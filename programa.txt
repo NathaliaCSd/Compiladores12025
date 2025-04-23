@@ -1,31 +1,30 @@
-{ dado o comprimento de um arco, calcular seu cosseno pela soma cos(x) = S x^i/i! para um dado numero de termos }
+{ dados o nome, o preço e o tipo dos vinhos (indicados aqui por "T" para tinto, "B" para branco ou "R" para rosê, descrever o vinho mais caro; não são considerados vinhos de preços iguais; fim dos dados indicado por nome = "fim" }
 
 algoritmo
-	declare i, termo, baseFatorial, fatorial, numeroTermos: inteiro
-	declare cosseno, angulo: real
+	tipo tVinho: registro
+						nome,
+						tipoVinho: literal
+						preco: real
+					fim_registro
+	declare
+		vinho, vinhoCaro: tVinho
 
-	{ leitura do arco e do numero de termos }
-	leia(angulo, numeroTermos) { angulo em radianos }
+	{ repetição para leitura dos dados }
+	vinhoCaro.preco <- -1 	{ para forçar a troca na primeira vez }
+	faca	
+		{ dados }
+		leia(vinho.nome, vinho.preco, vinho.tipoVinho)
 
-	{ calculo da aproximacao do cosseno 
-	cosseno <- 0   { acumulador do resultado }
-	baseFatorial <- 1
-	fatorial <- 1
-	termo <- 1
-	para i <- 1 ate numeroTermos faca
-		{ faz o somatorio }
-		se i % 2 = 1 entao
-			cosseno <- cosseno + termo   { soma termos impares }
-		senao
-			cosseno <- cosseno - termo   { subtrai termos pares }
+		{ verificação do maior preço }
+		se vinho.preco > vinhoCaro.preco e vinho.nome <> "fim" entao
+			vinhoCaro <- vinho 		{ copia tudo }
 		fim_se
+	ate vinho.nome = "fim
 
-		{ calcula o proximo termo }
-		fatorial <- fatorial * baseFatorial * (baseFatorial + 1)
-		baseFatorial <- baseFatorial + 2
-		termo <- pot(x, i + 1)/fatorial
-	fim_para
-
-	{ resultado calculado }
-	escreva("cos(", angulo, ") = ", cosseno)
+	{ apresentação do resultado }
+	se vinhoCaro.preco = -1 entao
+		escreva("Nenhum vinho foi apresentado.")
+	senao
+		escreva(vinhoCaro.nome, vinhoCaro.preco, vinhocaro.tipoVinho)
+	fim_se
 fim_algoritmo

@@ -22,7 +22,14 @@ public class Principal {
                     int tipo = t.getType(); //
                     String nomeToken = t1Jander.VOCABULARY.getDisplayName(t.getType());
                     String texto = t.getText();
-                    
+                    if ("COMENTARIO_INACABADO".equals(nomeToken)) {
+                        pw.println("Linha " + t.getLine() + ": comentario nao fechado");
+                        break; // Para a análise após o erro
+                    }
+                    if ("CADEIA_INACABADA".equals(nomeToken)) {
+                        pw.println("Linha " + t.getLine() + ": cadeia literal nao fechada");
+                        break; // Para a análise após o erro
+                    }
                     if ("ERROR".equals(nomeToken)) {
                         pw.println("Linha " + t.getLine() + ": " + texto + " - simbolo nao identificado");
                         break; // Para a análise após o erro

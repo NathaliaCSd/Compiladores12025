@@ -68,10 +68,12 @@ DIFERENTE     : '<>';
 // LITERAIS E IDENTIFICADORES
 NUM_INT       : [0-9]+;
 NUM_REAL      : [0-9]+ '.' [0-9]+;
+CADEIA_INACABADA    : '"' (~["\r\n"]);
 CADEIA        : '"' (~[\r\n"\\])* '"';
 IDENT         : [a-zA-Z] [a-zA-Z0-9_]*;
 
 // COMENTÁRIOS E ESPAÇOS EM BRANCO
+COMENTARIO_INACABADO    :'{' ~[\r\n}]*?('\r' |'\n'|'EOF');
 COMENTARIO    : '{' ~[\r\n}]* '}' -> skip;
 WS            : [ \t\r\n]+ -> skip;
 

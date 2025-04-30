@@ -1,4 +1,4 @@
-// Generated from java-escape by ANTLR 4.11.1
+// Generated from br/ufscar/dc/compiladores/alguma/sintatico/Alguma.g4 by ANTLR 4.12.0
 package br.ufscar.dc.compiladores.alguma.sintatico;
 
 import org.antlr.v4.runtime.ParserRuleContext;

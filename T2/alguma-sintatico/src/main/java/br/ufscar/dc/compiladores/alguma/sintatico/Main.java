@@ -1,10 +1,16 @@
 package br.ufscar.dc.compiladores.alguma.sintatico;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.FileWriter;
 
-import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.BaseErrorListener;
+import org.antlr.v4.runtime.CharStream;
+import org.antlr.v4.runtime.CharStreams;
+import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.RecognitionException;
+import org.antlr.v4.runtime.Recognizer;
+import org.antlr.v4.runtime.Token;
 
 public class Main {
     public static void main(String args[]) throws IOException {
@@ -25,7 +31,7 @@ public class Main {
             while ((t = lexer.nextToken()).getType() != Token.EOF) {
                 String nomeToken = AlgumaLexer.VOCABULARY.getDisplayName(t.getType());
                 String texto = t.getText();
-                pw.println("<'" + texto + "'," + nomeToken + ">");
+                //pw.println("<'" + texto + "'," + nomeToken + ">");
             }
 
             // 2. Reinicializa o CharStream e o lexer, porque ele já foi consumido
@@ -44,13 +50,13 @@ public class Main {
                                         int charPositionInLine,
                                         String msg,
                                         RecognitionException e) {
-                    pw.println("Linha " + line + ": erro sintático próximo a " + ((Token) offendingSymbol).getText());
+                    pw.println("Linha " + line + ": erro sintatico proximo a " + ((Token) offendingSymbol).getText());
                 }
             });
 
             // 4. Executa o parser
             parser.programa();
-
+            pw.println("Fim da compilacao");
         } catch (IOException e) {
             System.err.println("Erro ao escrever no arquivo de saída: " + args[1]);
         }

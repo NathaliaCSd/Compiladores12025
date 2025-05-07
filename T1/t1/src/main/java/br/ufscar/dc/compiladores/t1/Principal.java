@@ -28,8 +28,6 @@ public class Principal {
                     }
                     if ("CADEIA_INACABADA".equals(nomeToken)) {
                         pw.println("Linha " + t.getLine() + ": cadeia literal nao fechada");
-                        break; // Para a análise após o erro
-                    }
                     if ("ERROR".equals(nomeToken)) {
                         pw.println("Linha " + t.getLine() + ": " + texto + " - simbolo nao identificado");
                         break; // Para a análise após o erro
@@ -37,7 +35,9 @@ public class Principal {
 
                     if (!nomeToken.equals("WS") && !nomeToken.equals("COMENTARIO")) {
                         pw.println("<'" + texto + "'," + nomeToken + ">");
+                    }    break; // Para a análise após o erro
                     }
+                    
                     
                 }
             }

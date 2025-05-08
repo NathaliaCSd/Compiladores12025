@@ -88,6 +88,7 @@ public interface AlgumaListener extends ParseTreeListener {
 	 */
 	void exitTipo(AlgumaParser.TipoContext ctx);
 	/**
+<<<<<<< HEAD
 	 * Enter a parse tree produced by {@link AlgumaParser#registro}.
 	 * @param ctx the parse tree
 	 */
@@ -137,6 +138,57 @@ public interface AlgumaListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitValor_constante(AlgumaParser.Valor_constanteContext ctx);
+=======
+	 * Enter a parse tree produced by {@link AlgumaParser#tipo_basico}.
+	 * @param ctx the parse tree
+	 */
+	void enterTipo_basico(AlgumaParser.Tipo_basicoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AlgumaParser#tipo_basico}.
+	 * @param ctx the parse tree
+	 */
+	void exitTipo_basico(AlgumaParser.Tipo_basicoContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link AlgumaParser#tipo_basico_ident}.
+	 * @param ctx the parse tree
+	 */
+	void enterTipo_basico_ident(AlgumaParser.Tipo_basico_identContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AlgumaParser#tipo_basico_ident}.
+	 * @param ctx the parse tree
+	 */
+	void exitTipo_basico_ident(AlgumaParser.Tipo_basico_identContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link AlgumaParser#tipo_estendido}.
+	 * @param ctx the parse tree
+	 */
+	void enterTipo_estendido(AlgumaParser.Tipo_estendidoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AlgumaParser#tipo_estendido}.
+	 * @param ctx the parse tree
+	 */
+	void exitTipo_estendido(AlgumaParser.Tipo_estendidoContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link AlgumaParser#valor_constante}.
+	 * @param ctx the parse tree
+	 */
+	void enterValor_constante(AlgumaParser.Valor_constanteContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AlgumaParser#valor_constante}.
+	 * @param ctx the parse tree
+	 */
+	void exitValor_constante(AlgumaParser.Valor_constanteContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link AlgumaParser#registro}.
+	 * @param ctx the parse tree
+	 */
+	void enterRegistro(AlgumaParser.RegistroContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AlgumaParser#registro}.
+	 * @param ctx the parse tree
+	 */
+	void exitRegistro(AlgumaParser.RegistroContext ctx);
+>>>>>>> 9d471cf (testando casos de erro)
 	/**
 	 * Enter a parse tree produced by {@link AlgumaParser#declaracao_global}.
 	 * @param ctx the parse tree
@@ -148,6 +200,7 @@ public interface AlgumaListener extends ParseTreeListener {
 	 */
 	void exitDeclaracao_global(AlgumaParser.Declaracao_globalContext ctx);
 	/**
+<<<<<<< HEAD
 	 * Enter a parse tree produced by {@link AlgumaParser#parametros}.
 	 * @param ctx the parse tree
 	 */
@@ -167,6 +220,27 @@ public interface AlgumaListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitParametro(AlgumaParser.ParametroContext ctx);
+=======
+	 * Enter a parse tree produced by {@link AlgumaParser#parametro}.
+	 * @param ctx the parse tree
+	 */
+	void enterParametro(AlgumaParser.ParametroContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AlgumaParser#parametro}.
+	 * @param ctx the parse tree
+	 */
+	void exitParametro(AlgumaParser.ParametroContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link AlgumaParser#parametros}.
+	 * @param ctx the parse tree
+	 */
+	void enterParametros(AlgumaParser.ParametrosContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AlgumaParser#parametros}.
+	 * @param ctx the parse tree
+	 */
+	void exitParametros(AlgumaParser.ParametrosContext ctx);
+>>>>>>> 9d471cf (testando casos de erro)
 	/**
 	 * Enter a parse tree produced by {@link AlgumaParser#corpo}.
 	 * @param ctx the parse tree

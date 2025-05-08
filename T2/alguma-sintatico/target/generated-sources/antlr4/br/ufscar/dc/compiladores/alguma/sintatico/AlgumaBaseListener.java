@@ -113,61 +113,101 @@ public class AlgumaBaseListener implements AlgumaListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+<<<<<<< HEAD
 	@Override public void enterRegistro(AlgumaParser.RegistroContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitRegistro(AlgumaParser.RegistroContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterTipo_estendido(AlgumaParser.Tipo_estendidoContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitTipo_estendido(AlgumaParser.Tipo_estendidoContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterTipo_basico_ident(AlgumaParser.Tipo_basico_identContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitTipo_basico_ident(AlgumaParser.Tipo_basico_identContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
+=======
 	@Override public void enterTipo_basico(AlgumaParser.Tipo_basicoContext ctx) { }
+>>>>>>> 9d471cf (testando casos de erro)
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+<<<<<<< HEAD
+	@Override public void exitRegistro(AlgumaParser.RegistroContext ctx) { }
+=======
 	@Override public void exitTipo_basico(AlgumaParser.Tipo_basicoContext ctx) { }
+>>>>>>> 9d471cf (testando casos de erro)
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+<<<<<<< HEAD
+	@Override public void enterTipo_estendido(AlgumaParser.Tipo_estendidoContext ctx) { }
+=======
+	@Override public void enterTipo_basico_ident(AlgumaParser.Tipo_basico_identContext ctx) { }
+>>>>>>> 9d471cf (testando casos de erro)
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+<<<<<<< HEAD
+	@Override public void exitTipo_estendido(AlgumaParser.Tipo_estendidoContext ctx) { }
+=======
+	@Override public void exitTipo_basico_ident(AlgumaParser.Tipo_basico_identContext ctx) { }
+>>>>>>> 9d471cf (testando casos de erro)
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+<<<<<<< HEAD
+	@Override public void enterTipo_basico_ident(AlgumaParser.Tipo_basico_identContext ctx) { }
+=======
+	@Override public void enterTipo_estendido(AlgumaParser.Tipo_estendidoContext ctx) { }
+>>>>>>> 9d471cf (testando casos de erro)
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+<<<<<<< HEAD
+	@Override public void exitTipo_basico_ident(AlgumaParser.Tipo_basico_identContext ctx) { }
+=======
+	@Override public void exitTipo_estendido(AlgumaParser.Tipo_estendidoContext ctx) { }
+>>>>>>> 9d471cf (testando casos de erro)
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+<<<<<<< HEAD
+	@Override public void enterTipo_basico(AlgumaParser.Tipo_basicoContext ctx) { }
+=======
 	@Override public void enterValor_constante(AlgumaParser.Valor_constanteContext ctx) { }
+>>>>>>> 9d471cf (testando casos de erro)
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+<<<<<<< HEAD
+	@Override public void exitTipo_basico(AlgumaParser.Tipo_basicoContext ctx) { }
+=======
 	@Override public void exitValor_constante(AlgumaParser.Valor_constanteContext ctx) { }
+>>>>>>> 9d471cf (testando casos de erro)
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+<<<<<<< HEAD
+	@Override public void enterValor_constante(AlgumaParser.Valor_constanteContext ctx) { }
+=======
+	@Override public void enterRegistro(AlgumaParser.RegistroContext ctx) { }
+>>>>>>> 9d471cf (testando casos de erro)
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+<<<<<<< HEAD
+	@Override public void exitValor_constante(AlgumaParser.Valor_constanteContext ctx) { }
+=======
+	@Override public void exitRegistro(AlgumaParser.RegistroContext ctx) { }
+>>>>>>> 9d471cf (testando casos de erro)
 	/**
 	 * {@inheritDoc}
 	 *
@@ -185,25 +225,41 @@ public class AlgumaBaseListener implements AlgumaListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+<<<<<<< HEAD
 	@Override public void enterParametros(AlgumaParser.ParametrosContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitParametros(AlgumaParser.ParametrosContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
+=======
 	@Override public void enterParametro(AlgumaParser.ParametroContext ctx) { }
+>>>>>>> 9d471cf (testando casos de erro)
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+<<<<<<< HEAD
+	@Override public void exitParametros(AlgumaParser.ParametrosContext ctx) { }
+=======
 	@Override public void exitParametro(AlgumaParser.ParametroContext ctx) { }
+>>>>>>> 9d471cf (testando casos de erro)
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+<<<<<<< HEAD
+	@Override public void enterParametro(AlgumaParser.ParametroContext ctx) { }
+=======
+	@Override public void enterParametros(AlgumaParser.ParametrosContext ctx) { }
+>>>>>>> 9d471cf (testando casos de erro)
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+<<<<<<< HEAD
+	@Override public void exitParametro(AlgumaParser.ParametroContext ctx) { }
+=======
+	@Override public void exitParametros(AlgumaParser.ParametrosContext ctx) { }
+>>>>>>> 9d471cf (testando casos de erro)
 	/**
 	 * {@inheritDoc}
 	 *

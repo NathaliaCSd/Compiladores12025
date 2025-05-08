@@ -14,33 +14,51 @@ import org.antlr.v4.runtime.Token;
 
 public class Main {
     public static void main(String args[]) throws IOException {
-        if (args.length < 2) {
-            System.err.println("Uso: java -jar <jarfile> <arquivo_entrada> <arquivo_saida>");
-            return;
-        }
-
-        // Leitura do arquivo de entrada
         CharStream cs = CharStreams.fromFileName(args[0]);
         AlgumaLexer lexer = new AlgumaLexer(cs);
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
 
         try (PrintWriter pw = new PrintWriter(new FileWriter(args[1]))) {
-
-            // 1. Imprime os tokens reconhecidos
             Token t = null;
+            boolean houveErroLexico = false;
+
+            // Verificação de erros léxicos
             while ((t = lexer.nextToken()).getType() != Token.EOF) {
                 String nomeToken = AlgumaLexer.VOCABULARY.getDisplayName(t.getType());
                 String texto = t.getText();
+<<<<<<< HEAD
                 //pw.println("<'" + texto + "'," + nomeToken + ">");
+=======
+
+                if ("COMENTARIO_INACABADO".equals(nomeToken)) {
+                    pw.println("Linha " + t.getLine() + ": comentario nao fechado");
+                    houveErroLexico = true;
+                    break;
+                }
+                if ("CADEIA_INACABADA".equals(nomeToken)) {
+                    pw.println("Linha " + t.getLine() + ": cadeia literal nao fechada");
+                    houveErroLexico = true;
+                    break;
+                }
+                if ("ERROR".equals(nomeToken)) {
+                    pw.println("Linha " + t.getLine() + ": " + texto + " - simbolo nao identificado");
+                    houveErroLexico = true;
+                    break;
+                }
+>>>>>>> 9d471cf (testando casos de erro)
             }
 
-            // 2. Reinicializa o CharStream e o lexer, porque ele já foi consumido
+            if (houveErroLexico) {
+                pw.println("Fim da compilacao");
+                return;
+            }
+
+            // Nova leitura para análise sintática
             cs = CharStreams.fromFileName(args[0]);
             lexer = new AlgumaLexer(cs);
-            tokens = new CommonTokenStream(lexer);
+            CommonTokenStream tokens = new CommonTokenStream(lexer);
             AlgumaParser parser = new AlgumaParser(tokens);
 
-            // 3. Remove o listener padrão e adiciona um personalizado
+            // Listener de erro sintático
             parser.removeErrorListeners();
             parser.addErrorListener(new BaseErrorListener() {
                 @Override
@@ -50,15 +68,44 @@ public class Main {
                                         int charPositionInLine,
                                         String msg,
                                         RecognitionException e) {
+<<<<<<< HEAD
                     pw.println("Linha " + line + ": erro sintatico proximo a " + ((Token) offendingSymbol).getText());
+=======
+                    String textoErro = ((Token) offendingSymbol).getText();
+                    if ("<EOF>".equals(textoErro)) {
+                        textoErro = "EOF";
+                    }
+                    throw new RuntimeException("Linha " + line + ": erro sintatico proximo a " + textoErro);
+>>>>>>> 9d471cf (testando casos de erro)
                 }
             });
+            
 
+<<<<<<< HEAD
             // 4. Executa o parser
             parser.programa();
             pw.println("Fim da compilacao");
         } catch (IOException e) {
             System.err.println("Erro ao escrever no arquivo de saída: " + args[1]);
         }
+=======
+            try {
+                parser.programa();
+                tokens.fill();
+                for (Token tokenFinal : tokens.getTokens()) {
+                    String nomeToken = AlgumaLexer.VOCABULARY.getDisplayName(tokenFinal.getType());
+                    String texto = tokenFinal.getText();
+                    if (!nomeToken.equals("WS") && !nomeToken.equals("COMENTARIO")) {
+                        pw.println("<'" + texto + "'," + nomeToken + ">");
+                    }
+                }
+                pw.println("Fim da compilacao");
+            } catch (RuntimeException e) {
+                pw.println(e.getMessage());
+                pw.println("Fim da compilacao");
+            }
+            
+>>>>>>> 9d471cf (testando casos de erro)
     }
+}
 }

@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 Linha 10: erro sintatico proximo a leia
+=======
+Linha 5: erro sintatico proximo a registro
+>>>>>>> 7f8f96f (Testando casos de erro)
 Fim da compilacao

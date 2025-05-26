@@ -1,11 +1,11 @@
 package br.ufscar.dc.compiladores.expr.parser;
 
-import br.ufscar.dc.compiladores.expr.parser.AlgumaParser.Declaracao_globalContext;
+import br.ufscar.dc.compiladores.expr.parser.AlgumaParser;
 import br.ufscar.dc.compiladores.expr.parser.TabelaDeSimbolos.TipoAlguma;
 
 public class AlgumaSemantico extends AlgumaBaseVisitor<Void> {
 
-    TabelaDeSimbolos tabela;
+    private TabelaDeSimbolos tabela;
 
     @Override
     public Void visitPrograma(AlgumaParser.ProgramaContext ctx) {
@@ -14,62 +14,72 @@ public class AlgumaSemantico extends AlgumaBaseVisitor<Void> {
     }
 
     @Override
-    public Void visitDecl_local_global(AlgumaParser.Decl_local_globalContext ctx){
-    String nomeVar = ctx.declaracao_local().variavel().getText();
-    String strTipoVar = ctx.declaracao_local().tipo().getText();
+    public Void visitDecl_local_global(AlgumaParser.Decl_local_globalContext ctx) {
+        // pega nome e tipo da variável declarada
+        String nomeVar = ctx.declaracao_local().variavel().getText();
+        String strTipoVar = ctx.declaracao_local().tipo().getText().toLowerCase();
         TipoAlguma tipoVar = TipoAlguma.INVALIDO;
         switch (strTipoVar) {
-            case "INTEIRO":
+            case "inteiro":
                 tipoVar = TipoAlguma.INTEIRO;
                 break;
-            case "REAL":
+            case "real":
                 tipoVar = TipoAlguma.REAL;
                 break;
             default:
-                // Nunca irá acontecer, pois o analisador sintático
-                // não permite
+                // tipos não numéricos não tratados aqui
+                // nunca ira acontecer, pois o analisador sintatico nao permite
                 break;
         }
-
-        // Verificar se a variável já foi declarada
+        // verifica re-declaração (se a variavel ja foi declada)
         if (tabela.existe(nomeVar)) {
-            AlgumaSemanticoUtils.adicionarErroSemantico(ctx.declaracao_local().IDENT().getSymbol(), "Variável " + nomeVar + " já existe");
+            AlgumaSemanticoUtils.adicionarErroSemantico(
+                    ctx.declaracao_local().IDENT().getSymbol(),
+                    "Variável '" + nomeVar + "' já existe");
         } else {
             tabela.adicionar(nomeVar, tipoVar);
         }
-
         return super.visitDecl_local_global(ctx);
     }
 
     @Override
     public Void visitCmdLeia(AlgumaParser.CmdLeiaContext ctx) {
-        TipoAlguma tipoExpressao = AlgumaSemanticoUtils.verificarTipo(tabela, ctx.Cmd().exp_aritmetica());
-        if (tipoExpressao != TipoAlguma.INVALIDO) {
-            String nomeVar = ctx.Cmd().identificador().getText();
+        // para cada identificador em leia(...)
+        for (AlgumaParser.IdentificadorContext idCtx : ctx.identificador()) {
+            String nomeVar = idCtx.getText();
             if (!tabela.existe(nomeVar)) {
-                AlgumaSemanticoUtils.adicionarErroSemantico(ctx.VARIAVEL().getSymbol(), "Variável " + nomeVar + " não foi declarada antes do uso");
-            } else {
-                TipoAlguma tipoVariavel = AlgumaSemanticoUtils.verificarTipo(tabela, nomeVar);
-                if (tipoVariavel != tipoExpressao) {
-                    AlgumaSemanticoUtils.adicionarErroSemantico(ctx.VARIAVEL().getSymbol(), "Tipo da variável " + nomeVar + " não é compatível com o tipo da expressão");
-                }
+                AlgumaSemanticoUtils.adicionarErroSemantico(
+                        idCtx.start,
+                        "Variável '" + nomeVar + "' não foi declarada antes do uso");
             }
         }
-        return super.visitComandoAtribuicao(ctx);
+        return super.visitCmdLeia(ctx);
     }
 
     @Override
-    public Void visitCmd(AlgumaParser.CmdContext ctx) {
-        String nomeVar = ctx.cmdLeia().LEIA().getText();
+    public Void visitCmdAtribuicao(AlgumaParser.CmdAtribuicaoContext ctx) {
+        // 1) Nome da variável à esquerda
+        String nomeVar = ctx.identificador().getText();
+        // 2) Se não existe, erro de uso antes da declaração
         if (!tabela.existe(nomeVar)) {
-            AlgumaSemanticoUtils.adicionarErroSemantico(ctx.cmdLeia().LEIA().getSymbol(), "Variável " + nomeVar + " não foi declarada antes do uso");
+            AlgumaSemanticoUtils.adicionarErroSemantico(
+                    ctx.identificador().start,
+                    "Variável '" + nomeVar + "' não foi declarada antes do uso");
+        } else {
+            // 3) Calcula tipo da expressão do lado direito
+            AlgumaParser.ExpressaoContext expCtx = ctx.expressao();
+            TabelaDeSimbolos.TipoAlguma tipoExp = AlgumaSemanticoUtils.verificarTipo(tabela, expCtx);
+            // 4) Obtém tipo da variável na tabela
+            TabelaDeSimbolos.TipoAlguma tipoVar = tabela.verificar(nomeVar);
+            // 5) Se ambos válidos e diferentes, erro de incompatibilidade
+            if (tipoExp != TabelaDeSimbolos.TipoAlguma.INVALIDO
+                    && tipoVar != tipoExp) {
+                AlgumaSemanticoUtils.adicionarErroSemantico(
+                        ctx.identificador().start,
+                        "Tipo da variável '" + nomeVar + "' não é compatível com o tipo da expressão");
+            }
         }
-        return super.visitCmd(ctx);
-    }
-
-    @Override
-    public Void visitCmdAtribuicao(AlgumaParser.CmdAtribuicaoContext ctx){
-            AlgumaSemanticoUtils.verificarTipo(tabela, ctx);
         return super.visitCmdAtribuicao(ctx);
     }
+
 }

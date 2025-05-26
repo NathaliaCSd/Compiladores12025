@@ -358,15 +358,89 @@ public interface AlgumaListener extends ParseTreeListener {
 	 */
 	void exitTermo(AlgumaParser.TermoContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link AlgumaParser#fator}.
+	 * Enter a parse tree produced by the {@code LiteralInteiro}
+	 * labeled alternative in {@link AlgumaParser#fator}.
 	 * @param ctx the parse tree
 	 */
-	void enterFator(AlgumaParser.FatorContext ctx);
+	void enterLiteralInteiro(AlgumaParser.LiteralInteiroContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link AlgumaParser#fator}.
+	 * Exit a parse tree produced by the {@code LiteralInteiro}
+	 * labeled alternative in {@link AlgumaParser#fator}.
 	 * @param ctx the parse tree
 	 */
-	void exitFator(AlgumaParser.FatorContext ctx);
+	void exitLiteralInteiro(AlgumaParser.LiteralInteiroContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code LiteralReal}
+	 * labeled alternative in {@link AlgumaParser#fator}.
+	 * @param ctx the parse tree
+	 */
+	void enterLiteralReal(AlgumaParser.LiteralRealContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code LiteralReal}
+	 * labeled alternative in {@link AlgumaParser#fator}.
+	 * @param ctx the parse tree
+	 */
+	void exitLiteralReal(AlgumaParser.LiteralRealContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code FatorIdentificador}
+	 * labeled alternative in {@link AlgumaParser#fator}.
+	 * @param ctx the parse tree
+	 */
+	void enterFatorIdentificador(AlgumaParser.FatorIdentificadorContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code FatorIdentificador}
+	 * labeled alternative in {@link AlgumaParser#fator}.
+	 * @param ctx the parse tree
+	 */
+	void exitFatorIdentificador(AlgumaParser.FatorIdentificadorContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code ChamadaFuncao}
+	 * labeled alternative in {@link AlgumaParser#fator}.
+	 * @param ctx the parse tree
+	 */
+	void enterChamadaFuncao(AlgumaParser.ChamadaFuncaoContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code ChamadaFuncao}
+	 * labeled alternative in {@link AlgumaParser#fator}.
+	 * @param ctx the parse tree
+	 */
+	void exitChamadaFuncao(AlgumaParser.ChamadaFuncaoContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Agrupamento}
+	 * labeled alternative in {@link AlgumaParser#fator}.
+	 * @param ctx the parse tree
+	 */
+	void enterAgrupamento(AlgumaParser.AgrupamentoContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Agrupamento}
+	 * labeled alternative in {@link AlgumaParser#fator}.
+	 * @param ctx the parse tree
+	 */
+	void exitAgrupamento(AlgumaParser.AgrupamentoContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Referencia}
+	 * labeled alternative in {@link AlgumaParser#fator}.
+	 * @param ctx the parse tree
+	 */
+	void enterReferencia(AlgumaParser.ReferenciaContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Referencia}
+	 * labeled alternative in {@link AlgumaParser#fator}.
+	 * @param ctx the parse tree
+	 */
+	void exitReferencia(AlgumaParser.ReferenciaContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code LiteralString}
+	 * labeled alternative in {@link AlgumaParser#fator}.
+	 * @param ctx the parse tree
+	 */
+	void enterLiteralString(AlgumaParser.LiteralStringContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code LiteralString}
+	 * labeled alternative in {@link AlgumaParser#fator}.
+	 * @param ctx the parse tree
+	 */
+	void exitLiteralString(AlgumaParser.LiteralStringContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link AlgumaParser#op1}.
 	 * @param ctx the parse tree
@@ -387,46 +461,6 @@ public interface AlgumaListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitOp2(AlgumaParser.Op2Context ctx);
-	/**
-	 * Enter a parse tree produced by {@link AlgumaParser#op3}.
-	 * @param ctx the parse tree
-	 */
-	void enterOp3(AlgumaParser.Op3Context ctx);
-	/**
-	 * Exit a parse tree produced by {@link AlgumaParser#op3}.
-	 * @param ctx the parse tree
-	 */
-	void exitOp3(AlgumaParser.Op3Context ctx);
-	/**
-	 * Enter a parse tree produced by {@link AlgumaParser#parcela}.
-	 * @param ctx the parse tree
-	 */
-	void enterParcela(AlgumaParser.ParcelaContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link AlgumaParser#parcela}.
-	 * @param ctx the parse tree
-	 */
-	void exitParcela(AlgumaParser.ParcelaContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link AlgumaParser#parcela_unario}.
-	 * @param ctx the parse tree
-	 */
-	void enterParcela_unario(AlgumaParser.Parcela_unarioContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link AlgumaParser#parcela_unario}.
-	 * @param ctx the parse tree
-	 */
-	void exitParcela_unario(AlgumaParser.Parcela_unarioContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link AlgumaParser#parcela_nao_unario}.
-	 * @param ctx the parse tree
-	 */
-	void enterParcela_nao_unario(AlgumaParser.Parcela_nao_unarioContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link AlgumaParser#parcela_nao_unario}.
-	 * @param ctx the parse tree
-	 */
-	void exitParcela_nao_unario(AlgumaParser.Parcela_nao_unarioContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link AlgumaParser#exp_relacional}.
 	 * @param ctx the parse tree

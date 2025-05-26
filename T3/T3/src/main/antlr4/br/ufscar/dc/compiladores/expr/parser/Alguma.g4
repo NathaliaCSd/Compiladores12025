@@ -1,9 +1,11 @@
 grammar Alguma;
 
+// Regra principal do programa
 programa
-    : declaracoes 'algoritmo' corpo 'fim_algoritmo'
+    : declaracoes ALGORITMO corpo FIM_ALGORITMO
     ;
 
+// Declarações globais e locais
 declaracoes
     : decl_local_global*
     ;
@@ -14,11 +16,12 @@ decl_local_global
     ;
 
 declaracao_local
-    : 'declare' variavel
-    | 'constante' IDENT ':' tipo_basico '-' valor_constante
-    | 'tipo' IDENT ':' tipo
+    : DECLARE variavel
+    | CONSTANTE IDENT ':' tipo_basico '-' valor_constante
+    | TIPO IDENT ':' tipo
     ;
 
+// Variáveis com possíveis dimensões
 variavel
     : identificador (',' identificador)* ':' tipo
     ;
@@ -31,17 +34,18 @@ dimensao
     : ('[' exp_aritmetica ']')*
     ;
 
+// Tipos básicos e registros
 tipo
     : registro
     | tipo_estendido
     ;
 
 registro
-    : 'registro' variavel* 'fim_registro'
+    : REGISTRO variavel* FIM_REGISTRO
     ;
 
 tipo_estendido
-    : ('^')? tipo_basico_ident
+    : PONTEIRO? tipo_basico_ident
     ;
 
 tipo_basico_ident
@@ -50,23 +54,24 @@ tipo_basico_ident
     ;
 
 tipo_basico
-    : 'literal'
-    | 'inteiro'
-    | 'real'
-    | 'logico'
+    : LITERAL
+    | INTEIRO
+    | REAL
+    | LOGICO
     ;
 
 valor_constante
     : CADEIA
     | NUM_INT
     | NUM_REAL
-    | 'verdadeiro'
-    | 'falso'
+    | VERDADEIRO
+    | FALSO
     ;
 
+// Declarações de procedimentos e funções
 declaracao_global
-    : 'procedimento' IDENT '(' parametros? ')' declaracao_local* cmd* 'fim_procedimento'
-    | 'funcao' IDENT '(' parametros? ')' ':' tipo_estendido declaracao_local* cmd* 'fim_funcao'
+    : PROCEDIMENTO IDENT '(' parametros? ')' declaracao_local* cmd* FIM_PROCEDIMENTO
+    | FUNCAO IDENT '(' parametros? ')' ':' tipo_estendido declaracao_local* cmd* FIM_FUNCAO
     ;
 
 parametros
@@ -74,9 +79,10 @@ parametros
     ;
 
 parametro
-    : ('var')? identificador (',' identificador)* ':' tipo_estendido
+    : VAR? identificador (',' identificador)* ':' tipo_estendido
     ;
 
+// Corpo com comandos
 corpo
     : declaracao_local* cmd*
     ;
@@ -95,35 +101,35 @@ cmd
     ;
 
 cmdLeia
-    : 'leia' '(' ('^')? identificador (',' ('^')? identificador)* ')'
+    : LEIA '(' PONTEIRO? identificador (',' PONTEIRO? identificador)* ')'
     ;
 
 cmdEscreva
-    : 'escreva' '(' expressao (',' expressao)* ')'
+    : ESCREVA '(' expressao (',' expressao)* ')'
     ;
 
 cmdSe
-    : 'se' expressao 'entao' cmd* ('senao' cmd*)? 'fim_se'
+    : SE expressao ENTAO cmd* (SENAO cmd*)? FIM_SE
     ;
 
 cmdCaso
-    : 'caso' exp_aritmetica 'seja' selecao ('senao' cmd*)? 'fim_caso'
+    : CASO exp_aritmetica SEJA selecao (SENAO cmd*)? FIM_CASO
     ;
 
 cmdPara
-    : 'para' IDENT '<-' exp_aritmetica 'ate' exp_aritmetica 'faca' cmd* 'fim_para'
+    : PARA IDENT ATRIBUICAO exp_aritmetica ATE exp_aritmetica FACA cmd* FIM_PARA
     ;
 
 cmdEnquanto
-    : 'enquanto' expressao 'faca' cmd* 'fim_enquanto'
+    : ENQUANTO expressao FACA cmd* FIM_ENQUANTO
     ;
 
 cmdFaca
-    : 'faca' cmd* 'ate' expressao
+    : FACA cmd* ATE expressao
     ;
 
 cmdAtribuicao
-    : ('^')? identificador '<-' expressao
+    : PONTEIRO? identificador ATRIBUICAO expressao
     ;
 
 cmdChamada
@@ -131,9 +137,10 @@ cmdChamada
     ;
 
 cmdRetorne
-    : 'retorne' expressao
+    : RETORNE expressao
     ;
 
+// Seleção de casos
 selecao
     : item_selecao*
     ;
@@ -151,9 +158,10 @@ numero_intervalo
     ;
 
 op_unario
-    : '-'
+    : MENOS
     ;
 
+// EXPRESSÃO ARITMÉTICA
 exp_aritmetica
     : termo (op1 termo)*
     ;
@@ -162,53 +170,42 @@ termo
     : fator (op2 fator)*
     ;
 
+// Achata Fator, incluindo direto literais, variáveis e operações
+// Comentário: Tiramos as regras parcela/parcela_unario para que em FatorContext
+// já existam ctx.NUM_INT(), ctx.NUM_REAL() e ctx.identificador() diretamente.
 fator
-    : parcela (op3 parcela)*
+    : NUM_INT                            # LiteralInteiro
+    | NUM_REAL                           # LiteralReal
+    | identificador                     # FatorIdentificador
+    | IDENT '(' expressao (',' expressao)* ')'  # ChamadaFuncao
+    | '(' expressao ')'                  # Agrupamento
+    | '#' identificador                  # Referencia
+    | CADEIA                             # LiteralString
     ;
 
+// Operadores aritméticos
 op1
-    : '+'
-    | '-'
+    : MAIS
+    | MENOS
     ;
 
 op2
-    : '*'
-    | '/'
+    : MULT
+    | DIV
     ;
 
-op3
-    : '%'
-    ;
-
-parcela
-    : op_unario? parcela_unario
-    | parcela_nao_unario
-    ;
-
-parcela_unario
-    : ('^')? identificador
-    | IDENT '(' expressao (',' expressao)* ')'
-    | NUM_INT
-    | NUM_REAL
-    | '(' expressao ')'
-    ;
-
-parcela_nao_unario
-    : '#' identificador
-    | CADEIA
-    ;
-
+// EXPRESSÃO RELACIONAL e LÓGICA
 exp_relacional
     : exp_aritmetica (op_relacional exp_aritmetica)?
     ;
 
 op_relacional
-    : '='
-    | '<>'
-    | '>='
-    | '<='
-    | '>'
-    | '<'
+    : IGUAL
+    | DIFERENTE
+    | MAIOR_IGUAL
+    | MENOR_IGUAL
+    | MAIOR
+    | MENOR
     ;
 
 expressao
@@ -220,24 +217,24 @@ termo_logico
     ;
 
 fator_logico
-    : 'nao'? parcela_logica
+    : NAO? parcela_logica
     ;
 
 parcela_logica
-    : 'verdadeiro'
-    | 'falso'
+    : VERDADEIRO
+    | FALSO
     | exp_relacional
     ;
 
 op_logico_1
-    : 'ou'
+    : OU
     ;
 
 op_logico_2
-    : 'e'
+    : E
     ;
 
-// PALAVRAS-CHAVE
+// Tokens literais e símbolos
 ALGORITMO     : 'algoritmo';
 DECLARE       : 'declare';
 FIM_ALGORITMO : 'fim_algoritmo';
@@ -276,7 +273,6 @@ CONSTANTE     : 'constante';
 FALSO         : 'falso';
 VERDADEIRO    : 'verdadeiro';
 
-// SÍMBOLOS RESERVADOS
 DOIS_PONTOS   : ':';
 ABRE_PAR      : '(';
 FECHA_PAR     : ')';
@@ -289,7 +285,6 @@ PONTO         : '.';
 ABRE_COLCH    : '[';
 FECHA_COLCH   : ']';
 
-// OPERADORES MATEMÁTICOS E RELACIONAIS
 MAIS          : '+';
 MENOS         : '-';
 MULT          : '*';
@@ -302,10 +297,9 @@ MAIOR_IGUAL   : '>=';
 IGUAL         : '=';
 DIFERENTE     : '<>';
 
-// LITERAIS E IDENTIFICADORES
 NUM_INT       : [0-9]+;
-NUM_REAL      : [0-9]+ '.' [0-9]+;
-CADEIA_INACABADA    : '"' (~["\r\n"]);
+NUM_REAL      : [0-9]+'.'[0-9]+;
+CADEIA_INACABADO    : '"' (~["\r\n])*? ('\r'|'\n'|'EOF');
 CADEIA        : '"' (~[\r\n"\\])* '"';
 IDENT         : [a-zA-Z] [a-zA-Z0-9_]*;
 

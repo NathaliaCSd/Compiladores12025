@@ -3,17 +3,15 @@ package br.ufscar.dc.compiladores.expr.parser;
 import java.util.HashMap;
 import java.util.Map;
 
+//classe tabela de simbolos disponibilizada pelo professor no github da disciplina 
+
 public class TabelaDeSimbolos {
     public enum TipoAlguma {
         INTEIRO,
-        inteiro,
         REAL,
-        real,
         LITERAL,
-        literal,
-        LOGICO,
-        logico,
-        INVALIDO
+        INVALIDO, 
+        LOGICO
     }
     
     class EntradaTabelaDeSimbolos {
@@ -33,19 +31,14 @@ public class TabelaDeSimbolos {
     }
     
     public void adicionar(String nome, TipoAlguma tipo) {
-        tabela.put(nome.toLowerCase(), new EntradaTabelaDeSimbolos(nome, tipo));
+        tabela.put(nome, new EntradaTabelaDeSimbolos(nome, tipo));
     }
     
     public boolean existe(String nome) {
-        return tabela.containsKey(nome.toLowerCase());
+        return tabela.containsKey(nome);
     }
     
     public TipoAlguma verificar(String nome) {
-    EntradaTabelaDeSimbolos entrada = tabela.get(nome.toLowerCase());
-    if (entrada != null) {
-        return entrada.tipo;
+        return tabela.get(nome).tipo;
     }
-    return TipoAlguma.INVALIDO;
-}
-
 }

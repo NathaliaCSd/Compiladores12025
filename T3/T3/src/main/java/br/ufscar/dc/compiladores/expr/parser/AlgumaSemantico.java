@@ -1,114 +1,142 @@
 package br.ufscar.dc.compiladores.expr.parser;
 
 import br.ufscar.dc.compiladores.expr.parser.TabelaDeSimbolos.TipoAlguma;
+import org.antlr.v4.runtime.Token;
 
+//construido usando visitor 
 public class AlgumaSemantico extends AlgumaBaseVisitor<Void> {
 
-    private TabelaDeSimbolos tabela;
-    public static String extrairNome(AlgumaParser.IdentificadorContext ctx) {
-        return ctx.IDENT(0).getText(); // pega apenas o identificador principal (ignora campos/indexações)
-    }
+    // usado escopos para criar uma pilha de tabelas
+    // como o prof fez nos exemplos
+    private Escopos pilhaDeTabelas = new Escopos();
+    private String erroSemantico;
+
+    /**
+     * Ponto de entrada do programa: limpa erros, inicia escopo global e
+     * percorre toda a árvore. Ao final, encerra escopo global.
+     */
     @Override
     public Void visitPrograma(AlgumaParser.ProgramaContext ctx) {
-        tabela = new TabelaDeSimbolos();
-        return super.visitPrograma(ctx);
+        AlgumaSemanticoUtils.errosSemanticos.clear();
+        pilhaDeTabelas.criarNovoEscopo(); // abre escopo global
+        super.visitPrograma(ctx);
+        pilhaDeTabelas.abandonarEscopo();
+        return null;
     }
 
-
     @Override
-    public Void visitTipo_basico_ident(AlgumaParser.Tipo_basico_identContext ctx) {
-        if (ctx.IDENT() != null) {
-            String nomeTipo = ctx.IDENT().getText();
-            if (!tabela.existe(nomeTipo)) {
+    public Void visitCorpo(AlgumaParser.CorpoContext ctx) {
+        pilhaDeTabelas.criarNovoEscopo(); // abre escopo para corpo
+        super.visitCorpo(ctx); // processa declarações e comandos
+        pilhaDeTabelas.abandonarEscopo(); // fecha escopo do corpo
+        return null;
+    }
+
+    /**
+     * Trata declarações locais: variáveis, constantes e tipos.
+     * Aqui processamos o caso 'declare variavel'.
+     */
+    @Override
+    public Void visitDeclaracao_local(AlgumaParser.Declaracao_localContext ctx) {
+        // Obtém a tabela de símbolos do escopo atual
+        TabelaDeSimbolos escopoAtual = pilhaDeTabelas.obterEscopoAtual();
+
+        // Caso 1: declaração de variável via "declare"
+        if (ctx.DECLARE() != null) {
+            // Captura o contexto da regra variavel e extrai o tipo em texto
+            AlgumaParser.VariavelContext varCtx = ctx.variavel();
+            String strTipoVar = varCtx.tipo().getText().toLowerCase();
+
+            // Verifica se o tipo é básico (literal, inteiro, real, logico)
+            if (!AlgumaSemanticoUtils.ehTipoBasico(strTipoVar)) {
+                erroSemantico = "tipo " + strTipoVar + " nao declarado";
                 AlgumaSemanticoUtils.adicionarErroSemantico(
-                        ctx.IDENT().getSymbol(),
-                        "tipo " + nomeTipo + " nao declarado");
+                        varCtx.tipo().start, erroSemantico);
             }
-        }
-        return super.visitTipo_basico_ident(ctx);
-    }
 
-    @Override
-    public Void visitDecl_local_global(AlgumaParser.Decl_local_globalContext ctx) {
-        if (ctx.declaracao_local() != null && ctx.declaracao_local().variavel() != null) {
-            AlgumaParser.VariavelContext varCtx = ctx.declaracao_local().variavel();
-            //System.out.println("AlgumaParser.VariavelContext varCtx = ctx.declaracao_local().variavel(): "+varCtx);
-            AlgumaParser.TipoContext tipoCtx = varCtx.tipo();
-            //System.out.println("AlgumaParser.TipoContext tipoCtx = varCtx.tipo();: "+varCtx.tipo());
-        
-            String nomeTipo = tipoCtx.getText();
-            TipoAlguma tipoVar;
-
-            // Mapeia os tipos básicos
-            
-            switch (nomeTipo) {
-                case "inteiro":
+            // Converte string em enum TipoAlguma
+            TipoAlguma tipoVar = TipoAlguma.INVALIDO;
+            switch (strTipoVar) {
+                case "INTEIRO":
                     tipoVar = TipoAlguma.INTEIRO;
                     break;
-                case "real":
+                case "REAL":
                     tipoVar = TipoAlguma.REAL;
                     break;
-                case "literal":
-                    tipoVar = TipoAlguma.LITERAL;
-                    break;
                 default:
-                    // Tipo não reconhecido (pode ser definido pelo usuário)
-                    if (!tabela.existe(nomeTipo)) {
-                        AlgumaSemanticoUtils.adicionarErroSemantico(
-                                tipoCtx.start,
-                                "tipo " + nomeTipo + " nao declarado");
-                    }
-                    tipoVar = TipoAlguma.INVALIDO;
+                    // Nunca irá acontecer, pois o analisador sintático
+                    // não permite
+                    break;
             }
 
-            // Adiciona os identificadores à tabela
+            // verifica se a variavel ja foi declarada
             for (AlgumaParser.IdentificadorContext idCtx : varCtx.identificador()) {
                 String nomeVar = idCtx.getText();
-                if (tabela.existe(nomeVar)) {
+                if (escopoAtual.existe(nomeVar)) {
+                    erroSemantico = "identificador " + nomeVar + " ja declarado anteriormente";
                     AlgumaSemanticoUtils.adicionarErroSemantico(
-                            idCtx.start,
-                            "identificador " + nomeVar + " ja declarado");
+                            idCtx.start, erroSemantico);
                 } else {
-                    tabela.adicionar(nomeVar, tipoVar);
-
+                    escopoAtual.adicionar(nomeVar, tipoVar);
                 }
             }
         }
-
-        return super.visitDecl_local_global(ctx);
+        // Outros casos (constante, tipo) podem ser implementados de modo similar
+        return super.visitDeclaracao_local(ctx);
     }
 
+    /**
+     * Comando de leitura: verifica se cada variável já foi declarada em algum
+     * escopo.
+     */
     @Override
     public Void visitCmdLeia(AlgumaParser.CmdLeiaContext ctx) {
         for (AlgumaParser.IdentificadorContext idCtx : ctx.identificador()) {
-            String nomeVar = AlgumaSemanticoUtils.extrairNome(idCtx);
-            if (!tabela.existe(nomeVar)) {
+            boolean encontrado = false;
+            // Varre da tabela interna até a global
+            for (TabelaDeSimbolos esc : pilhaDeTabelas.percorrerEscoposAninhados()) {
+                if (esc.existe(idCtx.getText())) {
+                    encontrado = true;
+                    break;
+                }
+            }
+            if (!encontrado) {
+                erroSemantico = "identificador " + idCtx.getText() + " nao declarado";
                 AlgumaSemanticoUtils.adicionarErroSemantico(
-                        idCtx.start,
-                        "identificador " + nomeVar + " nao declarado:::   "+tabela.toString()+"   ::: nome var:"+nomeVar);
+                        idCtx.start, erroSemantico);
             }
         }
-        return super.visitCmdLeia(ctx);
+        return null;
     }
 
 
     @Override
-    public Void visitCmdAtribuicao(AlgumaParser.CmdAtribuicaoContext ctx) {
-        String nomeVar = AlgumaSemanticoUtils.extrairNome(ctx.identificador());
-        if (!tabela.existe(nomeVar)) {
-            AlgumaSemanticoUtils.adicionarErroSemantico(
-                    ctx.identificador().start,
-                    "identificador " + nomeVar + " nao declarado");
-        } else {
-            TipoAlguma tipoExp = AlgumaSemanticoUtils.verificarTipo(tabela, ctx.expressao());
-            TipoAlguma tipoVar = tabela.verificar(nomeVar);
-            if (tipoExp != TipoAlguma.INVALIDO && tipoVar != tipoExp) {
-                AlgumaSemanticoUtils.adicionarErroSemantico(
-                        ctx.identificador().start,
-                        "Tipo da variável '" + nomeVar + "' não é compatível com o tipo da expressão");
-            }
+    public Void visitCmdEscreva(AlgumaParser.CmdEscrevaContext ctx) {
+        for (AlgumaParser.ExpressaoContext exprCtx : ctx.expressao()) {
+            visitExpressao(exprCtx);
         }
-        return super.visitCmdAtribuicao(ctx);
+        return null;
     }
 
+    @Override
+    public Void visitCmdAtribuicao(AlgumaParser.CmdAtribuicaoContext ctx) {
+        TipoAlguma tipoExpressao = AlgumaSemanticoUtils.verificarTipo(pilhaDeTabelas, ctx.expressao());
+        TipoAlguma tipoId = pilhaDeTabelas.obterEscopoAtual()
+                .verificar(ctx.identificador().getText());
+
+        if (!(tipoExpressao.equals(tipoId) ||
+                AlgumaSemanticoUtils.ehTipoInteiroEmReal(tipoId, tipoExpressao))) {
+            erroSemantico = "atribuicao nao compativel para " +
+                    ctx.identificador().getText();
+            AlgumaSemanticoUtils.adicionarErroSemantico(
+                    ctx.start, erroSemantico);
+        }
+        return null;
+    }
+
+    @Override
+    public Void visitExp_aritmetica(AlgumaParser.Exp_aritmeticaContext ctx) {
+        AlgumaSemanticoUtils.verificarTipo(pilhaDeTabelas, ctx);
+        return super.visitExp_aritmetica(ctx);
+    }
 }

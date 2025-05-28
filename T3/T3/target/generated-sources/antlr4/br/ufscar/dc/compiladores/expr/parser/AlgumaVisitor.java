@@ -23,12 +23,6 @@ public interface AlgumaVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitDeclaracoes(AlgumaParser.DeclaracoesContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link AlgumaParser#decl_local_global}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitDecl_local_global(AlgumaParser.Decl_local_globalContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link AlgumaParser#declaracao_local}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -221,54 +215,11 @@ public interface AlgumaVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitTermo(AlgumaParser.TermoContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code LiteralInteiro}
-	 * labeled alternative in {@link AlgumaParser#fator}.
+	 * Visit a parse tree produced by {@link AlgumaParser#fator}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitLiteralInteiro(AlgumaParser.LiteralInteiroContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code LiteralReal}
-	 * labeled alternative in {@link AlgumaParser#fator}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitLiteralReal(AlgumaParser.LiteralRealContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code FatorIdentificador}
-	 * labeled alternative in {@link AlgumaParser#fator}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitFatorIdentificador(AlgumaParser.FatorIdentificadorContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code ChamadaFuncao}
-	 * labeled alternative in {@link AlgumaParser#fator}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitChamadaFuncao(AlgumaParser.ChamadaFuncaoContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code Agrupamento}
-	 * labeled alternative in {@link AlgumaParser#fator}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitAgrupamento(AlgumaParser.AgrupamentoContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code Referencia}
-	 * labeled alternative in {@link AlgumaParser#fator}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitReferencia(AlgumaParser.ReferenciaContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code LiteralString}
-	 * labeled alternative in {@link AlgumaParser#fator}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitLiteralString(AlgumaParser.LiteralStringContext ctx);
+	T visitFator(AlgumaParser.FatorContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link AlgumaParser#op1}.
 	 * @param ctx the parse tree
@@ -281,6 +232,30 @@ public interface AlgumaVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitOp2(AlgumaParser.Op2Context ctx);
+	/**
+	 * Visit a parse tree produced by {@link AlgumaParser#op3}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOp3(AlgumaParser.Op3Context ctx);
+	/**
+	 * Visit a parse tree produced by {@link AlgumaParser#parcela}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParcela(AlgumaParser.ParcelaContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link AlgumaParser#parcela_unario}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParcela_unario(AlgumaParser.Parcela_unarioContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link AlgumaParser#parcela_nao_unario}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParcela_nao_unario(AlgumaParser.Parcela_nao_unarioContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link AlgumaParser#exp_relacional}.
 	 * @param ctx the parse tree

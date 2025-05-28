@@ -2,13 +2,14 @@ package br.ufscar.dc.compiladores.expr.parser;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.antlr.v4.runtime.Token;
+
 import br.ufscar.dc.compiladores.expr.parser.AlgumaParser.Exp_aritmeticaContext;
-import br.ufscar.dc.compiladores.expr.parser.AlgumaParser.TermoContext;
-import br.ufscar.dc.compiladores.expr.parser.AlgumaParser.FatorContext;
-import br.ufscar.dc.compiladores.expr.parser.AlgumaParser.ExpressaoContext;
-import br.ufscar.dc.compiladores.expr.parser.AlgumaParser.IdentificadorContext;
 import br.ufscar.dc.compiladores.expr.parser.AlgumaParser.Exp_relacionalContext;
+import br.ufscar.dc.compiladores.expr.parser.AlgumaParser.ExpressaoContext;
+import br.ufscar.dc.compiladores.expr.parser.AlgumaParser.FatorContext;
+import br.ufscar.dc.compiladores.expr.parser.AlgumaParser.TermoContext;
 
 public class AlgumaSemanticoUtils {
     public static List<String> errosSemanticos = new ArrayList<>();
@@ -17,7 +18,7 @@ public class AlgumaSemanticoUtils {
     public static void adicionarErroSemantico(Token t, String mensagem) {
         int linha = t.getLine();
         int coluna = t.getCharPositionInLine();
-        errosSemanticos.add(String.format("Erro %d:%d - %s", linha, coluna, mensagem));
+        errosSemanticos.add(String.format("Linha %d: %s", linha, mensagem));
     }
 
     // Verifica tipo de expressão lógica ou aritmética

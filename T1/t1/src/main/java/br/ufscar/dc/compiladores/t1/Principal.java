@@ -17,7 +17,7 @@ public class Principal {
 
             // escreve a saída no segundo argumento
             try (PrintWriter pw = new PrintWriter(args[1])) {
-                Token t = null;
+                Token t ;
                 while ((t = lex.nextToken()).getType() != Token.EOF) {
                     int tipo = t.getType(); //
                     String nomeToken = t1Jander.VOCABULARY.getDisplayName(t.getType());
@@ -28,6 +28,8 @@ public class Principal {
                     }
                     if ("CADEIA_INACABADA".equals(nomeToken)) {
                         pw.println("Linha " + t.getLine() + ": cadeia literal nao fechada");
+                        break;
+                    }
                     if ("ERROR".equals(nomeToken)) {
                         pw.println("Linha " + t.getLine() + ": " + texto + " - simbolo nao identificado");
                         break; // Para a análise após o erro
@@ -35,8 +37,8 @@ public class Principal {
 
                     if (!nomeToken.equals("WS") && !nomeToken.equals("COMENTARIO")) {
                         pw.println("<'" + texto + "'," + nomeToken + ">");
-                    }    break; // Para a análise após o erro
-                    }
+                    }    
+                    
                     
                     
                 }

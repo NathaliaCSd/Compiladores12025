@@ -1,3 +1,28 @@
-Linha 10: identificador nome nao declarado
-Linha 11: identificador idades nao declarado
-Fim da compilacao
+<'algoritmo','algoritmo'>
+<'declare','declare'>
+<'nome',IDENT>
+<':',':'>
+<'literal','literal'>
+<'declare','declare'>
+<'idade',IDENT>
+<':',':'>
+<'inteiro','inteiro'>
+<'leia','leia'>
+<'(','('>
+<'nome',IDENT>
+<')',')'>
+<'leia','leia'>
+<'(','('>
+<'idade',IDENT>
+<')',')'>
+<'escreva','escreva'>
+<'(','('>
+<'nome',IDENT>
+<',',','>
+<'" tem "',CADEIA>
+<',',','>
+<'idade',IDENT>
+<',',','>
+<'" anos."',CADEIA>
+<')',')'>
+<'fim_algoritmo','fim_algoritmo'>

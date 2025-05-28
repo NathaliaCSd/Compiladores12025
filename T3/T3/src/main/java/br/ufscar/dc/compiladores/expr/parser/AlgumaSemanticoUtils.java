@@ -20,7 +20,9 @@ public class AlgumaSemanticoUtils {
         int coluna = t.getCharPositionInLine();
         errosSemanticos.add(String.format("Linha %d: %s", linha, mensagem));
     }
-
+    public static String extrairNome(AlgumaParser.IdentificadorContext ctx) {
+        return ctx.IDENT(0).getText(); // pega apenas o identificador principal (ignora campos/indexações)
+    }
     // Verifica tipo de expressão lógica ou aritmética
     public static TabelaDeSimbolos.TipoAlguma verificarTipo(
             TabelaDeSimbolos tabela,

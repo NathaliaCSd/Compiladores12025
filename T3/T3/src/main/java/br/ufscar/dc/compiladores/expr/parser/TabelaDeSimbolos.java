@@ -6,8 +6,13 @@ import java.util.Map;
 public class TabelaDeSimbolos {
     public enum TipoAlguma {
         INTEIRO,
+        inteiro,
         REAL,
+        real,
         LITERAL,
+        literal,
+        LOGICO,
+        logico,
         INVALIDO
     }
     
@@ -28,14 +33,19 @@ public class TabelaDeSimbolos {
     }
     
     public void adicionar(String nome, TipoAlguma tipo) {
-        tabela.put(nome, new EntradaTabelaDeSimbolos(nome, tipo));
+        tabela.put(nome.toLowerCase(), new EntradaTabelaDeSimbolos(nome, tipo));
     }
     
     public boolean existe(String nome) {
-        return tabela.containsKey(nome);
+        return tabela.containsKey(nome.toLowerCase());
     }
     
     public TipoAlguma verificar(String nome) {
-        return tabela.get(nome).tipo;
+    EntradaTabelaDeSimbolos entrada = tabela.get(nome.toLowerCase());
+    if (entrada != null) {
+        return entrada.tipo;
     }
+    return TipoAlguma.INVALIDO;
+}
+
 }

@@ -5,37 +5,43 @@ import br.ufscar.dc.compiladores.expr.parser.TabelaDeSimbolos.TipoAlguma;
 public class AlgumaSemantico extends AlgumaBaseVisitor<Void> {
 
     private TabelaDeSimbolos tabela;
-
+    public static String extrairNome(AlgumaParser.IdentificadorContext ctx) {
+        return ctx.IDENT(0).getText(); // pega apenas o identificador principal (ignora campos/indexações)
+    }
     @Override
     public Void visitPrograma(AlgumaParser.ProgramaContext ctx) {
         tabela = new TabelaDeSimbolos();
         return super.visitPrograma(ctx);
     }
 
-        @Override
-        public Void visitTipo_basico_ident(AlgumaParser.Tipo_basico_identContext ctx) {
-            if (ctx.IDENT() != null) {
-                String nomeTipo = ctx.IDENT().getText();
-                
-                if (!escopo.existe(nomeTipo)) {
-                    AlgumaSemanticoUtils.adicionarErroSemantico(
-                        ctx.IDENT().getSymbol(),
-                        "tipo " + nomeTipo + " nao declarado"
-                    );
-                }
-            }
-            return null;
-        }
 
+    @Override
+    public Void visitTipo_basico_ident(AlgumaParser.Tipo_basico_identContext ctx) {
+        if (ctx.IDENT() != null) {
+            String nomeTipo = ctx.IDENT().getText();
+            if (!tabela.existe(nomeTipo)) {
+                AlgumaSemanticoUtils.adicionarErroSemantico(
+                        ctx.IDENT().getSymbol(),
+                        "tipo " + nomeTipo + " nao declarado");
+            }
+        }
+        return super.visitTipo_basico_ident(ctx);
+    }
 
     @Override
     public Void visitDecl_local_global(AlgumaParser.Decl_local_globalContext ctx) {
         if (ctx.declaracao_local() != null && ctx.declaracao_local().variavel() != null) {
-            String nomeVar = ctx.declaracao_local().variavel().getText();
-            String strTipoVar = ctx.declaracao_local().tipo().getText().toLowerCase();
-            TipoAlguma tipoVar = TipoAlguma.INVALIDO;
+            AlgumaParser.VariavelContext varCtx = ctx.declaracao_local().variavel();
+            //System.out.println("AlgumaParser.VariavelContext varCtx = ctx.declaracao_local().variavel(): "+varCtx);
+            AlgumaParser.TipoContext tipoCtx = varCtx.tipo();
+            //System.out.println("AlgumaParser.TipoContext tipoCtx = varCtx.tipo();: "+varCtx.tipo());
+        
+            String nomeTipo = tipoCtx.getText();
+            TipoAlguma tipoVar;
 
-            switch (strTipoVar) {
+            // Mapeia os tipos básicos
+            
+            switch (nomeTipo) {
                 case "inteiro":
                     tipoVar = TipoAlguma.INTEIRO;
                     break;
@@ -46,41 +52,49 @@ public class AlgumaSemantico extends AlgumaBaseVisitor<Void> {
                     tipoVar = TipoAlguma.LITERAL;
                     break;
                 default:
-                    // Adiciona erro de tipo não declarado e NÃO adiciona variável na tabela
-                    AlgumaSemanticoUtils.adicionarErroSemantico(
-                        ctx.declaracao_local().tipo().start,
-                        "tipo " + strTipoVar + " nao declarado"
-                    );
-                    return super.visitDecl_local_global(ctx);  // interrompe para não adicionar variável
+                    // Tipo não reconhecido (pode ser definido pelo usuário)
+                    if (!tabela.existe(nomeTipo)) {
+                        AlgumaSemanticoUtils.adicionarErroSemantico(
+                                tipoCtx.start,
+                                "tipo " + nomeTipo + " nao declarado");
+                    }
+                    tipoVar = TipoAlguma.INVALIDO;
             }
 
-            if (tabela.existe(nomeVar)) {
-                AlgumaSemanticoUtils.adicionarErroSemantico(
-                    ctx.declaracao_local().IDENT().getSymbol(),
-                    "Variável '" + nomeVar + "' já existe");
-            } else {
-                tabela.adicionar(nomeVar, tipoVar);
+            // Adiciona os identificadores à tabela
+            for (AlgumaParser.IdentificadorContext idCtx : varCtx.identificador()) {
+                String nomeVar = idCtx.getText();
+                if (tabela.existe(nomeVar)) {
+                    AlgumaSemanticoUtils.adicionarErroSemantico(
+                            idCtx.start,
+                            "identificador " + nomeVar + " ja declarado");
+                } else {
+                    tabela.adicionar(nomeVar, tipoVar);
+
+                }
             }
         }
+
         return super.visitDecl_local_global(ctx);
     }
 
     @Override
     public Void visitCmdLeia(AlgumaParser.CmdLeiaContext ctx) {
         for (AlgumaParser.IdentificadorContext idCtx : ctx.identificador()) {
-            String nomeVar = idCtx.getText();
+            String nomeVar = AlgumaSemanticoUtils.extrairNome(idCtx);
             if (!tabela.existe(nomeVar)) {
                 AlgumaSemanticoUtils.adicionarErroSemantico(
                         idCtx.start,
-                        "identificador " + nomeVar + " nao declarado");
+                        "identificador " + nomeVar + " nao declarado:::   "+tabela.toString()+"   ::: nome var:"+nomeVar);
             }
         }
         return super.visitCmdLeia(ctx);
     }
 
+
     @Override
     public Void visitCmdAtribuicao(AlgumaParser.CmdAtribuicaoContext ctx) {
-        String nomeVar = ctx.identificador().getText();
+        String nomeVar = AlgumaSemanticoUtils.extrairNome(ctx.identificador());
         if (!tabela.existe(nomeVar)) {
             AlgumaSemanticoUtils.adicionarErroSemantico(
                     ctx.identificador().start,
@@ -97,5 +111,4 @@ public class AlgumaSemantico extends AlgumaBaseVisitor<Void> {
         return super.visitCmdAtribuicao(ctx);
     }
 
-    // REMOVIDO visitIdentificador para evitar verificação duplicada
 }

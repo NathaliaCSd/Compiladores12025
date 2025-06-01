@@ -110,6 +110,8 @@ public class AlgumaSemantico extends AlgumaBaseVisitor<Void> {
                 switch (strTipoConst) {
                     case "inteiro": tipoConst = TipoAlguma.INTEIRO; 
                     break;
+                    case "registro": tipoConst = TipoAlguma.REGISTRO; 
+                    break;
                     case "real":    tipoConst = TipoAlguma.REAL;    
                     break;
                     case "literal": tipoConst = TipoAlguma.LITERAL; 

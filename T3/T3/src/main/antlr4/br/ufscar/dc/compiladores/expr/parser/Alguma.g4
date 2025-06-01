@@ -35,7 +35,7 @@ tipo
     ;
 
 registro
-    : 'REGISTRO' (variavel)* FIM_REGISTRO
+    : REGISTRO (variavel)* FIM_REGISTRO
     ;
 
 tipo_estendido
@@ -52,6 +52,7 @@ tipo_basico
     | INTEIRO
     | REAL
     | LOGICO
+    | REGISTRO
     ;
 
 valor_constante

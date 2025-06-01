@@ -11,7 +11,8 @@ public class TabelaDeSimbolos {
         REAL,
         LITERAL,
         INVALIDO, 
-        LOGICO
+        LOGICO,
+        REGISTRO
     }
     
     class EntradaTabelaDeSimbolos {

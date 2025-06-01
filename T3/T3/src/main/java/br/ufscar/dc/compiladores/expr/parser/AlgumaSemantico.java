@@ -1,7 +1,6 @@
 package br.ufscar.dc.compiladores.expr.parser;
 
 import br.ufscar.dc.compiladores.expr.parser.TabelaDeSimbolos.TipoAlguma;
-import org.antlr.v4.runtime.Token;
 
 //construido usando visitor 
 public class AlgumaSemantico extends AlgumaBaseVisitor<Void> {
@@ -139,4 +138,29 @@ public class AlgumaSemantico extends AlgumaBaseVisitor<Void> {
         AlgumaSemanticoUtils.verificarTipo(pilhaDeTabelas, ctx);
         return super.visitExp_aritmetica(ctx);
     }
+    @Override
+    public Void visitParcela_unario(AlgumaParser.Parcela_unarioContext ctx) {
+        // Verifica se a parcela é um identificador
+        if (ctx.p1 != null) {
+            String nomeId = ctx.p1.getText();
+            boolean encontrado = false;
+
+            // Varre todos os escopos (de dentro pra fora)
+            for (TabelaDeSimbolos esc : pilhaDeTabelas.percorrerEscoposAninhados()) {
+                if (esc.existe(nomeId)) {
+                    encontrado = true;
+                    break;
+                }
+            }
+
+            // Se não encontrado, gera erro
+            if (!encontrado) {
+                erroSemantico = "identificador " + nomeId + " nao declarado";
+                AlgumaSemanticoUtils.adicionarErroSemantico(ctx.p1.start, erroSemantico);
+            }
+        }
+
+        return super.visitParcela_unario(ctx);
+    }
+
 }

@@ -2,7 +2,9 @@ package br.ufscar.dc.compiladores.expr.parser;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.antlr.v4.runtime.Token;
+
 import br.ufscar.dc.compiladores.expr.parser.TabelaDeSimbolos.TipoAlguma;
 
 public class AlgumaSemanticoUtils {
@@ -63,7 +65,7 @@ public class AlgumaSemanticoUtils {
             if (ret == null) {
                 ret = aux;
             } else if (ret != aux && aux != TabelaDeSimbolos.TipoAlguma.INVALIDO) {
-                //adicionarErroSemantico(ctx.start, "Expressão " + ctx.getText() + " contém tipos incompatíveis");
+                
                 ret = TabelaDeSimbolos.TipoAlguma.INVALIDO;
             }
         }
@@ -78,7 +80,7 @@ public class AlgumaSemanticoUtils {
     public static TipoAlguma verificarTipo(Escopos pilhaDetabelas, AlgumaParser.Parcela_logicaContext ctx){
         if (ctx.pl1 != null){
             return TipoAlguma.LOGICO;
-        }else { // ctx.pl2 != null
+        }else { 
             return verificarTipo(pilhaDetabelas, ctx.pl2);
         }
     }
@@ -98,10 +100,15 @@ public class AlgumaSemanticoUtils {
             if (tipo == null) {
                 tipo = aux;
             } else if (tipo != aux && aux != TabelaDeSimbolos.TipoAlguma.INVALIDO) {
-                if (ehTipoNumeral(tipo, aux)){
-                    continue;
+                if (ehTipoNumeral(tipo, aux)) {
+                    // int + real => real
+                    tipo = TabelaDeSimbolos.TipoAlguma.REAL;
+                } else if (tipo == TipoAlguma.LITERAL || aux == TipoAlguma.LITERAL) {
+                    // Se houver literal, qualquer concatenação vira literal
+                    tipo = TipoAlguma.LITERAL;
+                } else {
+                    tipo = TabelaDeSimbolos.TipoAlguma.INVALIDO;
                 }
-                tipo = TabelaDeSimbolos.TipoAlguma.INVALIDO;
             }
         }
 
@@ -116,11 +123,15 @@ public class AlgumaSemanticoUtils {
             if (tipo == null) {
                 tipo = aux;
             } else if (tipo != aux && aux != TabelaDeSimbolos.TipoAlguma.INVALIDO) {
-                if (ehTipoNumeral(tipo, aux)){
-                    continue;
+                if (ehTipoNumeral(tipo, aux)) {
+                    // int + real => real
+                    tipo = TabelaDeSimbolos.TipoAlguma.REAL;
+                } else if (tipo == TipoAlguma.LITERAL || aux == TipoAlguma.LITERAL) {
+                    // Se houver literal, qualquer concatenação vira literal
+                    tipo = TipoAlguma.LITERAL;
+                } else {
+                    tipo = TabelaDeSimbolos.TipoAlguma.INVALIDO;
                 }
-                //adicionarErroSemantico(ctx.start, "Termo " + ctx.getText() + " contém tipos incompatíveis");
-                tipo = TabelaDeSimbolos.TipoAlguma.INVALIDO;
             }
         }
         return tipo;
@@ -134,11 +145,15 @@ public class AlgumaSemanticoUtils {
             if (tipo == null) {
                 tipo = aux;
             } else if (tipo != aux && aux != TabelaDeSimbolos.TipoAlguma.INVALIDO) {
-                if (ehTipoNumeral(tipo, aux)){
-                    continue;
+                if (ehTipoNumeral(tipo, aux)) {
+                    // int + real => real
+                    tipo = TabelaDeSimbolos.TipoAlguma.REAL;
+                } else if (tipo == TipoAlguma.LITERAL || aux == TipoAlguma.LITERAL) {
+                    // Se houver literal, qualquer concatenação vira literal
+                    tipo = TipoAlguma.LITERAL;
+                } else {
+                    tipo = TabelaDeSimbolos.TipoAlguma.INVALIDO;
                 }
-                //adicionarErroSemantico(ctx.start, "Fator " + ctx.getText() + " contém tipos incompatíveis");
-                tipo = TabelaDeSimbolos.TipoAlguma.INVALIDO;
             }
         }
         return tipo;

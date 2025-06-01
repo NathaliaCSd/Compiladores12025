@@ -42,41 +42,46 @@ public class AlgumaSemantico extends AlgumaBaseVisitor<Void> {
 
         // Caso 1: declaração de variável via "declare"
         if (ctx.DECLARE() != null) {
-            // Captura o contexto da regra variavel e extrai o tipo em texto
             AlgumaParser.VariavelContext varCtx = ctx.variavel();
             String strTipoVar = varCtx.tipo().getText().toLowerCase();
 
-            // Verifica se o tipo é básico (literal, inteiro, real, logico)
+            // 1) Verifica se o tipo existe
             if (!AlgumaSemanticoUtils.ehTipoBasico(strTipoVar)) {
-                erroSemantico = "tipo " + strTipoVar + " nao declarado";
-                AlgumaSemanticoUtils.adicionarErroSemantico(
-                        varCtx.tipo().start, erroSemantico);
-            }
+                String erroSemantico = "tipo " + strTipoVar + " nao declarado";
+                AlgumaSemanticoUtils.adicionarErroSemantico(varCtx.tipo().start, erroSemantico);
+                // *não* adiciona nada na tabela
+            } else {
+                // Converte string em enum TipoAlguma
+                TipoAlguma tipoVar = TipoAlguma.INVALIDO;
+                switch (strTipoVar) {
+                    case "inteiro":
+                        tipoVar = TipoAlguma.INTEIRO;
+                        break;
+                    case "real":
+                        tipoVar = TipoAlguma.REAL;
+                        break;
+                    case "literal":
+                        tipoVar = TipoAlguma.LITERAL;
+                        break;
+                    case "logico":
+                        tipoVar = TipoAlguma.LOGICO;
+                        break;
+                    default:
+                        // Nunca irá acontecer, pois o analisador sintático
+                        // não permite
+                        break;
+                }
 
-            // Converte string em enum TipoAlguma
-            TipoAlguma tipoVar = TipoAlguma.INVALIDO;
-            switch (strTipoVar) {
-                case "INTEIRO":
-                    tipoVar = TipoAlguma.INTEIRO;
-                    break;
-                case "REAL":
-                    tipoVar = TipoAlguma.REAL;
-                    break;
-                default:
-                    // Nunca irá acontecer, pois o analisador sintático
-                    // não permite
-                    break;
-            }
-
-            // verifica se a variavel ja foi declarada
-            for (AlgumaParser.IdentificadorContext idCtx : varCtx.identificador()) {
-                String nomeVar = idCtx.getText();
-                if (escopoAtual.existe(nomeVar)) {
-                    erroSemantico = "identificador " + nomeVar + " ja declarado anteriormente";
-                    AlgumaSemanticoUtils.adicionarErroSemantico(
-                            idCtx.start, erroSemantico);
-                } else {
-                    escopoAtual.adicionar(nomeVar, tipoVar);
+                // verifica se a variavel ja foi declarada
+                for (AlgumaParser.IdentificadorContext idCtx : varCtx.identificador()) {
+                    String nomeVar = idCtx.getText();
+                    if (escopoAtual.existe(nomeVar)) {
+                        erroSemantico = "identificador " + nomeVar + " ja declarado anteriormente";
+                        AlgumaSemanticoUtils.adicionarErroSemantico(
+                                idCtx.start, erroSemantico);
+                    } else {
+                        escopoAtual.adicionar(nomeVar, tipoVar);
+                    }
                 }
             }
         }
@@ -108,7 +113,6 @@ public class AlgumaSemantico extends AlgumaBaseVisitor<Void> {
         return null;
     }
 
-
     @Override
     public Void visitCmdEscreva(AlgumaParser.CmdEscrevaContext ctx) {
         for (AlgumaParser.ExpressaoContext exprCtx : ctx.expressao()) {
@@ -138,6 +142,7 @@ public class AlgumaSemantico extends AlgumaBaseVisitor<Void> {
         AlgumaSemanticoUtils.verificarTipo(pilhaDeTabelas, ctx);
         return super.visitExp_aritmetica(ctx);
     }
+
     @Override
     public Void visitParcela_unario(AlgumaParser.Parcela_unarioContext ctx) {
         // Verifica se a parcela é um identificador

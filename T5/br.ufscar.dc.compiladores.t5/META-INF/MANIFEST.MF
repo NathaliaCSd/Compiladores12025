@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: br.ufscar.dc.compiladores.t5
+Bundle-ManifestVersion: 2
+Bundle-Name: br.ufscar.dc.compiladores.t5
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: br.ufscar.dc.compiladores.t5; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.19.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.39.0",
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package: br.ufscar.dc.compiladores.t5.t5,
+ br.ufscar.dc.compiladores.t5.services,
+ br.ufscar.dc.compiladores.t5.serializer,
+ br.ufscar.dc.compiladores.t5.scoping,
+ br.ufscar.dc.compiladores.t5.generator,
+ br.ufscar.dc.compiladores.t5.t5.impl,
+ br.ufscar.dc.compiladores.t5.parser.antlr,
+ br.ufscar.dc.compiladores.t5.validation,
+ br.ufscar.dc.compiladores.t5.t5.util,
+ br.ufscar.dc.compiladores.t5,
+ br.ufscar.dc.compiladores.t5.parser.antlr.internal
+Import-Package: org.apache.log4j

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package
+			uri = "http://www.ufscar.br/dc/compiladores/t5/T5"
+			class = "br.ufscar.dc.compiladores.t5.t5.T5Package"
+			genModel = "model/generated/T5.genmodel" />
+	</extension>
+</plugin>

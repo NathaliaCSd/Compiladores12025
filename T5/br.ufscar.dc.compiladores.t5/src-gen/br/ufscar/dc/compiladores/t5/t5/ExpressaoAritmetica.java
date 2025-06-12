@@ -16,8 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link br.ufscar.dc.compiladores.t5.t5.ExpressaoAritmetica#getTermo1 <em>Termo1</em>}</li>
- *   <li>{@link br.ufscar.dc.compiladores.t5.t5.ExpressaoAritmetica#getOutrosTermos <em>Outros Termos</em>}</li>
+ *   <li>{@link br.ufscar.dc.compiladores.t5.t5.ExpressaoAritmetica#getTermos <em>Termos</em>}</li>
+ *   <li>{@link br.ufscar.dc.compiladores.t5.t5.ExpressaoAritmetica#getOutros <em>Outros</em>}</li>
  * </ul>
  *
  * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getExpressaoAritmetica()
@@ -27,37 +27,27 @@ import org.eclipse.emf.ecore.EObject;
 public interface ExpressaoAritmetica extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Termo1</b></em>' containment reference.
+   * Returns the value of the '<em><b>Termos</b></em>' containment reference list.
+   * The list contents are of type {@link br.ufscar.dc.compiladores.t5.t5.TermoAritmetico}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Termo1</em>' containment reference.
-   * @see #setTermo1(TermoAritmetico)
-   * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getExpressaoAritmetica_Termo1()
+   * @return the value of the '<em>Termos</em>' containment reference list.
+   * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getExpressaoAritmetica_Termos()
    * @model containment="true"
    * @generated
    */
-  TermoAritmetico getTermo1();
+  EList<TermoAritmetico> getTermos();
 
   /**
-   * Sets the value of the '{@link br.ufscar.dc.compiladores.t5.t5.ExpressaoAritmetica#getTermo1 <em>Termo1</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Termo1</em>' containment reference.
-   * @see #getTermo1()
-   * @generated
-   */
-  void setTermo1(TermoAritmetico value);
-
-  /**
-   * Returns the value of the '<em><b>Outros Termos</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Outros</b></em>' containment reference list.
    * The list contents are of type {@link br.ufscar.dc.compiladores.t5.t5.OutroTermoAritmetico}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Outros Termos</em>' containment reference list.
-   * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getExpressaoAritmetica_OutrosTermos()
+   * @return the value of the '<em>Outros</em>' containment reference list.
+   * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getExpressaoAritmetica_Outros()
    * @model containment="true"
    * @generated
    */
-  EList<OutroTermoAritmetico> getOutrosTermos();
+  EList<OutroTermoAritmetico> getOutros();
 
 } // ExpressaoAritmetica

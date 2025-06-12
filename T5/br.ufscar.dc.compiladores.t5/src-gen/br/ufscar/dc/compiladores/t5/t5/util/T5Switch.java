@@ -73,6 +73,13 @@ public class T5Switch<T> extends Switch<T>
   {
     switch (classifierID)
     {
+      case T5Package.MODEL:
+      {
+        Model model = (Model)theEObject;
+        T result = caseModel(model);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case T5Package.PROGRAMA:
       {
         Programa programa = (Programa)theEObject;
@@ -84,6 +91,193 @@ public class T5Switch<T> extends Switch<T>
       {
         Declaracao declaracao = (Declaracao)theEObject;
         T result = caseDeclaracao(declaracao);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case T5Package.DECLARACAO_LOCAL:
+      {
+        DeclaracaoLocal declaracaoLocal = (DeclaracaoLocal)theEObject;
+        T result = caseDeclaracaoLocal(declaracaoLocal);
+        if (result == null) result = caseDeclaracao(declaracaoLocal);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case T5Package.DECLARACAO_GLOBAL:
+      {
+        DeclaracaoGlobal declaracaoGlobal = (DeclaracaoGlobal)theEObject;
+        T result = caseDeclaracaoGlobal(declaracaoGlobal);
+        if (result == null) result = caseDeclaracao(declaracaoGlobal);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case T5Package.VARIAVEL:
+      {
+        Variavel variavel = (Variavel)theEObject;
+        T result = caseVariavel(variavel);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case T5Package.IDENTIFICADOR:
+      {
+        Identificador identificador = (Identificador)theEObject;
+        T result = caseIdentificador(identificador);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case T5Package.DIMENSAO:
+      {
+        Dimensao dimensao = (Dimensao)theEObject;
+        T result = caseDimensao(dimensao);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case T5Package.TIPO:
+      {
+        Tipo tipo = (Tipo)theEObject;
+        T result = caseTipo(tipo);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case T5Package.REGISTRO:
+      {
+        Registro registro = (Registro)theEObject;
+        T result = caseRegistro(registro);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case T5Package.TIPO_ESTENDIDO:
+      {
+        TipoEstendido tipoEstendido = (TipoEstendido)theEObject;
+        T result = caseTipoEstendido(tipoEstendido);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case T5Package.PARAMETROS:
+      {
+        Parametros parametros = (Parametros)theEObject;
+        T result = caseParametros(parametros);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case T5Package.PARAMETRO:
+      {
+        Parametro parametro = (Parametro)theEObject;
+        T result = caseParametro(parametro);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case T5Package.CORPO:
+      {
+        Corpo corpo = (Corpo)theEObject;
+        T result = caseCorpo(corpo);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case T5Package.COMANDO:
+      {
+        Comando comando = (Comando)theEObject;
+        T result = caseComando(comando);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case T5Package.COMANDO_LEIA:
+      {
+        ComandoLeia comandoLeia = (ComandoLeia)theEObject;
+        T result = caseComandoLeia(comandoLeia);
+        if (result == null) result = caseComando(comandoLeia);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case T5Package.COMANDO_ESCREVA:
+      {
+        ComandoEscreva comandoEscreva = (ComandoEscreva)theEObject;
+        T result = caseComandoEscreva(comandoEscreva);
+        if (result == null) result = caseComando(comandoEscreva);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case T5Package.COMANDO_SE:
+      {
+        ComandoSe comandoSe = (ComandoSe)theEObject;
+        T result = caseComandoSe(comandoSe);
+        if (result == null) result = caseComando(comandoSe);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case T5Package.COMANDO_CASO:
+      {
+        ComandoCaso comandoCaso = (ComandoCaso)theEObject;
+        T result = caseComandoCaso(comandoCaso);
+        if (result == null) result = caseComando(comandoCaso);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case T5Package.COMANDO_PARA:
+      {
+        ComandoPara comandoPara = (ComandoPara)theEObject;
+        T result = caseComandoPara(comandoPara);
+        if (result == null) result = caseComando(comandoPara);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case T5Package.COMANDO_ENQUANTO:
+      {
+        ComandoEnquanto comandoEnquanto = (ComandoEnquanto)theEObject;
+        T result = caseComandoEnquanto(comandoEnquanto);
+        if (result == null) result = caseComando(comandoEnquanto);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case T5Package.COMANDO_FACA:
+      {
+        ComandoFaca comandoFaca = (ComandoFaca)theEObject;
+        T result = caseComandoFaca(comandoFaca);
+        if (result == null) result = caseComando(comandoFaca);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case T5Package.COMANDO_ATRIBUICAO:
+      {
+        ComandoAtribuicao comandoAtribuicao = (ComandoAtribuicao)theEObject;
+        T result = caseComandoAtribuicao(comandoAtribuicao);
+        if (result == null) result = caseComando(comandoAtribuicao);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case T5Package.COMANDO_CHAMADA:
+      {
+        ComandoChamada comandoChamada = (ComandoChamada)theEObject;
+        T result = caseComandoChamada(comandoChamada);
+        if (result == null) result = caseComando(comandoChamada);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case T5Package.COMANDO_RETORNE:
+      {
+        ComandoRetorne comandoRetorne = (ComandoRetorne)theEObject;
+        T result = caseComandoRetorne(comandoRetorne);
+        if (result == null) result = caseComando(comandoRetorne);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case T5Package.SELECAO:
+      {
+        Selecao selecao = (Selecao)theEObject;
+        T result = caseSelecao(selecao);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case T5Package.ITEM_SELECAO:
+      {
+        ItemSelecao itemSelecao = (ItemSelecao)theEObject;
+        T result = caseItemSelecao(itemSelecao);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case T5Package.NUMERO_INTERVALO:
+      {
+        NumeroIntervalo numeroIntervalo = (NumeroIntervalo)theEObject;
+        T result = caseNumeroIntervalo(numeroIntervalo);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -122,27 +316,17 @@ public class T5Switch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case T5Package.FATOR_NUMERO:
+      case T5Package.EXPRESSAO:
       {
-        FatorNumero fatorNumero = (FatorNumero)theEObject;
-        T result = caseFatorNumero(fatorNumero);
-        if (result == null) result = caseFatorAritmetico(fatorNumero);
+        Expressao expressao = (Expressao)theEObject;
+        T result = caseExpressao(expressao);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case T5Package.FATOR_VARIAVEL:
+      case T5Package.TERMO_LOGICO:
       {
-        FatorVariavel fatorVariavel = (FatorVariavel)theEObject;
-        T result = caseFatorVariavel(fatorVariavel);
-        if (result == null) result = caseFatorAritmetico(fatorVariavel);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case T5Package.FATOR_SUB_EXPRESSAO:
-      {
-        FatorSubExpressao fatorSubExpressao = (FatorSubExpressao)theEObject;
-        T result = caseFatorSubExpressao(fatorSubExpressao);
-        if (result == null) result = caseFatorAritmetico(fatorSubExpressao);
+        TermoLogico termoLogico = (TermoLogico)theEObject;
+        T result = caseTermoLogico(termoLogico);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -153,93 +337,24 @@ public class T5Switch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case T5Package.OUTRO_TERMO_RELACIONAL:
-      {
-        OutroTermoRelacional outroTermoRelacional = (OutroTermoRelacional)theEObject;
-        T result = caseOutroTermoRelacional(outroTermoRelacional);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case T5Package.TERMO_RELACIONAL:
-      {
-        TermoRelacional termoRelacional = (TermoRelacional)theEObject;
-        T result = caseTermoRelacional(termoRelacional);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case T5Package.TERMO_COMPARACAO_RELACIONAL:
-      {
-        TermoComparacaoRelacional termoComparacaoRelacional = (TermoComparacaoRelacional)theEObject;
-        T result = caseTermoComparacaoRelacional(termoComparacaoRelacional);
-        if (result == null) result = caseTermoRelacional(termoComparacaoRelacional);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case T5Package.TERMO_SUB_EXPRESSAO_RELACIONAL:
-      {
-        TermoSubExpressaoRelacional termoSubExpressaoRelacional = (TermoSubExpressaoRelacional)theEObject;
-        T result = caseTermoSubExpressaoRelacional(termoSubExpressaoRelacional);
-        if (result == null) result = caseTermoRelacional(termoSubExpressaoRelacional);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case T5Package.COMANDO:
-      {
-        Comando comando = (Comando)theEObject;
-        T result = caseComando(comando);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case T5Package.COMANDO_ATRIBUICAO:
-      {
-        ComandoAtribuicao comandoAtribuicao = (ComandoAtribuicao)theEObject;
-        T result = caseComandoAtribuicao(comandoAtribuicao);
-        if (result == null) result = caseComando(comandoAtribuicao);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case T5Package.COMANDO_ENTRADA:
-      {
-        ComandoEntrada comandoEntrada = (ComandoEntrada)theEObject;
-        T result = caseComandoEntrada(comandoEntrada);
-        if (result == null) result = caseComando(comandoEntrada);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case T5Package.COMANDO_SAIDA:
-      {
-        ComandoSaida comandoSaida = (ComandoSaida)theEObject;
-        T result = caseComandoSaida(comandoSaida);
-        if (result == null) result = caseComando(comandoSaida);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case T5Package.COMANDO_CONDICAO:
-      {
-        ComandoCondicao comandoCondicao = (ComandoCondicao)theEObject;
-        T result = caseComandoCondicao(comandoCondicao);
-        if (result == null) result = caseComando(comandoCondicao);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case T5Package.COMANDO_REPETICAO:
-      {
-        ComandoRepeticao comandoRepeticao = (ComandoRepeticao)theEObject;
-        T result = caseComandoRepeticao(comandoRepeticao);
-        if (result == null) result = caseComando(comandoRepeticao);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case T5Package.SUB_ALGORITMO:
-      {
-        SubAlgoritmo subAlgoritmo = (SubAlgoritmo)theEObject;
-        T result = caseSubAlgoritmo(subAlgoritmo);
-        if (result == null) result = caseComando(subAlgoritmo);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       default: return defaultCase(theEObject);
     }
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Model</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Model</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseModel(Model object)
+  {
+    return null;
   }
 
   /**
@@ -270,6 +385,406 @@ public class T5Switch<T> extends Switch<T>
    * @generated
    */
   public T caseDeclaracao(Declaracao object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Declaracao Local</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Declaracao Local</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDeclaracaoLocal(DeclaracaoLocal object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Declaracao Global</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Declaracao Global</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDeclaracaoGlobal(DeclaracaoGlobal object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Variavel</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Variavel</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVariavel(Variavel object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Identificador</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Identificador</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIdentificador(Identificador object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Dimensao</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Dimensao</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDimensao(Dimensao object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Tipo</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Tipo</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTipo(Tipo object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Registro</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Registro</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRegistro(Registro object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Tipo Estendido</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Tipo Estendido</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTipoEstendido(TipoEstendido object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Parametros</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Parametros</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseParametros(Parametros object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Parametro</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Parametro</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseParametro(Parametro object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Corpo</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Corpo</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCorpo(Corpo object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Comando</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Comando</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComando(Comando object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Comando Leia</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Comando Leia</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComandoLeia(ComandoLeia object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Comando Escreva</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Comando Escreva</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComandoEscreva(ComandoEscreva object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Comando Se</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Comando Se</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComandoSe(ComandoSe object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Comando Caso</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Comando Caso</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComandoCaso(ComandoCaso object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Comando Para</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Comando Para</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComandoPara(ComandoPara object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Comando Enquanto</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Comando Enquanto</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComandoEnquanto(ComandoEnquanto object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Comando Faca</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Comando Faca</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComandoFaca(ComandoFaca object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Comando Atribuicao</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Comando Atribuicao</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComandoAtribuicao(ComandoAtribuicao object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Comando Chamada</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Comando Chamada</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComandoChamada(ComandoChamada object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Comando Retorne</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Comando Retorne</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComandoRetorne(ComandoRetorne object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Selecao</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Selecao</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSelecao(Selecao object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Item Selecao</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Item Selecao</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseItemSelecao(ItemSelecao object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Numero Intervalo</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Numero Intervalo</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNumeroIntervalo(NumeroIntervalo object)
   {
     return null;
   }
@@ -355,49 +870,33 @@ public class T5Switch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Fator Numero</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Expressao</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Fator Numero</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Expressao</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseFatorNumero(FatorNumero object)
+  public T caseExpressao(Expressao object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Fator Variavel</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Termo Logico</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Fator Variavel</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Termo Logico</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseFatorVariavel(FatorVariavel object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Fator Sub Expressao</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Fator Sub Expressao</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseFatorSubExpressao(FatorSubExpressao object)
+  public T caseTermoLogico(TermoLogico object)
   {
     return null;
   }
@@ -414,182 +913,6 @@ public class T5Switch<T> extends Switch<T>
    * @generated
    */
   public T caseExpressaoRelacional(ExpressaoRelacional object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Outro Termo Relacional</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Outro Termo Relacional</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseOutroTermoRelacional(OutroTermoRelacional object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Termo Relacional</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Termo Relacional</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseTermoRelacional(TermoRelacional object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Termo Comparacao Relacional</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Termo Comparacao Relacional</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseTermoComparacaoRelacional(TermoComparacaoRelacional object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Termo Sub Expressao Relacional</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Termo Sub Expressao Relacional</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseTermoSubExpressaoRelacional(TermoSubExpressaoRelacional object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Comando</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Comando</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseComando(Comando object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Comando Atribuicao</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Comando Atribuicao</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseComandoAtribuicao(ComandoAtribuicao object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Comando Entrada</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Comando Entrada</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseComandoEntrada(ComandoEntrada object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Comando Saida</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Comando Saida</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseComandoSaida(ComandoSaida object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Comando Condicao</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Comando Condicao</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseComandoCondicao(ComandoCondicao object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Comando Repeticao</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Comando Repeticao</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseComandoRepeticao(ComandoRepeticao object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Sub Algoritmo</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Sub Algoritmo</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSubAlgoritmo(SubAlgoritmo object)
   {
     return null;
   }

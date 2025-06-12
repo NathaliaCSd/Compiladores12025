@@ -76,6 +76,11 @@ public class T5AdapterFactory extends AdapterFactoryImpl
     new T5Switch<Adapter>()
     {
       @Override
+      public Adapter caseModel(Model object)
+      {
+        return createModelAdapter();
+      }
+      @Override
       public Adapter casePrograma(Programa object)
       {
         return createProgramaAdapter();
@@ -84,6 +89,131 @@ public class T5AdapterFactory extends AdapterFactoryImpl
       public Adapter caseDeclaracao(Declaracao object)
       {
         return createDeclaracaoAdapter();
+      }
+      @Override
+      public Adapter caseDeclaracaoLocal(DeclaracaoLocal object)
+      {
+        return createDeclaracaoLocalAdapter();
+      }
+      @Override
+      public Adapter caseDeclaracaoGlobal(DeclaracaoGlobal object)
+      {
+        return createDeclaracaoGlobalAdapter();
+      }
+      @Override
+      public Adapter caseVariavel(Variavel object)
+      {
+        return createVariavelAdapter();
+      }
+      @Override
+      public Adapter caseIdentificador(Identificador object)
+      {
+        return createIdentificadorAdapter();
+      }
+      @Override
+      public Adapter caseDimensao(Dimensao object)
+      {
+        return createDimensaoAdapter();
+      }
+      @Override
+      public Adapter caseTipo(Tipo object)
+      {
+        return createTipoAdapter();
+      }
+      @Override
+      public Adapter caseRegistro(Registro object)
+      {
+        return createRegistroAdapter();
+      }
+      @Override
+      public Adapter caseTipoEstendido(TipoEstendido object)
+      {
+        return createTipoEstendidoAdapter();
+      }
+      @Override
+      public Adapter caseParametros(Parametros object)
+      {
+        return createParametrosAdapter();
+      }
+      @Override
+      public Adapter caseParametro(Parametro object)
+      {
+        return createParametroAdapter();
+      }
+      @Override
+      public Adapter caseCorpo(Corpo object)
+      {
+        return createCorpoAdapter();
+      }
+      @Override
+      public Adapter caseComando(Comando object)
+      {
+        return createComandoAdapter();
+      }
+      @Override
+      public Adapter caseComandoLeia(ComandoLeia object)
+      {
+        return createComandoLeiaAdapter();
+      }
+      @Override
+      public Adapter caseComandoEscreva(ComandoEscreva object)
+      {
+        return createComandoEscrevaAdapter();
+      }
+      @Override
+      public Adapter caseComandoSe(ComandoSe object)
+      {
+        return createComandoSeAdapter();
+      }
+      @Override
+      public Adapter caseComandoCaso(ComandoCaso object)
+      {
+        return createComandoCasoAdapter();
+      }
+      @Override
+      public Adapter caseComandoPara(ComandoPara object)
+      {
+        return createComandoParaAdapter();
+      }
+      @Override
+      public Adapter caseComandoEnquanto(ComandoEnquanto object)
+      {
+        return createComandoEnquantoAdapter();
+      }
+      @Override
+      public Adapter caseComandoFaca(ComandoFaca object)
+      {
+        return createComandoFacaAdapter();
+      }
+      @Override
+      public Adapter caseComandoAtribuicao(ComandoAtribuicao object)
+      {
+        return createComandoAtribuicaoAdapter();
+      }
+      @Override
+      public Adapter caseComandoChamada(ComandoChamada object)
+      {
+        return createComandoChamadaAdapter();
+      }
+      @Override
+      public Adapter caseComandoRetorne(ComandoRetorne object)
+      {
+        return createComandoRetorneAdapter();
+      }
+      @Override
+      public Adapter caseSelecao(Selecao object)
+      {
+        return createSelecaoAdapter();
+      }
+      @Override
+      public Adapter caseItemSelecao(ItemSelecao object)
+      {
+        return createItemSelecaoAdapter();
+      }
+      @Override
+      public Adapter caseNumeroIntervalo(NumeroIntervalo object)
+      {
+        return createNumeroIntervaloAdapter();
       }
       @Override
       public Adapter caseExpressaoAritmetica(ExpressaoAritmetica object)
@@ -111,79 +241,19 @@ public class T5AdapterFactory extends AdapterFactoryImpl
         return createFatorAritmeticoAdapter();
       }
       @Override
-      public Adapter caseFatorNumero(FatorNumero object)
+      public Adapter caseExpressao(Expressao object)
       {
-        return createFatorNumeroAdapter();
+        return createExpressaoAdapter();
       }
       @Override
-      public Adapter caseFatorVariavel(FatorVariavel object)
+      public Adapter caseTermoLogico(TermoLogico object)
       {
-        return createFatorVariavelAdapter();
-      }
-      @Override
-      public Adapter caseFatorSubExpressao(FatorSubExpressao object)
-      {
-        return createFatorSubExpressaoAdapter();
+        return createTermoLogicoAdapter();
       }
       @Override
       public Adapter caseExpressaoRelacional(ExpressaoRelacional object)
       {
         return createExpressaoRelacionalAdapter();
-      }
-      @Override
-      public Adapter caseOutroTermoRelacional(OutroTermoRelacional object)
-      {
-        return createOutroTermoRelacionalAdapter();
-      }
-      @Override
-      public Adapter caseTermoRelacional(TermoRelacional object)
-      {
-        return createTermoRelacionalAdapter();
-      }
-      @Override
-      public Adapter caseTermoComparacaoRelacional(TermoComparacaoRelacional object)
-      {
-        return createTermoComparacaoRelacionalAdapter();
-      }
-      @Override
-      public Adapter caseTermoSubExpressaoRelacional(TermoSubExpressaoRelacional object)
-      {
-        return createTermoSubExpressaoRelacionalAdapter();
-      }
-      @Override
-      public Adapter caseComando(Comando object)
-      {
-        return createComandoAdapter();
-      }
-      @Override
-      public Adapter caseComandoAtribuicao(ComandoAtribuicao object)
-      {
-        return createComandoAtribuicaoAdapter();
-      }
-      @Override
-      public Adapter caseComandoEntrada(ComandoEntrada object)
-      {
-        return createComandoEntradaAdapter();
-      }
-      @Override
-      public Adapter caseComandoSaida(ComandoSaida object)
-      {
-        return createComandoSaidaAdapter();
-      }
-      @Override
-      public Adapter caseComandoCondicao(ComandoCondicao object)
-      {
-        return createComandoCondicaoAdapter();
-      }
-      @Override
-      public Adapter caseComandoRepeticao(ComandoRepeticao object)
-      {
-        return createComandoRepeticaoAdapter();
-      }
-      @Override
-      public Adapter caseSubAlgoritmo(SubAlgoritmo object)
-      {
-        return createSubAlgoritmoAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -206,6 +276,21 @@ public class T5AdapterFactory extends AdapterFactoryImpl
     return modelSwitch.doSwitch((EObject)target);
   }
 
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.Model <em>Model</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.ufscar.dc.compiladores.t5.t5.Model
+   * @generated
+   */
+  public Adapter createModelAdapter()
+  {
+    return null;
+  }
 
   /**
    * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.Programa <em>Programa</em>}'.
@@ -233,6 +318,381 @@ public class T5AdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDeclaracaoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.DeclaracaoLocal <em>Declaracao Local</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.ufscar.dc.compiladores.t5.t5.DeclaracaoLocal
+   * @generated
+   */
+  public Adapter createDeclaracaoLocalAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.DeclaracaoGlobal <em>Declaracao Global</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.ufscar.dc.compiladores.t5.t5.DeclaracaoGlobal
+   * @generated
+   */
+  public Adapter createDeclaracaoGlobalAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.Variavel <em>Variavel</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.ufscar.dc.compiladores.t5.t5.Variavel
+   * @generated
+   */
+  public Adapter createVariavelAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.Identificador <em>Identificador</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.ufscar.dc.compiladores.t5.t5.Identificador
+   * @generated
+   */
+  public Adapter createIdentificadorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.Dimensao <em>Dimensao</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.ufscar.dc.compiladores.t5.t5.Dimensao
+   * @generated
+   */
+  public Adapter createDimensaoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.Tipo <em>Tipo</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.ufscar.dc.compiladores.t5.t5.Tipo
+   * @generated
+   */
+  public Adapter createTipoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.Registro <em>Registro</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.ufscar.dc.compiladores.t5.t5.Registro
+   * @generated
+   */
+  public Adapter createRegistroAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.TipoEstendido <em>Tipo Estendido</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.ufscar.dc.compiladores.t5.t5.TipoEstendido
+   * @generated
+   */
+  public Adapter createTipoEstendidoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.Parametros <em>Parametros</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.ufscar.dc.compiladores.t5.t5.Parametros
+   * @generated
+   */
+  public Adapter createParametrosAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.Parametro <em>Parametro</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.ufscar.dc.compiladores.t5.t5.Parametro
+   * @generated
+   */
+  public Adapter createParametroAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.Corpo <em>Corpo</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.ufscar.dc.compiladores.t5.t5.Corpo
+   * @generated
+   */
+  public Adapter createCorpoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.Comando <em>Comando</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.ufscar.dc.compiladores.t5.t5.Comando
+   * @generated
+   */
+  public Adapter createComandoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.ComandoLeia <em>Comando Leia</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoLeia
+   * @generated
+   */
+  public Adapter createComandoLeiaAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.ComandoEscreva <em>Comando Escreva</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoEscreva
+   * @generated
+   */
+  public Adapter createComandoEscrevaAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.ComandoSe <em>Comando Se</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoSe
+   * @generated
+   */
+  public Adapter createComandoSeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.ComandoCaso <em>Comando Caso</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoCaso
+   * @generated
+   */
+  public Adapter createComandoCasoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.ComandoPara <em>Comando Para</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoPara
+   * @generated
+   */
+  public Adapter createComandoParaAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.ComandoEnquanto <em>Comando Enquanto</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoEnquanto
+   * @generated
+   */
+  public Adapter createComandoEnquantoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.ComandoFaca <em>Comando Faca</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoFaca
+   * @generated
+   */
+  public Adapter createComandoFacaAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.ComandoAtribuicao <em>Comando Atribuicao</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoAtribuicao
+   * @generated
+   */
+  public Adapter createComandoAtribuicaoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.ComandoChamada <em>Comando Chamada</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoChamada
+   * @generated
+   */
+  public Adapter createComandoChamadaAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.ComandoRetorne <em>Comando Retorne</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoRetorne
+   * @generated
+   */
+  public Adapter createComandoRetorneAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.Selecao <em>Selecao</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.ufscar.dc.compiladores.t5.t5.Selecao
+   * @generated
+   */
+  public Adapter createSelecaoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.ItemSelecao <em>Item Selecao</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.ufscar.dc.compiladores.t5.t5.ItemSelecao
+   * @generated
+   */
+  public Adapter createItemSelecaoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.NumeroIntervalo <em>Numero Intervalo</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.ufscar.dc.compiladores.t5.t5.NumeroIntervalo
+   * @generated
+   */
+  public Adapter createNumeroIntervaloAdapter()
   {
     return null;
   }
@@ -313,46 +773,31 @@ public class T5AdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.FatorNumero <em>Fator Numero</em>}'.
+   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.Expressao <em>Expressao</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see br.ufscar.dc.compiladores.t5.t5.FatorNumero
+   * @see br.ufscar.dc.compiladores.t5.t5.Expressao
    * @generated
    */
-  public Adapter createFatorNumeroAdapter()
+  public Adapter createExpressaoAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.FatorVariavel <em>Fator Variavel</em>}'.
+   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.TermoLogico <em>Termo Logico</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see br.ufscar.dc.compiladores.t5.t5.FatorVariavel
+   * @see br.ufscar.dc.compiladores.t5.t5.TermoLogico
    * @generated
    */
-  public Adapter createFatorVariavelAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.FatorSubExpressao <em>Fator Sub Expressao</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see br.ufscar.dc.compiladores.t5.t5.FatorSubExpressao
-   * @generated
-   */
-  public Adapter createFatorSubExpressaoAdapter()
+  public Adapter createTermoLogicoAdapter()
   {
     return null;
   }
@@ -368,171 +813,6 @@ public class T5AdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createExpressaoRelacionalAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.OutroTermoRelacional <em>Outro Termo Relacional</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see br.ufscar.dc.compiladores.t5.t5.OutroTermoRelacional
-   * @generated
-   */
-  public Adapter createOutroTermoRelacionalAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.TermoRelacional <em>Termo Relacional</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see br.ufscar.dc.compiladores.t5.t5.TermoRelacional
-   * @generated
-   */
-  public Adapter createTermoRelacionalAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.TermoComparacaoRelacional <em>Termo Comparacao Relacional</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see br.ufscar.dc.compiladores.t5.t5.TermoComparacaoRelacional
-   * @generated
-   */
-  public Adapter createTermoComparacaoRelacionalAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.TermoSubExpressaoRelacional <em>Termo Sub Expressao Relacional</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see br.ufscar.dc.compiladores.t5.t5.TermoSubExpressaoRelacional
-   * @generated
-   */
-  public Adapter createTermoSubExpressaoRelacionalAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.Comando <em>Comando</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see br.ufscar.dc.compiladores.t5.t5.Comando
-   * @generated
-   */
-  public Adapter createComandoAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.ComandoAtribuicao <em>Comando Atribuicao</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see br.ufscar.dc.compiladores.t5.t5.ComandoAtribuicao
-   * @generated
-   */
-  public Adapter createComandoAtribuicaoAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.ComandoEntrada <em>Comando Entrada</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see br.ufscar.dc.compiladores.t5.t5.ComandoEntrada
-   * @generated
-   */
-  public Adapter createComandoEntradaAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.ComandoSaida <em>Comando Saida</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see br.ufscar.dc.compiladores.t5.t5.ComandoSaida
-   * @generated
-   */
-  public Adapter createComandoSaidaAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.ComandoCondicao <em>Comando Condicao</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see br.ufscar.dc.compiladores.t5.t5.ComandoCondicao
-   * @generated
-   */
-  public Adapter createComandoCondicaoAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.ComandoRepeticao <em>Comando Repeticao</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see br.ufscar.dc.compiladores.t5.t5.ComandoRepeticao
-   * @generated
-   */
-  public Adapter createComandoRepeticaoAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.SubAlgoritmo <em>Sub Algoritmo</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see br.ufscar.dc.compiladores.t5.t5.SubAlgoritmo
-   * @generated
-   */
-  public Adapter createSubAlgoritmoAdapter()
   {
     return null;
   }

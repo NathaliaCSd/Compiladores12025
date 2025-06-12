@@ -10,7 +10,6 @@ import br.ufscar.dc.compiladores.t5.t5.TermoAritmetico;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -18,7 +17,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -32,8 +30,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link br.ufscar.dc.compiladores.t5.t5.impl.TermoAritmeticoImpl#getFator1 <em>Fator1</em>}</li>
- *   <li>{@link br.ufscar.dc.compiladores.t5.t5.impl.TermoAritmeticoImpl#getOutrosFatores <em>Outros Fatores</em>}</li>
+ *   <li>{@link br.ufscar.dc.compiladores.t5.t5.impl.TermoAritmeticoImpl#getFatores <em>Fatores</em>}</li>
+ *   <li>{@link br.ufscar.dc.compiladores.t5.t5.impl.TermoAritmeticoImpl#getOutros <em>Outros</em>}</li>
  * </ul>
  *
  * @generated
@@ -41,24 +39,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class TermoAritmeticoImpl extends MinimalEObjectImpl.Container implements TermoAritmetico
 {
   /**
-   * The cached value of the '{@link #getFator1() <em>Fator1</em>}' containment reference.
+   * The cached value of the '{@link #getFatores() <em>Fatores</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFator1()
+   * @see #getFatores()
    * @generated
    * @ordered
    */
-  protected FatorAritmetico fator1;
+  protected EList<FatorAritmetico> fatores;
 
   /**
-   * The cached value of the '{@link #getOutrosFatores() <em>Outros Fatores</em>}' containment reference list.
+   * The cached value of the '{@link #getOutros() <em>Outros</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOutrosFatores()
+   * @see #getOutros()
    * @generated
    * @ordered
    */
-  protected EList<OutroFatorAritmetico> outrosFatores;
+  protected EList<OutroFatorAritmetico> outros;
 
   /**
    * <!-- begin-user-doc -->
@@ -87,26 +85,13 @@ public class TermoAritmeticoImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
-  public FatorAritmetico getFator1()
+  public EList<FatorAritmetico> getFatores()
   {
-    return fator1;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetFator1(FatorAritmetico newFator1, NotificationChain msgs)
-  {
-    FatorAritmetico oldFator1 = fator1;
-    fator1 = newFator1;
-    if (eNotificationRequired())
+    if (fatores == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, T5Package.TERMO_ARITMETICO__FATOR1, oldFator1, newFator1);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      fatores = new EObjectContainmentEList<FatorAritmetico>(FatorAritmetico.class, this, T5Package.TERMO_ARITMETICO__FATORES);
     }
-    return msgs;
+    return fatores;
   }
 
   /**
@@ -115,35 +100,13 @@ public class TermoAritmeticoImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
-  public void setFator1(FatorAritmetico newFator1)
+  public EList<OutroFatorAritmetico> getOutros()
   {
-    if (newFator1 != fator1)
+    if (outros == null)
     {
-      NotificationChain msgs = null;
-      if (fator1 != null)
-        msgs = ((InternalEObject)fator1).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - T5Package.TERMO_ARITMETICO__FATOR1, null, msgs);
-      if (newFator1 != null)
-        msgs = ((InternalEObject)newFator1).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - T5Package.TERMO_ARITMETICO__FATOR1, null, msgs);
-      msgs = basicSetFator1(newFator1, msgs);
-      if (msgs != null) msgs.dispatch();
+      outros = new EObjectContainmentEList<OutroFatorAritmetico>(OutroFatorAritmetico.class, this, T5Package.TERMO_ARITMETICO__OUTROS);
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, T5Package.TERMO_ARITMETICO__FATOR1, newFator1, newFator1));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<OutroFatorAritmetico> getOutrosFatores()
-  {
-    if (outrosFatores == null)
-    {
-      outrosFatores = new EObjectContainmentEList<OutroFatorAritmetico>(OutroFatorAritmetico.class, this, T5Package.TERMO_ARITMETICO__OUTROS_FATORES);
-    }
-    return outrosFatores;
+    return outros;
   }
 
   /**
@@ -156,10 +119,10 @@ public class TermoAritmeticoImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case T5Package.TERMO_ARITMETICO__FATOR1:
-        return basicSetFator1(null, msgs);
-      case T5Package.TERMO_ARITMETICO__OUTROS_FATORES:
-        return ((InternalEList<?>)getOutrosFatores()).basicRemove(otherEnd, msgs);
+      case T5Package.TERMO_ARITMETICO__FATORES:
+        return ((InternalEList<?>)getFatores()).basicRemove(otherEnd, msgs);
+      case T5Package.TERMO_ARITMETICO__OUTROS:
+        return ((InternalEList<?>)getOutros()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -174,10 +137,10 @@ public class TermoAritmeticoImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case T5Package.TERMO_ARITMETICO__FATOR1:
-        return getFator1();
-      case T5Package.TERMO_ARITMETICO__OUTROS_FATORES:
-        return getOutrosFatores();
+      case T5Package.TERMO_ARITMETICO__FATORES:
+        return getFatores();
+      case T5Package.TERMO_ARITMETICO__OUTROS:
+        return getOutros();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -193,12 +156,13 @@ public class TermoAritmeticoImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case T5Package.TERMO_ARITMETICO__FATOR1:
-        setFator1((FatorAritmetico)newValue);
+      case T5Package.TERMO_ARITMETICO__FATORES:
+        getFatores().clear();
+        getFatores().addAll((Collection<? extends FatorAritmetico>)newValue);
         return;
-      case T5Package.TERMO_ARITMETICO__OUTROS_FATORES:
-        getOutrosFatores().clear();
-        getOutrosFatores().addAll((Collection<? extends OutroFatorAritmetico>)newValue);
+      case T5Package.TERMO_ARITMETICO__OUTROS:
+        getOutros().clear();
+        getOutros().addAll((Collection<? extends OutroFatorAritmetico>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -214,11 +178,11 @@ public class TermoAritmeticoImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case T5Package.TERMO_ARITMETICO__FATOR1:
-        setFator1((FatorAritmetico)null);
+      case T5Package.TERMO_ARITMETICO__FATORES:
+        getFatores().clear();
         return;
-      case T5Package.TERMO_ARITMETICO__OUTROS_FATORES:
-        getOutrosFatores().clear();
+      case T5Package.TERMO_ARITMETICO__OUTROS:
+        getOutros().clear();
         return;
     }
     super.eUnset(featureID);
@@ -234,10 +198,10 @@ public class TermoAritmeticoImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case T5Package.TERMO_ARITMETICO__FATOR1:
-        return fator1 != null;
-      case T5Package.TERMO_ARITMETICO__OUTROS_FATORES:
-        return outrosFatores != null && !outrosFatores.isEmpty();
+      case T5Package.TERMO_ARITMETICO__FATORES:
+        return fatores != null && !fatores.isEmpty();
+      case T5Package.TERMO_ARITMETICO__OUTROS:
+        return outros != null && !outros.isEmpty();
     }
     return super.eIsSet(featureID);
   }

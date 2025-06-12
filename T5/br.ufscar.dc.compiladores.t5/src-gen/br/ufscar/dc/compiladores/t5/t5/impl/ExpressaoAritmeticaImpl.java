@@ -10,7 +10,6 @@ import br.ufscar.dc.compiladores.t5.t5.TermoAritmetico;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -18,7 +17,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -32,8 +30,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link br.ufscar.dc.compiladores.t5.t5.impl.ExpressaoAritmeticaImpl#getTermo1 <em>Termo1</em>}</li>
- *   <li>{@link br.ufscar.dc.compiladores.t5.t5.impl.ExpressaoAritmeticaImpl#getOutrosTermos <em>Outros Termos</em>}</li>
+ *   <li>{@link br.ufscar.dc.compiladores.t5.t5.impl.ExpressaoAritmeticaImpl#getTermos <em>Termos</em>}</li>
+ *   <li>{@link br.ufscar.dc.compiladores.t5.t5.impl.ExpressaoAritmeticaImpl#getOutros <em>Outros</em>}</li>
  * </ul>
  *
  * @generated
@@ -41,24 +39,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ExpressaoAritmeticaImpl extends MinimalEObjectImpl.Container implements ExpressaoAritmetica
 {
   /**
-   * The cached value of the '{@link #getTermo1() <em>Termo1</em>}' containment reference.
+   * The cached value of the '{@link #getTermos() <em>Termos</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTermo1()
+   * @see #getTermos()
    * @generated
    * @ordered
    */
-  protected TermoAritmetico termo1;
+  protected EList<TermoAritmetico> termos;
 
   /**
-   * The cached value of the '{@link #getOutrosTermos() <em>Outros Termos</em>}' containment reference list.
+   * The cached value of the '{@link #getOutros() <em>Outros</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOutrosTermos()
+   * @see #getOutros()
    * @generated
    * @ordered
    */
-  protected EList<OutroTermoAritmetico> outrosTermos;
+  protected EList<OutroTermoAritmetico> outros;
 
   /**
    * <!-- begin-user-doc -->
@@ -87,26 +85,13 @@ public class ExpressaoAritmeticaImpl extends MinimalEObjectImpl.Container implem
    * @generated
    */
   @Override
-  public TermoAritmetico getTermo1()
+  public EList<TermoAritmetico> getTermos()
   {
-    return termo1;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetTermo1(TermoAritmetico newTermo1, NotificationChain msgs)
-  {
-    TermoAritmetico oldTermo1 = termo1;
-    termo1 = newTermo1;
-    if (eNotificationRequired())
+    if (termos == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, T5Package.EXPRESSAO_ARITMETICA__TERMO1, oldTermo1, newTermo1);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      termos = new EObjectContainmentEList<TermoAritmetico>(TermoAritmetico.class, this, T5Package.EXPRESSAO_ARITMETICA__TERMOS);
     }
-    return msgs;
+    return termos;
   }
 
   /**
@@ -115,35 +100,13 @@ public class ExpressaoAritmeticaImpl extends MinimalEObjectImpl.Container implem
    * @generated
    */
   @Override
-  public void setTermo1(TermoAritmetico newTermo1)
+  public EList<OutroTermoAritmetico> getOutros()
   {
-    if (newTermo1 != termo1)
+    if (outros == null)
     {
-      NotificationChain msgs = null;
-      if (termo1 != null)
-        msgs = ((InternalEObject)termo1).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - T5Package.EXPRESSAO_ARITMETICA__TERMO1, null, msgs);
-      if (newTermo1 != null)
-        msgs = ((InternalEObject)newTermo1).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - T5Package.EXPRESSAO_ARITMETICA__TERMO1, null, msgs);
-      msgs = basicSetTermo1(newTermo1, msgs);
-      if (msgs != null) msgs.dispatch();
+      outros = new EObjectContainmentEList<OutroTermoAritmetico>(OutroTermoAritmetico.class, this, T5Package.EXPRESSAO_ARITMETICA__OUTROS);
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, T5Package.EXPRESSAO_ARITMETICA__TERMO1, newTermo1, newTermo1));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<OutroTermoAritmetico> getOutrosTermos()
-  {
-    if (outrosTermos == null)
-    {
-      outrosTermos = new EObjectContainmentEList<OutroTermoAritmetico>(OutroTermoAritmetico.class, this, T5Package.EXPRESSAO_ARITMETICA__OUTROS_TERMOS);
-    }
-    return outrosTermos;
+    return outros;
   }
 
   /**
@@ -156,10 +119,10 @@ public class ExpressaoAritmeticaImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case T5Package.EXPRESSAO_ARITMETICA__TERMO1:
-        return basicSetTermo1(null, msgs);
-      case T5Package.EXPRESSAO_ARITMETICA__OUTROS_TERMOS:
-        return ((InternalEList<?>)getOutrosTermos()).basicRemove(otherEnd, msgs);
+      case T5Package.EXPRESSAO_ARITMETICA__TERMOS:
+        return ((InternalEList<?>)getTermos()).basicRemove(otherEnd, msgs);
+      case T5Package.EXPRESSAO_ARITMETICA__OUTROS:
+        return ((InternalEList<?>)getOutros()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -174,10 +137,10 @@ public class ExpressaoAritmeticaImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case T5Package.EXPRESSAO_ARITMETICA__TERMO1:
-        return getTermo1();
-      case T5Package.EXPRESSAO_ARITMETICA__OUTROS_TERMOS:
-        return getOutrosTermos();
+      case T5Package.EXPRESSAO_ARITMETICA__TERMOS:
+        return getTermos();
+      case T5Package.EXPRESSAO_ARITMETICA__OUTROS:
+        return getOutros();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -193,12 +156,13 @@ public class ExpressaoAritmeticaImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case T5Package.EXPRESSAO_ARITMETICA__TERMO1:
-        setTermo1((TermoAritmetico)newValue);
+      case T5Package.EXPRESSAO_ARITMETICA__TERMOS:
+        getTermos().clear();
+        getTermos().addAll((Collection<? extends TermoAritmetico>)newValue);
         return;
-      case T5Package.EXPRESSAO_ARITMETICA__OUTROS_TERMOS:
-        getOutrosTermos().clear();
-        getOutrosTermos().addAll((Collection<? extends OutroTermoAritmetico>)newValue);
+      case T5Package.EXPRESSAO_ARITMETICA__OUTROS:
+        getOutros().clear();
+        getOutros().addAll((Collection<? extends OutroTermoAritmetico>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -214,11 +178,11 @@ public class ExpressaoAritmeticaImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case T5Package.EXPRESSAO_ARITMETICA__TERMO1:
-        setTermo1((TermoAritmetico)null);
+      case T5Package.EXPRESSAO_ARITMETICA__TERMOS:
+        getTermos().clear();
         return;
-      case T5Package.EXPRESSAO_ARITMETICA__OUTROS_TERMOS:
-        getOutrosTermos().clear();
+      case T5Package.EXPRESSAO_ARITMETICA__OUTROS:
+        getOutros().clear();
         return;
     }
     super.eUnset(featureID);
@@ -234,10 +198,10 @@ public class ExpressaoAritmeticaImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case T5Package.EXPRESSAO_ARITMETICA__TERMO1:
-        return termo1 != null;
-      case T5Package.EXPRESSAO_ARITMETICA__OUTROS_TERMOS:
-        return outrosTermos != null && !outrosTermos.isEmpty();
+      case T5Package.EXPRESSAO_ARITMETICA__TERMOS:
+        return termos != null && !termos.isEmpty();
+      case T5Package.EXPRESSAO_ARITMETICA__OUTROS:
+        return outros != null && !outros.isEmpty();
     }
     return super.eIsSet(featureID);
   }

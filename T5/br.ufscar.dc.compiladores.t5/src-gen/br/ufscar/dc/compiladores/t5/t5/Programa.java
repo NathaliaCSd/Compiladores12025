@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link br.ufscar.dc.compiladores.t5.t5.Programa#getDeclaracoes <em>Declaracoes</em>}</li>
- *   <li>{@link br.ufscar.dc.compiladores.t5.t5.Programa#getComandos <em>Comandos</em>}</li>
+ *   <li>{@link br.ufscar.dc.compiladores.t5.t5.Programa#getCorpo <em>Corpo</em>}</li>
  * </ul>
  *
  * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getPrograma()
@@ -39,15 +39,25 @@ public interface Programa extends EObject
   EList<Declaracao> getDeclaracoes();
 
   /**
-   * Returns the value of the '<em><b>Comandos</b></em>' containment reference list.
-   * The list contents are of type {@link br.ufscar.dc.compiladores.t5.t5.Comando}.
+   * Returns the value of the '<em><b>Corpo</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Comandos</em>' containment reference list.
-   * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getPrograma_Comandos()
+   * @return the value of the '<em>Corpo</em>' containment reference.
+   * @see #setCorpo(Corpo)
+   * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getPrograma_Corpo()
    * @model containment="true"
    * @generated
    */
-  EList<Comando> getComandos();
+  Corpo getCorpo();
+
+  /**
+   * Sets the value of the '{@link br.ufscar.dc.compiladores.t5.t5.Programa#getCorpo <em>Corpo</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Corpo</em>' containment reference.
+   * @see #getCorpo()
+   * @generated
+   */
+  void setCorpo(Corpo value);
 
 } // Programa

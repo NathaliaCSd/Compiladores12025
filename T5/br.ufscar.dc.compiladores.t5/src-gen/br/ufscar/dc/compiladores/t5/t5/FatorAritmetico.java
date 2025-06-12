@@ -10,6 +10,15 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Fator Aritmetico</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link br.ufscar.dc.compiladores.t5.t5.FatorAritmetico#getRef <em>Ref</em>}</li>
+ *   <li>{@link br.ufscar.dc.compiladores.t5.t5.FatorAritmetico#getNumero <em>Numero</em>}</li>
+ *   <li>{@link br.ufscar.dc.compiladores.t5.t5.FatorAritmetico#getReal <em>Real</em>}</li>
+ *   <li>{@link br.ufscar.dc.compiladores.t5.t5.FatorAritmetico#getExp <em>Exp</em>}</li>
+ * </ul>
  *
  * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getFatorAritmetico()
  * @model
@@ -17,4 +26,92 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface FatorAritmetico extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Ref</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Ref</em>' reference.
+   * @see #setRef(Declaracao)
+   * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getFatorAritmetico_Ref()
+   * @model
+   * @generated
+   */
+  Declaracao getRef();
+
+  /**
+   * Sets the value of the '{@link br.ufscar.dc.compiladores.t5.t5.FatorAritmetico#getRef <em>Ref</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Ref</em>' reference.
+   * @see #getRef()
+   * @generated
+   */
+  void setRef(Declaracao value);
+
+  /**
+   * Returns the value of the '<em><b>Numero</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Numero</em>' attribute.
+   * @see #setNumero(int)
+   * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getFatorAritmetico_Numero()
+   * @model
+   * @generated
+   */
+  int getNumero();
+
+  /**
+   * Sets the value of the '{@link br.ufscar.dc.compiladores.t5.t5.FatorAritmetico#getNumero <em>Numero</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Numero</em>' attribute.
+   * @see #getNumero()
+   * @generated
+   */
+  void setNumero(int value);
+
+  /**
+   * Returns the value of the '<em><b>Real</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Real</em>' attribute.
+   * @see #setReal(String)
+   * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getFatorAritmetico_Real()
+   * @model
+   * @generated
+   */
+  String getReal();
+
+  /**
+   * Sets the value of the '{@link br.ufscar.dc.compiladores.t5.t5.FatorAritmetico#getReal <em>Real</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Real</em>' attribute.
+   * @see #getReal()
+   * @generated
+   */
+  void setReal(String value);
+
+  /**
+   * Returns the value of the '<em><b>Exp</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Exp</em>' containment reference.
+   * @see #setExp(ExpressaoAritmetica)
+   * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getFatorAritmetico_Exp()
+   * @model containment="true"
+   * @generated
+   */
+  ExpressaoAritmetica getExp();
+
+  /**
+   * Sets the value of the '{@link br.ufscar.dc.compiladores.t5.t5.FatorAritmetico#getExp <em>Exp</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Exp</em>' containment reference.
+   * @see #getExp()
+   * @generated
+   */
+  void setExp(ExpressaoAritmetica value);
+
 } // FatorAritmetico

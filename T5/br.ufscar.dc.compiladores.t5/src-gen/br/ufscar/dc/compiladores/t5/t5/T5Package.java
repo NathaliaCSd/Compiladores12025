@@ -58,6 +58,34 @@ public interface T5Package extends EPackage
   T5Package eINSTANCE = br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl.init();
 
   /**
+   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ModelImpl <em>Model</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.ModelImpl
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getModel()
+   * @generated
+   */
+  int MODEL = 0;
+
+  /**
+   * The feature id for the '<em><b>Programa</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__PROGRAMA = 0;
+
+  /**
+   * The number of structural features of the '<em>Model</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ProgramaImpl <em>Programa</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -65,7 +93,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getPrograma()
    * @generated
    */
-  int PROGRAMA = 0;
+  int PROGRAMA = 1;
 
   /**
    * The feature id for the '<em><b>Declaracoes</b></em>' containment reference list.
@@ -77,13 +105,13 @@ public interface T5Package extends EPackage
   int PROGRAMA__DECLARACOES = 0;
 
   /**
-   * The feature id for the '<em><b>Comandos</b></em>' containment reference list.
+   * The feature id for the '<em><b>Corpo</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROGRAMA__COMANDOS = 1;
+  int PROGRAMA__CORPO = 1;
 
   /**
    * The number of structural features of the '<em>Programa</em>' class.
@@ -102,7 +130,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getDeclaracao()
    * @generated
    */
-  int DECLARACAO = 1;
+  int DECLARACAO = 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -114,22 +142,938 @@ public interface T5Package extends EPackage
   int DECLARACAO__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Tipo</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DECLARACAO__TIPO = 1;
-
-  /**
    * The number of structural features of the '<em>Declaracao</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DECLARACAO_FEATURE_COUNT = 2;
+  int DECLARACAO_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.DeclaracaoLocalImpl <em>Declaracao Local</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.DeclaracaoLocalImpl
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getDeclaracaoLocal()
+   * @generated
+   */
+  int DECLARACAO_LOCAL = 3;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARACAO_LOCAL__NAME = DECLARACAO__NAME;
+
+  /**
+   * The feature id for the '<em><b>Variaveis</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARACAO_LOCAL__VARIAVEIS = DECLARACAO_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Tipo Basico</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARACAO_LOCAL__TIPO_BASICO = DECLARACAO_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Valor</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARACAO_LOCAL__VALOR = DECLARACAO_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Tipo Def</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARACAO_LOCAL__TIPO_DEF = DECLARACAO_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>Declaracao Local</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARACAO_LOCAL_FEATURE_COUNT = DECLARACAO_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.DeclaracaoGlobalImpl <em>Declaracao Global</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.DeclaracaoGlobalImpl
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getDeclaracaoGlobal()
+   * @generated
+   */
+  int DECLARACAO_GLOBAL = 4;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARACAO_GLOBAL__NAME = DECLARACAO__NAME;
+
+  /**
+   * The feature id for the '<em><b>Parametros</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARACAO_GLOBAL__PARAMETROS = DECLARACAO_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Corpo</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARACAO_GLOBAL__CORPO = DECLARACAO_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Tipo Retorno</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARACAO_GLOBAL__TIPO_RETORNO = DECLARACAO_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Declaracao Global</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARACAO_GLOBAL_FEATURE_COUNT = DECLARACAO_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.VariavelImpl <em>Variavel</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.VariavelImpl
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getVariavel()
+   * @generated
+   */
+  int VARIAVEL = 5;
+
+  /**
+   * The feature id for the '<em><b>Id</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIAVEL__ID = 0;
+
+  /**
+   * The feature id for the '<em><b>Tipo Var</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIAVEL__TIPO_VAR = 1;
+
+  /**
+   * The number of structural features of the '<em>Variavel</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIAVEL_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.IdentificadorImpl <em>Identificador</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.IdentificadorImpl
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getIdentificador()
+   * @generated
+   */
+  int IDENTIFICADOR = 6;
+
+  /**
+   * The feature id for the '<em><b>Dimensoes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IDENTIFICADOR__DIMENSOES = 0;
+
+  /**
+   * The number of structural features of the '<em>Identificador</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IDENTIFICADOR_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.DimensaoImpl <em>Dimensao</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.DimensaoImpl
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getDimensao()
+   * @generated
+   */
+  int DIMENSAO = 7;
+
+  /**
+   * The feature id for the '<em><b>Exp</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIMENSAO__EXP = 0;
+
+  /**
+   * The number of structural features of the '<em>Dimensao</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIMENSAO_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.TipoImpl <em>Tipo</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.TipoImpl
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getTipo()
+   * @generated
+   */
+  int TIPO = 8;
+
+  /**
+   * The feature id for the '<em><b>Registro</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TIPO__REGISTRO = 0;
+
+  /**
+   * The feature id for the '<em><b>Tipo Ext</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TIPO__TIPO_EXT = 1;
+
+  /**
+   * The number of structural features of the '<em>Tipo</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TIPO_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.RegistroImpl <em>Registro</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.RegistroImpl
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getRegistro()
+   * @generated
+   */
+  int REGISTRO = 9;
+
+  /**
+   * The feature id for the '<em><b>Campos</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REGISTRO__CAMPOS = 0;
+
+  /**
+   * The number of structural features of the '<em>Registro</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REGISTRO_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.TipoEstendidoImpl <em>Tipo Estendido</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.TipoEstendidoImpl
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getTipoEstendido()
+   * @generated
+   */
+  int TIPO_ESTENDIDO = 10;
+
+  /**
+   * The feature id for the '<em><b>Basic</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TIPO_ESTENDIDO__BASIC = 0;
+
+  /**
+   * The feature id for the '<em><b>Ref</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TIPO_ESTENDIDO__REF = 1;
+
+  /**
+   * The number of structural features of the '<em>Tipo Estendido</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TIPO_ESTENDIDO_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ParametrosImpl <em>Parametros</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.ParametrosImpl
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getParametros()
+   * @generated
+   */
+  int PARAMETROS = 11;
+
+  /**
+   * The feature id for the '<em><b>Parametro</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETROS__PARAMETRO = 0;
+
+  /**
+   * The number of structural features of the '<em>Parametros</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETROS_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ParametroImpl <em>Parametro</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.ParametroImpl
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getParametro()
+   * @generated
+   */
+  int PARAMETRO = 12;
+
+  /**
+   * The feature id for the '<em><b>Ids</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETRO__IDS = 0;
+
+  /**
+   * The feature id for the '<em><b>Tipo Param</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETRO__TIPO_PARAM = 1;
+
+  /**
+   * The number of structural features of the '<em>Parametro</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETRO_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.CorpoImpl <em>Corpo</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.CorpoImpl
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getCorpo()
+   * @generated
+   */
+  int CORPO = 13;
+
+  /**
+   * The feature id for the '<em><b>Locais</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CORPO__LOCAIS = 0;
+
+  /**
+   * The feature id for the '<em><b>Comandos</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CORPO__COMANDOS = 1;
+
+  /**
+   * The number of structural features of the '<em>Corpo</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CORPO_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoImpl <em>Comando</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoImpl
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComando()
+   * @generated
+   */
+  int COMANDO = 14;
+
+  /**
+   * The number of structural features of the '<em>Comando</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoLeiaImpl <em>Comando Leia</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoLeiaImpl
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoLeia()
+   * @generated
+   */
+  int COMANDO_LEIA = 15;
+
+  /**
+   * The feature id for the '<em><b>Alvo</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_LEIA__ALVO = COMANDO_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Comando Leia</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_LEIA_FEATURE_COUNT = COMANDO_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoEscrevaImpl <em>Comando Escreva</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoEscrevaImpl
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoEscreva()
+   * @generated
+   */
+  int COMANDO_ESCREVA = 16;
+
+  /**
+   * The feature id for the '<em><b>Exp</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_ESCREVA__EXP = COMANDO_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Comando Escreva</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_ESCREVA_FEATURE_COUNT = COMANDO_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoSeImpl <em>Comando Se</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoSeImpl
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoSe()
+   * @generated
+   */
+  int COMANDO_SE = 17;
+
+  /**
+   * The feature id for the '<em><b>Cond</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_SE__COND = COMANDO_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Comandos</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_SE__COMANDOS = COMANDO_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Comandos Else</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_SE__COMANDOS_ELSE = COMANDO_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Comando Se</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_SE_FEATURE_COUNT = COMANDO_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoCasoImpl <em>Comando Caso</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoCasoImpl
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoCaso()
+   * @generated
+   */
+  int COMANDO_CASO = 18;
+
+  /**
+   * The feature id for the '<em><b>Exp</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_CASO__EXP = COMANDO_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Selecao</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_CASO__SELECAO = COMANDO_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Comandos Else</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_CASO__COMANDOS_ELSE = COMANDO_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Comando Caso</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_CASO_FEATURE_COUNT = COMANDO_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoParaImpl <em>Comando Para</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoParaImpl
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoPara()
+   * @generated
+   */
+  int COMANDO_PARA = 19;
+
+  /**
+   * The feature id for the '<em><b>Var</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_PARA__VAR = COMANDO_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Inicio</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_PARA__INICIO = COMANDO_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Fim</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_PARA__FIM = COMANDO_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Comandos</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_PARA__COMANDOS = COMANDO_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>Comando Para</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_PARA_FEATURE_COUNT = COMANDO_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoEnquantoImpl <em>Comando Enquanto</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoEnquantoImpl
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoEnquanto()
+   * @generated
+   */
+  int COMANDO_ENQUANTO = 20;
+
+  /**
+   * The feature id for the '<em><b>Cond</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_ENQUANTO__COND = COMANDO_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Comandos</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_ENQUANTO__COMANDOS = COMANDO_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Comando Enquanto</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_ENQUANTO_FEATURE_COUNT = COMANDO_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoFacaImpl <em>Comando Faca</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoFacaImpl
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoFaca()
+   * @generated
+   */
+  int COMANDO_FACA = 21;
+
+  /**
+   * The feature id for the '<em><b>Comandos</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_FACA__COMANDOS = COMANDO_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Cond</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_FACA__COND = COMANDO_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Comando Faca</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_FACA_FEATURE_COUNT = COMANDO_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoAtribuicaoImpl <em>Comando Atribuicao</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoAtribuicaoImpl
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoAtribuicao()
+   * @generated
+   */
+  int COMANDO_ATRIBUICAO = 22;
+
+  /**
+   * The feature id for the '<em><b>Target</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_ATRIBUICAO__TARGET = COMANDO_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Valor</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_ATRIBUICAO__VALOR = COMANDO_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Comando Atribuicao</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_ATRIBUICAO_FEATURE_COUNT = COMANDO_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoChamadaImpl <em>Comando Chamada</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoChamadaImpl
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoChamada()
+   * @generated
+   */
+  int COMANDO_CHAMADA = 23;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_CHAMADA__NAME = COMANDO_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Args</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_CHAMADA__ARGS = COMANDO_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Comando Chamada</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_CHAMADA_FEATURE_COUNT = COMANDO_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoRetorneImpl <em>Comando Retorne</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoRetorneImpl
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoRetorne()
+   * @generated
+   */
+  int COMANDO_RETORNE = 24;
+
+  /**
+   * The feature id for the '<em><b>Exp</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_RETORNE__EXP = COMANDO_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Comando Retorne</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDO_RETORNE_FEATURE_COUNT = COMANDO_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.SelecaoImpl <em>Selecao</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.SelecaoImpl
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getSelecao()
+   * @generated
+   */
+  int SELECAO = 25;
+
+  /**
+   * The feature id for the '<em><b>Itens</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECAO__ITENS = 0;
+
+  /**
+   * The feature id for the '<em><b>Comandos</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECAO__COMANDOS = 1;
+
+  /**
+   * The number of structural features of the '<em>Selecao</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECAO_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ItemSelecaoImpl <em>Item Selecao</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.ItemSelecaoImpl
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getItemSelecao()
+   * @generated
+   */
+  int ITEM_SELECAO = 26;
+
+  /**
+   * The feature id for the '<em><b>Faixas</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ITEM_SELECAO__FAIXAS = 0;
+
+  /**
+   * The number of structural features of the '<em>Item Selecao</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ITEM_SELECAO_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.NumeroIntervaloImpl <em>Numero Intervalo</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.NumeroIntervaloImpl
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getNumeroIntervalo()
+   * @generated
+   */
+  int NUMERO_INTERVALO = 27;
+
+  /**
+   * The feature id for the '<em><b>Sinal</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMERO_INTERVALO__SINAL = 0;
+
+  /**
+   * The feature id for the '<em><b>Start</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMERO_INTERVALO__START = 1;
+
+  /**
+   * The feature id for the '<em><b>End</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMERO_INTERVALO__END = 2;
+
+  /**
+   * The number of structural features of the '<em>Numero Intervalo</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMERO_INTERVALO_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ExpressaoAritmeticaImpl <em>Expressao Aritmetica</em>}' class.
@@ -139,25 +1083,25 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getExpressaoAritmetica()
    * @generated
    */
-  int EXPRESSAO_ARITMETICA = 2;
+  int EXPRESSAO_ARITMETICA = 28;
 
   /**
-   * The feature id for the '<em><b>Termo1</b></em>' containment reference.
+   * The feature id for the '<em><b>Termos</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSAO_ARITMETICA__TERMO1 = 0;
+  int EXPRESSAO_ARITMETICA__TERMOS = 0;
 
   /**
-   * The feature id for the '<em><b>Outros Termos</b></em>' containment reference list.
+   * The feature id for the '<em><b>Outros</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSAO_ARITMETICA__OUTROS_TERMOS = 1;
+  int EXPRESSAO_ARITMETICA__OUTROS = 1;
 
   /**
    * The number of structural features of the '<em>Expressao Aritmetica</em>' class.
@@ -176,16 +1120,16 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getOutroTermoAritmetico()
    * @generated
    */
-  int OUTRO_TERMO_ARITMETICO = 3;
+  int OUTRO_TERMO_ARITMETICO = 29;
 
   /**
-   * The feature id for the '<em><b>Operador</b></em>' attribute.
+   * The feature id for the '<em><b>Op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OUTRO_TERMO_ARITMETICO__OPERADOR = 0;
+  int OUTRO_TERMO_ARITMETICO__OP = 0;
 
   /**
    * The feature id for the '<em><b>Termo</b></em>' containment reference.
@@ -213,25 +1157,25 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getTermoAritmetico()
    * @generated
    */
-  int TERMO_ARITMETICO = 4;
+  int TERMO_ARITMETICO = 30;
 
   /**
-   * The feature id for the '<em><b>Fator1</b></em>' containment reference.
+   * The feature id for the '<em><b>Fatores</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TERMO_ARITMETICO__FATOR1 = 0;
+  int TERMO_ARITMETICO__FATORES = 0;
 
   /**
-   * The feature id for the '<em><b>Outros Fatores</b></em>' containment reference list.
+   * The feature id for the '<em><b>Outros</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TERMO_ARITMETICO__OUTROS_FATORES = 1;
+  int TERMO_ARITMETICO__OUTROS = 1;
 
   /**
    * The number of structural features of the '<em>Termo Aritmetico</em>' class.
@@ -250,16 +1194,16 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getOutroFatorAritmetico()
    * @generated
    */
-  int OUTRO_FATOR_ARITMETICO = 5;
+  int OUTRO_FATOR_ARITMETICO = 31;
 
   /**
-   * The feature id for the '<em><b>Operador</b></em>' attribute.
+   * The feature id for the '<em><b>Op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OUTRO_FATOR_ARITMETICO__OPERADOR = 0;
+  int OUTRO_FATOR_ARITMETICO__OP = 0;
 
   /**
    * The feature id for the '<em><b>Fator</b></em>' containment reference.
@@ -287,26 +1231,16 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getFatorAritmetico()
    * @generated
    */
-  int FATOR_ARITMETICO = 6;
+  int FATOR_ARITMETICO = 32;
 
   /**
-   * The number of structural features of the '<em>Fator Aritmetico</em>' class.
+   * The feature id for the '<em><b>Ref</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FATOR_ARITMETICO_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.FatorNumeroImpl <em>Fator Numero</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see br.ufscar.dc.compiladores.t5.t5.impl.FatorNumeroImpl
-   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getFatorNumero()
-   * @generated
-   */
-  int FATOR_NUMERO = 7;
+  int FATOR_ARITMETICO__REF = 0;
 
   /**
    * The feature id for the '<em><b>Numero</b></em>' attribute.
@@ -315,72 +1249,99 @@ public interface T5Package extends EPackage
    * @generated
    * @ordered
    */
-  int FATOR_NUMERO__NUMERO = FATOR_ARITMETICO_FEATURE_COUNT + 0;
+  int FATOR_ARITMETICO__NUMERO = 1;
 
   /**
-   * The number of structural features of the '<em>Fator Numero</em>' class.
+   * The feature id for the '<em><b>Real</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FATOR_NUMERO_FEATURE_COUNT = FATOR_ARITMETICO_FEATURE_COUNT + 1;
+  int FATOR_ARITMETICO__REAL = 2;
 
   /**
-   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.FatorVariavelImpl <em>Fator Variavel</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see br.ufscar.dc.compiladores.t5.t5.impl.FatorVariavelImpl
-   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getFatorVariavel()
-   * @generated
-   */
-  int FATOR_VARIAVEL = 8;
-
-  /**
-   * The feature id for the '<em><b>Variavel</b></em>' reference.
+   * The feature id for the '<em><b>Exp</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FATOR_VARIAVEL__VARIAVEL = FATOR_ARITMETICO_FEATURE_COUNT + 0;
+  int FATOR_ARITMETICO__EXP = 3;
 
   /**
-   * The number of structural features of the '<em>Fator Variavel</em>' class.
+   * The number of structural features of the '<em>Fator Aritmetico</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FATOR_VARIAVEL_FEATURE_COUNT = FATOR_ARITMETICO_FEATURE_COUNT + 1;
+  int FATOR_ARITMETICO_FEATURE_COUNT = 4;
 
   /**
-   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.FatorSubExpressaoImpl <em>Fator Sub Expressao</em>}' class.
+   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ExpressaoImpl <em>Expressao</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see br.ufscar.dc.compiladores.t5.t5.impl.FatorSubExpressaoImpl
-   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getFatorSubExpressao()
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.ExpressaoImpl
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getExpressao()
    * @generated
    */
-  int FATOR_SUB_EXPRESSAO = 9;
+  int EXPRESSAO = 33;
 
   /**
-   * The feature id for the '<em><b>Expressao</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FATOR_SUB_EXPRESSAO__EXPRESSAO = FATOR_ARITMETICO_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Fator Sub Expressao</em>' class.
+   * The feature id for the '<em><b>Logicos</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FATOR_SUB_EXPRESSAO_FEATURE_COUNT = FATOR_ARITMETICO_FEATURE_COUNT + 1;
+  int EXPRESSAO__LOGICOS = 0;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSAO__OP = 1;
+
+  /**
+   * The number of structural features of the '<em>Expressao</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSAO_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.TermoLogicoImpl <em>Termo Logico</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.TermoLogicoImpl
+   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getTermoLogico()
+   * @generated
+   */
+  int TERMO_LOGICO = 34;
+
+  /**
+   * The feature id for the '<em><b>Rel</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERMO_LOGICO__REL = 0;
+
+  /**
+   * The number of structural features of the '<em>Termo Logico</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERMO_LOGICO_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ExpressaoRelacionalImpl <em>Expressao Relacional</em>}' class.
@@ -390,25 +1351,34 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getExpressaoRelacional()
    * @generated
    */
-  int EXPRESSAO_RELACIONAL = 10;
+  int EXPRESSAO_RELACIONAL = 35;
 
   /**
-   * The feature id for the '<em><b>Termo1</b></em>' containment reference.
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSAO_RELACIONAL__TERMO1 = 0;
+  int EXPRESSAO_RELACIONAL__LEFT = 0;
 
   /**
-   * The feature id for the '<em><b>Outros Termos</b></em>' containment reference list.
+   * The feature id for the '<em><b>Op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSAO_RELACIONAL__OUTROS_TERMOS = 1;
+  int EXPRESSAO_RELACIONAL__OP = 1;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSAO_RELACIONAL__RIGHT = 2;
 
   /**
    * The number of structural features of the '<em>Expressao Relacional</em>' class.
@@ -417,361 +1387,29 @@ public interface T5Package extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSAO_RELACIONAL_FEATURE_COUNT = 2;
+  int EXPRESSAO_RELACIONAL_FEATURE_COUNT = 3;
+
 
   /**
-   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.OutroTermoRelacionalImpl <em>Outro Termo Relacional</em>}' class.
+   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.Model <em>Model</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see br.ufscar.dc.compiladores.t5.t5.impl.OutroTermoRelacionalImpl
-   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getOutroTermoRelacional()
+   * @return the meta object for class '<em>Model</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Model
    * @generated
    */
-  int OUTRO_TERMO_RELACIONAL = 11;
+  EClass getModel();
 
   /**
-   * The feature id for the '<em><b>Operador</b></em>' attribute.
+   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.Model#getPrograma <em>Programa</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUTRO_TERMO_RELACIONAL__OPERADOR = 0;
-
-  /**
-   * The feature id for the '<em><b>Termo</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUTRO_TERMO_RELACIONAL__TERMO = 1;
-
-  /**
-   * The number of structural features of the '<em>Outro Termo Relacional</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUTRO_TERMO_RELACIONAL_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.TermoRelacionalImpl <em>Termo Relacional</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see br.ufscar.dc.compiladores.t5.t5.impl.TermoRelacionalImpl
-   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getTermoRelacional()
+   * @return the meta object for the containment reference '<em>Programa</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Model#getPrograma()
+   * @see #getModel()
    * @generated
    */
-  int TERMO_RELACIONAL = 12;
-
-  /**
-   * The number of structural features of the '<em>Termo Relacional</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TERMO_RELACIONAL_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.TermoComparacaoRelacionalImpl <em>Termo Comparacao Relacional</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see br.ufscar.dc.compiladores.t5.t5.impl.TermoComparacaoRelacionalImpl
-   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getTermoComparacaoRelacional()
-   * @generated
-   */
-  int TERMO_COMPARACAO_RELACIONAL = 13;
-
-  /**
-   * The feature id for the '<em><b>Exp1</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TERMO_COMPARACAO_RELACIONAL__EXP1 = TERMO_RELACIONAL_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op Rel</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TERMO_COMPARACAO_RELACIONAL__OP_REL = TERMO_RELACIONAL_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Exp2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TERMO_COMPARACAO_RELACIONAL__EXP2 = TERMO_RELACIONAL_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Termo Comparacao Relacional</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TERMO_COMPARACAO_RELACIONAL_FEATURE_COUNT = TERMO_RELACIONAL_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.TermoSubExpressaoRelacionalImpl <em>Termo Sub Expressao Relacional</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see br.ufscar.dc.compiladores.t5.t5.impl.TermoSubExpressaoRelacionalImpl
-   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getTermoSubExpressaoRelacional()
-   * @generated
-   */
-  int TERMO_SUB_EXPRESSAO_RELACIONAL = 14;
-
-  /**
-   * The feature id for the '<em><b>Exp Rel</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TERMO_SUB_EXPRESSAO_RELACIONAL__EXP_REL = TERMO_RELACIONAL_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Termo Sub Expressao Relacional</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TERMO_SUB_EXPRESSAO_RELACIONAL_FEATURE_COUNT = TERMO_RELACIONAL_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoImpl <em>Comando</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoImpl
-   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComando()
-   * @generated
-   */
-  int COMANDO = 15;
-
-  /**
-   * The number of structural features of the '<em>Comando</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMANDO_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoAtribuicaoImpl <em>Comando Atribuicao</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoAtribuicaoImpl
-   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoAtribuicao()
-   * @generated
-   */
-  int COMANDO_ATRIBUICAO = 16;
-
-  /**
-   * The feature id for the '<em><b>Exp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMANDO_ATRIBUICAO__EXP = COMANDO_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Variavel</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMANDO_ATRIBUICAO__VARIAVEL = COMANDO_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Comando Atribuicao</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMANDO_ATRIBUICAO_FEATURE_COUNT = COMANDO_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoEntradaImpl <em>Comando Entrada</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoEntradaImpl
-   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoEntrada()
-   * @generated
-   */
-  int COMANDO_ENTRADA = 17;
-
-  /**
-   * The feature id for the '<em><b>Variavel</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMANDO_ENTRADA__VARIAVEL = COMANDO_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Comando Entrada</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMANDO_ENTRADA_FEATURE_COUNT = COMANDO_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoSaidaImpl <em>Comando Saida</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoSaidaImpl
-   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoSaida()
-   * @generated
-   */
-  int COMANDO_SAIDA = 18;
-
-  /**
-   * The feature id for the '<em><b>Variavel</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMANDO_SAIDA__VARIAVEL = COMANDO_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Comando Saida</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMANDO_SAIDA_FEATURE_COUNT = COMANDO_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoCondicaoImpl <em>Comando Condicao</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoCondicaoImpl
-   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoCondicao()
-   * @generated
-   */
-  int COMANDO_CONDICAO = 19;
-
-  /**
-   * The feature id for the '<em><b>Exp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMANDO_CONDICAO__EXP = COMANDO_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Cmd1</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMANDO_CONDICAO__CMD1 = COMANDO_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Cmd2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMANDO_CONDICAO__CMD2 = COMANDO_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Comando Condicao</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMANDO_CONDICAO_FEATURE_COUNT = COMANDO_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoRepeticaoImpl <em>Comando Repeticao</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoRepeticaoImpl
-   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoRepeticao()
-   * @generated
-   */
-  int COMANDO_REPETICAO = 20;
-
-  /**
-   * The feature id for the '<em><b>Exp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMANDO_REPETICAO__EXP = COMANDO_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Cmd</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMANDO_REPETICAO__CMD = COMANDO_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Comando Repeticao</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMANDO_REPETICAO_FEATURE_COUNT = COMANDO_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.SubAlgoritmoImpl <em>Sub Algoritmo</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see br.ufscar.dc.compiladores.t5.t5.impl.SubAlgoritmoImpl
-   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getSubAlgoritmo()
-   * @generated
-   */
-  int SUB_ALGORITMO = 21;
-
-  /**
-   * The feature id for the '<em><b>Comandos</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SUB_ALGORITMO__COMANDOS = COMANDO_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Sub Algoritmo</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SUB_ALGORITMO_FEATURE_COUNT = COMANDO_FEATURE_COUNT + 1;
-
+  EReference getModel_Programa();
 
   /**
    * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.Programa <em>Programa</em>}'.
@@ -795,15 +1433,15 @@ public interface T5Package extends EPackage
   EReference getPrograma_Declaracoes();
 
   /**
-   * Returns the meta object for the containment reference list '{@link br.ufscar.dc.compiladores.t5.t5.Programa#getComandos <em>Comandos</em>}'.
+   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.Programa#getCorpo <em>Corpo</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Comandos</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.Programa#getComandos()
+   * @return the meta object for the containment reference '<em>Corpo</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Programa#getCorpo()
    * @see #getPrograma()
    * @generated
    */
-  EReference getPrograma_Comandos();
+  EReference getPrograma_Corpo();
 
   /**
    * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.Declaracao <em>Declaracao</em>}'.
@@ -827,15 +1465,782 @@ public interface T5Package extends EPackage
   EAttribute getDeclaracao_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link br.ufscar.dc.compiladores.t5.t5.Declaracao#getTipo <em>Tipo</em>}'.
+   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.DeclaracaoLocal <em>Declaracao Local</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Tipo</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.Declaracao#getTipo()
-   * @see #getDeclaracao()
+   * @return the meta object for class '<em>Declaracao Local</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.DeclaracaoLocal
    * @generated
    */
-  EAttribute getDeclaracao_Tipo();
+  EClass getDeclaracaoLocal();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link br.ufscar.dc.compiladores.t5.t5.DeclaracaoLocal#getVariaveis <em>Variaveis</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Variaveis</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.DeclaracaoLocal#getVariaveis()
+   * @see #getDeclaracaoLocal()
+   * @generated
+   */
+  EReference getDeclaracaoLocal_Variaveis();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.ufscar.dc.compiladores.t5.t5.DeclaracaoLocal#getTipoBasico <em>Tipo Basico</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Tipo Basico</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.DeclaracaoLocal#getTipoBasico()
+   * @see #getDeclaracaoLocal()
+   * @generated
+   */
+  EAttribute getDeclaracaoLocal_TipoBasico();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.ufscar.dc.compiladores.t5.t5.DeclaracaoLocal#getValor <em>Valor</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Valor</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.DeclaracaoLocal#getValor()
+   * @see #getDeclaracaoLocal()
+   * @generated
+   */
+  EAttribute getDeclaracaoLocal_Valor();
+
+  /**
+   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.DeclaracaoLocal#getTipoDef <em>Tipo Def</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Tipo Def</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.DeclaracaoLocal#getTipoDef()
+   * @see #getDeclaracaoLocal()
+   * @generated
+   */
+  EReference getDeclaracaoLocal_TipoDef();
+
+  /**
+   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.DeclaracaoGlobal <em>Declaracao Global</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Declaracao Global</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.DeclaracaoGlobal
+   * @generated
+   */
+  EClass getDeclaracaoGlobal();
+
+  /**
+   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.DeclaracaoGlobal#getParametros <em>Parametros</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Parametros</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.DeclaracaoGlobal#getParametros()
+   * @see #getDeclaracaoGlobal()
+   * @generated
+   */
+  EReference getDeclaracaoGlobal_Parametros();
+
+  /**
+   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.DeclaracaoGlobal#getCorpo <em>Corpo</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Corpo</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.DeclaracaoGlobal#getCorpo()
+   * @see #getDeclaracaoGlobal()
+   * @generated
+   */
+  EReference getDeclaracaoGlobal_Corpo();
+
+  /**
+   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.DeclaracaoGlobal#getTipoRetorno <em>Tipo Retorno</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Tipo Retorno</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.DeclaracaoGlobal#getTipoRetorno()
+   * @see #getDeclaracaoGlobal()
+   * @generated
+   */
+  EReference getDeclaracaoGlobal_TipoRetorno();
+
+  /**
+   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.Variavel <em>Variavel</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Variavel</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Variavel
+   * @generated
+   */
+  EClass getVariavel();
+
+  /**
+   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.Variavel#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Id</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Variavel#getId()
+   * @see #getVariavel()
+   * @generated
+   */
+  EReference getVariavel_Id();
+
+  /**
+   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.Variavel#getTipoVar <em>Tipo Var</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Tipo Var</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Variavel#getTipoVar()
+   * @see #getVariavel()
+   * @generated
+   */
+  EReference getVariavel_TipoVar();
+
+  /**
+   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.Identificador <em>Identificador</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Identificador</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Identificador
+   * @generated
+   */
+  EClass getIdentificador();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link br.ufscar.dc.compiladores.t5.t5.Identificador#getDimensoes <em>Dimensoes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Dimensoes</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Identificador#getDimensoes()
+   * @see #getIdentificador()
+   * @generated
+   */
+  EReference getIdentificador_Dimensoes();
+
+  /**
+   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.Dimensao <em>Dimensao</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Dimensao</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Dimensao
+   * @generated
+   */
+  EClass getDimensao();
+
+  /**
+   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.Dimensao#getExp <em>Exp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Exp</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Dimensao#getExp()
+   * @see #getDimensao()
+   * @generated
+   */
+  EReference getDimensao_Exp();
+
+  /**
+   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.Tipo <em>Tipo</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Tipo</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Tipo
+   * @generated
+   */
+  EClass getTipo();
+
+  /**
+   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.Tipo#getRegistro <em>Registro</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Registro</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Tipo#getRegistro()
+   * @see #getTipo()
+   * @generated
+   */
+  EReference getTipo_Registro();
+
+  /**
+   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.Tipo#getTipoExt <em>Tipo Ext</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Tipo Ext</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Tipo#getTipoExt()
+   * @see #getTipo()
+   * @generated
+   */
+  EReference getTipo_TipoExt();
+
+  /**
+   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.Registro <em>Registro</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Registro</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Registro
+   * @generated
+   */
+  EClass getRegistro();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link br.ufscar.dc.compiladores.t5.t5.Registro#getCampos <em>Campos</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Campos</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Registro#getCampos()
+   * @see #getRegistro()
+   * @generated
+   */
+  EReference getRegistro_Campos();
+
+  /**
+   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.TipoEstendido <em>Tipo Estendido</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Tipo Estendido</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.TipoEstendido
+   * @generated
+   */
+  EClass getTipoEstendido();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.ufscar.dc.compiladores.t5.t5.TipoEstendido#getBasic <em>Basic</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Basic</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.TipoEstendido#getBasic()
+   * @see #getTipoEstendido()
+   * @generated
+   */
+  EAttribute getTipoEstendido_Basic();
+
+  /**
+   * Returns the meta object for the reference '{@link br.ufscar.dc.compiladores.t5.t5.TipoEstendido#getRef <em>Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Ref</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.TipoEstendido#getRef()
+   * @see #getTipoEstendido()
+   * @generated
+   */
+  EReference getTipoEstendido_Ref();
+
+  /**
+   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.Parametros <em>Parametros</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Parametros</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Parametros
+   * @generated
+   */
+  EClass getParametros();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link br.ufscar.dc.compiladores.t5.t5.Parametros#getParametro <em>Parametro</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Parametro</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Parametros#getParametro()
+   * @see #getParametros()
+   * @generated
+   */
+  EReference getParametros_Parametro();
+
+  /**
+   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.Parametro <em>Parametro</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Parametro</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Parametro
+   * @generated
+   */
+  EClass getParametro();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link br.ufscar.dc.compiladores.t5.t5.Parametro#getIds <em>Ids</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Ids</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Parametro#getIds()
+   * @see #getParametro()
+   * @generated
+   */
+  EReference getParametro_Ids();
+
+  /**
+   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.Parametro#getTipoParam <em>Tipo Param</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Tipo Param</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Parametro#getTipoParam()
+   * @see #getParametro()
+   * @generated
+   */
+  EReference getParametro_TipoParam();
+
+  /**
+   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.Corpo <em>Corpo</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Corpo</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Corpo
+   * @generated
+   */
+  EClass getCorpo();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link br.ufscar.dc.compiladores.t5.t5.Corpo#getLocais <em>Locais</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Locais</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Corpo#getLocais()
+   * @see #getCorpo()
+   * @generated
+   */
+  EReference getCorpo_Locais();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link br.ufscar.dc.compiladores.t5.t5.Corpo#getComandos <em>Comandos</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Comandos</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Corpo#getComandos()
+   * @see #getCorpo()
+   * @generated
+   */
+  EReference getCorpo_Comandos();
+
+  /**
+   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.Comando <em>Comando</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Comando</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Comando
+   * @generated
+   */
+  EClass getComando();
+
+  /**
+   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.ComandoLeia <em>Comando Leia</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Comando Leia</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoLeia
+   * @generated
+   */
+  EClass getComandoLeia();
+
+  /**
+   * Returns the meta object for the reference '{@link br.ufscar.dc.compiladores.t5.t5.ComandoLeia#getAlvo <em>Alvo</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Alvo</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoLeia#getAlvo()
+   * @see #getComandoLeia()
+   * @generated
+   */
+  EReference getComandoLeia_Alvo();
+
+  /**
+   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.ComandoEscreva <em>Comando Escreva</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Comando Escreva</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoEscreva
+   * @generated
+   */
+  EClass getComandoEscreva();
+
+  /**
+   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.ComandoEscreva#getExp <em>Exp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Exp</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoEscreva#getExp()
+   * @see #getComandoEscreva()
+   * @generated
+   */
+  EReference getComandoEscreva_Exp();
+
+  /**
+   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.ComandoSe <em>Comando Se</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Comando Se</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoSe
+   * @generated
+   */
+  EClass getComandoSe();
+
+  /**
+   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.ComandoSe#getCond <em>Cond</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Cond</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoSe#getCond()
+   * @see #getComandoSe()
+   * @generated
+   */
+  EReference getComandoSe_Cond();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link br.ufscar.dc.compiladores.t5.t5.ComandoSe#getComandos <em>Comandos</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Comandos</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoSe#getComandos()
+   * @see #getComandoSe()
+   * @generated
+   */
+  EReference getComandoSe_Comandos();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link br.ufscar.dc.compiladores.t5.t5.ComandoSe#getComandosElse <em>Comandos Else</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Comandos Else</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoSe#getComandosElse()
+   * @see #getComandoSe()
+   * @generated
+   */
+  EReference getComandoSe_ComandosElse();
+
+  /**
+   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.ComandoCaso <em>Comando Caso</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Comando Caso</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoCaso
+   * @generated
+   */
+  EClass getComandoCaso();
+
+  /**
+   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.ComandoCaso#getExp <em>Exp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Exp</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoCaso#getExp()
+   * @see #getComandoCaso()
+   * @generated
+   */
+  EReference getComandoCaso_Exp();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link br.ufscar.dc.compiladores.t5.t5.ComandoCaso#getSelecao <em>Selecao</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Selecao</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoCaso#getSelecao()
+   * @see #getComandoCaso()
+   * @generated
+   */
+  EReference getComandoCaso_Selecao();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link br.ufscar.dc.compiladores.t5.t5.ComandoCaso#getComandosElse <em>Comandos Else</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Comandos Else</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoCaso#getComandosElse()
+   * @see #getComandoCaso()
+   * @generated
+   */
+  EReference getComandoCaso_ComandosElse();
+
+  /**
+   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.ComandoPara <em>Comando Para</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Comando Para</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoPara
+   * @generated
+   */
+  EClass getComandoPara();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.ufscar.dc.compiladores.t5.t5.ComandoPara#getVar <em>Var</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Var</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoPara#getVar()
+   * @see #getComandoPara()
+   * @generated
+   */
+  EAttribute getComandoPara_Var();
+
+  /**
+   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.ComandoPara#getInicio <em>Inicio</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Inicio</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoPara#getInicio()
+   * @see #getComandoPara()
+   * @generated
+   */
+  EReference getComandoPara_Inicio();
+
+  /**
+   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.ComandoPara#getFim <em>Fim</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Fim</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoPara#getFim()
+   * @see #getComandoPara()
+   * @generated
+   */
+  EReference getComandoPara_Fim();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link br.ufscar.dc.compiladores.t5.t5.ComandoPara#getComandos <em>Comandos</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Comandos</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoPara#getComandos()
+   * @see #getComandoPara()
+   * @generated
+   */
+  EReference getComandoPara_Comandos();
+
+  /**
+   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.ComandoEnquanto <em>Comando Enquanto</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Comando Enquanto</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoEnquanto
+   * @generated
+   */
+  EClass getComandoEnquanto();
+
+  /**
+   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.ComandoEnquanto#getCond <em>Cond</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Cond</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoEnquanto#getCond()
+   * @see #getComandoEnquanto()
+   * @generated
+   */
+  EReference getComandoEnquanto_Cond();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link br.ufscar.dc.compiladores.t5.t5.ComandoEnquanto#getComandos <em>Comandos</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Comandos</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoEnquanto#getComandos()
+   * @see #getComandoEnquanto()
+   * @generated
+   */
+  EReference getComandoEnquanto_Comandos();
+
+  /**
+   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.ComandoFaca <em>Comando Faca</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Comando Faca</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoFaca
+   * @generated
+   */
+  EClass getComandoFaca();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link br.ufscar.dc.compiladores.t5.t5.ComandoFaca#getComandos <em>Comandos</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Comandos</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoFaca#getComandos()
+   * @see #getComandoFaca()
+   * @generated
+   */
+  EReference getComandoFaca_Comandos();
+
+  /**
+   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.ComandoFaca#getCond <em>Cond</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Cond</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoFaca#getCond()
+   * @see #getComandoFaca()
+   * @generated
+   */
+  EReference getComandoFaca_Cond();
+
+  /**
+   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.ComandoAtribuicao <em>Comando Atribuicao</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Comando Atribuicao</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoAtribuicao
+   * @generated
+   */
+  EClass getComandoAtribuicao();
+
+  /**
+   * Returns the meta object for the reference '{@link br.ufscar.dc.compiladores.t5.t5.ComandoAtribuicao#getTarget <em>Target</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Target</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoAtribuicao#getTarget()
+   * @see #getComandoAtribuicao()
+   * @generated
+   */
+  EReference getComandoAtribuicao_Target();
+
+  /**
+   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.ComandoAtribuicao#getValor <em>Valor</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Valor</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoAtribuicao#getValor()
+   * @see #getComandoAtribuicao()
+   * @generated
+   */
+  EReference getComandoAtribuicao_Valor();
+
+  /**
+   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.ComandoChamada <em>Comando Chamada</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Comando Chamada</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoChamada
+   * @generated
+   */
+  EClass getComandoChamada();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.ufscar.dc.compiladores.t5.t5.ComandoChamada#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoChamada#getName()
+   * @see #getComandoChamada()
+   * @generated
+   */
+  EAttribute getComandoChamada_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link br.ufscar.dc.compiladores.t5.t5.ComandoChamada#getArgs <em>Args</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Args</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoChamada#getArgs()
+   * @see #getComandoChamada()
+   * @generated
+   */
+  EReference getComandoChamada_Args();
+
+  /**
+   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.ComandoRetorne <em>Comando Retorne</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Comando Retorne</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoRetorne
+   * @generated
+   */
+  EClass getComandoRetorne();
+
+  /**
+   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.ComandoRetorne#getExp <em>Exp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Exp</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ComandoRetorne#getExp()
+   * @see #getComandoRetorne()
+   * @generated
+   */
+  EReference getComandoRetorne_Exp();
+
+  /**
+   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.Selecao <em>Selecao</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Selecao</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Selecao
+   * @generated
+   */
+  EClass getSelecao();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link br.ufscar.dc.compiladores.t5.t5.Selecao#getItens <em>Itens</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Itens</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Selecao#getItens()
+   * @see #getSelecao()
+   * @generated
+   */
+  EReference getSelecao_Itens();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link br.ufscar.dc.compiladores.t5.t5.Selecao#getComandos <em>Comandos</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Comandos</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Selecao#getComandos()
+   * @see #getSelecao()
+   * @generated
+   */
+  EReference getSelecao_Comandos();
+
+  /**
+   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.ItemSelecao <em>Item Selecao</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Item Selecao</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ItemSelecao
+   * @generated
+   */
+  EClass getItemSelecao();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link br.ufscar.dc.compiladores.t5.t5.ItemSelecao#getFaixas <em>Faixas</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Faixas</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ItemSelecao#getFaixas()
+   * @see #getItemSelecao()
+   * @generated
+   */
+  EReference getItemSelecao_Faixas();
+
+  /**
+   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.NumeroIntervalo <em>Numero Intervalo</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Numero Intervalo</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.NumeroIntervalo
+   * @generated
+   */
+  EClass getNumeroIntervalo();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.ufscar.dc.compiladores.t5.t5.NumeroIntervalo#isSinal <em>Sinal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Sinal</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.NumeroIntervalo#isSinal()
+   * @see #getNumeroIntervalo()
+   * @generated
+   */
+  EAttribute getNumeroIntervalo_Sinal();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.ufscar.dc.compiladores.t5.t5.NumeroIntervalo#getStart <em>Start</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Start</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.NumeroIntervalo#getStart()
+   * @see #getNumeroIntervalo()
+   * @generated
+   */
+  EAttribute getNumeroIntervalo_Start();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.ufscar.dc.compiladores.t5.t5.NumeroIntervalo#getEnd <em>End</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>End</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.NumeroIntervalo#getEnd()
+   * @see #getNumeroIntervalo()
+   * @generated
+   */
+  EAttribute getNumeroIntervalo_End();
 
   /**
    * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.ExpressaoAritmetica <em>Expressao Aritmetica</em>}'.
@@ -848,26 +2253,26 @@ public interface T5Package extends EPackage
   EClass getExpressaoAritmetica();
 
   /**
-   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.ExpressaoAritmetica#getTermo1 <em>Termo1</em>}'.
+   * Returns the meta object for the containment reference list '{@link br.ufscar.dc.compiladores.t5.t5.ExpressaoAritmetica#getTermos <em>Termos</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Termo1</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.ExpressaoAritmetica#getTermo1()
+   * @return the meta object for the containment reference list '<em>Termos</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ExpressaoAritmetica#getTermos()
    * @see #getExpressaoAritmetica()
    * @generated
    */
-  EReference getExpressaoAritmetica_Termo1();
+  EReference getExpressaoAritmetica_Termos();
 
   /**
-   * Returns the meta object for the containment reference list '{@link br.ufscar.dc.compiladores.t5.t5.ExpressaoAritmetica#getOutrosTermos <em>Outros Termos</em>}'.
+   * Returns the meta object for the containment reference list '{@link br.ufscar.dc.compiladores.t5.t5.ExpressaoAritmetica#getOutros <em>Outros</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Outros Termos</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.ExpressaoAritmetica#getOutrosTermos()
+   * @return the meta object for the containment reference list '<em>Outros</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ExpressaoAritmetica#getOutros()
    * @see #getExpressaoAritmetica()
    * @generated
    */
-  EReference getExpressaoAritmetica_OutrosTermos();
+  EReference getExpressaoAritmetica_Outros();
 
   /**
    * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.OutroTermoAritmetico <em>Outro Termo Aritmetico</em>}'.
@@ -880,15 +2285,15 @@ public interface T5Package extends EPackage
   EClass getOutroTermoAritmetico();
 
   /**
-   * Returns the meta object for the attribute '{@link br.ufscar.dc.compiladores.t5.t5.OutroTermoAritmetico#getOperador <em>Operador</em>}'.
+   * Returns the meta object for the attribute '{@link br.ufscar.dc.compiladores.t5.t5.OutroTermoAritmetico#getOp <em>Op</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Operador</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.OutroTermoAritmetico#getOperador()
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.OutroTermoAritmetico#getOp()
    * @see #getOutroTermoAritmetico()
    * @generated
    */
-  EAttribute getOutroTermoAritmetico_Operador();
+  EAttribute getOutroTermoAritmetico_Op();
 
   /**
    * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.OutroTermoAritmetico#getTermo <em>Termo</em>}'.
@@ -912,26 +2317,26 @@ public interface T5Package extends EPackage
   EClass getTermoAritmetico();
 
   /**
-   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.TermoAritmetico#getFator1 <em>Fator1</em>}'.
+   * Returns the meta object for the containment reference list '{@link br.ufscar.dc.compiladores.t5.t5.TermoAritmetico#getFatores <em>Fatores</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Fator1</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.TermoAritmetico#getFator1()
+   * @return the meta object for the containment reference list '<em>Fatores</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.TermoAritmetico#getFatores()
    * @see #getTermoAritmetico()
    * @generated
    */
-  EReference getTermoAritmetico_Fator1();
+  EReference getTermoAritmetico_Fatores();
 
   /**
-   * Returns the meta object for the containment reference list '{@link br.ufscar.dc.compiladores.t5.t5.TermoAritmetico#getOutrosFatores <em>Outros Fatores</em>}'.
+   * Returns the meta object for the containment reference list '{@link br.ufscar.dc.compiladores.t5.t5.TermoAritmetico#getOutros <em>Outros</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Outros Fatores</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.TermoAritmetico#getOutrosFatores()
+   * @return the meta object for the containment reference list '<em>Outros</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.TermoAritmetico#getOutros()
    * @see #getTermoAritmetico()
    * @generated
    */
-  EReference getTermoAritmetico_OutrosFatores();
+  EReference getTermoAritmetico_Outros();
 
   /**
    * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.OutroFatorAritmetico <em>Outro Fator Aritmetico</em>}'.
@@ -944,15 +2349,15 @@ public interface T5Package extends EPackage
   EClass getOutroFatorAritmetico();
 
   /**
-   * Returns the meta object for the attribute '{@link br.ufscar.dc.compiladores.t5.t5.OutroFatorAritmetico#getOperador <em>Operador</em>}'.
+   * Returns the meta object for the attribute '{@link br.ufscar.dc.compiladores.t5.t5.OutroFatorAritmetico#getOp <em>Op</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Operador</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.OutroFatorAritmetico#getOperador()
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.OutroFatorAritmetico#getOp()
    * @see #getOutroFatorAritmetico()
    * @generated
    */
-  EAttribute getOutroFatorAritmetico_Operador();
+  EAttribute getOutroFatorAritmetico_Op();
 
   /**
    * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.OutroFatorAritmetico#getFator <em>Fator</em>}'.
@@ -976,67 +2381,101 @@ public interface T5Package extends EPackage
   EClass getFatorAritmetico();
 
   /**
-   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.FatorNumero <em>Fator Numero</em>}'.
+   * Returns the meta object for the reference '{@link br.ufscar.dc.compiladores.t5.t5.FatorAritmetico#getRef <em>Ref</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Fator Numero</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.FatorNumero
+   * @return the meta object for the reference '<em>Ref</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.FatorAritmetico#getRef()
+   * @see #getFatorAritmetico()
    * @generated
    */
-  EClass getFatorNumero();
+  EReference getFatorAritmetico_Ref();
 
   /**
-   * Returns the meta object for the attribute '{@link br.ufscar.dc.compiladores.t5.t5.FatorNumero#getNumero <em>Numero</em>}'.
+   * Returns the meta object for the attribute '{@link br.ufscar.dc.compiladores.t5.t5.FatorAritmetico#getNumero <em>Numero</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Numero</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.FatorNumero#getNumero()
-   * @see #getFatorNumero()
+   * @see br.ufscar.dc.compiladores.t5.t5.FatorAritmetico#getNumero()
+   * @see #getFatorAritmetico()
    * @generated
    */
-  EAttribute getFatorNumero_Numero();
+  EAttribute getFatorAritmetico_Numero();
 
   /**
-   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.FatorVariavel <em>Fator Variavel</em>}'.
+   * Returns the meta object for the attribute '{@link br.ufscar.dc.compiladores.t5.t5.FatorAritmetico#getReal <em>Real</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Fator Variavel</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.FatorVariavel
+   * @return the meta object for the attribute '<em>Real</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.FatorAritmetico#getReal()
+   * @see #getFatorAritmetico()
    * @generated
    */
-  EClass getFatorVariavel();
+  EAttribute getFatorAritmetico_Real();
 
   /**
-   * Returns the meta object for the reference '{@link br.ufscar.dc.compiladores.t5.t5.FatorVariavel#getVariavel <em>Variavel</em>}'.
+   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.FatorAritmetico#getExp <em>Exp</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Variavel</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.FatorVariavel#getVariavel()
-   * @see #getFatorVariavel()
+   * @return the meta object for the containment reference '<em>Exp</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.FatorAritmetico#getExp()
+   * @see #getFatorAritmetico()
    * @generated
    */
-  EReference getFatorVariavel_Variavel();
+  EReference getFatorAritmetico_Exp();
 
   /**
-   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.FatorSubExpressao <em>Fator Sub Expressao</em>}'.
+   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.Expressao <em>Expressao</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Fator Sub Expressao</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.FatorSubExpressao
+   * @return the meta object for class '<em>Expressao</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Expressao
    * @generated
    */
-  EClass getFatorSubExpressao();
+  EClass getExpressao();
 
   /**
-   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.FatorSubExpressao#getExpressao <em>Expressao</em>}'.
+   * Returns the meta object for the containment reference list '{@link br.ufscar.dc.compiladores.t5.t5.Expressao#getLogicos <em>Logicos</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expressao</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.FatorSubExpressao#getExpressao()
-   * @see #getFatorSubExpressao()
+   * @return the meta object for the containment reference list '<em>Logicos</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Expressao#getLogicos()
+   * @see #getExpressao()
    * @generated
    */
-  EReference getFatorSubExpressao_Expressao();
+  EReference getExpressao_Logicos();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.ufscar.dc.compiladores.t5.t5.Expressao#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Expressao#getOp()
+   * @see #getExpressao()
+   * @generated
+   */
+  EAttribute getExpressao_Op();
+
+  /**
+   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.TermoLogico <em>Termo Logico</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Termo Logico</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.TermoLogico
+   * @generated
+   */
+  EClass getTermoLogico();
+
+  /**
+   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.TermoLogico#getRel <em>Rel</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Rel</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.TermoLogico#getRel()
+   * @see #getTermoLogico()
+   * @generated
+   */
+  EReference getTermoLogico_Rel();
 
   /**
    * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.ExpressaoRelacional <em>Expressao Relacional</em>}'.
@@ -1049,312 +2488,37 @@ public interface T5Package extends EPackage
   EClass getExpressaoRelacional();
 
   /**
-   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.ExpressaoRelacional#getTermo1 <em>Termo1</em>}'.
+   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.ExpressaoRelacional#getLeft <em>Left</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Termo1</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.ExpressaoRelacional#getTermo1()
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ExpressaoRelacional#getLeft()
    * @see #getExpressaoRelacional()
    * @generated
    */
-  EReference getExpressaoRelacional_Termo1();
+  EReference getExpressaoRelacional_Left();
 
   /**
-   * Returns the meta object for the containment reference list '{@link br.ufscar.dc.compiladores.t5.t5.ExpressaoRelacional#getOutrosTermos <em>Outros Termos</em>}'.
+   * Returns the meta object for the attribute '{@link br.ufscar.dc.compiladores.t5.t5.ExpressaoRelacional#getOp <em>Op</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Outros Termos</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.ExpressaoRelacional#getOutrosTermos()
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ExpressaoRelacional#getOp()
    * @see #getExpressaoRelacional()
    * @generated
    */
-  EReference getExpressaoRelacional_OutrosTermos();
+  EAttribute getExpressaoRelacional_Op();
 
   /**
-   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.OutroTermoRelacional <em>Outro Termo Relacional</em>}'.
+   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.ExpressaoRelacional#getRight <em>Right</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Outro Termo Relacional</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.OutroTermoRelacional
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.ExpressaoRelacional#getRight()
+   * @see #getExpressaoRelacional()
    * @generated
    */
-  EClass getOutroTermoRelacional();
-
-  /**
-   * Returns the meta object for the attribute '{@link br.ufscar.dc.compiladores.t5.t5.OutroTermoRelacional#getOperador <em>Operador</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Operador</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.OutroTermoRelacional#getOperador()
-   * @see #getOutroTermoRelacional()
-   * @generated
-   */
-  EAttribute getOutroTermoRelacional_Operador();
-
-  /**
-   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.OutroTermoRelacional#getTermo <em>Termo</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Termo</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.OutroTermoRelacional#getTermo()
-   * @see #getOutroTermoRelacional()
-   * @generated
-   */
-  EReference getOutroTermoRelacional_Termo();
-
-  /**
-   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.TermoRelacional <em>Termo Relacional</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Termo Relacional</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.TermoRelacional
-   * @generated
-   */
-  EClass getTermoRelacional();
-
-  /**
-   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.TermoComparacaoRelacional <em>Termo Comparacao Relacional</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Termo Comparacao Relacional</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.TermoComparacaoRelacional
-   * @generated
-   */
-  EClass getTermoComparacaoRelacional();
-
-  /**
-   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.TermoComparacaoRelacional#getExp1 <em>Exp1</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Exp1</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.TermoComparacaoRelacional#getExp1()
-   * @see #getTermoComparacaoRelacional()
-   * @generated
-   */
-  EReference getTermoComparacaoRelacional_Exp1();
-
-  /**
-   * Returns the meta object for the attribute '{@link br.ufscar.dc.compiladores.t5.t5.TermoComparacaoRelacional#getOpRel <em>Op Rel</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op Rel</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.TermoComparacaoRelacional#getOpRel()
-   * @see #getTermoComparacaoRelacional()
-   * @generated
-   */
-  EAttribute getTermoComparacaoRelacional_OpRel();
-
-  /**
-   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.TermoComparacaoRelacional#getExp2 <em>Exp2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Exp2</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.TermoComparacaoRelacional#getExp2()
-   * @see #getTermoComparacaoRelacional()
-   * @generated
-   */
-  EReference getTermoComparacaoRelacional_Exp2();
-
-  /**
-   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.TermoSubExpressaoRelacional <em>Termo Sub Expressao Relacional</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Termo Sub Expressao Relacional</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.TermoSubExpressaoRelacional
-   * @generated
-   */
-  EClass getTermoSubExpressaoRelacional();
-
-  /**
-   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.TermoSubExpressaoRelacional#getExpRel <em>Exp Rel</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Exp Rel</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.TermoSubExpressaoRelacional#getExpRel()
-   * @see #getTermoSubExpressaoRelacional()
-   * @generated
-   */
-  EReference getTermoSubExpressaoRelacional_ExpRel();
-
-  /**
-   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.Comando <em>Comando</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Comando</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.Comando
-   * @generated
-   */
-  EClass getComando();
-
-  /**
-   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.ComandoAtribuicao <em>Comando Atribuicao</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Comando Atribuicao</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.ComandoAtribuicao
-   * @generated
-   */
-  EClass getComandoAtribuicao();
-
-  /**
-   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.ComandoAtribuicao#getExp <em>Exp</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Exp</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.ComandoAtribuicao#getExp()
-   * @see #getComandoAtribuicao()
-   * @generated
-   */
-  EReference getComandoAtribuicao_Exp();
-
-  /**
-   * Returns the meta object for the reference '{@link br.ufscar.dc.compiladores.t5.t5.ComandoAtribuicao#getVariavel <em>Variavel</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Variavel</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.ComandoAtribuicao#getVariavel()
-   * @see #getComandoAtribuicao()
-   * @generated
-   */
-  EReference getComandoAtribuicao_Variavel();
-
-  /**
-   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.ComandoEntrada <em>Comando Entrada</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Comando Entrada</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.ComandoEntrada
-   * @generated
-   */
-  EClass getComandoEntrada();
-
-  /**
-   * Returns the meta object for the reference '{@link br.ufscar.dc.compiladores.t5.t5.ComandoEntrada#getVariavel <em>Variavel</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Variavel</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.ComandoEntrada#getVariavel()
-   * @see #getComandoEntrada()
-   * @generated
-   */
-  EReference getComandoEntrada_Variavel();
-
-  /**
-   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.ComandoSaida <em>Comando Saida</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Comando Saida</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.ComandoSaida
-   * @generated
-   */
-  EClass getComandoSaida();
-
-  /**
-   * Returns the meta object for the reference '{@link br.ufscar.dc.compiladores.t5.t5.ComandoSaida#getVariavel <em>Variavel</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Variavel</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.ComandoSaida#getVariavel()
-   * @see #getComandoSaida()
-   * @generated
-   */
-  EReference getComandoSaida_Variavel();
-
-  /**
-   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.ComandoCondicao <em>Comando Condicao</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Comando Condicao</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.ComandoCondicao
-   * @generated
-   */
-  EClass getComandoCondicao();
-
-  /**
-   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.ComandoCondicao#getExp <em>Exp</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Exp</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.ComandoCondicao#getExp()
-   * @see #getComandoCondicao()
-   * @generated
-   */
-  EReference getComandoCondicao_Exp();
-
-  /**
-   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.ComandoCondicao#getCmd1 <em>Cmd1</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Cmd1</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.ComandoCondicao#getCmd1()
-   * @see #getComandoCondicao()
-   * @generated
-   */
-  EReference getComandoCondicao_Cmd1();
-
-  /**
-   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.ComandoCondicao#getCmd2 <em>Cmd2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Cmd2</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.ComandoCondicao#getCmd2()
-   * @see #getComandoCondicao()
-   * @generated
-   */
-  EReference getComandoCondicao_Cmd2();
-
-  /**
-   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.ComandoRepeticao <em>Comando Repeticao</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Comando Repeticao</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.ComandoRepeticao
-   * @generated
-   */
-  EClass getComandoRepeticao();
-
-  /**
-   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.ComandoRepeticao#getExp <em>Exp</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Exp</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.ComandoRepeticao#getExp()
-   * @see #getComandoRepeticao()
-   * @generated
-   */
-  EReference getComandoRepeticao_Exp();
-
-  /**
-   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.ComandoRepeticao#getCmd <em>Cmd</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Cmd</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.ComandoRepeticao#getCmd()
-   * @see #getComandoRepeticao()
-   * @generated
-   */
-  EReference getComandoRepeticao_Cmd();
-
-  /**
-   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.SubAlgoritmo <em>Sub Algoritmo</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Sub Algoritmo</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.SubAlgoritmo
-   * @generated
-   */
-  EClass getSubAlgoritmo();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link br.ufscar.dc.compiladores.t5.t5.SubAlgoritmo#getComandos <em>Comandos</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Comandos</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.SubAlgoritmo#getComandos()
-   * @see #getSubAlgoritmo()
-   * @generated
-   */
-  EReference getSubAlgoritmo_Comandos();
+  EReference getExpressaoRelacional_Right();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1380,6 +2544,24 @@ public interface T5Package extends EPackage
   interface Literals
   {
     /**
+     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ModelImpl <em>Model</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.ModelImpl
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getModel()
+     * @generated
+     */
+    EClass MODEL = eINSTANCE.getModel();
+
+    /**
+     * The meta object literal for the '<em><b>Programa</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__PROGRAMA = eINSTANCE.getModel_Programa();
+
+    /**
      * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ProgramaImpl <em>Programa</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1398,12 +2580,12 @@ public interface T5Package extends EPackage
     EReference PROGRAMA__DECLARACOES = eINSTANCE.getPrograma_Declaracoes();
 
     /**
-     * The meta object literal for the '<em><b>Comandos</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Corpo</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PROGRAMA__COMANDOS = eINSTANCE.getPrograma_Comandos();
+    EReference PROGRAMA__CORPO = eINSTANCE.getPrograma_Corpo();
 
     /**
      * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.DeclaracaoImpl <em>Declaracao</em>}' class.
@@ -1424,12 +2606,638 @@ public interface T5Package extends EPackage
     EAttribute DECLARACAO__NAME = eINSTANCE.getDeclaracao_Name();
 
     /**
-     * The meta object literal for the '<em><b>Tipo</b></em>' attribute feature.
+     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.DeclaracaoLocalImpl <em>Declaracao Local</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.DeclaracaoLocalImpl
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getDeclaracaoLocal()
+     * @generated
+     */
+    EClass DECLARACAO_LOCAL = eINSTANCE.getDeclaracaoLocal();
+
+    /**
+     * The meta object literal for the '<em><b>Variaveis</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DECLARACAO__TIPO = eINSTANCE.getDeclaracao_Tipo();
+    EReference DECLARACAO_LOCAL__VARIAVEIS = eINSTANCE.getDeclaracaoLocal_Variaveis();
+
+    /**
+     * The meta object literal for the '<em><b>Tipo Basico</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DECLARACAO_LOCAL__TIPO_BASICO = eINSTANCE.getDeclaracaoLocal_TipoBasico();
+
+    /**
+     * The meta object literal for the '<em><b>Valor</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DECLARACAO_LOCAL__VALOR = eINSTANCE.getDeclaracaoLocal_Valor();
+
+    /**
+     * The meta object literal for the '<em><b>Tipo Def</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECLARACAO_LOCAL__TIPO_DEF = eINSTANCE.getDeclaracaoLocal_TipoDef();
+
+    /**
+     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.DeclaracaoGlobalImpl <em>Declaracao Global</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.DeclaracaoGlobalImpl
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getDeclaracaoGlobal()
+     * @generated
+     */
+    EClass DECLARACAO_GLOBAL = eINSTANCE.getDeclaracaoGlobal();
+
+    /**
+     * The meta object literal for the '<em><b>Parametros</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECLARACAO_GLOBAL__PARAMETROS = eINSTANCE.getDeclaracaoGlobal_Parametros();
+
+    /**
+     * The meta object literal for the '<em><b>Corpo</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECLARACAO_GLOBAL__CORPO = eINSTANCE.getDeclaracaoGlobal_Corpo();
+
+    /**
+     * The meta object literal for the '<em><b>Tipo Retorno</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECLARACAO_GLOBAL__TIPO_RETORNO = eINSTANCE.getDeclaracaoGlobal_TipoRetorno();
+
+    /**
+     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.VariavelImpl <em>Variavel</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.VariavelImpl
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getVariavel()
+     * @generated
+     */
+    EClass VARIAVEL = eINSTANCE.getVariavel();
+
+    /**
+     * The meta object literal for the '<em><b>Id</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VARIAVEL__ID = eINSTANCE.getVariavel_Id();
+
+    /**
+     * The meta object literal for the '<em><b>Tipo Var</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VARIAVEL__TIPO_VAR = eINSTANCE.getVariavel_TipoVar();
+
+    /**
+     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.IdentificadorImpl <em>Identificador</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.IdentificadorImpl
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getIdentificador()
+     * @generated
+     */
+    EClass IDENTIFICADOR = eINSTANCE.getIdentificador();
+
+    /**
+     * The meta object literal for the '<em><b>Dimensoes</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IDENTIFICADOR__DIMENSOES = eINSTANCE.getIdentificador_Dimensoes();
+
+    /**
+     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.DimensaoImpl <em>Dimensao</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.DimensaoImpl
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getDimensao()
+     * @generated
+     */
+    EClass DIMENSAO = eINSTANCE.getDimensao();
+
+    /**
+     * The meta object literal for the '<em><b>Exp</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIMENSAO__EXP = eINSTANCE.getDimensao_Exp();
+
+    /**
+     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.TipoImpl <em>Tipo</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.TipoImpl
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getTipo()
+     * @generated
+     */
+    EClass TIPO = eINSTANCE.getTipo();
+
+    /**
+     * The meta object literal for the '<em><b>Registro</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TIPO__REGISTRO = eINSTANCE.getTipo_Registro();
+
+    /**
+     * The meta object literal for the '<em><b>Tipo Ext</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TIPO__TIPO_EXT = eINSTANCE.getTipo_TipoExt();
+
+    /**
+     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.RegistroImpl <em>Registro</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.RegistroImpl
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getRegistro()
+     * @generated
+     */
+    EClass REGISTRO = eINSTANCE.getRegistro();
+
+    /**
+     * The meta object literal for the '<em><b>Campos</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference REGISTRO__CAMPOS = eINSTANCE.getRegistro_Campos();
+
+    /**
+     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.TipoEstendidoImpl <em>Tipo Estendido</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.TipoEstendidoImpl
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getTipoEstendido()
+     * @generated
+     */
+    EClass TIPO_ESTENDIDO = eINSTANCE.getTipoEstendido();
+
+    /**
+     * The meta object literal for the '<em><b>Basic</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TIPO_ESTENDIDO__BASIC = eINSTANCE.getTipoEstendido_Basic();
+
+    /**
+     * The meta object literal for the '<em><b>Ref</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TIPO_ESTENDIDO__REF = eINSTANCE.getTipoEstendido_Ref();
+
+    /**
+     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ParametrosImpl <em>Parametros</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.ParametrosImpl
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getParametros()
+     * @generated
+     */
+    EClass PARAMETROS = eINSTANCE.getParametros();
+
+    /**
+     * The meta object literal for the '<em><b>Parametro</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PARAMETROS__PARAMETRO = eINSTANCE.getParametros_Parametro();
+
+    /**
+     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ParametroImpl <em>Parametro</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.ParametroImpl
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getParametro()
+     * @generated
+     */
+    EClass PARAMETRO = eINSTANCE.getParametro();
+
+    /**
+     * The meta object literal for the '<em><b>Ids</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PARAMETRO__IDS = eINSTANCE.getParametro_Ids();
+
+    /**
+     * The meta object literal for the '<em><b>Tipo Param</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PARAMETRO__TIPO_PARAM = eINSTANCE.getParametro_TipoParam();
+
+    /**
+     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.CorpoImpl <em>Corpo</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.CorpoImpl
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getCorpo()
+     * @generated
+     */
+    EClass CORPO = eINSTANCE.getCorpo();
+
+    /**
+     * The meta object literal for the '<em><b>Locais</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CORPO__LOCAIS = eINSTANCE.getCorpo_Locais();
+
+    /**
+     * The meta object literal for the '<em><b>Comandos</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CORPO__COMANDOS = eINSTANCE.getCorpo_Comandos();
+
+    /**
+     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoImpl <em>Comando</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoImpl
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComando()
+     * @generated
+     */
+    EClass COMANDO = eINSTANCE.getComando();
+
+    /**
+     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoLeiaImpl <em>Comando Leia</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoLeiaImpl
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoLeia()
+     * @generated
+     */
+    EClass COMANDO_LEIA = eINSTANCE.getComandoLeia();
+
+    /**
+     * The meta object literal for the '<em><b>Alvo</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMANDO_LEIA__ALVO = eINSTANCE.getComandoLeia_Alvo();
+
+    /**
+     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoEscrevaImpl <em>Comando Escreva</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoEscrevaImpl
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoEscreva()
+     * @generated
+     */
+    EClass COMANDO_ESCREVA = eINSTANCE.getComandoEscreva();
+
+    /**
+     * The meta object literal for the '<em><b>Exp</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMANDO_ESCREVA__EXP = eINSTANCE.getComandoEscreva_Exp();
+
+    /**
+     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoSeImpl <em>Comando Se</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoSeImpl
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoSe()
+     * @generated
+     */
+    EClass COMANDO_SE = eINSTANCE.getComandoSe();
+
+    /**
+     * The meta object literal for the '<em><b>Cond</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMANDO_SE__COND = eINSTANCE.getComandoSe_Cond();
+
+    /**
+     * The meta object literal for the '<em><b>Comandos</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMANDO_SE__COMANDOS = eINSTANCE.getComandoSe_Comandos();
+
+    /**
+     * The meta object literal for the '<em><b>Comandos Else</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMANDO_SE__COMANDOS_ELSE = eINSTANCE.getComandoSe_ComandosElse();
+
+    /**
+     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoCasoImpl <em>Comando Caso</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoCasoImpl
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoCaso()
+     * @generated
+     */
+    EClass COMANDO_CASO = eINSTANCE.getComandoCaso();
+
+    /**
+     * The meta object literal for the '<em><b>Exp</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMANDO_CASO__EXP = eINSTANCE.getComandoCaso_Exp();
+
+    /**
+     * The meta object literal for the '<em><b>Selecao</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMANDO_CASO__SELECAO = eINSTANCE.getComandoCaso_Selecao();
+
+    /**
+     * The meta object literal for the '<em><b>Comandos Else</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMANDO_CASO__COMANDOS_ELSE = eINSTANCE.getComandoCaso_ComandosElse();
+
+    /**
+     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoParaImpl <em>Comando Para</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoParaImpl
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoPara()
+     * @generated
+     */
+    EClass COMANDO_PARA = eINSTANCE.getComandoPara();
+
+    /**
+     * The meta object literal for the '<em><b>Var</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMANDO_PARA__VAR = eINSTANCE.getComandoPara_Var();
+
+    /**
+     * The meta object literal for the '<em><b>Inicio</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMANDO_PARA__INICIO = eINSTANCE.getComandoPara_Inicio();
+
+    /**
+     * The meta object literal for the '<em><b>Fim</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMANDO_PARA__FIM = eINSTANCE.getComandoPara_Fim();
+
+    /**
+     * The meta object literal for the '<em><b>Comandos</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMANDO_PARA__COMANDOS = eINSTANCE.getComandoPara_Comandos();
+
+    /**
+     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoEnquantoImpl <em>Comando Enquanto</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoEnquantoImpl
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoEnquanto()
+     * @generated
+     */
+    EClass COMANDO_ENQUANTO = eINSTANCE.getComandoEnquanto();
+
+    /**
+     * The meta object literal for the '<em><b>Cond</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMANDO_ENQUANTO__COND = eINSTANCE.getComandoEnquanto_Cond();
+
+    /**
+     * The meta object literal for the '<em><b>Comandos</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMANDO_ENQUANTO__COMANDOS = eINSTANCE.getComandoEnquanto_Comandos();
+
+    /**
+     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoFacaImpl <em>Comando Faca</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoFacaImpl
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoFaca()
+     * @generated
+     */
+    EClass COMANDO_FACA = eINSTANCE.getComandoFaca();
+
+    /**
+     * The meta object literal for the '<em><b>Comandos</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMANDO_FACA__COMANDOS = eINSTANCE.getComandoFaca_Comandos();
+
+    /**
+     * The meta object literal for the '<em><b>Cond</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMANDO_FACA__COND = eINSTANCE.getComandoFaca_Cond();
+
+    /**
+     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoAtribuicaoImpl <em>Comando Atribuicao</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoAtribuicaoImpl
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoAtribuicao()
+     * @generated
+     */
+    EClass COMANDO_ATRIBUICAO = eINSTANCE.getComandoAtribuicao();
+
+    /**
+     * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMANDO_ATRIBUICAO__TARGET = eINSTANCE.getComandoAtribuicao_Target();
+
+    /**
+     * The meta object literal for the '<em><b>Valor</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMANDO_ATRIBUICAO__VALOR = eINSTANCE.getComandoAtribuicao_Valor();
+
+    /**
+     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoChamadaImpl <em>Comando Chamada</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoChamadaImpl
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoChamada()
+     * @generated
+     */
+    EClass COMANDO_CHAMADA = eINSTANCE.getComandoChamada();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMANDO_CHAMADA__NAME = eINSTANCE.getComandoChamada_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Args</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMANDO_CHAMADA__ARGS = eINSTANCE.getComandoChamada_Args();
+
+    /**
+     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoRetorneImpl <em>Comando Retorne</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoRetorneImpl
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoRetorne()
+     * @generated
+     */
+    EClass COMANDO_RETORNE = eINSTANCE.getComandoRetorne();
+
+    /**
+     * The meta object literal for the '<em><b>Exp</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMANDO_RETORNE__EXP = eINSTANCE.getComandoRetorne_Exp();
+
+    /**
+     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.SelecaoImpl <em>Selecao</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.SelecaoImpl
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getSelecao()
+     * @generated
+     */
+    EClass SELECAO = eINSTANCE.getSelecao();
+
+    /**
+     * The meta object literal for the '<em><b>Itens</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SELECAO__ITENS = eINSTANCE.getSelecao_Itens();
+
+    /**
+     * The meta object literal for the '<em><b>Comandos</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SELECAO__COMANDOS = eINSTANCE.getSelecao_Comandos();
+
+    /**
+     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ItemSelecaoImpl <em>Item Selecao</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.ItemSelecaoImpl
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getItemSelecao()
+     * @generated
+     */
+    EClass ITEM_SELECAO = eINSTANCE.getItemSelecao();
+
+    /**
+     * The meta object literal for the '<em><b>Faixas</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ITEM_SELECAO__FAIXAS = eINSTANCE.getItemSelecao_Faixas();
+
+    /**
+     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.NumeroIntervaloImpl <em>Numero Intervalo</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.NumeroIntervaloImpl
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getNumeroIntervalo()
+     * @generated
+     */
+    EClass NUMERO_INTERVALO = eINSTANCE.getNumeroIntervalo();
+
+    /**
+     * The meta object literal for the '<em><b>Sinal</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NUMERO_INTERVALO__SINAL = eINSTANCE.getNumeroIntervalo_Sinal();
+
+    /**
+     * The meta object literal for the '<em><b>Start</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NUMERO_INTERVALO__START = eINSTANCE.getNumeroIntervalo_Start();
+
+    /**
+     * The meta object literal for the '<em><b>End</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NUMERO_INTERVALO__END = eINSTANCE.getNumeroIntervalo_End();
 
     /**
      * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ExpressaoAritmeticaImpl <em>Expressao Aritmetica</em>}' class.
@@ -1442,20 +3250,20 @@ public interface T5Package extends EPackage
     EClass EXPRESSAO_ARITMETICA = eINSTANCE.getExpressaoAritmetica();
 
     /**
-     * The meta object literal for the '<em><b>Termo1</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Termos</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPRESSAO_ARITMETICA__TERMO1 = eINSTANCE.getExpressaoAritmetica_Termo1();
+    EReference EXPRESSAO_ARITMETICA__TERMOS = eINSTANCE.getExpressaoAritmetica_Termos();
 
     /**
-     * The meta object literal for the '<em><b>Outros Termos</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Outros</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPRESSAO_ARITMETICA__OUTROS_TERMOS = eINSTANCE.getExpressaoAritmetica_OutrosTermos();
+    EReference EXPRESSAO_ARITMETICA__OUTROS = eINSTANCE.getExpressaoAritmetica_Outros();
 
     /**
      * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.OutroTermoAritmeticoImpl <em>Outro Termo Aritmetico</em>}' class.
@@ -1468,12 +3276,12 @@ public interface T5Package extends EPackage
     EClass OUTRO_TERMO_ARITMETICO = eINSTANCE.getOutroTermoAritmetico();
 
     /**
-     * The meta object literal for the '<em><b>Operador</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute OUTRO_TERMO_ARITMETICO__OPERADOR = eINSTANCE.getOutroTermoAritmetico_Operador();
+    EAttribute OUTRO_TERMO_ARITMETICO__OP = eINSTANCE.getOutroTermoAritmetico_Op();
 
     /**
      * The meta object literal for the '<em><b>Termo</b></em>' containment reference feature.
@@ -1494,20 +3302,20 @@ public interface T5Package extends EPackage
     EClass TERMO_ARITMETICO = eINSTANCE.getTermoAritmetico();
 
     /**
-     * The meta object literal for the '<em><b>Fator1</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Fatores</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TERMO_ARITMETICO__FATOR1 = eINSTANCE.getTermoAritmetico_Fator1();
+    EReference TERMO_ARITMETICO__FATORES = eINSTANCE.getTermoAritmetico_Fatores();
 
     /**
-     * The meta object literal for the '<em><b>Outros Fatores</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Outros</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TERMO_ARITMETICO__OUTROS_FATORES = eINSTANCE.getTermoAritmetico_OutrosFatores();
+    EReference TERMO_ARITMETICO__OUTROS = eINSTANCE.getTermoAritmetico_Outros();
 
     /**
      * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.OutroFatorAritmeticoImpl <em>Outro Fator Aritmetico</em>}' class.
@@ -1520,12 +3328,12 @@ public interface T5Package extends EPackage
     EClass OUTRO_FATOR_ARITMETICO = eINSTANCE.getOutroFatorAritmetico();
 
     /**
-     * The meta object literal for the '<em><b>Operador</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute OUTRO_FATOR_ARITMETICO__OPERADOR = eINSTANCE.getOutroFatorAritmetico_Operador();
+    EAttribute OUTRO_FATOR_ARITMETICO__OP = eINSTANCE.getOutroFatorAritmetico_Op();
 
     /**
      * The meta object literal for the '<em><b>Fator</b></em>' containment reference feature.
@@ -1546,14 +3354,12 @@ public interface T5Package extends EPackage
     EClass FATOR_ARITMETICO = eINSTANCE.getFatorAritmetico();
 
     /**
-     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.FatorNumeroImpl <em>Fator Numero</em>}' class.
+     * The meta object literal for the '<em><b>Ref</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see br.ufscar.dc.compiladores.t5.t5.impl.FatorNumeroImpl
-     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getFatorNumero()
      * @generated
      */
-    EClass FATOR_NUMERO = eINSTANCE.getFatorNumero();
+    EReference FATOR_ARITMETICO__REF = eINSTANCE.getFatorAritmetico_Ref();
 
     /**
      * The meta object literal for the '<em><b>Numero</b></em>' attribute feature.
@@ -1561,43 +3367,67 @@ public interface T5Package extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FATOR_NUMERO__NUMERO = eINSTANCE.getFatorNumero_Numero();
+    EAttribute FATOR_ARITMETICO__NUMERO = eINSTANCE.getFatorAritmetico_Numero();
 
     /**
-     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.FatorVariavelImpl <em>Fator Variavel</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see br.ufscar.dc.compiladores.t5.t5.impl.FatorVariavelImpl
-     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getFatorVariavel()
-     * @generated
-     */
-    EClass FATOR_VARIAVEL = eINSTANCE.getFatorVariavel();
-
-    /**
-     * The meta object literal for the '<em><b>Variavel</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Real</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FATOR_VARIAVEL__VARIAVEL = eINSTANCE.getFatorVariavel_Variavel();
+    EAttribute FATOR_ARITMETICO__REAL = eINSTANCE.getFatorAritmetico_Real();
 
     /**
-     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.FatorSubExpressaoImpl <em>Fator Sub Expressao</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see br.ufscar.dc.compiladores.t5.t5.impl.FatorSubExpressaoImpl
-     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getFatorSubExpressao()
-     * @generated
-     */
-    EClass FATOR_SUB_EXPRESSAO = eINSTANCE.getFatorSubExpressao();
-
-    /**
-     * The meta object literal for the '<em><b>Expressao</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Exp</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FATOR_SUB_EXPRESSAO__EXPRESSAO = eINSTANCE.getFatorSubExpressao_Expressao();
+    EReference FATOR_ARITMETICO__EXP = eINSTANCE.getFatorAritmetico_Exp();
+
+    /**
+     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ExpressaoImpl <em>Expressao</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.ExpressaoImpl
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getExpressao()
+     * @generated
+     */
+    EClass EXPRESSAO = eINSTANCE.getExpressao();
+
+    /**
+     * The meta object literal for the '<em><b>Logicos</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSAO__LOGICOS = eINSTANCE.getExpressao_Logicos();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPRESSAO__OP = eINSTANCE.getExpressao_Op();
+
+    /**
+     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.TermoLogicoImpl <em>Termo Logico</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.TermoLogicoImpl
+     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getTermoLogico()
+     * @generated
+     */
+    EClass TERMO_LOGICO = eINSTANCE.getTermoLogico();
+
+    /**
+     * The meta object literal for the '<em><b>Rel</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TERMO_LOGICO__REL = eINSTANCE.getTermoLogico_Rel();
 
     /**
      * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ExpressaoRelacionalImpl <em>Expressao Relacional</em>}' class.
@@ -1610,258 +3440,28 @@ public interface T5Package extends EPackage
     EClass EXPRESSAO_RELACIONAL = eINSTANCE.getExpressaoRelacional();
 
     /**
-     * The meta object literal for the '<em><b>Termo1</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPRESSAO_RELACIONAL__TERMO1 = eINSTANCE.getExpressaoRelacional_Termo1();
+    EReference EXPRESSAO_RELACIONAL__LEFT = eINSTANCE.getExpressaoRelacional_Left();
 
     /**
-     * The meta object literal for the '<em><b>Outros Termos</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPRESSAO_RELACIONAL__OUTROS_TERMOS = eINSTANCE.getExpressaoRelacional_OutrosTermos();
+    EAttribute EXPRESSAO_RELACIONAL__OP = eINSTANCE.getExpressaoRelacional_Op();
 
     /**
-     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.OutroTermoRelacionalImpl <em>Outro Termo Relacional</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see br.ufscar.dc.compiladores.t5.t5.impl.OutroTermoRelacionalImpl
-     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getOutroTermoRelacional()
-     * @generated
-     */
-    EClass OUTRO_TERMO_RELACIONAL = eINSTANCE.getOutroTermoRelacional();
-
-    /**
-     * The meta object literal for the '<em><b>Operador</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute OUTRO_TERMO_RELACIONAL__OPERADOR = eINSTANCE.getOutroTermoRelacional_Operador();
-
-    /**
-     * The meta object literal for the '<em><b>Termo</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference OUTRO_TERMO_RELACIONAL__TERMO = eINSTANCE.getOutroTermoRelacional_Termo();
-
-    /**
-     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.TermoRelacionalImpl <em>Termo Relacional</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see br.ufscar.dc.compiladores.t5.t5.impl.TermoRelacionalImpl
-     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getTermoRelacional()
-     * @generated
-     */
-    EClass TERMO_RELACIONAL = eINSTANCE.getTermoRelacional();
-
-    /**
-     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.TermoComparacaoRelacionalImpl <em>Termo Comparacao Relacional</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see br.ufscar.dc.compiladores.t5.t5.impl.TermoComparacaoRelacionalImpl
-     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getTermoComparacaoRelacional()
-     * @generated
-     */
-    EClass TERMO_COMPARACAO_RELACIONAL = eINSTANCE.getTermoComparacaoRelacional();
-
-    /**
-     * The meta object literal for the '<em><b>Exp1</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TERMO_COMPARACAO_RELACIONAL__EXP1 = eINSTANCE.getTermoComparacaoRelacional_Exp1();
-
-    /**
-     * The meta object literal for the '<em><b>Op Rel</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TERMO_COMPARACAO_RELACIONAL__OP_REL = eINSTANCE.getTermoComparacaoRelacional_OpRel();
-
-    /**
-     * The meta object literal for the '<em><b>Exp2</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TERMO_COMPARACAO_RELACIONAL__EXP2 = eINSTANCE.getTermoComparacaoRelacional_Exp2();
-
-    /**
-     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.TermoSubExpressaoRelacionalImpl <em>Termo Sub Expressao Relacional</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see br.ufscar.dc.compiladores.t5.t5.impl.TermoSubExpressaoRelacionalImpl
-     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getTermoSubExpressaoRelacional()
-     * @generated
-     */
-    EClass TERMO_SUB_EXPRESSAO_RELACIONAL = eINSTANCE.getTermoSubExpressaoRelacional();
-
-    /**
-     * The meta object literal for the '<em><b>Exp Rel</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TERMO_SUB_EXPRESSAO_RELACIONAL__EXP_REL = eINSTANCE.getTermoSubExpressaoRelacional_ExpRel();
-
-    /**
-     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoImpl <em>Comando</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoImpl
-     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComando()
-     * @generated
-     */
-    EClass COMANDO = eINSTANCE.getComando();
-
-    /**
-     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoAtribuicaoImpl <em>Comando Atribuicao</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoAtribuicaoImpl
-     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoAtribuicao()
-     * @generated
-     */
-    EClass COMANDO_ATRIBUICAO = eINSTANCE.getComandoAtribuicao();
-
-    /**
-     * The meta object literal for the '<em><b>Exp</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMANDO_ATRIBUICAO__EXP = eINSTANCE.getComandoAtribuicao_Exp();
-
-    /**
-     * The meta object literal for the '<em><b>Variavel</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMANDO_ATRIBUICAO__VARIAVEL = eINSTANCE.getComandoAtribuicao_Variavel();
-
-    /**
-     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoEntradaImpl <em>Comando Entrada</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoEntradaImpl
-     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoEntrada()
-     * @generated
-     */
-    EClass COMANDO_ENTRADA = eINSTANCE.getComandoEntrada();
-
-    /**
-     * The meta object literal for the '<em><b>Variavel</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMANDO_ENTRADA__VARIAVEL = eINSTANCE.getComandoEntrada_Variavel();
-
-    /**
-     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoSaidaImpl <em>Comando Saida</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoSaidaImpl
-     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoSaida()
-     * @generated
-     */
-    EClass COMANDO_SAIDA = eINSTANCE.getComandoSaida();
-
-    /**
-     * The meta object literal for the '<em><b>Variavel</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMANDO_SAIDA__VARIAVEL = eINSTANCE.getComandoSaida_Variavel();
-
-    /**
-     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoCondicaoImpl <em>Comando Condicao</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoCondicaoImpl
-     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoCondicao()
-     * @generated
-     */
-    EClass COMANDO_CONDICAO = eINSTANCE.getComandoCondicao();
-
-    /**
-     * The meta object literal for the '<em><b>Exp</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMANDO_CONDICAO__EXP = eINSTANCE.getComandoCondicao_Exp();
-
-    /**
-     * The meta object literal for the '<em><b>Cmd1</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMANDO_CONDICAO__CMD1 = eINSTANCE.getComandoCondicao_Cmd1();
-
-    /**
-     * The meta object literal for the '<em><b>Cmd2</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMANDO_CONDICAO__CMD2 = eINSTANCE.getComandoCondicao_Cmd2();
-
-    /**
-     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoRepeticaoImpl <em>Comando Repeticao</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see br.ufscar.dc.compiladores.t5.t5.impl.ComandoRepeticaoImpl
-     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoRepeticao()
-     * @generated
-     */
-    EClass COMANDO_REPETICAO = eINSTANCE.getComandoRepeticao();
-
-    /**
-     * The meta object literal for the '<em><b>Exp</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMANDO_REPETICAO__EXP = eINSTANCE.getComandoRepeticao_Exp();
-
-    /**
-     * The meta object literal for the '<em><b>Cmd</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMANDO_REPETICAO__CMD = eINSTANCE.getComandoRepeticao_Cmd();
-
-    /**
-     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.SubAlgoritmoImpl <em>Sub Algoritmo</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see br.ufscar.dc.compiladores.t5.t5.impl.SubAlgoritmoImpl
-     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getSubAlgoritmo()
-     * @generated
-     */
-    EClass SUB_ALGORITMO = eINSTANCE.getSubAlgoritmo();
-
-    /**
-     * The meta object literal for the '<em><b>Comandos</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SUB_ALGORITMO__COMANDOS = eINSTANCE.getSubAlgoritmo_Comandos();
+    EReference EXPRESSAO_RELACIONAL__RIGHT = eINSTANCE.getExpressaoRelacional_Right();
 
   }
 

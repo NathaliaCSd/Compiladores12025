@@ -65,31 +65,57 @@ public class T5FactoryImpl extends EFactoryImpl implements T5Factory
   {
     switch (eClass.getClassifierID())
     {
+      case T5Package.MODEL: return createModel();
       case T5Package.PROGRAMA: return createPrograma();
       case T5Package.DECLARACAO: return createDeclaracao();
+      case T5Package.DECLARACAO_LOCAL: return createDeclaracaoLocal();
+      case T5Package.DECLARACAO_GLOBAL: return createDeclaracaoGlobal();
+      case T5Package.VARIAVEL: return createVariavel();
+      case T5Package.IDENTIFICADOR: return createIdentificador();
+      case T5Package.DIMENSAO: return createDimensao();
+      case T5Package.TIPO: return createTipo();
+      case T5Package.REGISTRO: return createRegistro();
+      case T5Package.TIPO_ESTENDIDO: return createTipoEstendido();
+      case T5Package.PARAMETROS: return createParametros();
+      case T5Package.PARAMETRO: return createParametro();
+      case T5Package.CORPO: return createCorpo();
+      case T5Package.COMANDO: return createComando();
+      case T5Package.COMANDO_LEIA: return createComandoLeia();
+      case T5Package.COMANDO_ESCREVA: return createComandoEscreva();
+      case T5Package.COMANDO_SE: return createComandoSe();
+      case T5Package.COMANDO_CASO: return createComandoCaso();
+      case T5Package.COMANDO_PARA: return createComandoPara();
+      case T5Package.COMANDO_ENQUANTO: return createComandoEnquanto();
+      case T5Package.COMANDO_FACA: return createComandoFaca();
+      case T5Package.COMANDO_ATRIBUICAO: return createComandoAtribuicao();
+      case T5Package.COMANDO_CHAMADA: return createComandoChamada();
+      case T5Package.COMANDO_RETORNE: return createComandoRetorne();
+      case T5Package.SELECAO: return createSelecao();
+      case T5Package.ITEM_SELECAO: return createItemSelecao();
+      case T5Package.NUMERO_INTERVALO: return createNumeroIntervalo();
       case T5Package.EXPRESSAO_ARITMETICA: return createExpressaoAritmetica();
       case T5Package.OUTRO_TERMO_ARITMETICO: return createOutroTermoAritmetico();
       case T5Package.TERMO_ARITMETICO: return createTermoAritmetico();
       case T5Package.OUTRO_FATOR_ARITMETICO: return createOutroFatorAritmetico();
       case T5Package.FATOR_ARITMETICO: return createFatorAritmetico();
-      case T5Package.FATOR_NUMERO: return createFatorNumero();
-      case T5Package.FATOR_VARIAVEL: return createFatorVariavel();
-      case T5Package.FATOR_SUB_EXPRESSAO: return createFatorSubExpressao();
+      case T5Package.EXPRESSAO: return createExpressao();
+      case T5Package.TERMO_LOGICO: return createTermoLogico();
       case T5Package.EXPRESSAO_RELACIONAL: return createExpressaoRelacional();
-      case T5Package.OUTRO_TERMO_RELACIONAL: return createOutroTermoRelacional();
-      case T5Package.TERMO_RELACIONAL: return createTermoRelacional();
-      case T5Package.TERMO_COMPARACAO_RELACIONAL: return createTermoComparacaoRelacional();
-      case T5Package.TERMO_SUB_EXPRESSAO_RELACIONAL: return createTermoSubExpressaoRelacional();
-      case T5Package.COMANDO: return createComando();
-      case T5Package.COMANDO_ATRIBUICAO: return createComandoAtribuicao();
-      case T5Package.COMANDO_ENTRADA: return createComandoEntrada();
-      case T5Package.COMANDO_SAIDA: return createComandoSaida();
-      case T5Package.COMANDO_CONDICAO: return createComandoCondicao();
-      case T5Package.COMANDO_REPETICAO: return createComandoRepeticao();
-      case T5Package.SUB_ALGORITMO: return createSubAlgoritmo();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Model createModel()
+  {
+    ModelImpl model = new ModelImpl();
+    return model;
   }
 
   /**
@@ -114,6 +140,306 @@ public class T5FactoryImpl extends EFactoryImpl implements T5Factory
   {
     DeclaracaoImpl declaracao = new DeclaracaoImpl();
     return declaracao;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DeclaracaoLocal createDeclaracaoLocal()
+  {
+    DeclaracaoLocalImpl declaracaoLocal = new DeclaracaoLocalImpl();
+    return declaracaoLocal;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DeclaracaoGlobal createDeclaracaoGlobal()
+  {
+    DeclaracaoGlobalImpl declaracaoGlobal = new DeclaracaoGlobalImpl();
+    return declaracaoGlobal;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Variavel createVariavel()
+  {
+    VariavelImpl variavel = new VariavelImpl();
+    return variavel;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Identificador createIdentificador()
+  {
+    IdentificadorImpl identificador = new IdentificadorImpl();
+    return identificador;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Dimensao createDimensao()
+  {
+    DimensaoImpl dimensao = new DimensaoImpl();
+    return dimensao;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Tipo createTipo()
+  {
+    TipoImpl tipo = new TipoImpl();
+    return tipo;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Registro createRegistro()
+  {
+    RegistroImpl registro = new RegistroImpl();
+    return registro;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TipoEstendido createTipoEstendido()
+  {
+    TipoEstendidoImpl tipoEstendido = new TipoEstendidoImpl();
+    return tipoEstendido;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Parametros createParametros()
+  {
+    ParametrosImpl parametros = new ParametrosImpl();
+    return parametros;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Parametro createParametro()
+  {
+    ParametroImpl parametro = new ParametroImpl();
+    return parametro;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Corpo createCorpo()
+  {
+    CorpoImpl corpo = new CorpoImpl();
+    return corpo;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Comando createComando()
+  {
+    ComandoImpl comando = new ComandoImpl();
+    return comando;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ComandoLeia createComandoLeia()
+  {
+    ComandoLeiaImpl comandoLeia = new ComandoLeiaImpl();
+    return comandoLeia;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ComandoEscreva createComandoEscreva()
+  {
+    ComandoEscrevaImpl comandoEscreva = new ComandoEscrevaImpl();
+    return comandoEscreva;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ComandoSe createComandoSe()
+  {
+    ComandoSeImpl comandoSe = new ComandoSeImpl();
+    return comandoSe;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ComandoCaso createComandoCaso()
+  {
+    ComandoCasoImpl comandoCaso = new ComandoCasoImpl();
+    return comandoCaso;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ComandoPara createComandoPara()
+  {
+    ComandoParaImpl comandoPara = new ComandoParaImpl();
+    return comandoPara;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ComandoEnquanto createComandoEnquanto()
+  {
+    ComandoEnquantoImpl comandoEnquanto = new ComandoEnquantoImpl();
+    return comandoEnquanto;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ComandoFaca createComandoFaca()
+  {
+    ComandoFacaImpl comandoFaca = new ComandoFacaImpl();
+    return comandoFaca;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ComandoAtribuicao createComandoAtribuicao()
+  {
+    ComandoAtribuicaoImpl comandoAtribuicao = new ComandoAtribuicaoImpl();
+    return comandoAtribuicao;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ComandoChamada createComandoChamada()
+  {
+    ComandoChamadaImpl comandoChamada = new ComandoChamadaImpl();
+    return comandoChamada;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ComandoRetorne createComandoRetorne()
+  {
+    ComandoRetorneImpl comandoRetorne = new ComandoRetorneImpl();
+    return comandoRetorne;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Selecao createSelecao()
+  {
+    SelecaoImpl selecao = new SelecaoImpl();
+    return selecao;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ItemSelecao createItemSelecao()
+  {
+    ItemSelecaoImpl itemSelecao = new ItemSelecaoImpl();
+    return itemSelecao;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NumeroIntervalo createNumeroIntervalo()
+  {
+    NumeroIntervaloImpl numeroIntervalo = new NumeroIntervaloImpl();
+    return numeroIntervalo;
   }
 
   /**
@@ -182,10 +508,10 @@ public class T5FactoryImpl extends EFactoryImpl implements T5Factory
    * @generated
    */
   @Override
-  public FatorNumero createFatorNumero()
+  public Expressao createExpressao()
   {
-    FatorNumeroImpl fatorNumero = new FatorNumeroImpl();
-    return fatorNumero;
+    ExpressaoImpl expressao = new ExpressaoImpl();
+    return expressao;
   }
 
   /**
@@ -194,22 +520,10 @@ public class T5FactoryImpl extends EFactoryImpl implements T5Factory
    * @generated
    */
   @Override
-  public FatorVariavel createFatorVariavel()
+  public TermoLogico createTermoLogico()
   {
-    FatorVariavelImpl fatorVariavel = new FatorVariavelImpl();
-    return fatorVariavel;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public FatorSubExpressao createFatorSubExpressao()
-  {
-    FatorSubExpressaoImpl fatorSubExpressao = new FatorSubExpressaoImpl();
-    return fatorSubExpressao;
+    TermoLogicoImpl termoLogico = new TermoLogicoImpl();
+    return termoLogico;
   }
 
   /**
@@ -222,138 +536,6 @@ public class T5FactoryImpl extends EFactoryImpl implements T5Factory
   {
     ExpressaoRelacionalImpl expressaoRelacional = new ExpressaoRelacionalImpl();
     return expressaoRelacional;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public OutroTermoRelacional createOutroTermoRelacional()
-  {
-    OutroTermoRelacionalImpl outroTermoRelacional = new OutroTermoRelacionalImpl();
-    return outroTermoRelacional;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public TermoRelacional createTermoRelacional()
-  {
-    TermoRelacionalImpl termoRelacional = new TermoRelacionalImpl();
-    return termoRelacional;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public TermoComparacaoRelacional createTermoComparacaoRelacional()
-  {
-    TermoComparacaoRelacionalImpl termoComparacaoRelacional = new TermoComparacaoRelacionalImpl();
-    return termoComparacaoRelacional;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public TermoSubExpressaoRelacional createTermoSubExpressaoRelacional()
-  {
-    TermoSubExpressaoRelacionalImpl termoSubExpressaoRelacional = new TermoSubExpressaoRelacionalImpl();
-    return termoSubExpressaoRelacional;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Comando createComando()
-  {
-    ComandoImpl comando = new ComandoImpl();
-    return comando;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ComandoAtribuicao createComandoAtribuicao()
-  {
-    ComandoAtribuicaoImpl comandoAtribuicao = new ComandoAtribuicaoImpl();
-    return comandoAtribuicao;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ComandoEntrada createComandoEntrada()
-  {
-    ComandoEntradaImpl comandoEntrada = new ComandoEntradaImpl();
-    return comandoEntrada;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ComandoSaida createComandoSaida()
-  {
-    ComandoSaidaImpl comandoSaida = new ComandoSaidaImpl();
-    return comandoSaida;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ComandoCondicao createComandoCondicao()
-  {
-    ComandoCondicaoImpl comandoCondicao = new ComandoCondicaoImpl();
-    return comandoCondicao;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ComandoRepeticao createComandoRepeticao()
-  {
-    ComandoRepeticaoImpl comandoRepeticao = new ComandoRepeticaoImpl();
-    return comandoRepeticao;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public SubAlgoritmo createSubAlgoritmo()
-  {
-    SubAlgoritmoImpl subAlgoritmo = new SubAlgoritmoImpl();
-    return subAlgoritmo;
   }
 
   /**

@@ -3,8 +3,6 @@
  */
 package br.ufscar.dc.compiladores.t5.t5;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,8 +14,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link br.ufscar.dc.compiladores.t5.t5.ExpressaoRelacional#getTermo1 <em>Termo1</em>}</li>
- *   <li>{@link br.ufscar.dc.compiladores.t5.t5.ExpressaoRelacional#getOutrosTermos <em>Outros Termos</em>}</li>
+ *   <li>{@link br.ufscar.dc.compiladores.t5.t5.ExpressaoRelacional#getLeft <em>Left</em>}</li>
+ *   <li>{@link br.ufscar.dc.compiladores.t5.t5.ExpressaoRelacional#getOp <em>Op</em>}</li>
+ *   <li>{@link br.ufscar.dc.compiladores.t5.t5.ExpressaoRelacional#getRight <em>Right</em>}</li>
  * </ul>
  *
  * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getExpressaoRelacional()
@@ -27,37 +26,69 @@ import org.eclipse.emf.ecore.EObject;
 public interface ExpressaoRelacional extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Termo1</b></em>' containment reference.
+   * Returns the value of the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Termo1</em>' containment reference.
-   * @see #setTermo1(TermoRelacional)
-   * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getExpressaoRelacional_Termo1()
+   * @return the value of the '<em>Left</em>' containment reference.
+   * @see #setLeft(ExpressaoAritmetica)
+   * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getExpressaoRelacional_Left()
    * @model containment="true"
    * @generated
    */
-  TermoRelacional getTermo1();
+  ExpressaoAritmetica getLeft();
 
   /**
-   * Sets the value of the '{@link br.ufscar.dc.compiladores.t5.t5.ExpressaoRelacional#getTermo1 <em>Termo1</em>}' containment reference.
+   * Sets the value of the '{@link br.ufscar.dc.compiladores.t5.t5.ExpressaoRelacional#getLeft <em>Left</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Termo1</em>' containment reference.
-   * @see #getTermo1()
+   * @param value the new value of the '<em>Left</em>' containment reference.
+   * @see #getLeft()
    * @generated
    */
-  void setTermo1(TermoRelacional value);
+  void setLeft(ExpressaoAritmetica value);
 
   /**
-   * Returns the value of the '<em><b>Outros Termos</b></em>' containment reference list.
-   * The list contents are of type {@link br.ufscar.dc.compiladores.t5.t5.OutroTermoRelacional}.
+   * Returns the value of the '<em><b>Op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Outros Termos</em>' containment reference list.
-   * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getExpressaoRelacional_OutrosTermos()
+   * @return the value of the '<em>Op</em>' attribute.
+   * @see #setOp(String)
+   * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getExpressaoRelacional_Op()
+   * @model
+   * @generated
+   */
+  String getOp();
+
+  /**
+   * Sets the value of the '{@link br.ufscar.dc.compiladores.t5.t5.ExpressaoRelacional#getOp <em>Op</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Op</em>' attribute.
+   * @see #getOp()
+   * @generated
+   */
+  void setOp(String value);
+
+  /**
+   * Returns the value of the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Right</em>' containment reference.
+   * @see #setRight(ExpressaoAritmetica)
+   * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getExpressaoRelacional_Right()
    * @model containment="true"
    * @generated
    */
-  EList<OutroTermoRelacional> getOutrosTermos();
+  ExpressaoAritmetica getRight();
+
+  /**
+   * Sets the value of the '{@link br.ufscar.dc.compiladores.t5.t5.ExpressaoRelacional#getRight <em>Right</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Right</em>' containment reference.
+   * @see #getRight()
+   * @generated
+   */
+  void setRight(ExpressaoAritmetica value);
 
 } // ExpressaoRelacional

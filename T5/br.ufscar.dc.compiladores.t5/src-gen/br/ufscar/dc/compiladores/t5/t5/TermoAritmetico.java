@@ -16,8 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link br.ufscar.dc.compiladores.t5.t5.TermoAritmetico#getFator1 <em>Fator1</em>}</li>
- *   <li>{@link br.ufscar.dc.compiladores.t5.t5.TermoAritmetico#getOutrosFatores <em>Outros Fatores</em>}</li>
+ *   <li>{@link br.ufscar.dc.compiladores.t5.t5.TermoAritmetico#getFatores <em>Fatores</em>}</li>
+ *   <li>{@link br.ufscar.dc.compiladores.t5.t5.TermoAritmetico#getOutros <em>Outros</em>}</li>
  * </ul>
  *
  * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getTermoAritmetico()
@@ -27,37 +27,27 @@ import org.eclipse.emf.ecore.EObject;
 public interface TermoAritmetico extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Fator1</b></em>' containment reference.
+   * Returns the value of the '<em><b>Fatores</b></em>' containment reference list.
+   * The list contents are of type {@link br.ufscar.dc.compiladores.t5.t5.FatorAritmetico}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Fator1</em>' containment reference.
-   * @see #setFator1(FatorAritmetico)
-   * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getTermoAritmetico_Fator1()
+   * @return the value of the '<em>Fatores</em>' containment reference list.
+   * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getTermoAritmetico_Fatores()
    * @model containment="true"
    * @generated
    */
-  FatorAritmetico getFator1();
+  EList<FatorAritmetico> getFatores();
 
   /**
-   * Sets the value of the '{@link br.ufscar.dc.compiladores.t5.t5.TermoAritmetico#getFator1 <em>Fator1</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Fator1</em>' containment reference.
-   * @see #getFator1()
-   * @generated
-   */
-  void setFator1(FatorAritmetico value);
-
-  /**
-   * Returns the value of the '<em><b>Outros Fatores</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Outros</b></em>' containment reference list.
    * The list contents are of type {@link br.ufscar.dc.compiladores.t5.t5.OutroFatorAritmetico}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Outros Fatores</em>' containment reference list.
-   * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getTermoAritmetico_OutrosFatores()
+   * @return the value of the '<em>Outros</em>' containment reference list.
+   * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getTermoAritmetico_Outros()
    * @model containment="true"
    * @generated
    */
-  EList<OutroFatorAritmetico> getOutrosFatores();
+  EList<OutroFatorAritmetico> getOutros();
 
 } // TermoAritmetico

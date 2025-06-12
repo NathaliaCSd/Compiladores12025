@@ -3,13 +3,14 @@
  */
 package br.ufscar.dc.compiladores.t5.t5.impl;
 
-import br.ufscar.dc.compiladores.t5.t5.Comando;
+import br.ufscar.dc.compiladores.t5.t5.Corpo;
 import br.ufscar.dc.compiladores.t5.t5.Declaracao;
 import br.ufscar.dc.compiladores.t5.t5.Programa;
 import br.ufscar.dc.compiladores.t5.t5.T5Package;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -17,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -31,7 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link br.ufscar.dc.compiladores.t5.t5.impl.ProgramaImpl#getDeclaracoes <em>Declaracoes</em>}</li>
- *   <li>{@link br.ufscar.dc.compiladores.t5.t5.impl.ProgramaImpl#getComandos <em>Comandos</em>}</li>
+ *   <li>{@link br.ufscar.dc.compiladores.t5.t5.impl.ProgramaImpl#getCorpo <em>Corpo</em>}</li>
  * </ul>
  *
  * @generated
@@ -49,14 +51,14 @@ public class ProgramaImpl extends MinimalEObjectImpl.Container implements Progra
   protected EList<Declaracao> declaracoes;
 
   /**
-   * The cached value of the '{@link #getComandos() <em>Comandos</em>}' containment reference list.
+   * The cached value of the '{@link #getCorpo() <em>Corpo</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getComandos()
+   * @see #getCorpo()
    * @generated
    * @ordered
    */
-  protected EList<Comando> comandos;
+  protected Corpo corpo;
 
   /**
    * <!-- begin-user-doc -->
@@ -100,13 +102,48 @@ public class ProgramaImpl extends MinimalEObjectImpl.Container implements Progra
    * @generated
    */
   @Override
-  public EList<Comando> getComandos()
+  public Corpo getCorpo()
   {
-    if (comandos == null)
+    return corpo;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetCorpo(Corpo newCorpo, NotificationChain msgs)
+  {
+    Corpo oldCorpo = corpo;
+    corpo = newCorpo;
+    if (eNotificationRequired())
     {
-      comandos = new EObjectContainmentEList<Comando>(Comando.class, this, T5Package.PROGRAMA__COMANDOS);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, T5Package.PROGRAMA__CORPO, oldCorpo, newCorpo);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return comandos;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setCorpo(Corpo newCorpo)
+  {
+    if (newCorpo != corpo)
+    {
+      NotificationChain msgs = null;
+      if (corpo != null)
+        msgs = ((InternalEObject)corpo).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - T5Package.PROGRAMA__CORPO, null, msgs);
+      if (newCorpo != null)
+        msgs = ((InternalEObject)newCorpo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - T5Package.PROGRAMA__CORPO, null, msgs);
+      msgs = basicSetCorpo(newCorpo, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, T5Package.PROGRAMA__CORPO, newCorpo, newCorpo));
   }
 
   /**
@@ -121,8 +158,8 @@ public class ProgramaImpl extends MinimalEObjectImpl.Container implements Progra
     {
       case T5Package.PROGRAMA__DECLARACOES:
         return ((InternalEList<?>)getDeclaracoes()).basicRemove(otherEnd, msgs);
-      case T5Package.PROGRAMA__COMANDOS:
-        return ((InternalEList<?>)getComandos()).basicRemove(otherEnd, msgs);
+      case T5Package.PROGRAMA__CORPO:
+        return basicSetCorpo(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -139,8 +176,8 @@ public class ProgramaImpl extends MinimalEObjectImpl.Container implements Progra
     {
       case T5Package.PROGRAMA__DECLARACOES:
         return getDeclaracoes();
-      case T5Package.PROGRAMA__COMANDOS:
-        return getComandos();
+      case T5Package.PROGRAMA__CORPO:
+        return getCorpo();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -160,9 +197,8 @@ public class ProgramaImpl extends MinimalEObjectImpl.Container implements Progra
         getDeclaracoes().clear();
         getDeclaracoes().addAll((Collection<? extends Declaracao>)newValue);
         return;
-      case T5Package.PROGRAMA__COMANDOS:
-        getComandos().clear();
-        getComandos().addAll((Collection<? extends Comando>)newValue);
+      case T5Package.PROGRAMA__CORPO:
+        setCorpo((Corpo)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -181,8 +217,8 @@ public class ProgramaImpl extends MinimalEObjectImpl.Container implements Progra
       case T5Package.PROGRAMA__DECLARACOES:
         getDeclaracoes().clear();
         return;
-      case T5Package.PROGRAMA__COMANDOS:
-        getComandos().clear();
+      case T5Package.PROGRAMA__CORPO:
+        setCorpo((Corpo)null);
         return;
     }
     super.eUnset(featureID);
@@ -200,8 +236,8 @@ public class ProgramaImpl extends MinimalEObjectImpl.Container implements Progra
     {
       case T5Package.PROGRAMA__DECLARACOES:
         return declaracoes != null && !declaracoes.isEmpty();
-      case T5Package.PROGRAMA__COMANDOS:
-        return comandos != null && !comandos.isEmpty();
+      case T5Package.PROGRAMA__CORPO:
+        return corpo != null;
     }
     return super.eIsSet(featureID);
   }

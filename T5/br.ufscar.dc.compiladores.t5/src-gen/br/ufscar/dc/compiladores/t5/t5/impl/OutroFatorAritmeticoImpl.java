@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link br.ufscar.dc.compiladores.t5.t5.impl.OutroFatorAritmeticoImpl#getOperador <em>Operador</em>}</li>
+ *   <li>{@link br.ufscar.dc.compiladores.t5.t5.impl.OutroFatorAritmeticoImpl#getOp <em>Op</em>}</li>
  *   <li>{@link br.ufscar.dc.compiladores.t5.t5.impl.OutroFatorAritmeticoImpl#getFator <em>Fator</em>}</li>
  * </ul>
  *
@@ -33,24 +33,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class OutroFatorAritmeticoImpl extends MinimalEObjectImpl.Container implements OutroFatorAritmetico
 {
   /**
-   * The default value of the '{@link #getOperador() <em>Operador</em>}' attribute.
+   * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOperador()
+   * @see #getOp()
    * @generated
    * @ordered
    */
-  protected static final String OPERADOR_EDEFAULT = null;
+  protected static final String OP_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getOperador() <em>Operador</em>}' attribute.
+   * The cached value of the '{@link #getOp() <em>Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOperador()
+   * @see #getOp()
    * @generated
    * @ordered
    */
-  protected String operador = OPERADOR_EDEFAULT;
+  protected String op = OP_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getFator() <em>Fator</em>}' containment reference.
@@ -89,9 +89,9 @@ public class OutroFatorAritmeticoImpl extends MinimalEObjectImpl.Container imple
    * @generated
    */
   @Override
-  public String getOperador()
+  public String getOp()
   {
-    return operador;
+    return op;
   }
 
   /**
@@ -100,12 +100,12 @@ public class OutroFatorAritmeticoImpl extends MinimalEObjectImpl.Container imple
    * @generated
    */
   @Override
-  public void setOperador(String newOperador)
+  public void setOp(String newOp)
   {
-    String oldOperador = operador;
-    operador = newOperador;
+    String oldOp = op;
+    op = newOp;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, T5Package.OUTRO_FATOR_ARITMETICO__OPERADOR, oldOperador, operador));
+      eNotify(new ENotificationImpl(this, Notification.SET, T5Package.OUTRO_FATOR_ARITMETICO__OP, oldOp, op));
   }
 
   /**
@@ -184,8 +184,8 @@ public class OutroFatorAritmeticoImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case T5Package.OUTRO_FATOR_ARITMETICO__OPERADOR:
-        return getOperador();
+      case T5Package.OUTRO_FATOR_ARITMETICO__OP:
+        return getOp();
       case T5Package.OUTRO_FATOR_ARITMETICO__FATOR:
         return getFator();
     }
@@ -202,8 +202,8 @@ public class OutroFatorAritmeticoImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case T5Package.OUTRO_FATOR_ARITMETICO__OPERADOR:
-        setOperador((String)newValue);
+      case T5Package.OUTRO_FATOR_ARITMETICO__OP:
+        setOp((String)newValue);
         return;
       case T5Package.OUTRO_FATOR_ARITMETICO__FATOR:
         setFator((FatorAritmetico)newValue);
@@ -222,8 +222,8 @@ public class OutroFatorAritmeticoImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case T5Package.OUTRO_FATOR_ARITMETICO__OPERADOR:
-        setOperador(OPERADOR_EDEFAULT);
+      case T5Package.OUTRO_FATOR_ARITMETICO__OP:
+        setOp(OP_EDEFAULT);
         return;
       case T5Package.OUTRO_FATOR_ARITMETICO__FATOR:
         setFator((FatorAritmetico)null);
@@ -242,8 +242,8 @@ public class OutroFatorAritmeticoImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case T5Package.OUTRO_FATOR_ARITMETICO__OPERADOR:
-        return OPERADOR_EDEFAULT == null ? operador != null : !OPERADOR_EDEFAULT.equals(operador);
+      case T5Package.OUTRO_FATOR_ARITMETICO__OP:
+        return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
       case T5Package.OUTRO_FATOR_ARITMETICO__FATOR:
         return fator != null;
     }
@@ -261,8 +261,8 @@ public class OutroFatorAritmeticoImpl extends MinimalEObjectImpl.Container imple
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (operador: ");
-    result.append(operador);
+    result.append(" (op: ");
+    result.append(op);
     result.append(')');
     return result.toString();
   }

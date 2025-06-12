@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link br.ufscar.dc.compiladores.t5.t5.Declaracao#getName <em>Name</em>}</li>
- *   <li>{@link br.ufscar.dc.compiladores.t5.t5.Declaracao#getTipo <em>Tipo</em>}</li>
  * </ul>
  *
  * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getDeclaracao()
@@ -45,27 +44,5 @@ public interface Declaracao extends EObject
    * @generated
    */
   void setName(String value);
-
-  /**
-   * Returns the value of the '<em><b>Tipo</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Tipo</em>' attribute.
-   * @see #setTipo(String)
-   * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getDeclaracao_Tipo()
-   * @model
-   * @generated
-   */
-  String getTipo();
-
-  /**
-   * Sets the value of the '{@link br.ufscar.dc.compiladores.t5.t5.Declaracao#getTipo <em>Tipo</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Tipo</em>' attribute.
-   * @see #getTipo()
-   * @generated
-   */
-  void setTipo(String value);
 
 } // Declaracao

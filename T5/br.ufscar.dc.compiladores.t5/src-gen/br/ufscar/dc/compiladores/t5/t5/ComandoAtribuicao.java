@@ -13,8 +13,8 @@ package br.ufscar.dc.compiladores.t5.t5;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link br.ufscar.dc.compiladores.t5.t5.ComandoAtribuicao#getExp <em>Exp</em>}</li>
- *   <li>{@link br.ufscar.dc.compiladores.t5.t5.ComandoAtribuicao#getVariavel <em>Variavel</em>}</li>
+ *   <li>{@link br.ufscar.dc.compiladores.t5.t5.ComandoAtribuicao#getTarget <em>Target</em>}</li>
+ *   <li>{@link br.ufscar.dc.compiladores.t5.t5.ComandoAtribuicao#getValor <em>Valor</em>}</li>
  * </ul>
  *
  * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getComandoAtribuicao()
@@ -24,47 +24,47 @@ package br.ufscar.dc.compiladores.t5.t5;
 public interface ComandoAtribuicao extends Comando
 {
   /**
-   * Returns the value of the '<em><b>Exp</b></em>' containment reference.
+   * Returns the value of the '<em><b>Target</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Exp</em>' containment reference.
-   * @see #setExp(ExpressaoAritmetica)
-   * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getComandoAtribuicao_Exp()
-   * @model containment="true"
-   * @generated
-   */
-  ExpressaoAritmetica getExp();
-
-  /**
-   * Sets the value of the '{@link br.ufscar.dc.compiladores.t5.t5.ComandoAtribuicao#getExp <em>Exp</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Exp</em>' containment reference.
-   * @see #getExp()
-   * @generated
-   */
-  void setExp(ExpressaoAritmetica value);
-
-  /**
-   * Returns the value of the '<em><b>Variavel</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Variavel</em>' reference.
-   * @see #setVariavel(Declaracao)
-   * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getComandoAtribuicao_Variavel()
+   * @return the value of the '<em>Target</em>' reference.
+   * @see #setTarget(Declaracao)
+   * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getComandoAtribuicao_Target()
    * @model
    * @generated
    */
-  Declaracao getVariavel();
+  Declaracao getTarget();
 
   /**
-   * Sets the value of the '{@link br.ufscar.dc.compiladores.t5.t5.ComandoAtribuicao#getVariavel <em>Variavel</em>}' reference.
+   * Sets the value of the '{@link br.ufscar.dc.compiladores.t5.t5.ComandoAtribuicao#getTarget <em>Target</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Variavel</em>' reference.
-   * @see #getVariavel()
+   * @param value the new value of the '<em>Target</em>' reference.
+   * @see #getTarget()
    * @generated
    */
-  void setVariavel(Declaracao value);
+  void setTarget(Declaracao value);
+
+  /**
+   * Returns the value of the '<em><b>Valor</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Valor</em>' containment reference.
+   * @see #setValor(Expressao)
+   * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getComandoAtribuicao_Valor()
+   * @model containment="true"
+   * @generated
+   */
+  Expressao getValor();
+
+  /**
+   * Sets the value of the '{@link br.ufscar.dc.compiladores.t5.t5.ComandoAtribuicao#getValor <em>Valor</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Valor</em>' containment reference.
+   * @see #getValor()
+   * @generated
+   */
+  void setValor(Expressao value);
 
 } // ComandoAtribuicao

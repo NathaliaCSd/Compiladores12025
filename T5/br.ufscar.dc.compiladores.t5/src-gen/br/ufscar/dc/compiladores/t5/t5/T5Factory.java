@@ -24,6 +24,15 @@ public interface T5Factory extends EFactory
   T5Factory eINSTANCE = br.ufscar.dc.compiladores.t5.t5.impl.T5FactoryImpl.init();
 
   /**
+   * Returns a new object of class '<em>Model</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Model</em>'.
+   * @generated
+   */
+  Model createModel();
+
+  /**
    * Returns a new object of class '<em>Programa</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -40,6 +49,231 @@ public interface T5Factory extends EFactory
    * @generated
    */
   Declaracao createDeclaracao();
+
+  /**
+   * Returns a new object of class '<em>Declaracao Local</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Declaracao Local</em>'.
+   * @generated
+   */
+  DeclaracaoLocal createDeclaracaoLocal();
+
+  /**
+   * Returns a new object of class '<em>Declaracao Global</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Declaracao Global</em>'.
+   * @generated
+   */
+  DeclaracaoGlobal createDeclaracaoGlobal();
+
+  /**
+   * Returns a new object of class '<em>Variavel</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variavel</em>'.
+   * @generated
+   */
+  Variavel createVariavel();
+
+  /**
+   * Returns a new object of class '<em>Identificador</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Identificador</em>'.
+   * @generated
+   */
+  Identificador createIdentificador();
+
+  /**
+   * Returns a new object of class '<em>Dimensao</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Dimensao</em>'.
+   * @generated
+   */
+  Dimensao createDimensao();
+
+  /**
+   * Returns a new object of class '<em>Tipo</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Tipo</em>'.
+   * @generated
+   */
+  Tipo createTipo();
+
+  /**
+   * Returns a new object of class '<em>Registro</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Registro</em>'.
+   * @generated
+   */
+  Registro createRegistro();
+
+  /**
+   * Returns a new object of class '<em>Tipo Estendido</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Tipo Estendido</em>'.
+   * @generated
+   */
+  TipoEstendido createTipoEstendido();
+
+  /**
+   * Returns a new object of class '<em>Parametros</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Parametros</em>'.
+   * @generated
+   */
+  Parametros createParametros();
+
+  /**
+   * Returns a new object of class '<em>Parametro</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Parametro</em>'.
+   * @generated
+   */
+  Parametro createParametro();
+
+  /**
+   * Returns a new object of class '<em>Corpo</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Corpo</em>'.
+   * @generated
+   */
+  Corpo createCorpo();
+
+  /**
+   * Returns a new object of class '<em>Comando</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Comando</em>'.
+   * @generated
+   */
+  Comando createComando();
+
+  /**
+   * Returns a new object of class '<em>Comando Leia</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Comando Leia</em>'.
+   * @generated
+   */
+  ComandoLeia createComandoLeia();
+
+  /**
+   * Returns a new object of class '<em>Comando Escreva</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Comando Escreva</em>'.
+   * @generated
+   */
+  ComandoEscreva createComandoEscreva();
+
+  /**
+   * Returns a new object of class '<em>Comando Se</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Comando Se</em>'.
+   * @generated
+   */
+  ComandoSe createComandoSe();
+
+  /**
+   * Returns a new object of class '<em>Comando Caso</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Comando Caso</em>'.
+   * @generated
+   */
+  ComandoCaso createComandoCaso();
+
+  /**
+   * Returns a new object of class '<em>Comando Para</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Comando Para</em>'.
+   * @generated
+   */
+  ComandoPara createComandoPara();
+
+  /**
+   * Returns a new object of class '<em>Comando Enquanto</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Comando Enquanto</em>'.
+   * @generated
+   */
+  ComandoEnquanto createComandoEnquanto();
+
+  /**
+   * Returns a new object of class '<em>Comando Faca</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Comando Faca</em>'.
+   * @generated
+   */
+  ComandoFaca createComandoFaca();
+
+  /**
+   * Returns a new object of class '<em>Comando Atribuicao</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Comando Atribuicao</em>'.
+   * @generated
+   */
+  ComandoAtribuicao createComandoAtribuicao();
+
+  /**
+   * Returns a new object of class '<em>Comando Chamada</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Comando Chamada</em>'.
+   * @generated
+   */
+  ComandoChamada createComandoChamada();
+
+  /**
+   * Returns a new object of class '<em>Comando Retorne</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Comando Retorne</em>'.
+   * @generated
+   */
+  ComandoRetorne createComandoRetorne();
+
+  /**
+   * Returns a new object of class '<em>Selecao</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Selecao</em>'.
+   * @generated
+   */
+  Selecao createSelecao();
+
+  /**
+   * Returns a new object of class '<em>Item Selecao</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Item Selecao</em>'.
+   * @generated
+   */
+  ItemSelecao createItemSelecao();
+
+  /**
+   * Returns a new object of class '<em>Numero Intervalo</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Numero Intervalo</em>'.
+   * @generated
+   */
+  NumeroIntervalo createNumeroIntervalo();
 
   /**
    * Returns a new object of class '<em>Expressao Aritmetica</em>'.
@@ -87,31 +321,22 @@ public interface T5Factory extends EFactory
   FatorAritmetico createFatorAritmetico();
 
   /**
-   * Returns a new object of class '<em>Fator Numero</em>'.
+   * Returns a new object of class '<em>Expressao</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Fator Numero</em>'.
+   * @return a new object of class '<em>Expressao</em>'.
    * @generated
    */
-  FatorNumero createFatorNumero();
+  Expressao createExpressao();
 
   /**
-   * Returns a new object of class '<em>Fator Variavel</em>'.
+   * Returns a new object of class '<em>Termo Logico</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Fator Variavel</em>'.
+   * @return a new object of class '<em>Termo Logico</em>'.
    * @generated
    */
-  FatorVariavel createFatorVariavel();
-
-  /**
-   * Returns a new object of class '<em>Fator Sub Expressao</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Fator Sub Expressao</em>'.
-   * @generated
-   */
-  FatorSubExpressao createFatorSubExpressao();
+  TermoLogico createTermoLogico();
 
   /**
    * Returns a new object of class '<em>Expressao Relacional</em>'.
@@ -121,105 +346,6 @@ public interface T5Factory extends EFactory
    * @generated
    */
   ExpressaoRelacional createExpressaoRelacional();
-
-  /**
-   * Returns a new object of class '<em>Outro Termo Relacional</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Outro Termo Relacional</em>'.
-   * @generated
-   */
-  OutroTermoRelacional createOutroTermoRelacional();
-
-  /**
-   * Returns a new object of class '<em>Termo Relacional</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Termo Relacional</em>'.
-   * @generated
-   */
-  TermoRelacional createTermoRelacional();
-
-  /**
-   * Returns a new object of class '<em>Termo Comparacao Relacional</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Termo Comparacao Relacional</em>'.
-   * @generated
-   */
-  TermoComparacaoRelacional createTermoComparacaoRelacional();
-
-  /**
-   * Returns a new object of class '<em>Termo Sub Expressao Relacional</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Termo Sub Expressao Relacional</em>'.
-   * @generated
-   */
-  TermoSubExpressaoRelacional createTermoSubExpressaoRelacional();
-
-  /**
-   * Returns a new object of class '<em>Comando</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Comando</em>'.
-   * @generated
-   */
-  Comando createComando();
-
-  /**
-   * Returns a new object of class '<em>Comando Atribuicao</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Comando Atribuicao</em>'.
-   * @generated
-   */
-  ComandoAtribuicao createComandoAtribuicao();
-
-  /**
-   * Returns a new object of class '<em>Comando Entrada</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Comando Entrada</em>'.
-   * @generated
-   */
-  ComandoEntrada createComandoEntrada();
-
-  /**
-   * Returns a new object of class '<em>Comando Saida</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Comando Saida</em>'.
-   * @generated
-   */
-  ComandoSaida createComandoSaida();
-
-  /**
-   * Returns a new object of class '<em>Comando Condicao</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Comando Condicao</em>'.
-   * @generated
-   */
-  ComandoCondicao createComandoCondicao();
-
-  /**
-   * Returns a new object of class '<em>Comando Repeticao</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Comando Repeticao</em>'.
-   * @generated
-   */
-  ComandoRepeticao createComandoRepeticao();
-
-  /**
-   * Returns a new object of class '<em>Sub Algoritmo</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sub Algoritmo</em>'.
-   * @generated
-   */
-  SubAlgoritmo createSubAlgoritmo();
 
   /**
    * Returns the package supported by this factory.

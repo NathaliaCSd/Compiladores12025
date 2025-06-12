@@ -5,7 +5,7 @@ package br.ufscar.dc.compiladores.t5.t5.impl;
 
 import br.ufscar.dc.compiladores.t5.t5.ComandoAtribuicao;
 import br.ufscar.dc.compiladores.t5.t5.Declaracao;
-import br.ufscar.dc.compiladores.t5.t5.ExpressaoAritmetica;
+import br.ufscar.dc.compiladores.t5.t5.Expressao;
 import br.ufscar.dc.compiladores.t5.t5.T5Package;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -24,8 +24,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoAtribuicaoImpl#getExp <em>Exp</em>}</li>
- *   <li>{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoAtribuicaoImpl#getVariavel <em>Variavel</em>}</li>
+ *   <li>{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoAtribuicaoImpl#getTarget <em>Target</em>}</li>
+ *   <li>{@link br.ufscar.dc.compiladores.t5.t5.impl.ComandoAtribuicaoImpl#getValor <em>Valor</em>}</li>
  * </ul>
  *
  * @generated
@@ -33,24 +33,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class ComandoAtribuicaoImpl extends ComandoImpl implements ComandoAtribuicao
 {
   /**
-   * The cached value of the '{@link #getExp() <em>Exp</em>}' containment reference.
+   * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExp()
+   * @see #getTarget()
    * @generated
    * @ordered
    */
-  protected ExpressaoAritmetica exp;
+  protected Declaracao target;
 
   /**
-   * The cached value of the '{@link #getVariavel() <em>Variavel</em>}' reference.
+   * The cached value of the '{@link #getValor() <em>Valor</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVariavel()
+   * @see #getValor()
    * @generated
    * @ordered
    */
-  protected Declaracao variavel;
+  protected Expressao valor;
 
   /**
    * <!-- begin-user-doc -->
@@ -79,9 +79,19 @@ public class ComandoAtribuicaoImpl extends ComandoImpl implements ComandoAtribui
    * @generated
    */
   @Override
-  public ExpressaoAritmetica getExp()
+  public Declaracao getTarget()
   {
-    return exp;
+    if (target != null && target.eIsProxy())
+    {
+      InternalEObject oldTarget = (InternalEObject)target;
+      target = (Declaracao)eResolveProxy(oldTarget);
+      if (target != oldTarget)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, T5Package.COMANDO_ATRIBUICAO__TARGET, oldTarget, target));
+      }
+    }
+    return target;
   }
 
   /**
@@ -89,13 +99,48 @@ public class ComandoAtribuicaoImpl extends ComandoImpl implements ComandoAtribui
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExp(ExpressaoAritmetica newExp, NotificationChain msgs)
+  public Declaracao basicGetTarget()
   {
-    ExpressaoAritmetica oldExp = exp;
-    exp = newExp;
+    return target;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setTarget(Declaracao newTarget)
+  {
+    Declaracao oldTarget = target;
+    target = newTarget;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, T5Package.COMANDO_ATRIBUICAO__TARGET, oldTarget, target));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Expressao getValor()
+  {
+    return valor;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetValor(Expressao newValor, NotificationChain msgs)
+  {
+    Expressao oldValor = valor;
+    valor = newValor;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, T5Package.COMANDO_ATRIBUICAO__EXP, oldExp, newExp);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, T5Package.COMANDO_ATRIBUICAO__VALOR, oldValor, newValor);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -107,65 +152,20 @@ public class ComandoAtribuicaoImpl extends ComandoImpl implements ComandoAtribui
    * @generated
    */
   @Override
-  public void setExp(ExpressaoAritmetica newExp)
+  public void setValor(Expressao newValor)
   {
-    if (newExp != exp)
+    if (newValor != valor)
     {
       NotificationChain msgs = null;
-      if (exp != null)
-        msgs = ((InternalEObject)exp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - T5Package.COMANDO_ATRIBUICAO__EXP, null, msgs);
-      if (newExp != null)
-        msgs = ((InternalEObject)newExp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - T5Package.COMANDO_ATRIBUICAO__EXP, null, msgs);
-      msgs = basicSetExp(newExp, msgs);
+      if (valor != null)
+        msgs = ((InternalEObject)valor).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - T5Package.COMANDO_ATRIBUICAO__VALOR, null, msgs);
+      if (newValor != null)
+        msgs = ((InternalEObject)newValor).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - T5Package.COMANDO_ATRIBUICAO__VALOR, null, msgs);
+      msgs = basicSetValor(newValor, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, T5Package.COMANDO_ATRIBUICAO__EXP, newExp, newExp));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Declaracao getVariavel()
-  {
-    if (variavel != null && variavel.eIsProxy())
-    {
-      InternalEObject oldVariavel = (InternalEObject)variavel;
-      variavel = (Declaracao)eResolveProxy(oldVariavel);
-      if (variavel != oldVariavel)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, T5Package.COMANDO_ATRIBUICAO__VARIAVEL, oldVariavel, variavel));
-      }
-    }
-    return variavel;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Declaracao basicGetVariavel()
-  {
-    return variavel;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setVariavel(Declaracao newVariavel)
-  {
-    Declaracao oldVariavel = variavel;
-    variavel = newVariavel;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, T5Package.COMANDO_ATRIBUICAO__VARIAVEL, oldVariavel, variavel));
+      eNotify(new ENotificationImpl(this, Notification.SET, T5Package.COMANDO_ATRIBUICAO__VALOR, newValor, newValor));
   }
 
   /**
@@ -178,8 +178,8 @@ public class ComandoAtribuicaoImpl extends ComandoImpl implements ComandoAtribui
   {
     switch (featureID)
     {
-      case T5Package.COMANDO_ATRIBUICAO__EXP:
-        return basicSetExp(null, msgs);
+      case T5Package.COMANDO_ATRIBUICAO__VALOR:
+        return basicSetValor(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -194,11 +194,11 @@ public class ComandoAtribuicaoImpl extends ComandoImpl implements ComandoAtribui
   {
     switch (featureID)
     {
-      case T5Package.COMANDO_ATRIBUICAO__EXP:
-        return getExp();
-      case T5Package.COMANDO_ATRIBUICAO__VARIAVEL:
-        if (resolve) return getVariavel();
-        return basicGetVariavel();
+      case T5Package.COMANDO_ATRIBUICAO__TARGET:
+        if (resolve) return getTarget();
+        return basicGetTarget();
+      case T5Package.COMANDO_ATRIBUICAO__VALOR:
+        return getValor();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -213,11 +213,11 @@ public class ComandoAtribuicaoImpl extends ComandoImpl implements ComandoAtribui
   {
     switch (featureID)
     {
-      case T5Package.COMANDO_ATRIBUICAO__EXP:
-        setExp((ExpressaoAritmetica)newValue);
+      case T5Package.COMANDO_ATRIBUICAO__TARGET:
+        setTarget((Declaracao)newValue);
         return;
-      case T5Package.COMANDO_ATRIBUICAO__VARIAVEL:
-        setVariavel((Declaracao)newValue);
+      case T5Package.COMANDO_ATRIBUICAO__VALOR:
+        setValor((Expressao)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -233,11 +233,11 @@ public class ComandoAtribuicaoImpl extends ComandoImpl implements ComandoAtribui
   {
     switch (featureID)
     {
-      case T5Package.COMANDO_ATRIBUICAO__EXP:
-        setExp((ExpressaoAritmetica)null);
+      case T5Package.COMANDO_ATRIBUICAO__TARGET:
+        setTarget((Declaracao)null);
         return;
-      case T5Package.COMANDO_ATRIBUICAO__VARIAVEL:
-        setVariavel((Declaracao)null);
+      case T5Package.COMANDO_ATRIBUICAO__VALOR:
+        setValor((Expressao)null);
         return;
     }
     super.eUnset(featureID);
@@ -253,10 +253,10 @@ public class ComandoAtribuicaoImpl extends ComandoImpl implements ComandoAtribui
   {
     switch (featureID)
     {
-      case T5Package.COMANDO_ATRIBUICAO__EXP:
-        return exp != null;
-      case T5Package.COMANDO_ATRIBUICAO__VARIAVEL:
-        return variavel != null;
+      case T5Package.COMANDO_ATRIBUICAO__TARGET:
+        return target != null;
+      case T5Package.COMANDO_ATRIBUICAO__VALOR:
+        return valor != null;
     }
     return super.eIsSet(featureID);
   }

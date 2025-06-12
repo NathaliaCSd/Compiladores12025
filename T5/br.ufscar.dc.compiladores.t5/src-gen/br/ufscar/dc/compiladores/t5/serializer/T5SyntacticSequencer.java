@@ -11,6 +11,9 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
+import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 
@@ -18,17 +21,74 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class T5SyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected T5GrammarAccess grammarAccess;
+	protected AbstractElementAlias match_ComandoAtribuicao_CircumflexAccentKeyword_0_q;
+	protected AbstractElementAlias match_ComandoCaso_SenaoKeyword_4_0_q;
+	protected AbstractElementAlias match_ComandoLeia_CircumflexAccentKeyword_2_q;
+	protected AbstractElementAlias match_ComandoLeia_CircumflexAccentKeyword_4_1_q;
+	protected AbstractElementAlias match_ComandoSe_SenaoKeyword_4_0_q;
+	protected AbstractElementAlias match_FatorAritmetico_CircumflexAccentKeyword_0_0_q;
+	protected AbstractElementAlias match_Identificador___FullStopKeyword_1_0_IDTerminalRuleCall_1_1__a;
+	protected AbstractElementAlias match_Parametro_VarKeyword_0_q;
+	protected AbstractElementAlias match_TermoLogico_NaoKeyword_0_q;
+	protected AbstractElementAlias match_TipoEstendido_CircumflexAccentKeyword_0_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (T5GrammarAccess) access;
+		match_ComandoAtribuicao_CircumflexAccentKeyword_0_q = new TokenAlias(false, true, grammarAccess.getComandoAtribuicaoAccess().getCircumflexAccentKeyword_0());
+		match_ComandoCaso_SenaoKeyword_4_0_q = new TokenAlias(false, true, grammarAccess.getComandoCasoAccess().getSenaoKeyword_4_0());
+		match_ComandoLeia_CircumflexAccentKeyword_2_q = new TokenAlias(false, true, grammarAccess.getComandoLeiaAccess().getCircumflexAccentKeyword_2());
+		match_ComandoLeia_CircumflexAccentKeyword_4_1_q = new TokenAlias(false, true, grammarAccess.getComandoLeiaAccess().getCircumflexAccentKeyword_4_1());
+		match_ComandoSe_SenaoKeyword_4_0_q = new TokenAlias(false, true, grammarAccess.getComandoSeAccess().getSenaoKeyword_4_0());
+		match_FatorAritmetico_CircumflexAccentKeyword_0_0_q = new TokenAlias(false, true, grammarAccess.getFatorAritmeticoAccess().getCircumflexAccentKeyword_0_0());
+		match_Identificador___FullStopKeyword_1_0_IDTerminalRuleCall_1_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getIdentificadorAccess().getFullStopKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getIdentificadorAccess().getIDTerminalRuleCall_1_1()));
+		match_Parametro_VarKeyword_0_q = new TokenAlias(false, true, grammarAccess.getParametroAccess().getVarKeyword_0());
+		match_TermoLogico_NaoKeyword_0_q = new TokenAlias(false, true, grammarAccess.getTermoLogicoAccess().getNaoKeyword_0());
+		match_TipoEstendido_CircumflexAccentKeyword_0_q = new TokenAlias(false, true, grammarAccess.getTipoEstendidoAccess().getCircumflexAccentKeyword_0());
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (ruleCall.getRule() == grammarAccess.getIDRule())
+			return getIDToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getOpUnarioRule())
+			return getOpUnarioToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getSTRINGRule())
+			return getSTRINGToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
+	/**
+	 * terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+	 */
+	protected String getIDToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "";
+	}
+	
+	/**
+	 * OpUnario:
+	 *     '-'
+	 * ;
+	 */
+	protected String getOpUnarioToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "-";
+	}
+	
+	/**
+	 * terminal STRING:
+	 * 			'"' ( '\\' .  | !('\\'|'"') )* '"' |
+	 * 			"'" ( '\\' .  | !('\\'|"'") )* "'"
+	 * 		;
+	 */
+	protected String getSTRINGToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "\"\"";
+	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
@@ -36,8 +96,172 @@ public class T5SyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			acceptNodes(getLastNavigableState(), syntaxNodes);
+			if (match_ComandoAtribuicao_CircumflexAccentKeyword_0_q.equals(syntax))
+				emit_ComandoAtribuicao_CircumflexAccentKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ComandoCaso_SenaoKeyword_4_0_q.equals(syntax))
+				emit_ComandoCaso_SenaoKeyword_4_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ComandoLeia_CircumflexAccentKeyword_2_q.equals(syntax))
+				emit_ComandoLeia_CircumflexAccentKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ComandoLeia_CircumflexAccentKeyword_4_1_q.equals(syntax))
+				emit_ComandoLeia_CircumflexAccentKeyword_4_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ComandoSe_SenaoKeyword_4_0_q.equals(syntax))
+				emit_ComandoSe_SenaoKeyword_4_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_FatorAritmetico_CircumflexAccentKeyword_0_0_q.equals(syntax))
+				emit_FatorAritmetico_CircumflexAccentKeyword_0_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Identificador___FullStopKeyword_1_0_IDTerminalRuleCall_1_1__a.equals(syntax))
+				emit_Identificador___FullStopKeyword_1_0_IDTerminalRuleCall_1_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Parametro_VarKeyword_0_q.equals(syntax))
+				emit_Parametro_VarKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TermoLogico_NaoKeyword_0_q.equals(syntax))
+				emit_TermoLogico_NaoKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TipoEstendido_CircumflexAccentKeyword_0_q.equals(syntax))
+				emit_TipoEstendido_CircumflexAccentKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     '^'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) target=[Declaracao|ID]
+	 
+	 * </pre>
+	 */
+	protected void emit_ComandoAtribuicao_CircumflexAccentKeyword_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     'senao'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     exp=ExpressaoAritmetica 'seja' (ambiguity) 'fim_caso' (rule end)
+	 *     selecao+=Selecao (ambiguity) 'fim_caso' (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_ComandoCaso_SenaoKeyword_4_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     '^'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'leia' '(' (ambiguity) alvo=[Declaracao|ID]
+	 
+	 * </pre>
+	 */
+	protected void emit_ComandoLeia_CircumflexAccentKeyword_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     '^'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     alvo=[Declaracao|ID] ',' (ambiguity) alvo=[Declaracao|ID]
+	 
+	 * </pre>
+	 */
+	protected void emit_ComandoLeia_CircumflexAccentKeyword_4_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     'senao'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     comandos+=Comando (ambiguity) 'fim_se' (rule end)
+	 *     cond=Expressao 'entao' (ambiguity) 'fim_se' (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_ComandoSe_SenaoKeyword_4_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     '^'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) ref=[Declaracao|ID]
+	 
+	 * </pre>
+	 */
+	protected void emit_FatorAritmetico_CircumflexAccentKeyword_0_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ('.' ID)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) ID (ambiguity) (rule start)
+	 *     (rule start) ID (ambiguity) dimensoes+=Dimensao
+	 
+	 * </pre>
+	 */
+	protected void emit_Identificador___FullStopKeyword_1_0_IDTerminalRuleCall_1_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     'var'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) ids+=Identificador
+	 
+	 * </pre>
+	 */
+	protected void emit_Parametro_VarKeyword_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     'nao'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) rel=ExpressaoRelacional
+	 
+	 * </pre>
+	 */
+	protected void emit_TermoLogico_NaoKeyword_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     '^'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) basic=TipoBasico
+	 *     (rule start) (ambiguity) ref=[Declaracao|ID]
+	 
+	 * </pre>
+	 */
+	protected void emit_TipoEstendido_CircumflexAccentKeyword_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 }

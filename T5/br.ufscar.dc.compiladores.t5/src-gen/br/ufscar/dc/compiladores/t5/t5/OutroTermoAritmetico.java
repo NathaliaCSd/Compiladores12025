@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link br.ufscar.dc.compiladores.t5.t5.OutroTermoAritmetico#getOperador <em>Operador</em>}</li>
+ *   <li>{@link br.ufscar.dc.compiladores.t5.t5.OutroTermoAritmetico#getOp <em>Op</em>}</li>
  *   <li>{@link br.ufscar.dc.compiladores.t5.t5.OutroTermoAritmetico#getTermo <em>Termo</em>}</li>
  * </ul>
  *
@@ -25,26 +25,26 @@ import org.eclipse.emf.ecore.EObject;
 public interface OutroTermoAritmetico extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Operador</b></em>' attribute.
+   * Returns the value of the '<em><b>Op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Operador</em>' attribute.
-   * @see #setOperador(String)
-   * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getOutroTermoAritmetico_Operador()
+   * @return the value of the '<em>Op</em>' attribute.
+   * @see #setOp(String)
+   * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getOutroTermoAritmetico_Op()
    * @model
    * @generated
    */
-  String getOperador();
+  String getOp();
 
   /**
-   * Sets the value of the '{@link br.ufscar.dc.compiladores.t5.t5.OutroTermoAritmetico#getOperador <em>Operador</em>}' attribute.
+   * Sets the value of the '{@link br.ufscar.dc.compiladores.t5.t5.OutroTermoAritmetico#getOp <em>Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Operador</em>' attribute.
-   * @see #getOperador()
+   * @param value the new value of the '<em>Op</em>' attribute.
+   * @see #getOp()
    * @generated
    */
-  void setOperador(String value);
+  void setOp(String value);
 
   /**
    * Returns the value of the '<em><b>Termo</b></em>' containment reference.

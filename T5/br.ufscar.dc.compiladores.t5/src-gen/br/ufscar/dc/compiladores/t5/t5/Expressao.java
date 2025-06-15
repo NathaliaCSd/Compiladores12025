@@ -39,25 +39,15 @@ public interface Expressao extends EObject
   EList<TermoLogico> getLogicos();
 
   /**
-   * Returns the value of the '<em><b>Op</b></em>' attribute.
+   * Returns the value of the '<em><b>Op</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Op</em>' attribute.
-   * @see #setOp(String)
+   * @return the value of the '<em>Op</em>' attribute list.
    * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getExpressao_Op()
-   * @model
+   * @model unique="false"
    * @generated
    */
-  String getOp();
-
-  /**
-   * Sets the value of the '{@link br.ufscar.dc.compiladores.t5.t5.Expressao#getOp <em>Op</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Op</em>' attribute.
-   * @see #getOp()
-   * @generated
-   */
-  void setOp(String value);
+  EList<String> getOp();
 
 } // Expressao

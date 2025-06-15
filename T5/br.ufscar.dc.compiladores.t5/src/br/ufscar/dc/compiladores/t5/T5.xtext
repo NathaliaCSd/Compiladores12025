@@ -1,7 +1,9 @@
-grammar br.ufscar.dc.compiladores.t5.T5 with org.eclipse.xtext.common.Terminals
+grammar br.ufscar.dc.compiladores.t5.T5
 
 generate t5 "http://www.ufscar.br/dc/compiladores/t5/T5"
 
+// Importa a biblioteca de tipos base do Eclipse, necessária para os terminais
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 Programa:
     'DECLARACOES' declaracoes+=Declaracao+
@@ -41,7 +43,7 @@ Tipo:
 ;
 
 Registro:
-    'registro' (campos+=Variavel)* 'fim_registro'
+    {Registro} 'registro' (campos+=Variavel)* 'fim_registro'
 ;
 
 TipoEstendido:
@@ -65,7 +67,7 @@ Parametro:
 ;
 
 Corpo:
-    (locais+=DeclaracaoLocal)* comandos+=Comando*
+    {Corpo} (locais+=DeclaracaoLocal)* comandos+=Comando*
 ;
 
 Comando:
@@ -82,7 +84,6 @@ Comando:
 ;
 
 ComandoLeia:
-    // Usa '+=' para criar uma lista e aponta para Variavel
     'leia' '(' ('^')? alvo+=[Variavel] (',' ('^')? alvo+=[Variavel])* ')'
 ;
 
@@ -111,12 +112,11 @@ ComandoFaca:
 ;
 
 ComandoAtribuicao:
-    target=[Variavel] '<-' valor=Expressao
+    'atribua' target=[Variavel] '<-' valor=Expressao
 ;
 
-
 ComandoChamada:
-    name=ID '(' (args+=Expressao (',' args+=Expressao)*)? ')'
+    'chame' name=ID '(' (args+=Expressao (',' args+=Expressao)*)? ')'
 ;
 
 ComandoRetorne:
@@ -156,7 +156,7 @@ OutroFatorAritmetico:
 ;
 
 FatorAritmetico:
-    ('^')? ref=[Variavel]  // CORRIGIDO: Aponta para Variavel
+    ('^')? ref=[Variavel]
   | numero=INT
   | real=REAL
   | '(' exp=ExpressaoAritmetica ')'
@@ -164,11 +164,11 @@ FatorAritmetico:
 ;
 
 Expressao:
-    logicos+=TermoLogico (op=OpBool logicos+=TermoLogico)*
+    logicos+=TermoLogico (op+=OpBool logicos+=TermoLogico)*
 ;
 
 TermoLogico:
-    ('nao')? rel=ExpressaoRelacional
+    nao?='nao'? rel=ExpressaoRelacional
 ;
 
 ExpressaoRelacional:
@@ -193,5 +193,12 @@ OpBool:
 
 terminal REAL: INT '.' INT;
 
-// Terminais padrões via org.eclipse.xtext.common.Terminals:
-// ID, INT, STRING, ML_COMMENT, SL_COMMENT, WS
+// Definição explícita dos terminais para resolver o conflito de palavras-chave
+terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+terminal INT returns ecore::EInt: ('0'..'9')+;
+terminal STRING:
+    '"' ( '\\' . /* escape sequence */ | !('\\'|'"') )* '"' |
+    "'" ( '\\' . /* escape sequence */ | !('\\'|"'") )* "'";
+terminal ML_COMMENT: '/*' -> '*/';
+terminal SL_COMMENT: '//' !('\n'|'\r')* ('\r'? '\n')?;
+terminal WS: (' '|'\t'|'\r'|'\n')+;

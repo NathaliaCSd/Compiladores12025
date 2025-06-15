@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link br.ufscar.dc.compiladores.t5.t5.impl.TermoLogicoImpl#isNao <em>Nao</em>}</li>
  *   <li>{@link br.ufscar.dc.compiladores.t5.t5.impl.TermoLogicoImpl#getRel <em>Rel</em>}</li>
  * </ul>
  *
@@ -31,6 +32,26 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class TermoLogicoImpl extends MinimalEObjectImpl.Container implements TermoLogico
 {
+  /**
+   * The default value of the '{@link #isNao() <em>Nao</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isNao()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean NAO_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isNao() <em>Nao</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isNao()
+   * @generated
+   * @ordered
+   */
+  protected boolean nao = NAO_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getRel() <em>Rel</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -60,6 +81,31 @@ public class TermoLogicoImpl extends MinimalEObjectImpl.Container implements Ter
   protected EClass eStaticClass()
   {
     return T5Package.Literals.TERMO_LOGICO;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isNao()
+  {
+    return nao;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setNao(boolean newNao)
+  {
+    boolean oldNao = nao;
+    nao = newNao;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, T5Package.TERMO_LOGICO__NAO, oldNao, nao));
   }
 
   /**
@@ -138,6 +184,8 @@ public class TermoLogicoImpl extends MinimalEObjectImpl.Container implements Ter
   {
     switch (featureID)
     {
+      case T5Package.TERMO_LOGICO__NAO:
+        return isNao();
       case T5Package.TERMO_LOGICO__REL:
         return getRel();
     }
@@ -154,6 +202,9 @@ public class TermoLogicoImpl extends MinimalEObjectImpl.Container implements Ter
   {
     switch (featureID)
     {
+      case T5Package.TERMO_LOGICO__NAO:
+        setNao((Boolean)newValue);
+        return;
       case T5Package.TERMO_LOGICO__REL:
         setRel((ExpressaoRelacional)newValue);
         return;
@@ -171,6 +222,9 @@ public class TermoLogicoImpl extends MinimalEObjectImpl.Container implements Ter
   {
     switch (featureID)
     {
+      case T5Package.TERMO_LOGICO__NAO:
+        setNao(NAO_EDEFAULT);
+        return;
       case T5Package.TERMO_LOGICO__REL:
         setRel((ExpressaoRelacional)null);
         return;
@@ -188,10 +242,29 @@ public class TermoLogicoImpl extends MinimalEObjectImpl.Container implements Ter
   {
     switch (featureID)
     {
+      case T5Package.TERMO_LOGICO__NAO:
+        return nao != NAO_EDEFAULT;
       case T5Package.TERMO_LOGICO__REL:
         return rel != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (nao: ");
+    result.append(nao);
+    result.append(')');
+    return result.toString();
   }
 
 } //TermoLogicoImpl

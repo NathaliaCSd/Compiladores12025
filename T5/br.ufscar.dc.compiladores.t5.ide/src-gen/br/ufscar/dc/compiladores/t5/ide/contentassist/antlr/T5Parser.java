@@ -75,8 +75,8 @@ public class T5Parser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getComandoFacaAccess().getGroup(), "rule__ComandoFaca__Group__0");
 			builder.put(grammarAccess.getComandoAtribuicaoAccess().getGroup(), "rule__ComandoAtribuicao__Group__0");
 			builder.put(grammarAccess.getComandoChamadaAccess().getGroup(), "rule__ComandoChamada__Group__0");
-			builder.put(grammarAccess.getComandoChamadaAccess().getGroup_2(), "rule__ComandoChamada__Group_2__0");
-			builder.put(grammarAccess.getComandoChamadaAccess().getGroup_2_1(), "rule__ComandoChamada__Group_2_1__0");
+			builder.put(grammarAccess.getComandoChamadaAccess().getGroup_3(), "rule__ComandoChamada__Group_3__0");
+			builder.put(grammarAccess.getComandoChamadaAccess().getGroup_3_1(), "rule__ComandoChamada__Group_3_1__0");
 			builder.put(grammarAccess.getComandoRetorneAccess().getGroup(), "rule__ComandoRetorne__Group__0");
 			builder.put(grammarAccess.getSelecaoAccess().getGroup(), "rule__Selecao__Group__0");
 			builder.put(grammarAccess.getItemSelecaoAccess().getGroup(), "rule__ItemSelecao__Group__0");
@@ -118,7 +118,7 @@ public class T5Parser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getDimensaoAccess().getExpAssignment_1(), "rule__Dimensao__ExpAssignment_1");
 			builder.put(grammarAccess.getTipoAccess().getRegistroAssignment_0(), "rule__Tipo__RegistroAssignment_0");
 			builder.put(grammarAccess.getTipoAccess().getTipoExtAssignment_1(), "rule__Tipo__TipoExtAssignment_1");
-			builder.put(grammarAccess.getRegistroAccess().getCamposAssignment_1(), "rule__Registro__CamposAssignment_1");
+			builder.put(grammarAccess.getRegistroAccess().getCamposAssignment_2(), "rule__Registro__CamposAssignment_2");
 			builder.put(grammarAccess.getTipoEstendidoAccess().getBasicAssignment_1_0(), "rule__TipoEstendido__BasicAssignment_1_0");
 			builder.put(grammarAccess.getTipoEstendidoAccess().getRefAssignment_1_1(), "rule__TipoEstendido__RefAssignment_1_1");
 			builder.put(grammarAccess.getParametrosAccess().getParametroAssignment_0(), "rule__Parametros__ParametroAssignment_0");
@@ -126,8 +126,8 @@ public class T5Parser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getParametroAccess().getIdsAssignment_1(), "rule__Parametro__IdsAssignment_1");
 			builder.put(grammarAccess.getParametroAccess().getIdsAssignment_2_1(), "rule__Parametro__IdsAssignment_2_1");
 			builder.put(grammarAccess.getParametroAccess().getTipoParamAssignment_4(), "rule__Parametro__TipoParamAssignment_4");
-			builder.put(grammarAccess.getCorpoAccess().getLocaisAssignment_0(), "rule__Corpo__LocaisAssignment_0");
-			builder.put(grammarAccess.getCorpoAccess().getComandosAssignment_1(), "rule__Corpo__ComandosAssignment_1");
+			builder.put(grammarAccess.getCorpoAccess().getLocaisAssignment_1(), "rule__Corpo__LocaisAssignment_1");
+			builder.put(grammarAccess.getCorpoAccess().getComandosAssignment_2(), "rule__Corpo__ComandosAssignment_2");
 			builder.put(grammarAccess.getComandoLeiaAccess().getAlvoAssignment_3(), "rule__ComandoLeia__AlvoAssignment_3");
 			builder.put(grammarAccess.getComandoLeiaAccess().getAlvoAssignment_4_2(), "rule__ComandoLeia__AlvoAssignment_4_2");
 			builder.put(grammarAccess.getComandoEscrevaAccess().getExpAssignment_2(), "rule__ComandoEscreva__ExpAssignment_2");
@@ -146,11 +146,11 @@ public class T5Parser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getComandoEnquantoAccess().getComandosAssignment_3(), "rule__ComandoEnquanto__ComandosAssignment_3");
 			builder.put(grammarAccess.getComandoFacaAccess().getComandosAssignment_1(), "rule__ComandoFaca__ComandosAssignment_1");
 			builder.put(grammarAccess.getComandoFacaAccess().getCondAssignment_3(), "rule__ComandoFaca__CondAssignment_3");
-			builder.put(grammarAccess.getComandoAtribuicaoAccess().getTargetAssignment_0(), "rule__ComandoAtribuicao__TargetAssignment_0");
-			builder.put(grammarAccess.getComandoAtribuicaoAccess().getValorAssignment_2(), "rule__ComandoAtribuicao__ValorAssignment_2");
-			builder.put(grammarAccess.getComandoChamadaAccess().getNameAssignment_0(), "rule__ComandoChamada__NameAssignment_0");
-			builder.put(grammarAccess.getComandoChamadaAccess().getArgsAssignment_2_0(), "rule__ComandoChamada__ArgsAssignment_2_0");
-			builder.put(grammarAccess.getComandoChamadaAccess().getArgsAssignment_2_1_1(), "rule__ComandoChamada__ArgsAssignment_2_1_1");
+			builder.put(grammarAccess.getComandoAtribuicaoAccess().getTargetAssignment_1(), "rule__ComandoAtribuicao__TargetAssignment_1");
+			builder.put(grammarAccess.getComandoAtribuicaoAccess().getValorAssignment_3(), "rule__ComandoAtribuicao__ValorAssignment_3");
+			builder.put(grammarAccess.getComandoChamadaAccess().getNameAssignment_1(), "rule__ComandoChamada__NameAssignment_1");
+			builder.put(grammarAccess.getComandoChamadaAccess().getArgsAssignment_3_0(), "rule__ComandoChamada__ArgsAssignment_3_0");
+			builder.put(grammarAccess.getComandoChamadaAccess().getArgsAssignment_3_1_1(), "rule__ComandoChamada__ArgsAssignment_3_1_1");
 			builder.put(grammarAccess.getComandoRetorneAccess().getExpAssignment_1(), "rule__ComandoRetorne__ExpAssignment_1");
 			builder.put(grammarAccess.getSelecaoAccess().getItensAssignment_0(), "rule__Selecao__ItensAssignment_0");
 			builder.put(grammarAccess.getSelecaoAccess().getComandosAssignment_2(), "rule__Selecao__ComandosAssignment_2");
@@ -175,6 +175,7 @@ public class T5Parser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getExpressaoAccess().getLogicosAssignment_0(), "rule__Expressao__LogicosAssignment_0");
 			builder.put(grammarAccess.getExpressaoAccess().getOpAssignment_1_0(), "rule__Expressao__OpAssignment_1_0");
 			builder.put(grammarAccess.getExpressaoAccess().getLogicosAssignment_1_1(), "rule__Expressao__LogicosAssignment_1_1");
+			builder.put(grammarAccess.getTermoLogicoAccess().getNaoAssignment_0(), "rule__TermoLogico__NaoAssignment_0");
 			builder.put(grammarAccess.getTermoLogicoAccess().getRelAssignment_1(), "rule__TermoLogico__RelAssignment_1");
 			builder.put(grammarAccess.getExpressaoRelacionalAccess().getLeftAssignment_0(), "rule__ExpressaoRelacional__LeftAssignment_0");
 			builder.put(grammarAccess.getExpressaoRelacionalAccess().getOpAssignment_1_0(), "rule__ExpressaoRelacional__OpAssignment_1_0");
@@ -202,7 +203,7 @@ public class T5Parser extends AbstractContentAssistParser {
 
 	@Override
 	protected String[] getInitialHiddenTokens() {
-		return new String[] { "RULE_WS", "RULE_ML_COMMENT", "RULE_SL_COMMENT" };
+		return new String[] {  };
 	}
 
 	public T5GrammarAccess getGrammarAccess() {

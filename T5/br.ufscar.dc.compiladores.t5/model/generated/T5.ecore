@@ -181,9 +181,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="Expressao">
     <eStructuralFeatures xsi:type="ecore:EReference" name="logicos" upperBound="-1"
         eType="#//TermoLogico" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TermoLogico">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nao" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rel" eType="#//ExpressaoRelacional"
         containment="true"/>
   </eClassifiers>

@@ -1491,9 +1491,20 @@ public class T5PackageImpl extends EPackageImpl implements T5Package
    * @generated
    */
   @Override
+  public EAttribute getTermoLogico_Nao()
+  {
+    return (EAttribute)termoLogicoEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getTermoLogico_Rel()
   {
-    return (EReference)termoLogicoEClass.getEStructuralFeatures().get(0);
+    return (EReference)termoLogicoEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1706,6 +1717,7 @@ public class T5PackageImpl extends EPackageImpl implements T5Package
     createEAttribute(expressaoEClass, EXPRESSAO__OP);
 
     termoLogicoEClass = createEClass(TERMO_LOGICO);
+    createEAttribute(termoLogicoEClass, TERMO_LOGICO__NAO);
     createEReference(termoLogicoEClass, TERMO_LOGICO__REL);
 
     expressaoRelacionalEClass = createEClass(EXPRESSAO_RELACIONAL);
@@ -1889,9 +1901,10 @@ public class T5PackageImpl extends EPackageImpl implements T5Package
 
     initEClass(expressaoEClass, Expressao.class, "Expressao", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getExpressao_Logicos(), this.getTermoLogico(), null, "logicos", null, 0, -1, Expressao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getExpressao_Op(), ecorePackage.getEString(), "op", null, 0, 1, Expressao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getExpressao_Op(), ecorePackage.getEString(), "op", null, 0, -1, Expressao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(termoLogicoEClass, TermoLogico.class, "TermoLogico", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTermoLogico_Nao(), ecorePackage.getEBoolean(), "nao", null, 0, 1, TermoLogico.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTermoLogico_Rel(), this.getExpressaoRelacional(), null, "rel", null, 0, 1, TermoLogico.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(expressaoRelacionalEClass, ExpressaoRelacional.class, "ExpressaoRelacional", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

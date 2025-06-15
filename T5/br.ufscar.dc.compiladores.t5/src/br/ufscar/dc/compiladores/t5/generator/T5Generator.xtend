@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import br.ufscar.dc.compiladores.t5.t5.DeclaracaoGlobal
 
 class T5Generator extends AbstractGenerator {
 
@@ -64,6 +65,13 @@ class T5Generator extends AbstractGenerator {
     «ENDIF»
 '''
 
+def dispatch compileDeclaracao(DeclaracaoGlobal d) '''
+     public static void «d.name»() {
+     	
+     }
+'''
+
+
 	def getTipoJava(Tipo t) {
 		val tipoBase = t.tipoExt?.basic
 		if (tipoBase !== null) {
@@ -75,7 +83,6 @@ class T5Generator extends AbstractGenerator {
 				default: 'Object'
 			}
 		} else {
-			// TODO: Adicionar lógica para registros e tipos definidos pelo usuário
 			'Object'
 		}
 	}
@@ -96,28 +103,24 @@ class T5Generator extends AbstractGenerator {
 	}
 
 	def compileCorpo(Corpo c) '''
-		«// TODO: Adicionar lógica para declarações locais dentro de funções/procedimentos»
-		«FOR cmd : c.comandos»
-			«compileComando(cmd)»
-		«ENDFOR»
+		«FOR Comando : c.comandos»
+			«compileComando(Comando)»
+	«ENDFOR»
 	'''
 
 	// --- Compilação de Comandos ---
 	def dispatch compileComando(ComandoAtribuicao c) '''
-		«c.target.name» = «compileExpressao(c.valor)»;
-	'''
+    «c.target.id.name» = «compileExpressao(c.valor)»;
+'''
 
 	def dispatch compileComando(ComandoLeia c) '''
-    // c.alvo agora é uma lista de Variaveis
     «FOR alvo : c.alvo»
         «alvo.id.name» = «getTipoLeitura(alvo)»;
     «ENDFOR»
 '''
 
 	def dispatch compileComando(ComandoEscreva c) '''
-    // c.exp agora é uma lista
     «FOR exp : c.exp»
-        // Adicionado "System.out.print" para melhor formatação
         System.out.print(«compileExpressao(exp)»);
     «ENDFOR»
     System.out.println(); // Adiciona uma nova linha no final
@@ -157,8 +160,8 @@ class T5Generator extends AbstractGenerator {
 	// --- Compilação de Expressões ---
 	def compileExpressao(Expressao e) '''«compileTermoLogico(e.logicos.get(0))»«FOR i : 1 ..< e.logicos.size» «compileOpBool(e.op.get(i-1))» «compileTermoLogico(e.logicos.get(i))»«ENDFOR»'''
 
-	def compileTermoLogico(TermoLogico tl) '''«IF tl.isNao»!«ENDIF»(«compileExpressaoRelacional(tl.rel)»)'''
-
+def compileTermoLogico(TermoLogico tl) '''«IF tl.nao»!«ENDIF»(«compileExpressaoRelacional(tl.rel)»)'''
+	
 	def compileExpressaoRelacional(ExpressaoRelacional er) {
 		if(er.right !== null) {
 			return '''«compileExpressaoAritmetica(er.left)» «compileOpRel(er.op)» «compileExpressaoAritmetica(er.right)»'''
@@ -171,15 +174,30 @@ class T5Generator extends AbstractGenerator {
 
 	def compileTermoAritmetico(TermoAritmetico t) '''«compileFatorAritmetico(t.fatores.head)»«FOR of : t.outros» «of.op» «compileFatorAritmetico(of.fator)»«ENDFOR»'''
 	
-	def compileFatorAritmetico(FatorAritmetico f) {
-    if(f.ref !== null) return f.ref.id.name // Acessa o nome da variável através de 'id.name'
-    if(f.str !== null) return '"' + f.str + '"'; // Literais devem estar entre aspas
-    if(f.exp !== null) return '(' + compileExpressaoAritmetica(f.exp) + ')'
-    if(f.real !== 0.0) return f.real.toString // Condição ajustada
-    if(f.numero !== 0) return f.numero.toString // Condição ajustada
-    // A verificação de 'numero' e 'real' pode ser imprecisa se o valor 0 for válido.
-    // Esta estrutura if-else assume que apenas uma das opções será preenchida pelo parser.
-    return '' // Caso padrão
+	def String compileFatorAritmetico(FatorAritmetico f) {
+    // Primeiro, checa a referência a outra variável
+    if (f.ref !== null) {
+        return f.ref.id.name
+    } 
+    // Depois, checa se é um literal String
+    else if (f.str !== null) {
+        return '"' + f.str + '"'
+    } 
+    // Depois, checa se é uma expressão entre parênteses
+    else if (f.exp !== null) {
+        return '(' + compileExpressaoAritmetica(f.exp) + ')'
+    } 
+    // Depois, checa se é um número real
+    else if (f.real != 0.0) {
+        return String.valueOf(f.real)
+    } 
+    // Finalmente, checa se é um número inteiro
+    else if (f.numero != 0) {
+        return String.valueOf(f.numero)
+    }
+    
+    // Se não for nada disso, retorna uma string vazia
+    return ""
 }
 
 	def compileOpBool(String op) {

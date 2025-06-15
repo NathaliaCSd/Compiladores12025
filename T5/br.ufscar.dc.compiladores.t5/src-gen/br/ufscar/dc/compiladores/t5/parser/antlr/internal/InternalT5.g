@@ -251,7 +251,7 @@ ruleDeclaracaoLocal returns [EObject current=null]
 							$current,
 							"name",
 							lv_name_5_0,
-							"org.eclipse.xtext.common.Terminals.ID");
+							"br.ufscar.dc.compiladores.t5.T5.ID");
 					}
 				)
 			)
@@ -322,7 +322,7 @@ ruleDeclaracaoLocal returns [EObject current=null]
 							$current,
 							"name",
 							lv_name_11_0,
-							"org.eclipse.xtext.common.Terminals.ID");
+							"br.ufscar.dc.compiladores.t5.T5.ID");
 					}
 				)
 			)
@@ -388,7 +388,7 @@ ruleDeclaracaoGlobal returns [EObject current=null]
 							$current,
 							"name",
 							lv_name_1_0,
-							"org.eclipse.xtext.common.Terminals.ID");
+							"br.ufscar.dc.compiladores.t5.T5.ID");
 					}
 				)
 			)
@@ -463,7 +463,7 @@ ruleDeclaracaoGlobal returns [EObject current=null]
 							$current,
 							"name",
 							lv_name_8_0,
-							"org.eclipse.xtext.common.Terminals.ID");
+							"br.ufscar.dc.compiladores.t5.T5.ID");
 					}
 				)
 			)
@@ -635,7 +635,7 @@ ruleIdentificador returns [EObject current=null]
 						$current,
 						"name",
 						lv_name_0_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						"br.ufscar.dc.compiladores.t5.T5.ID");
 				}
 			)
 		)
@@ -658,7 +658,7 @@ ruleIdentificador returns [EObject current=null]
 							$current,
 							"parts",
 							lv_parts_2_0,
-							"org.eclipse.xtext.common.Terminals.ID");
+							"br.ufscar.dc.compiladores.t5.T5.ID");
 					}
 				)
 			)
@@ -805,16 +805,23 @@ ruleRegistro returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='registro'
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getRegistroAccess().getRegistroAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='registro'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getRegistroAccess().getRegistroKeyword_0());
+			newLeafNode(otherlv_1, grammarAccess.getRegistroAccess().getRegistroKeyword_1());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRegistroAccess().getCamposVariavelParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getRegistroAccess().getCamposVariavelParserRuleCall_2_0());
 				}
-				lv_campos_1_0=ruleVariavel
+				lv_campos_2_0=ruleVariavel
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRegistroRule());
@@ -822,15 +829,15 @@ ruleRegistro returns [EObject current=null]
 					add(
 						$current,
 						"campos",
-						lv_campos_1_0,
+						lv_campos_2_0,
 						"br.ufscar.dc.compiladores.t5.T5.Variavel");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		otherlv_2='fim_registro'
+		otherlv_3='fim_registro'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getRegistroAccess().getFim_registroKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getRegistroAccess().getFim_registroKeyword_3());
 		}
 	)
 ;
@@ -1163,11 +1170,18 @@ ruleCorpo returns [EObject current=null]
 }:
 	(
 		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getCorpoAccess().getCorpoAction_0(),
+					$current);
+			}
+		)
+		(
 			(
 				{
-					newCompositeNode(grammarAccess.getCorpoAccess().getLocaisDeclaracaoLocalParserRuleCall_0_0());
+					newCompositeNode(grammarAccess.getCorpoAccess().getLocaisDeclaracaoLocalParserRuleCall_1_0());
 				}
-				lv_locais_0_0=ruleDeclaracaoLocal
+				lv_locais_1_0=ruleDeclaracaoLocal
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getCorpoRule());
@@ -1175,7 +1189,7 @@ ruleCorpo returns [EObject current=null]
 					add(
 						$current,
 						"locais",
-						lv_locais_0_0,
+						lv_locais_1_0,
 						"br.ufscar.dc.compiladores.t5.T5.DeclaracaoLocal");
 					afterParserOrEnumRuleCall();
 				}
@@ -1184,9 +1198,9 @@ ruleCorpo returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getCorpoAccess().getComandosComandoParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getCorpoAccess().getComandosComandoParserRuleCall_2_0());
 				}
-				lv_comandos_1_0=ruleComando
+				lv_comandos_2_0=ruleComando
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getCorpoRule());
@@ -1194,7 +1208,7 @@ ruleCorpo returns [EObject current=null]
 					add(
 						$current,
 						"comandos",
-						lv_comandos_1_0,
+						lv_comandos_2_0,
 						"br.ufscar.dc.compiladores.t5.T5.Comando");
 					afterParserOrEnumRuleCall();
 				}
@@ -1683,7 +1697,7 @@ ruleComandoPara returns [EObject current=null]
 						$current,
 						"var",
 						lv_var_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						"br.ufscar.dc.compiladores.t5.T5.ID");
 				}
 			)
 		)
@@ -1913,6 +1927,10 @@ ruleComandoAtribuicao returns [EObject current=null]
 	leaveRule();
 }:
 	(
+		otherlv_0='atribua'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getComandoAtribuicaoAccess().getAtribuaKeyword_0());
+		}
 		(
 			(
 				{
@@ -1920,22 +1938,22 @@ ruleComandoAtribuicao returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getComandoAtribuicaoRule());
 					}
 				}
-				otherlv_0=RULE_ID
+				otherlv_1=RULE_ID
 				{
-					newLeafNode(otherlv_0, grammarAccess.getComandoAtribuicaoAccess().getTargetVariavelCrossReference_0_0());
+					newLeafNode(otherlv_1, grammarAccess.getComandoAtribuicaoAccess().getTargetVariavelCrossReference_1_0());
 				}
 			)
 		)
-		otherlv_1='<-'
+		otherlv_2='<-'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getComandoAtribuicaoAccess().getLessThanSignHyphenMinusKeyword_1());
+			newLeafNode(otherlv_2, grammarAccess.getComandoAtribuicaoAccess().getLessThanSignHyphenMinusKeyword_2());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getComandoAtribuicaoAccess().getValorExpressaoParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getComandoAtribuicaoAccess().getValorExpressaoParserRuleCall_3_0());
 				}
-				lv_valor_2_0=ruleExpressao
+				lv_valor_3_0=ruleExpressao
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getComandoAtribuicaoRule());
@@ -1943,7 +1961,7 @@ ruleComandoAtribuicao returns [EObject current=null]
 					set(
 						$current,
 						"valor",
-						lv_valor_2_0,
+						lv_valor_3_0,
 						"br.ufscar.dc.compiladores.t5.T5.Expressao");
 					afterParserOrEnumRuleCall();
 				}
@@ -1968,11 +1986,15 @@ ruleComandoChamada returns [EObject current=null]
 	leaveRule();
 }:
 	(
+		otherlv_0='chame'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getComandoChamadaAccess().getChameKeyword_0());
+		}
 		(
 			(
-				lv_name_0_0=RULE_ID
+				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_0_0, grammarAccess.getComandoChamadaAccess().getNameIDTerminalRuleCall_0_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getComandoChamadaAccess().getNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -1981,22 +2003,22 @@ ruleComandoChamada returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_0_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						lv_name_1_0,
+						"br.ufscar.dc.compiladores.t5.T5.ID");
 				}
 			)
 		)
-		otherlv_1='('
+		otherlv_2='('
 		{
-			newLeafNode(otherlv_1, grammarAccess.getComandoChamadaAccess().getLeftParenthesisKeyword_1());
+			newLeafNode(otherlv_2, grammarAccess.getComandoChamadaAccess().getLeftParenthesisKeyword_2());
 		}
 		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getComandoChamadaAccess().getArgsExpressaoParserRuleCall_2_0_0());
+						newCompositeNode(grammarAccess.getComandoChamadaAccess().getArgsExpressaoParserRuleCall_3_0_0());
 					}
-					lv_args_2_0=ruleExpressao
+					lv_args_3_0=ruleExpressao
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getComandoChamadaRule());
@@ -2004,23 +2026,23 @@ ruleComandoChamada returns [EObject current=null]
 						add(
 							$current,
 							"args",
-							lv_args_2_0,
+							lv_args_3_0,
 							"br.ufscar.dc.compiladores.t5.T5.Expressao");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_3=','
+				otherlv_4=','
 				{
-					newLeafNode(otherlv_3, grammarAccess.getComandoChamadaAccess().getCommaKeyword_2_1_0());
+					newLeafNode(otherlv_4, grammarAccess.getComandoChamadaAccess().getCommaKeyword_3_1_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getComandoChamadaAccess().getArgsExpressaoParserRuleCall_2_1_1_0());
+							newCompositeNode(grammarAccess.getComandoChamadaAccess().getArgsExpressaoParserRuleCall_3_1_1_0());
 						}
-						lv_args_4_0=ruleExpressao
+						lv_args_5_0=ruleExpressao
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getComandoChamadaRule());
@@ -2028,7 +2050,7 @@ ruleComandoChamada returns [EObject current=null]
 							add(
 								$current,
 								"args",
-								lv_args_4_0,
+								lv_args_5_0,
 								"br.ufscar.dc.compiladores.t5.T5.Expressao");
 							afterParserOrEnumRuleCall();
 						}
@@ -2036,9 +2058,9 @@ ruleComandoChamada returns [EObject current=null]
 				)
 			)*
 		)?
-		otherlv_5=')'
+		otherlv_6=')'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getComandoChamadaAccess().getRightParenthesisKeyword_3());
+			newLeafNode(otherlv_6, grammarAccess.getComandoChamadaAccess().getRightParenthesisKeyword_4());
 		}
 	)
 ;
@@ -2258,7 +2280,7 @@ ruleNumeroIntervalo returns [EObject current=null]
 						$current,
 						"start",
 						lv_start_1_0,
-						"org.eclipse.xtext.common.Terminals.INT");
+						"br.ufscar.dc.compiladores.t5.T5.INT");
 				}
 			)
 		)
@@ -2281,7 +2303,7 @@ ruleNumeroIntervalo returns [EObject current=null]
 							$current,
 							"end",
 							lv_end_3_0,
-							"org.eclipse.xtext.common.Terminals.INT");
+							"br.ufscar.dc.compiladores.t5.T5.INT");
 					}
 				)
 			)
@@ -2591,7 +2613,7 @@ ruleFatorAritmetico returns [EObject current=null]
 						$current,
 						"numero",
 						lv_numero_2_0,
-						"org.eclipse.xtext.common.Terminals.INT");
+						"br.ufscar.dc.compiladores.t5.T5.INT");
 				}
 			)
 		)
@@ -2659,7 +2681,7 @@ ruleFatorAritmetico returns [EObject current=null]
 						$current,
 						"str",
 						lv_str_7_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
+						"br.ufscar.dc.compiladores.t5.T5.STRING");
 				}
 			)
 		)
@@ -2712,7 +2734,7 @@ ruleExpressao returns [EObject current=null]
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getExpressaoRule());
 						}
-						set(
+						add(
 							$current,
 							"op",
 							lv_op_1_0,
@@ -2761,10 +2783,18 @@ ruleTermoLogico returns [EObject current=null]
 }:
 	(
 		(
-			otherlv_0='nao'
-			{
-				newLeafNode(otherlv_0, grammarAccess.getTermoLogicoAccess().getNaoKeyword_0());
-			}
+			(
+				lv_nao_0_0='nao'
+				{
+					newLeafNode(lv_nao_0_0, grammarAccess.getTermoLogicoAccess().getNaoNaoKeyword_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTermoLogicoRule());
+					}
+					setWithLastConsumed($current, "nao", lv_nao_0_0 != null, "nao");
+				}
+			)
 		)?
 		(
 			(
@@ -3023,5 +3053,3 @@ RULE_ML_COMMENT : '/*' ( options {greedy=false;} : . )*'*/';
 RULE_SL_COMMENT : '//' ~(('\n'|'\r'))* ('\r'? '\n')?;
 
 RULE_WS : (' '|'\t'|'\r'|'\n')+;
-
-RULE_ANY_OTHER : .;

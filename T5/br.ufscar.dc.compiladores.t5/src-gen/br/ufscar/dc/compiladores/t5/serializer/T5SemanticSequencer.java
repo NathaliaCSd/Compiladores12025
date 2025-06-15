@@ -186,8 +186,8 @@ public class T5SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, T5Package.Literals.COMANDO_ATRIBUICAO__VALOR));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getComandoAtribuicaoAccess().getTargetVariavelIDTerminalRuleCall_0_0_1(), semanticObject.eGet(T5Package.Literals.COMANDO_ATRIBUICAO__TARGET, false));
-		feeder.accept(grammarAccess.getComandoAtribuicaoAccess().getValorExpressaoParserRuleCall_2_0(), semanticObject.getValor());
+		feeder.accept(grammarAccess.getComandoAtribuicaoAccess().getTargetVariavelIDTerminalRuleCall_1_0_1(), semanticObject.eGet(T5Package.Literals.COMANDO_ATRIBUICAO__TARGET, false));
+		feeder.accept(grammarAccess.getComandoAtribuicaoAccess().getValorExpressaoParserRuleCall_3_0(), semanticObject.getValor());
 		feeder.finish();
 	}
 	
@@ -339,7 +339,7 @@ public class T5SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Corpo returns Corpo
 	 *
 	 * Constraint:
-	 *     ((locais+=DeclaracaoLocal+ comandos+=Comando+) | comandos+=Comando+)?
+	 *     (locais+=DeclaracaoLocal* comandos+=Comando*)
 	 * </pre>
 	 */
 	protected void sequence_Corpo(ISerializationContext context, Corpo semanticObject) {
@@ -431,7 +431,7 @@ public class T5SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Expressao returns Expressao
 	 *
 	 * Constraint:
-	 *     (logicos+=TermoLogico (op=OpBool logicos+=TermoLogico)*)
+	 *     (logicos+=TermoLogico (op+=OpBool logicos+=TermoLogico)*)
 	 * </pre>
 	 */
 	protected void sequence_Expressao(ISerializationContext context, Expressao semanticObject) {
@@ -589,7 +589,7 @@ public class T5SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Registro returns Registro
 	 *
 	 * Constraint:
-	 *     campos+=Variavel+
+	 *     campos+=Variavel*
 	 * </pre>
 	 */
 	protected void sequence_Registro(ISerializationContext context, Registro semanticObject) {
@@ -631,17 +631,11 @@ public class T5SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     TermoLogico returns TermoLogico
 	 *
 	 * Constraint:
-	 *     rel=ExpressaoRelacional
+	 *     (nao?='nao'? rel=ExpressaoRelacional)
 	 * </pre>
 	 */
 	protected void sequence_TermoLogico(ISerializationContext context, TermoLogico semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, T5Package.Literals.TERMO_LOGICO__REL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, T5Package.Literals.TERMO_LOGICO__REL));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTermoLogicoAccess().getRelExpressaoRelacionalParserRuleCall_1_0(), semanticObject.getRel());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

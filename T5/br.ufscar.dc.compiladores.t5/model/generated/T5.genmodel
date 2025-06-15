@@ -140,6 +140,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute T5.ecore#//Expressao/op"/>
     </genClasses>
     <genClasses ecoreClass="T5.ecore#//TermoLogico">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute T5.ecore#//TermoLogico/nao"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T5.ecore#//TermoLogico/rel"/>
     </genClasses>
     <genClasses ecoreClass="T5.ecore#//ExpressaoRelacional">

@@ -1297,7 +1297,7 @@ public interface T5Package extends EPackage
   int EXPRESSAO__LOGICOS = 0;
 
   /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * The feature id for the '<em><b>Op</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1325,13 +1325,22 @@ public interface T5Package extends EPackage
   int TERMO_LOGICO = 33;
 
   /**
+   * The feature id for the '<em><b>Nao</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERMO_LOGICO__NAO = 0;
+
+  /**
    * The feature id for the '<em><b>Rel</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TERMO_LOGICO__REL = 0;
+  int TERMO_LOGICO__REL = 1;
 
   /**
    * The number of structural features of the '<em>Termo Logico</em>' class.
@@ -1340,7 +1349,7 @@ public interface T5Package extends EPackage
    * @generated
    * @ordered
    */
-  int TERMO_LOGICO_FEATURE_COUNT = 1;
+  int TERMO_LOGICO_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ExpressaoRelacionalImpl <em>Expressao Relacional</em>}' class.
@@ -2457,10 +2466,10 @@ public interface T5Package extends EPackage
   EReference getExpressao_Logicos();
 
   /**
-   * Returns the meta object for the attribute '{@link br.ufscar.dc.compiladores.t5.t5.Expressao#getOp <em>Op</em>}'.
+   * Returns the meta object for the attribute list '{@link br.ufscar.dc.compiladores.t5.t5.Expressao#getOp <em>Op</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
+   * @return the meta object for the attribute list '<em>Op</em>'.
    * @see br.ufscar.dc.compiladores.t5.t5.Expressao#getOp()
    * @see #getExpressao()
    * @generated
@@ -2476,6 +2485,17 @@ public interface T5Package extends EPackage
    * @generated
    */
   EClass getTermoLogico();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.ufscar.dc.compiladores.t5.t5.TermoLogico#isNao <em>Nao</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Nao</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.TermoLogico#isNao()
+   * @see #getTermoLogico()
+   * @generated
+   */
+  EAttribute getTermoLogico_Nao();
 
   /**
    * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.TermoLogico#getRel <em>Rel</em>}'.
@@ -3421,7 +3441,7 @@ public interface T5Package extends EPackage
     EReference EXPRESSAO__LOGICOS = eINSTANCE.getExpressao_Logicos();
 
     /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Op</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -3437,6 +3457,14 @@ public interface T5Package extends EPackage
      * @generated
      */
     EClass TERMO_LOGICO = eINSTANCE.getTermoLogico();
+
+    /**
+     * The meta object literal for the '<em><b>Nao</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TERMO_LOGICO__NAO = eINSTANCE.getTermoLogico_Nao();
 
     /**
      * The meta object literal for the '<em><b>Rel</b></em>' containment reference feature.

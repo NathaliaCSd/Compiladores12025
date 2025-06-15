@@ -9,7 +9,6 @@ import br.ufscar.dc.compiladores.t5.t5.TermoLogico;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -17,9 +16,9 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -50,24 +49,14 @@ public class ExpressaoImpl extends MinimalEObjectImpl.Container implements Expre
   protected EList<TermoLogico> logicos;
 
   /**
-   * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
+   * The cached value of the '{@link #getOp() <em>Op</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getOp()
    * @generated
    * @ordered
    */
-  protected static final String OP_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getOp() <em>Op</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOp()
-   * @generated
-   * @ordered
-   */
-  protected String op = OP_EDEFAULT;
+  protected EList<String> op;
 
   /**
    * <!-- begin-user-doc -->
@@ -111,23 +100,13 @@ public class ExpressaoImpl extends MinimalEObjectImpl.Container implements Expre
    * @generated
    */
   @Override
-  public String getOp()
+  public EList<String> getOp()
   {
+    if (op == null)
+    {
+      op = new EDataTypeEList<String>(String.class, this, T5Package.EXPRESSAO__OP);
+    }
     return op;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setOp(String newOp)
-  {
-    String oldOp = op;
-    op = newOp;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, T5Package.EXPRESSAO__OP, oldOp, op));
   }
 
   /**
@@ -180,7 +159,8 @@ public class ExpressaoImpl extends MinimalEObjectImpl.Container implements Expre
         getLogicos().addAll((Collection<? extends TermoLogico>)newValue);
         return;
       case T5Package.EXPRESSAO__OP:
-        setOp((String)newValue);
+        getOp().clear();
+        getOp().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -200,7 +180,7 @@ public class ExpressaoImpl extends MinimalEObjectImpl.Container implements Expre
         getLogicos().clear();
         return;
       case T5Package.EXPRESSAO__OP:
-        setOp(OP_EDEFAULT);
+        getOp().clear();
         return;
     }
     super.eUnset(featureID);
@@ -219,7 +199,7 @@ public class ExpressaoImpl extends MinimalEObjectImpl.Container implements Expre
       case T5Package.EXPRESSAO__LOGICOS:
         return logicos != null && !logicos.isEmpty();
       case T5Package.EXPRESSAO__OP:
-        return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
+        return op != null && !op.isEmpty();
     }
     return super.eIsSet(featureID);
   }

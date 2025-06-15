@@ -26,7 +26,6 @@ public class T5SyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_ComandoSe_SenaoKeyword_4_0_q;
 	protected AbstractElementAlias match_FatorAritmetico_CircumflexAccentKeyword_0_0_q;
 	protected AbstractElementAlias match_Parametro_VarKeyword_0_q;
-	protected AbstractElementAlias match_TermoLogico_NaoKeyword_0_q;
 	protected AbstractElementAlias match_TipoEstendido_CircumflexAccentKeyword_0_q;
 	
 	@Inject
@@ -38,7 +37,6 @@ public class T5SyntacticSequencer extends AbstractSyntacticSequencer {
 		match_ComandoSe_SenaoKeyword_4_0_q = new TokenAlias(false, true, grammarAccess.getComandoSeAccess().getSenaoKeyword_4_0());
 		match_FatorAritmetico_CircumflexAccentKeyword_0_0_q = new TokenAlias(false, true, grammarAccess.getFatorAritmeticoAccess().getCircumflexAccentKeyword_0_0());
 		match_Parametro_VarKeyword_0_q = new TokenAlias(false, true, grammarAccess.getParametroAccess().getVarKeyword_0());
-		match_TermoLogico_NaoKeyword_0_q = new TokenAlias(false, true, grammarAccess.getTermoLogicoAccess().getNaoKeyword_0());
 		match_TipoEstendido_CircumflexAccentKeyword_0_q = new TokenAlias(false, true, grammarAccess.getTipoEstendidoAccess().getCircumflexAccentKeyword_0());
 	}
 	
@@ -78,8 +76,6 @@ public class T5SyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_FatorAritmetico_CircumflexAccentKeyword_0_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Parametro_VarKeyword_0_q.equals(syntax))
 				emit_Parametro_VarKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_TermoLogico_NaoKeyword_0_q.equals(syntax))
-				emit_TermoLogico_NaoKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_TipoEstendido_CircumflexAccentKeyword_0_q.equals(syntax))
 				emit_TipoEstendido_CircumflexAccentKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
@@ -169,20 +165,6 @@ public class T5SyntacticSequencer extends AbstractSyntacticSequencer {
 	 * </pre>
 	 */
 	protected void emit_Parametro_VarKeyword_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * <pre>
-	 * Ambiguous syntax:
-	 *     'nao'?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) rel=ExpressaoRelacional
-	 
-	 * </pre>
-	 */
-	protected void emit_TermoLogico_NaoKeyword_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

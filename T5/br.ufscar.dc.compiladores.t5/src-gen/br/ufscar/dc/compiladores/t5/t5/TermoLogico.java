@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link br.ufscar.dc.compiladores.t5.t5.TermoLogico#isNao <em>Nao</em>}</li>
  *   <li>{@link br.ufscar.dc.compiladores.t5.t5.TermoLogico#getRel <em>Rel</em>}</li>
  * </ul>
  *
@@ -23,6 +24,28 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface TermoLogico extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Nao</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Nao</em>' attribute.
+   * @see #setNao(boolean)
+   * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getTermoLogico_Nao()
+   * @model
+   * @generated
+   */
+  boolean isNao();
+
+  /**
+   * Sets the value of the '{@link br.ufscar.dc.compiladores.t5.t5.TermoLogico#isNao <em>Nao</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Nao</em>' attribute.
+   * @see #isNao()
+   * @generated
+   */
+  void setNao(boolean value);
+
   /**
    * Returns the value of the '<em><b>Rel</b></em>' containment reference.
    * <!-- begin-user-doc -->

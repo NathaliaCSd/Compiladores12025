@@ -29,6 +29,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T5.ecore#//Variavel/tipoVar"/>
     </genClasses>
     <genClasses ecoreClass="T5.ecore#//Identificador">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute T5.ecore#//Identificador/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute T5.ecore#//Identificador/parts"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T5.ecore#//Identificador/dimensoes"/>
     </genClasses>
     <genClasses ecoreClass="T5.ecore#//Dimensao">
@@ -131,6 +133,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute T5.ecore#//FatorAritmetico/numero"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute T5.ecore#//FatorAritmetico/real"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T5.ecore#//FatorAritmetico/exp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute T5.ecore#//FatorAritmetico/str"/>
     </genClasses>
     <genClasses ecoreClass="T5.ecore#//Expressao">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T5.ecore#//Expressao/logicos"/>

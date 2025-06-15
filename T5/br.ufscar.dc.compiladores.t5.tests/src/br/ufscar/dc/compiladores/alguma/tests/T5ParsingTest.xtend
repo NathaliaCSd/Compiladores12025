@@ -3,7 +3,6 @@
  */
 package br.ufscar.dc.compiladores.alguma.tests
 
-import br.ufscar.dc.compiladores.t5.t5.Model
 
 import com.google.inject.Inject
 import org.eclipse.xtext.testing.InjectWith
@@ -19,7 +18,7 @@ import br.ufscar.dc.compiladores.t5.tests.T5InjectorProvider
 
 class T5ParsingTest {
 	@Inject
-	ParseHelper<Model> parseHelper
+	ParseHelper<Programa> parseHelper
 	
 	@Test
 	def void loadModel() {

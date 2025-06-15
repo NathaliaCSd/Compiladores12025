@@ -7,13 +7,17 @@ import br.ufscar.dc.compiladores.t5.t5.ComandoEscreva;
 import br.ufscar.dc.compiladores.t5.t5.Expressao;
 import br.ufscar.dc.compiladores.t5.t5.T5Package;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,14 +35,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class ComandoEscrevaImpl extends ComandoImpl implements ComandoEscreva
 {
   /**
-   * The cached value of the '{@link #getExp() <em>Exp</em>}' containment reference.
+   * The cached value of the '{@link #getExp() <em>Exp</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getExp()
    * @generated
    * @ordered
    */
-  protected Expressao exp;
+  protected EList<Expressao> exp;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,48 +71,13 @@ public class ComandoEscrevaImpl extends ComandoImpl implements ComandoEscreva
    * @generated
    */
   @Override
-  public Expressao getExp()
+  public EList<Expressao> getExp()
   {
+    if (exp == null)
+    {
+      exp = new EObjectContainmentEList<Expressao>(Expressao.class, this, T5Package.COMANDO_ESCREVA__EXP);
+    }
     return exp;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetExp(Expressao newExp, NotificationChain msgs)
-  {
-    Expressao oldExp = exp;
-    exp = newExp;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, T5Package.COMANDO_ESCREVA__EXP, oldExp, newExp);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setExp(Expressao newExp)
-  {
-    if (newExp != exp)
-    {
-      NotificationChain msgs = null;
-      if (exp != null)
-        msgs = ((InternalEObject)exp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - T5Package.COMANDO_ESCREVA__EXP, null, msgs);
-      if (newExp != null)
-        msgs = ((InternalEObject)newExp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - T5Package.COMANDO_ESCREVA__EXP, null, msgs);
-      msgs = basicSetExp(newExp, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, T5Package.COMANDO_ESCREVA__EXP, newExp, newExp));
   }
 
   /**
@@ -122,7 +91,7 @@ public class ComandoEscrevaImpl extends ComandoImpl implements ComandoEscreva
     switch (featureID)
     {
       case T5Package.COMANDO_ESCREVA__EXP:
-        return basicSetExp(null, msgs);
+        return ((InternalEList<?>)getExp()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -148,13 +117,15 @@ public class ComandoEscrevaImpl extends ComandoImpl implements ComandoEscreva
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case T5Package.COMANDO_ESCREVA__EXP:
-        setExp((Expressao)newValue);
+        getExp().clear();
+        getExp().addAll((Collection<? extends Expressao>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -171,7 +142,7 @@ public class ComandoEscrevaImpl extends ComandoImpl implements ComandoEscreva
     switch (featureID)
     {
       case T5Package.COMANDO_ESCREVA__EXP:
-        setExp((Expressao)null);
+        getExp().clear();
         return;
     }
     super.eUnset(featureID);
@@ -188,7 +159,7 @@ public class ComandoEscrevaImpl extends ComandoImpl implements ComandoEscreva
     switch (featureID)
     {
       case T5Package.COMANDO_ESCREVA__EXP:
-        return exp != null;
+        return exp != null && !exp.isEmpty();
     }
     return super.eIsSet(featureID);
   }

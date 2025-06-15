@@ -16,6 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link br.ufscar.dc.compiladores.t5.t5.Identificador#getName <em>Name</em>}</li>
+ *   <li>{@link br.ufscar.dc.compiladores.t5.t5.Identificador#getParts <em>Parts</em>}</li>
  *   <li>{@link br.ufscar.dc.compiladores.t5.t5.Identificador#getDimensoes <em>Dimensoes</em>}</li>
  * </ul>
  *
@@ -25,6 +27,40 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Identificador extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getIdentificador_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link br.ufscar.dc.compiladores.t5.t5.Identificador#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Parts</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Parts</em>' attribute list.
+   * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getIdentificador_Parts()
+   * @model unique="false"
+   * @generated
+   */
+  EList<String> getParts();
+
   /**
    * Returns the value of the '<em><b>Dimensoes</b></em>' containment reference list.
    * The list contents are of type {@link br.ufscar.dc.compiladores.t5.t5.Dimensao}.

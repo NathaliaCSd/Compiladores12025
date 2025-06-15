@@ -3,6 +3,7 @@
  */
 package br.ufscar.dc.compiladores.t5.t5;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,25 +24,15 @@ package br.ufscar.dc.compiladores.t5.t5;
 public interface ComandoLeia extends Comando
 {
   /**
-   * Returns the value of the '<em><b>Alvo</b></em>' reference.
+   * Returns the value of the '<em><b>Alvo</b></em>' reference list.
+   * The list contents are of type {@link br.ufscar.dc.compiladores.t5.t5.Variavel}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Alvo</em>' reference.
-   * @see #setAlvo(Declaracao)
+   * @return the value of the '<em>Alvo</em>' reference list.
    * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getComandoLeia_Alvo()
    * @model
    * @generated
    */
-  Declaracao getAlvo();
-
-  /**
-   * Sets the value of the '{@link br.ufscar.dc.compiladores.t5.t5.ComandoLeia#getAlvo <em>Alvo</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Alvo</em>' reference.
-   * @see #getAlvo()
-   * @generated
-   */
-  void setAlvo(Declaracao value);
+  EList<Variavel> getAlvo();
 
 } // ComandoLeia

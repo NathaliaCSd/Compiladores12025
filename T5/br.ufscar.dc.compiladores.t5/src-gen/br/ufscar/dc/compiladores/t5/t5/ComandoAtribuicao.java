@@ -28,12 +28,12 @@ public interface ComandoAtribuicao extends Comando
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Target</em>' reference.
-   * @see #setTarget(Declaracao)
+   * @see #setTarget(Variavel)
    * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getComandoAtribuicao_Target()
    * @model
    * @generated
    */
-  Declaracao getTarget();
+  Variavel getTarget();
 
   /**
    * Sets the value of the '{@link br.ufscar.dc.compiladores.t5.t5.ComandoAtribuicao#getTarget <em>Target</em>}' reference.
@@ -43,7 +43,7 @@ public interface ComandoAtribuicao extends Comando
    * @see #getTarget()
    * @generated
    */
-  void setTarget(Declaracao value);
+  void setTarget(Variavel value);
 
   /**
    * Returns the value of the '<em><b>Valor</b></em>' containment reference.

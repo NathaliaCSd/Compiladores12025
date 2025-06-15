@@ -20,7 +20,5 @@ Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-21
 Export-Package: br.ufscar.dc.compiladores.t5.ui.quickfix,
  br.ufscar.dc.compiladores.t5.ui.internal,
- br.ufscar.dc.compiladores.t5.ui.contentassist,
- br.ufscar.dc.compiladores.alguma.ui.quickfix,
- br.ufscar.dc.compiladores.alguma.ui.contentassist
+ br.ufscar.dc.compiladores.t5.ui.contentassist
 Bundle-Activator: br.ufscar.dc.compiladores.t5.ui.internal.T5Activator

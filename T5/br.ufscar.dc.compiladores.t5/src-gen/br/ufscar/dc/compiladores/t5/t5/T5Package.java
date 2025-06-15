@@ -289,13 +289,31 @@ public interface T5Package extends EPackage
   int IDENTIFICADOR = 5;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IDENTIFICADOR__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Parts</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IDENTIFICADOR__PARTS = 1;
+
+  /**
    * The feature id for the '<em><b>Dimensoes</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IDENTIFICADOR__DIMENSOES = 0;
+  int IDENTIFICADOR__DIMENSOES = 2;
 
   /**
    * The number of structural features of the '<em>Identificador</em>' class.
@@ -304,7 +322,7 @@ public interface T5Package extends EPackage
    * @generated
    * @ordered
    */
-  int IDENTIFICADOR_FEATURE_COUNT = 1;
+  int IDENTIFICADOR_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.DimensaoImpl <em>Dimensao</em>}' class.
@@ -568,7 +586,7 @@ public interface T5Package extends EPackage
   int COMANDO_LEIA = 14;
 
   /**
-   * The feature id for the '<em><b>Alvo</b></em>' reference.
+   * The feature id for the '<em><b>Alvo</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -596,7 +614,7 @@ public interface T5Package extends EPackage
   int COMANDO_ESCREVA = 15;
 
   /**
-   * The feature id for the '<em><b>Exp</b></em>' containment reference.
+   * The feature id for the '<em><b>Exp</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1242,13 +1260,22 @@ public interface T5Package extends EPackage
   int FATOR_ARITMETICO__EXP = 3;
 
   /**
+   * The feature id for the '<em><b>Str</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FATOR_ARITMETICO__STR = 4;
+
+  /**
    * The number of structural features of the '<em>Fator Aritmetico</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FATOR_ARITMETICO_FEATURE_COUNT = 4;
+  int FATOR_ARITMETICO_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ExpressaoImpl <em>Expressao</em>}' class.
@@ -1555,6 +1582,28 @@ public interface T5Package extends EPackage
   EClass getIdentificador();
 
   /**
+   * Returns the meta object for the attribute '{@link br.ufscar.dc.compiladores.t5.t5.Identificador#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Identificador#getName()
+   * @see #getIdentificador()
+   * @generated
+   */
+  EAttribute getIdentificador_Name();
+
+  /**
+   * Returns the meta object for the attribute list '{@link br.ufscar.dc.compiladores.t5.t5.Identificador#getParts <em>Parts</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Parts</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.Identificador#getParts()
+   * @see #getIdentificador()
+   * @generated
+   */
+  EAttribute getIdentificador_Parts();
+
+  /**
    * Returns the meta object for the containment reference list '{@link br.ufscar.dc.compiladores.t5.t5.Identificador#getDimensoes <em>Dimensoes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1777,10 +1826,10 @@ public interface T5Package extends EPackage
   EClass getComandoLeia();
 
   /**
-   * Returns the meta object for the reference '{@link br.ufscar.dc.compiladores.t5.t5.ComandoLeia#getAlvo <em>Alvo</em>}'.
+   * Returns the meta object for the reference list '{@link br.ufscar.dc.compiladores.t5.t5.ComandoLeia#getAlvo <em>Alvo</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Alvo</em>'.
+   * @return the meta object for the reference list '<em>Alvo</em>'.
    * @see br.ufscar.dc.compiladores.t5.t5.ComandoLeia#getAlvo()
    * @see #getComandoLeia()
    * @generated
@@ -1798,10 +1847,10 @@ public interface T5Package extends EPackage
   EClass getComandoEscreva();
 
   /**
-   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.ComandoEscreva#getExp <em>Exp</em>}'.
+   * Returns the meta object for the containment reference list '{@link br.ufscar.dc.compiladores.t5.t5.ComandoEscreva#getExp <em>Exp</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Exp</em>'.
+   * @return the meta object for the containment reference list '<em>Exp</em>'.
    * @see br.ufscar.dc.compiladores.t5.t5.ComandoEscreva#getExp()
    * @see #getComandoEscreva()
    * @generated
@@ -2376,6 +2425,17 @@ public interface T5Package extends EPackage
   EReference getFatorAritmetico_Exp();
 
   /**
+   * Returns the meta object for the attribute '{@link br.ufscar.dc.compiladores.t5.t5.FatorAritmetico#getStr <em>Str</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Str</em>'.
+   * @see br.ufscar.dc.compiladores.t5.t5.FatorAritmetico#getStr()
+   * @see #getFatorAritmetico()
+   * @generated
+   */
+  EAttribute getFatorAritmetico_Str();
+
+  /**
    * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.Expressao <em>Expressao</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2651,6 +2711,22 @@ public interface T5Package extends EPackage
     EClass IDENTIFICADOR = eINSTANCE.getIdentificador();
 
     /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IDENTIFICADOR__NAME = eINSTANCE.getIdentificador_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Parts</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IDENTIFICADOR__PARTS = eINSTANCE.getIdentificador_Parts();
+
+    /**
      * The meta object literal for the '<em><b>Dimensoes</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2837,7 +2913,7 @@ public interface T5Package extends EPackage
     EClass COMANDO_LEIA = eINSTANCE.getComandoLeia();
 
     /**
-     * The meta object literal for the '<em><b>Alvo</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Alvo</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -2855,7 +2931,7 @@ public interface T5Package extends EPackage
     EClass COMANDO_ESCREVA = eINSTANCE.getComandoEscreva();
 
     /**
-     * The meta object literal for the '<em><b>Exp</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Exp</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -3317,6 +3393,14 @@ public interface T5Package extends EPackage
      * @generated
      */
     EReference FATOR_ARITMETICO__EXP = eINSTANCE.getFatorAritmetico_Exp();
+
+    /**
+     * The meta object literal for the '<em><b>Str</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FATOR_ARITMETICO__STR = eINSTANCE.getFatorAritmetico_Str();
 
     /**
      * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ExpressaoImpl <em>Expressao</em>}' class.

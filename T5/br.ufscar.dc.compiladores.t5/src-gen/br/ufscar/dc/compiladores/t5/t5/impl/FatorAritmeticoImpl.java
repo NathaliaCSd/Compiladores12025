@@ -3,10 +3,10 @@
  */
 package br.ufscar.dc.compiladores.t5.t5.impl;
 
-import br.ufscar.dc.compiladores.t5.t5.Declaracao;
 import br.ufscar.dc.compiladores.t5.t5.ExpressaoAritmetica;
 import br.ufscar.dc.compiladores.t5.t5.FatorAritmetico;
 import br.ufscar.dc.compiladores.t5.t5.T5Package;
+import br.ufscar.dc.compiladores.t5.t5.Variavel;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -29,6 +29,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link br.ufscar.dc.compiladores.t5.t5.impl.FatorAritmeticoImpl#getNumero <em>Numero</em>}</li>
  *   <li>{@link br.ufscar.dc.compiladores.t5.t5.impl.FatorAritmeticoImpl#getReal <em>Real</em>}</li>
  *   <li>{@link br.ufscar.dc.compiladores.t5.t5.impl.FatorAritmeticoImpl#getExp <em>Exp</em>}</li>
+ *   <li>{@link br.ufscar.dc.compiladores.t5.t5.impl.FatorAritmeticoImpl#getStr <em>Str</em>}</li>
  * </ul>
  *
  * @generated
@@ -43,7 +44,7 @@ public class FatorAritmeticoImpl extends MinimalEObjectImpl.Container implements
    * @generated
    * @ordered
    */
-  protected Declaracao ref;
+  protected Variavel ref;
 
   /**
    * The default value of the '{@link #getNumero() <em>Numero</em>}' attribute.
@@ -96,6 +97,26 @@ public class FatorAritmeticoImpl extends MinimalEObjectImpl.Container implements
   protected ExpressaoAritmetica exp;
 
   /**
+   * The default value of the '{@link #getStr() <em>Str</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStr()
+   * @generated
+   * @ordered
+   */
+  protected static final String STR_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getStr() <em>Str</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStr()
+   * @generated
+   * @ordered
+   */
+  protected String str = STR_EDEFAULT;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -122,12 +143,12 @@ public class FatorAritmeticoImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
-  public Declaracao getRef()
+  public Variavel getRef()
   {
     if (ref != null && ref.eIsProxy())
     {
       InternalEObject oldRef = (InternalEObject)ref;
-      ref = (Declaracao)eResolveProxy(oldRef);
+      ref = (Variavel)eResolveProxy(oldRef);
       if (ref != oldRef)
       {
         if (eNotificationRequired())
@@ -142,7 +163,7 @@ public class FatorAritmeticoImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public Declaracao basicGetRef()
+  public Variavel basicGetRef()
   {
     return ref;
   }
@@ -153,9 +174,9 @@ public class FatorAritmeticoImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
-  public void setRef(Declaracao newRef)
+  public void setRef(Variavel newRef)
   {
-    Declaracao oldRef = ref;
+    Variavel oldRef = ref;
     ref = newRef;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, T5Package.FATOR_ARITMETICO__REF, oldRef, ref));
@@ -267,6 +288,31 @@ public class FatorAritmeticoImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
+  public String getStr()
+  {
+    return str;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setStr(String newStr)
+  {
+    String oldStr = str;
+    str = newStr;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, T5Package.FATOR_ARITMETICO__STR, oldStr, str));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -296,6 +342,8 @@ public class FatorAritmeticoImpl extends MinimalEObjectImpl.Container implements
         return getReal();
       case T5Package.FATOR_ARITMETICO__EXP:
         return getExp();
+      case T5Package.FATOR_ARITMETICO__STR:
+        return getStr();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -311,7 +359,7 @@ public class FatorAritmeticoImpl extends MinimalEObjectImpl.Container implements
     switch (featureID)
     {
       case T5Package.FATOR_ARITMETICO__REF:
-        setRef((Declaracao)newValue);
+        setRef((Variavel)newValue);
         return;
       case T5Package.FATOR_ARITMETICO__NUMERO:
         setNumero((Integer)newValue);
@@ -321,6 +369,9 @@ public class FatorAritmeticoImpl extends MinimalEObjectImpl.Container implements
         return;
       case T5Package.FATOR_ARITMETICO__EXP:
         setExp((ExpressaoAritmetica)newValue);
+        return;
+      case T5Package.FATOR_ARITMETICO__STR:
+        setStr((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -337,7 +388,7 @@ public class FatorAritmeticoImpl extends MinimalEObjectImpl.Container implements
     switch (featureID)
     {
       case T5Package.FATOR_ARITMETICO__REF:
-        setRef((Declaracao)null);
+        setRef((Variavel)null);
         return;
       case T5Package.FATOR_ARITMETICO__NUMERO:
         setNumero(NUMERO_EDEFAULT);
@@ -347,6 +398,9 @@ public class FatorAritmeticoImpl extends MinimalEObjectImpl.Container implements
         return;
       case T5Package.FATOR_ARITMETICO__EXP:
         setExp((ExpressaoAritmetica)null);
+        return;
+      case T5Package.FATOR_ARITMETICO__STR:
+        setStr(STR_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -370,6 +424,8 @@ public class FatorAritmeticoImpl extends MinimalEObjectImpl.Container implements
         return REAL_EDEFAULT == null ? real != null : !REAL_EDEFAULT.equals(real);
       case T5Package.FATOR_ARITMETICO__EXP:
         return exp != null;
+      case T5Package.FATOR_ARITMETICO__STR:
+        return STR_EDEFAULT == null ? str != null : !STR_EDEFAULT.equals(str);
     }
     return super.eIsSet(featureID);
   }
@@ -389,6 +445,8 @@ public class FatorAritmeticoImpl extends MinimalEObjectImpl.Container implements
     result.append(numero);
     result.append(", real: ");
     result.append(real);
+    result.append(", str: ");
+    result.append(str);
     result.append(')');
     return result.toString();
   }

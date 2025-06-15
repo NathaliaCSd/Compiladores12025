@@ -4,9 +4,9 @@
 package br.ufscar.dc.compiladores.t5.t5.impl;
 
 import br.ufscar.dc.compiladores.t5.t5.ComandoAtribuicao;
-import br.ufscar.dc.compiladores.t5.t5.Declaracao;
 import br.ufscar.dc.compiladores.t5.t5.Expressao;
 import br.ufscar.dc.compiladores.t5.t5.T5Package;
+import br.ufscar.dc.compiladores.t5.t5.Variavel;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -40,7 +40,7 @@ public class ComandoAtribuicaoImpl extends ComandoImpl implements ComandoAtribui
    * @generated
    * @ordered
    */
-  protected Declaracao target;
+  protected Variavel target;
 
   /**
    * The cached value of the '{@link #getValor() <em>Valor</em>}' containment reference.
@@ -79,12 +79,12 @@ public class ComandoAtribuicaoImpl extends ComandoImpl implements ComandoAtribui
    * @generated
    */
   @Override
-  public Declaracao getTarget()
+  public Variavel getTarget()
   {
     if (target != null && target.eIsProxy())
     {
       InternalEObject oldTarget = (InternalEObject)target;
-      target = (Declaracao)eResolveProxy(oldTarget);
+      target = (Variavel)eResolveProxy(oldTarget);
       if (target != oldTarget)
       {
         if (eNotificationRequired())
@@ -99,7 +99,7 @@ public class ComandoAtribuicaoImpl extends ComandoImpl implements ComandoAtribui
    * <!-- end-user-doc -->
    * @generated
    */
-  public Declaracao basicGetTarget()
+  public Variavel basicGetTarget()
   {
     return target;
   }
@@ -110,9 +110,9 @@ public class ComandoAtribuicaoImpl extends ComandoImpl implements ComandoAtribui
    * @generated
    */
   @Override
-  public void setTarget(Declaracao newTarget)
+  public void setTarget(Variavel newTarget)
   {
-    Declaracao oldTarget = target;
+    Variavel oldTarget = target;
     target = newTarget;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, T5Package.COMANDO_ATRIBUICAO__TARGET, oldTarget, target));
@@ -214,7 +214,7 @@ public class ComandoAtribuicaoImpl extends ComandoImpl implements ComandoAtribui
     switch (featureID)
     {
       case T5Package.COMANDO_ATRIBUICAO__TARGET:
-        setTarget((Declaracao)newValue);
+        setTarget((Variavel)newValue);
         return;
       case T5Package.COMANDO_ATRIBUICAO__VALOR:
         setValor((Expressao)newValue);
@@ -234,7 +234,7 @@ public class ComandoAtribuicaoImpl extends ComandoImpl implements ComandoAtribui
     switch (featureID)
     {
       case T5Package.COMANDO_ATRIBUICAO__TARGET:
-        setTarget((Declaracao)null);
+        setTarget((Variavel)null);
         return;
       case T5Package.COMANDO_ATRIBUICAO__VALOR:
         setValor((Expressao)null);

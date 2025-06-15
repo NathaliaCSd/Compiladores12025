@@ -16,12 +16,12 @@ import org.junit.jupiter.api.extension.ExtendWith;
 @SuppressWarnings("all")
 public class T5ParsingTest {
   @Inject
-  private /* ParseHelper<Model> */Object parseHelper;
+  private /* ParseHelper<Programa> */Object parseHelper;
 
   @Test
   public void loadModel() {
     throw new Error("Unresolved compilation problems:"
-      + "\nThe field T5ParsingTest.parseHelper refers to the missing type Model"
+      + "\nThe field T5ParsingTest.parseHelper refers to the missing type Programa"
       + "\neResource cannot be resolved"
       + "\nerrors cannot be resolved"
       + "\nisEmpty cannot be resolved"

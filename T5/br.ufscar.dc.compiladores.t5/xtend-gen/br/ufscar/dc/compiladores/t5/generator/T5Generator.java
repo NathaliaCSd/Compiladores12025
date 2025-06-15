@@ -11,7 +11,7 @@ import br.ufscar.dc.compiladores.t5.t5.ComandoEscreva;
 import br.ufscar.dc.compiladores.t5.t5.ComandoFaca;
 import br.ufscar.dc.compiladores.t5.t5.ComandoLeia;
 import br.ufscar.dc.compiladores.t5.t5.ComandoSe;
-import br.ufscar.dc.compiladores.t5.t5.Declaracao;
+import br.ufscar.dc.compiladores.t5.t5.Corpo;
 import br.ufscar.dc.compiladores.t5.t5.DeclaracaoLocal;
 import br.ufscar.dc.compiladores.t5.t5.Expressao;
 import br.ufscar.dc.compiladores.t5.t5.ExpressaoAritmetica;
@@ -22,8 +22,10 @@ import br.ufscar.dc.compiladores.t5.t5.OutroTermoAritmetico;
 import br.ufscar.dc.compiladores.t5.t5.Programa;
 import br.ufscar.dc.compiladores.t5.t5.TermoAritmetico;
 import br.ufscar.dc.compiladores.t5.t5.TermoLogico;
+import br.ufscar.dc.compiladores.t5.t5.Tipo;
+import br.ufscar.dc.compiladores.t5.t5.TipoEstendido;
+import br.ufscar.dc.compiladores.t5.t5.Variavel;
 import com.google.common.collect.Iterables;
-import java.util.Arrays;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -47,40 +49,167 @@ public class T5Generator extends AbstractGenerator {
 
   public CharSequence compilePrograma(final Programa p) {
     throw new Error("Unresolved compilation problems:"
-      + "\nThe method compileCorpo(Corpo) is undefined");
+      + "\nType mismatch: cannot convert from Declaracao to DeclaracaoLocal");
   }
 
   protected CharSequence _compileDeclaracao(final DeclaracaoLocal d) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nno viable alternative at input \'«\'"
-      + "\nno viable alternative at input \'FOR\'"
-      + "\nThe method getTipoJava(Tipo) is undefined"
-      + "\nThe method or field ID is undefined for the type Identificador");
-  }
-
-  protected CharSequence _compileComando(final ComandoAtribuicao c) {
     StringConcatenation _builder = new StringConcatenation();
-    String _name = c.getTarget().getName();
-    _builder.append(_name);
-    _builder.append(" = ");
-    CharSequence _compileExpressao = this.compileExpressao(c.getValor());
-    _builder.append(_compileExpressao);
-    _builder.append(";");
-    _builder.newLineIfNotEmpty();
+    {
+      int _size = d.getVariaveis().size();
+      boolean _greaterThan = (_size > 0);
+      if (_greaterThan) {
+        {
+          EList<Variavel> _variaveis = d.getVariaveis();
+          for(final Variavel v : _variaveis) {
+            _builder.append("// Usa v.id.name para obter o nome do identificador da variável");
+            _builder.newLine();
+            _builder.append("static ");
+            String _tipoJava = this.getTipoJava(v.getTipoVar());
+            _builder.append(_tipoJava);
+            _builder.append(" ");
+            String _name = v.getId().getName();
+            _builder.append(_name);
+            _builder.append(";");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+      }
+    }
     return _builder;
   }
 
-  protected CharSequence _compileComando(final ComandoLeia c) {
+  public String getTipoJava(final Tipo t) {
+    String _xblockexpression = null;
+    {
+      TipoEstendido _tipoExt = t.getTipoExt();
+      String _basic = null;
+      if (_tipoExt!=null) {
+        _basic=_tipoExt.getBasic();
+      }
+      final String tipoBase = _basic;
+      String _xifexpression = null;
+      if ((tipoBase != null)) {
+        String _switchResult = null;
+        if (tipoBase != null) {
+          switch (tipoBase) {
+            case "inteiro":
+              _switchResult = "int";
+              break;
+            case "real":
+              _switchResult = "double";
+              break;
+            case "literal":
+              _switchResult = "String";
+              break;
+            case "logico":
+              _switchResult = "boolean";
+              break;
+            default:
+              _switchResult = "Object";
+              break;
+          }
+        } else {
+          _switchResult = "Object";
+        }
+        _xifexpression = _switchResult;
+      } else {
+        _xifexpression = "Object";
+      }
+      _xblockexpression = _xifexpression;
+    }
+    return _xblockexpression;
+  }
+
+  public String getTipoLeitura(final Variavel v) {
+    String _xblockexpression = null;
+    {
+      TipoEstendido _tipoExt = v.getTipoVar().getTipoExt();
+      String _basic = null;
+      if (_tipoExt!=null) {
+        _basic=_tipoExt.getBasic();
+      }
+      final String tipoBase = _basic;
+      String _xifexpression = null;
+      if ((tipoBase != null)) {
+        String _switchResult = null;
+        if (tipoBase != null) {
+          switch (tipoBase) {
+            case "inteiro":
+              _switchResult = "sc.nextInt()";
+              break;
+            case "real":
+              _switchResult = "sc.nextDouble()";
+              break;
+            case "literal":
+              _switchResult = "sc.next()";
+              break;
+            case "logico":
+              _switchResult = "sc.nextBoolean()";
+              break;
+            default:
+              _switchResult = "sc.next()";
+              break;
+          }
+        } else {
+          _switchResult = "sc.next()";
+        }
+        _xifexpression = _switchResult;
+      } else {
+        _xifexpression = "sc.next()";
+      }
+      _xblockexpression = _xifexpression;
+    }
+    return _xblockexpression;
+  }
+
+  public CharSequence compileCorpo(final Corpo c) {
     throw new Error("Unresolved compilation problems:"
-      + "\nThe method or field name is undefined for the type Object"
-      + "\nThe method getTipoLeitura(Variavel) is undefined"
-      + "\nType mismatch: cannot convert from Declaracao to Iterable<?>");
+      + "\nno viable alternative at input \'«\'");
+  }
+
+  protected CharSequence _compileComando(final ComandoAtribuicao c) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method or field name is undefined for the type Variavel");
+  }
+
+  protected CharSequence _compileComando(final ComandoLeia c) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("// c.alvo agora é uma lista de Variaveis");
+    _builder.newLine();
+    {
+      EList<Variavel> _alvo = c.getAlvo();
+      for(final Variavel alvo : _alvo) {
+        String _name = alvo.getId().getName();
+        _builder.append(_name);
+        _builder.append(" = ");
+        String _tipoLeitura = this.getTipoLeitura(alvo);
+        _builder.append(_tipoLeitura);
+        _builder.append(";");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    return _builder;
   }
 
   protected CharSequence _compileComando(final ComandoEscreva c) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nType mismatch: cannot convert from Expressao to Iterable<?>"
-      + "\nType mismatch: cannot convert from Object to Expressao");
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("// c.exp agora é uma lista");
+    _builder.newLine();
+    {
+      EList<Expressao> _exp = c.getExp();
+      for(final Expressao exp : _exp) {
+        _builder.append("// Adicionado \"System.out.print\" para melhor formatação");
+        _builder.newLine();
+        _builder.append("System.out.print(");
+        CharSequence _compileExpressao = this.compileExpressao(exp);
+        _builder.append(_compileExpressao);
+        _builder.append(");");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("System.out.println(); // Adiciona uma nova linha no final");
+    _builder.newLine();
+    return _builder;
   }
 
   protected CharSequence _compileComando(final ComandoSe c) {
@@ -233,11 +362,36 @@ public class T5Generator extends AbstractGenerator {
   }
 
   public String compileFatorAritmetico(final FatorAritmetico f) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method or field STRING is undefined for the type FatorAritmetico"
-      + "\nThe method or field STRING is undefined for the type FatorAritmetico"
-      + "\nThe operator \'!==\' is undefined for the argument types int and null"
-      + "\n!== cannot be resolved");
+    Variavel _ref = f.getRef();
+    boolean _tripleNotEquals = (_ref != null);
+    if (_tripleNotEquals) {
+      return f.getRef().getId().getName();
+    }
+    String _str = f.getStr();
+    boolean _tripleNotEquals_1 = (_str != null);
+    if (_tripleNotEquals_1) {
+      String _str_1 = f.getStr();
+      String _plus = ("\"" + _str_1);
+      return (_plus + "\"");
+    }
+    ExpressaoAritmetica _exp = f.getExp();
+    boolean _tripleNotEquals_2 = (_exp != null);
+    if (_tripleNotEquals_2) {
+      Object _compileExpressaoAritmetica = this.compileExpressaoAritmetica(f.getExp());
+      String _plus_1 = ("(" + _compileExpressaoAritmetica);
+      return (_plus_1 + ")");
+    }
+    String _real = f.getReal();
+    boolean _tripleNotEquals_3 = (_real != Double.valueOf(0.0));
+    if (_tripleNotEquals_3) {
+      return f.getReal().toString();
+    }
+    int _numero = f.getNumero();
+    boolean _tripleNotEquals_4 = (_numero != 0);
+    if (_tripleNotEquals_4) {
+      return Integer.valueOf(f.getNumero()).toString();
+    }
+    return "";
   }
 
   public String compileOpBool(final String op) {
@@ -280,34 +434,13 @@ public class T5Generator extends AbstractGenerator {
     return _switchResult;
   }
 
-  protected CharSequence _compileDeclaracao(final Declaracao d) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("// Declaração não tratada: ");
-    String _name = d.eClass().getName();
-    _builder.append(_name);
-    return _builder;
-  }
-
-  protected CharSequence _compileComando(final Object o) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method or field eClass is undefined for the type Object"
-      + "\nname cannot be resolved");
+  @XbaseGenerated
+  public CharSequence compileDeclaracao(final DeclaracaoLocal d) {
+    return _compileDeclaracao(d);
   }
 
   @XbaseGenerated
-  public CharSequence compileDeclaracao(final Declaracao d) {
-    if (d instanceof DeclaracaoLocal) {
-      return _compileDeclaracao((DeclaracaoLocal)d);
-    } else if (d != null) {
-      return _compileDeclaracao(d);
-    } else {
-      throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(d).toString());
-    }
-  }
-
-  @XbaseGenerated
-  public CharSequence compileComando(final Object c) {
+  public CharSequence compileComando(final Comando c) {
     throw new Error("Unresolved compilation problems:"
       + "\nno viable alternative at input \'def\'");
   }

@@ -9,6 +9,7 @@ import br.ufscar.dc.compiladores.t5.t5.T5Package;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -16,8 +17,10 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -29,6 +32,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link br.ufscar.dc.compiladores.t5.t5.impl.IdentificadorImpl#getName <em>Name</em>}</li>
+ *   <li>{@link br.ufscar.dc.compiladores.t5.t5.impl.IdentificadorImpl#getParts <em>Parts</em>}</li>
  *   <li>{@link br.ufscar.dc.compiladores.t5.t5.impl.IdentificadorImpl#getDimensoes <em>Dimensoes</em>}</li>
  * </ul>
  *
@@ -36,6 +41,36 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class IdentificadorImpl extends MinimalEObjectImpl.Container implements Identificador
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getParts() <em>Parts</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getParts()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> parts;
+
   /**
    * The cached value of the '{@link #getDimensoes() <em>Dimensoes</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -65,6 +100,46 @@ public class IdentificadorImpl extends MinimalEObjectImpl.Container implements I
   protected EClass eStaticClass()
   {
     return T5Package.Literals.IDENTIFICADOR;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, T5Package.IDENTIFICADOR__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<String> getParts()
+  {
+    if (parts == null)
+    {
+      parts = new EDataTypeEList<String>(String.class, this, T5Package.IDENTIFICADOR__PARTS);
+    }
+    return parts;
   }
 
   /**
@@ -108,6 +183,10 @@ public class IdentificadorImpl extends MinimalEObjectImpl.Container implements I
   {
     switch (featureID)
     {
+      case T5Package.IDENTIFICADOR__NAME:
+        return getName();
+      case T5Package.IDENTIFICADOR__PARTS:
+        return getParts();
       case T5Package.IDENTIFICADOR__DIMENSOES:
         return getDimensoes();
     }
@@ -125,6 +204,13 @@ public class IdentificadorImpl extends MinimalEObjectImpl.Container implements I
   {
     switch (featureID)
     {
+      case T5Package.IDENTIFICADOR__NAME:
+        setName((String)newValue);
+        return;
+      case T5Package.IDENTIFICADOR__PARTS:
+        getParts().clear();
+        getParts().addAll((Collection<? extends String>)newValue);
+        return;
       case T5Package.IDENTIFICADOR__DIMENSOES:
         getDimensoes().clear();
         getDimensoes().addAll((Collection<? extends Dimensao>)newValue);
@@ -143,6 +229,12 @@ public class IdentificadorImpl extends MinimalEObjectImpl.Container implements I
   {
     switch (featureID)
     {
+      case T5Package.IDENTIFICADOR__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case T5Package.IDENTIFICADOR__PARTS:
+        getParts().clear();
+        return;
       case T5Package.IDENTIFICADOR__DIMENSOES:
         getDimensoes().clear();
         return;
@@ -160,10 +252,33 @@ public class IdentificadorImpl extends MinimalEObjectImpl.Container implements I
   {
     switch (featureID)
     {
+      case T5Package.IDENTIFICADOR__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case T5Package.IDENTIFICADOR__PARTS:
+        return parts != null && !parts.isEmpty();
       case T5Package.IDENTIFICADOR__DIMENSOES:
         return dimensoes != null && !dimensoes.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", parts: ");
+    result.append(parts);
+    result.append(')');
+    return result.toString();
   }
 
 } //IdentificadorImpl

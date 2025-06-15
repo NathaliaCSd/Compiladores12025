@@ -29,9 +29,8 @@ Variavel:
 ;
 
 Identificador:
-    ID ('.' ID)* dimensoes+=Dimensao*
+    name=ID ('.' parts+=ID)* dimensoes+=Dimensao*
 ;
-
 Dimensao:
     '[' exp=ExpressaoAritmetica ']'
 ;
@@ -83,11 +82,12 @@ Comando:
 ;
 
 ComandoLeia:
-    'leia' '(' ('^')? alvo=[Declaracao] (',' ('^')? alvo=[Declaracao])* ')'
+    // Usa '+=' para criar uma lista e aponta para Variavel
+    'leia' '(' ('^')? alvo+=[Variavel] (',' ('^')? alvo+=[Variavel])* ')'
 ;
 
 ComandoEscreva:
-    'escreva' '(' exp=Expressao (',' exp=Expressao)* ')'
+    'escreva' '(' exp+=Expressao (',' exp+=Expressao)* ')'
 ;
 
 ComandoSe:
@@ -111,8 +111,9 @@ ComandoFaca:
 ;
 
 ComandoAtribuicao:
-    ('^')? target=[Declaracao] '<-' valor=Expressao
+    target=[Variavel] '<-' valor=Expressao
 ;
+
 
 ComandoChamada:
     name=ID '(' (args+=Expressao (',' args+=Expressao)*)? ')'
@@ -155,11 +156,11 @@ OutroFatorAritmetico:
 ;
 
 FatorAritmetico:
-    ('^')? ref=[Declaracao]
+    ('^')? ref=[Variavel]  // CORRIGIDO: Aponta para Variavel
   | numero=INT
   | real=REAL
   | '(' exp=ExpressaoAritmetica ')'
-  | STRING
+  | str=STRING 
 ;
 
 Expressao:

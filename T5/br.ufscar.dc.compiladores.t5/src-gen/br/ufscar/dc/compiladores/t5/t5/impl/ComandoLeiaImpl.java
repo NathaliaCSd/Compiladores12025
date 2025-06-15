@@ -4,15 +4,16 @@
 package br.ufscar.dc.compiladores.t5.t5.impl;
 
 import br.ufscar.dc.compiladores.t5.t5.ComandoLeia;
-import br.ufscar.dc.compiladores.t5.t5.Declaracao;
 import br.ufscar.dc.compiladores.t5.t5.T5Package;
+import br.ufscar.dc.compiladores.t5.t5.Variavel;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,14 +31,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class ComandoLeiaImpl extends ComandoImpl implements ComandoLeia
 {
   /**
-   * The cached value of the '{@link #getAlvo() <em>Alvo</em>}' reference.
+   * The cached value of the '{@link #getAlvo() <em>Alvo</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getAlvo()
    * @generated
    * @ordered
    */
-  protected Declaracao alvo;
+  protected EList<Variavel> alvo;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,43 +67,13 @@ public class ComandoLeiaImpl extends ComandoImpl implements ComandoLeia
    * @generated
    */
   @Override
-  public Declaracao getAlvo()
+  public EList<Variavel> getAlvo()
   {
-    if (alvo != null && alvo.eIsProxy())
+    if (alvo == null)
     {
-      InternalEObject oldAlvo = (InternalEObject)alvo;
-      alvo = (Declaracao)eResolveProxy(oldAlvo);
-      if (alvo != oldAlvo)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, T5Package.COMANDO_LEIA__ALVO, oldAlvo, alvo));
-      }
+      alvo = new EObjectResolvingEList<Variavel>(Variavel.class, this, T5Package.COMANDO_LEIA__ALVO);
     }
     return alvo;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Declaracao basicGetAlvo()
-  {
-    return alvo;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setAlvo(Declaracao newAlvo)
-  {
-    Declaracao oldAlvo = alvo;
-    alvo = newAlvo;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, T5Package.COMANDO_LEIA__ALVO, oldAlvo, alvo));
   }
 
   /**
@@ -116,8 +87,7 @@ public class ComandoLeiaImpl extends ComandoImpl implements ComandoLeia
     switch (featureID)
     {
       case T5Package.COMANDO_LEIA__ALVO:
-        if (resolve) return getAlvo();
-        return basicGetAlvo();
+        return getAlvo();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -127,13 +97,15 @@ public class ComandoLeiaImpl extends ComandoImpl implements ComandoLeia
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case T5Package.COMANDO_LEIA__ALVO:
-        setAlvo((Declaracao)newValue);
+        getAlvo().clear();
+        getAlvo().addAll((Collection<? extends Variavel>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -150,7 +122,7 @@ public class ComandoLeiaImpl extends ComandoImpl implements ComandoLeia
     switch (featureID)
     {
       case T5Package.COMANDO_LEIA__ALVO:
-        setAlvo((Declaracao)null);
+        getAlvo().clear();
         return;
     }
     super.eUnset(featureID);
@@ -167,7 +139,7 @@ public class ComandoLeiaImpl extends ComandoImpl implements ComandoLeia
     switch (featureID)
     {
       case T5Package.COMANDO_LEIA__ALVO:
-        return alvo != null;
+        return alvo != null && !alvo.isEmpty();
     }
     return super.eIsSet(featureID);
   }

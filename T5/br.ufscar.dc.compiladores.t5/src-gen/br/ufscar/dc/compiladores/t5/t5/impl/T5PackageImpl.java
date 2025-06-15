@@ -567,9 +567,31 @@ public class T5PackageImpl extends EPackageImpl implements T5Package
    * @generated
    */
   @Override
+  public EAttribute getIdentificador_Name()
+  {
+    return (EAttribute)identificadorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getIdentificador_Parts()
+  {
+    return (EAttribute)identificadorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getIdentificador_Dimensoes()
   {
-    return (EReference)identificadorEClass.getEStructuralFeatures().get(0);
+    return (EReference)identificadorEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1414,6 +1436,17 @@ public class T5PackageImpl extends EPackageImpl implements T5Package
    * @generated
    */
   @Override
+  public EAttribute getFatorAritmetico_Str()
+  {
+    return (EAttribute)fatorAritmeticoEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getExpressao()
   {
     return expressaoEClass;
@@ -1561,6 +1594,8 @@ public class T5PackageImpl extends EPackageImpl implements T5Package
     createEReference(variavelEClass, VARIAVEL__TIPO_VAR);
 
     identificadorEClass = createEClass(IDENTIFICADOR);
+    createEAttribute(identificadorEClass, IDENTIFICADOR__NAME);
+    createEAttribute(identificadorEClass, IDENTIFICADOR__PARTS);
     createEReference(identificadorEClass, IDENTIFICADOR__DIMENSOES);
 
     dimensaoEClass = createEClass(DIMENSAO);
@@ -1664,6 +1699,7 @@ public class T5PackageImpl extends EPackageImpl implements T5Package
     createEAttribute(fatorAritmeticoEClass, FATOR_ARITMETICO__NUMERO);
     createEAttribute(fatorAritmeticoEClass, FATOR_ARITMETICO__REAL);
     createEReference(fatorAritmeticoEClass, FATOR_ARITMETICO__EXP);
+    createEAttribute(fatorAritmeticoEClass, FATOR_ARITMETICO__STR);
 
     expressaoEClass = createEClass(EXPRESSAO);
     createEReference(expressaoEClass, EXPRESSAO__LOGICOS);
@@ -1744,6 +1780,8 @@ public class T5PackageImpl extends EPackageImpl implements T5Package
     initEReference(getVariavel_TipoVar(), this.getTipo(), null, "tipoVar", null, 0, 1, Variavel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(identificadorEClass, Identificador.class, "Identificador", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getIdentificador_Name(), ecorePackage.getEString(), "name", null, 0, 1, Identificador.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getIdentificador_Parts(), ecorePackage.getEString(), "parts", null, 0, -1, Identificador.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getIdentificador_Dimensoes(), this.getDimensao(), null, "dimensoes", null, 0, -1, Identificador.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dimensaoEClass, Dimensao.class, "Dimensao", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1774,10 +1812,10 @@ public class T5PackageImpl extends EPackageImpl implements T5Package
     initEClass(comandoEClass, Comando.class, "Comando", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(comandoLeiaEClass, ComandoLeia.class, "ComandoLeia", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getComandoLeia_Alvo(), this.getDeclaracao(), null, "alvo", null, 0, 1, ComandoLeia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComandoLeia_Alvo(), this.getVariavel(), null, "alvo", null, 0, -1, ComandoLeia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(comandoEscrevaEClass, ComandoEscreva.class, "ComandoEscreva", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getComandoEscreva_Exp(), this.getExpressao(), null, "exp", null, 0, 1, ComandoEscreva.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComandoEscreva_Exp(), this.getExpressao(), null, "exp", null, 0, -1, ComandoEscreva.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(comandoSeEClass, ComandoSe.class, "ComandoSe", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getComandoSe_Cond(), this.getExpressao(), null, "cond", null, 0, 1, ComandoSe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1804,7 +1842,7 @@ public class T5PackageImpl extends EPackageImpl implements T5Package
     initEReference(getComandoFaca_Cond(), this.getExpressao(), null, "cond", null, 0, 1, ComandoFaca.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(comandoAtribuicaoEClass, ComandoAtribuicao.class, "ComandoAtribuicao", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getComandoAtribuicao_Target(), this.getDeclaracao(), null, "target", null, 0, 1, ComandoAtribuicao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComandoAtribuicao_Target(), this.getVariavel(), null, "target", null, 0, 1, ComandoAtribuicao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getComandoAtribuicao_Valor(), this.getExpressao(), null, "valor", null, 0, 1, ComandoAtribuicao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(comandoChamadaEClass, ComandoChamada.class, "ComandoChamada", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1843,10 +1881,11 @@ public class T5PackageImpl extends EPackageImpl implements T5Package
     initEReference(getOutroFatorAritmetico_Fator(), this.getFatorAritmetico(), null, "fator", null, 0, 1, OutroFatorAritmetico.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(fatorAritmeticoEClass, FatorAritmetico.class, "FatorAritmetico", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFatorAritmetico_Ref(), this.getDeclaracao(), null, "ref", null, 0, 1, FatorAritmetico.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFatorAritmetico_Ref(), this.getVariavel(), null, "ref", null, 0, 1, FatorAritmetico.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFatorAritmetico_Numero(), ecorePackage.getEInt(), "numero", null, 0, 1, FatorAritmetico.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFatorAritmetico_Real(), ecorePackage.getEString(), "real", null, 0, 1, FatorAritmetico.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFatorAritmetico_Exp(), this.getExpressaoAritmetica(), null, "exp", null, 0, 1, FatorAritmetico.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFatorAritmetico_Str(), ecorePackage.getEString(), "str", null, 0, 1, FatorAritmetico.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(expressaoEClass, Expressao.class, "Expressao", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getExpressao_Logicos(), this.getTermoLogico(), null, "logicos", null, 0, -1, Expressao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

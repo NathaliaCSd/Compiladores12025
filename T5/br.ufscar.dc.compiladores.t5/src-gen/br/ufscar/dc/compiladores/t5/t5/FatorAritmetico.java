@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link br.ufscar.dc.compiladores.t5.t5.FatorAritmetico#getNumero <em>Numero</em>}</li>
  *   <li>{@link br.ufscar.dc.compiladores.t5.t5.FatorAritmetico#getReal <em>Real</em>}</li>
  *   <li>{@link br.ufscar.dc.compiladores.t5.t5.FatorAritmetico#getExp <em>Exp</em>}</li>
+ *   <li>{@link br.ufscar.dc.compiladores.t5.t5.FatorAritmetico#getStr <em>Str</em>}</li>
  * </ul>
  *
  * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getFatorAritmetico()
@@ -31,12 +32,12 @@ public interface FatorAritmetico extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Ref</em>' reference.
-   * @see #setRef(Declaracao)
+   * @see #setRef(Variavel)
    * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getFatorAritmetico_Ref()
    * @model
    * @generated
    */
-  Declaracao getRef();
+  Variavel getRef();
 
   /**
    * Sets the value of the '{@link br.ufscar.dc.compiladores.t5.t5.FatorAritmetico#getRef <em>Ref</em>}' reference.
@@ -46,7 +47,7 @@ public interface FatorAritmetico extends EObject
    * @see #getRef()
    * @generated
    */
-  void setRef(Declaracao value);
+  void setRef(Variavel value);
 
   /**
    * Returns the value of the '<em><b>Numero</b></em>' attribute.
@@ -113,5 +114,27 @@ public interface FatorAritmetico extends EObject
    * @generated
    */
   void setExp(ExpressaoAritmetica value);
+
+  /**
+   * Returns the value of the '<em><b>Str</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Str</em>' attribute.
+   * @see #setStr(String)
+   * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getFatorAritmetico_Str()
+   * @model
+   * @generated
+   */
+  String getStr();
+
+  /**
+   * Sets the value of the '{@link br.ufscar.dc.compiladores.t5.t5.FatorAritmetico#getStr <em>Str</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Str</em>' attribute.
+   * @see #getStr()
+   * @generated
+   */
+  void setStr(String value);
 
 } // FatorAritmetico

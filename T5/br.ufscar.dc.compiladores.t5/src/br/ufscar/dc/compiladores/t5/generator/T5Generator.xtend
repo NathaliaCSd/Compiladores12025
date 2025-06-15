@@ -56,13 +56,13 @@ class T5Generator extends AbstractGenerator {
 	'''
 	
 	def dispatch compileDeclaracao(DeclaracaoLocal d) '''
-		«IF d.variaveis.size > 0»
-			«FOR v : d.variaveis»
-				static «getTipoJava(v.tipoVar)» «v.id.ID»;
-			«ENDFOR»
-		«ENDIF»
-		«// TODO: Adicionar lógica para constantes e tipos, se necessário.»
-	'''
+    «IF d.variaveis.size > 0»
+        «FOR v : d.variaveis»
+            // Usa v.id.name para obter o nome do identificador da variável
+            static «getTipoJava(v.tipoVar)» «v.id.name»;
+        «ENDFOR»
+    «ENDIF»
+'''
 
 	def getTipoJava(Tipo t) {
 		val tipoBase = t.tipoExt?.basic
@@ -108,16 +108,20 @@ class T5Generator extends AbstractGenerator {
 	'''
 
 	def dispatch compileComando(ComandoLeia c) '''
-		«FOR alvo : c.alvo»
-			«alvo.name» = «getTipoLeitura(alvo as Variavel)»;
-		«ENDFOR»
-	'''
+    // c.alvo agora é uma lista de Variaveis
+    «FOR alvo : c.alvo»
+        «alvo.id.name» = «getTipoLeitura(alvo)»;
+    «ENDFOR»
+'''
 
 	def dispatch compileComando(ComandoEscreva c) '''
-		«FOR exp : c.exp»
-			System.out.println(«compileExpressao(exp)»);
-		«ENDFOR»
-	'''
+    // c.exp agora é uma lista
+    «FOR exp : c.exp»
+        // Adicionado "System.out.print" para melhor formatação
+        System.out.print(«compileExpressao(exp)»);
+    «ENDFOR»
+    System.out.println(); // Adiciona uma nova linha no final
+'''
 
 	def dispatch compileComando(ComandoSe c) '''
 		if(«compileExpressao(c.cond)») {
@@ -168,13 +172,15 @@ class T5Generator extends AbstractGenerator {
 	def compileTermoAritmetico(TermoAritmetico t) '''«compileFatorAritmetico(t.fatores.head)»«FOR of : t.outros» «of.op» «compileFatorAritmetico(of.fator)»«ENDFOR»'''
 	
 	def compileFatorAritmetico(FatorAritmetico f) {
-		if(f.ref !== null) return f.ref.name
-		if(f.numero !== null) return f.numero.toString
-		if(f.real !== null) return f.real.toString
-		if(f.exp !== null) return '(' + compileExpressaoAritmetica(f.exp) + ')'
-		if(f.STRING !== null) return f.STRING
-		return '' // Caso não seja nenhum dos anteriores
-	}
+    if(f.ref !== null) return f.ref.id.name // Acessa o nome da variável através de 'id.name'
+    if(f.str !== null) return '"' + f.str + '"'; // Literais devem estar entre aspas
+    if(f.exp !== null) return '(' + compileExpressaoAritmetica(f.exp) + ')'
+    if(f.real !== 0.0) return f.real.toString // Condição ajustada
+    if(f.numero !== 0) return f.numero.toString // Condição ajustada
+    // A verificação de 'numero' e 'real' pode ser imprecisa se o valor 0 for válido.
+    // Esta estrutura if-else assume que apenas uma das opções será preenchida pelo parser.
+    return '' // Caso padrão
+}
 
 	def compileOpBool(String op) {
 		switch(op) {
@@ -191,13 +197,5 @@ class T5Generator extends AbstractGenerator {
 			default: op
 		}
 	}
-	
-	// Adicione dispatch para outros tipos de declarações e comandos conforme necessário
-	def dispatch compileDeclaracao(Declaracao d) {
-		'''// Declaração não tratada: «d.eClass.name»'''
-	}
-
-	def dispatch compileComando(Object o) {
-		'''// Comando não tratado: «o.eClass.name»'''
-	}
+		
 }

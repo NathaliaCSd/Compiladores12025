@@ -33,6 +33,9 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Identificador">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parts" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dimensoes" upperBound="-1"
         eType="#//Dimensao" containment="true"/>
   </eClassifiers>
@@ -72,10 +75,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Comando"/>
   <eClassifiers xsi:type="ecore:EClass" name="ComandoLeia" eSuperTypes="#//Comando">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="alvo" eType="#//Declaracao"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alvo" unique="false" upperBound="-1"
+        eType="#//Variavel"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComandoEscreva" eSuperTypes="#//Comando">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="exp" eType="#//Expressao"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exp" upperBound="-1" eType="#//Expressao"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComandoSe" eSuperTypes="#//Comando">
@@ -116,7 +120,7 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComandoAtribuicao" eSuperTypes="#//Comando">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Declaracao"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Variavel"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="valor" eType="#//Expressao"
         containment="true"/>
   </eClassifiers>
@@ -167,11 +171,12 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FatorAritmetico">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//Declaracao"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//Variavel"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="numero" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="real" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="exp" eType="#//ExpressaoAritmetica"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="str" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Expressao">
     <eStructuralFeatures xsi:type="ecore:EReference" name="logicos" upperBound="-1"

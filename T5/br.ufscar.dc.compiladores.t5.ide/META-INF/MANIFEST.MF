@@ -13,5 +13,4 @@ Require-Bundle: br.ufscar.dc.compiladores.t5,
 Bundle-RequiredExecutionEnvironment: JavaSE-21
 Export-Package: br.ufscar.dc.compiladores.t5.ide.contentassist.antlr.internal,
  br.ufscar.dc.compiladores.t5.ide.contentassist.antlr,
- br.ufscar.dc.compiladores.alguma.ide.contentassist.antlr,
- br.ufscar.dc.compiladores.alguma.ide.contentassist.antlr.internal
+ br.ufscar.dc.compiladores.t5.ide.contentassist.antlr.internal

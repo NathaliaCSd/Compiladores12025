@@ -3,6 +3,7 @@
  */
 package br.ufscar.dc.compiladores.t5.t5;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,25 +24,15 @@ package br.ufscar.dc.compiladores.t5.t5;
 public interface ComandoEscreva extends Comando
 {
   /**
-   * Returns the value of the '<em><b>Exp</b></em>' containment reference.
+   * Returns the value of the '<em><b>Exp</b></em>' containment reference list.
+   * The list contents are of type {@link br.ufscar.dc.compiladores.t5.t5.Expressao}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Exp</em>' containment reference.
-   * @see #setExp(Expressao)
+   * @return the value of the '<em>Exp</em>' containment reference list.
    * @see br.ufscar.dc.compiladores.t5.t5.T5Package#getComandoEscreva_Exp()
    * @model containment="true"
    * @generated
    */
-  Expressao getExp();
-
-  /**
-   * Sets the value of the '{@link br.ufscar.dc.compiladores.t5.t5.ComandoEscreva#getExp <em>Exp</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Exp</em>' containment reference.
-   * @see #getExp()
-   * @generated
-   */
-  void setExp(Expressao value);
+  EList<Expressao> getExp();
 
 } // ComandoEscreva

@@ -175,7 +175,7 @@ public class T5SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ComandoAtribuicao returns ComandoAtribuicao
 	 *
 	 * Constraint:
-	 *     (target=[Declaracao|ID] valor=Expressao)
+	 *     (target=[Variavel|ID] valor=Expressao)
 	 * </pre>
 	 */
 	protected void sequence_ComandoAtribuicao(ISerializationContext context, ComandoAtribuicao semanticObject) {
@@ -186,8 +186,8 @@ public class T5SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, T5Package.Literals.COMANDO_ATRIBUICAO__VALOR));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getComandoAtribuicaoAccess().getTargetDeclaracaoIDTerminalRuleCall_1_0_1(), semanticObject.eGet(T5Package.Literals.COMANDO_ATRIBUICAO__TARGET, false));
-		feeder.accept(grammarAccess.getComandoAtribuicaoAccess().getValorExpressaoParserRuleCall_3_0(), semanticObject.getValor());
+		feeder.accept(grammarAccess.getComandoAtribuicaoAccess().getTargetVariavelIDTerminalRuleCall_0_0_1(), semanticObject.eGet(T5Package.Literals.COMANDO_ATRIBUICAO__TARGET, false));
+		feeder.accept(grammarAccess.getComandoAtribuicaoAccess().getValorExpressaoParserRuleCall_2_0(), semanticObject.getValor());
 		feeder.finish();
 	}
 	
@@ -244,7 +244,7 @@ public class T5SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ComandoEscreva returns ComandoEscreva
 	 *
 	 * Constraint:
-	 *     (exp=Expressao exp=Expressao*)
+	 *     (exp+=Expressao exp+=Expressao*)
 	 * </pre>
 	 */
 	protected void sequence_ComandoEscreva(ISerializationContext context, ComandoEscreva semanticObject) {
@@ -274,7 +274,7 @@ public class T5SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ComandoLeia returns ComandoLeia
 	 *
 	 * Constraint:
-	 *     (alvo=[Declaracao|ID] alvo=[Declaracao|ID]*)
+	 *     (alvo+=[Variavel|ID] alvo+=[Variavel|ID]*)
 	 * </pre>
 	 */
 	protected void sequence_ComandoLeia(ISerializationContext context, ComandoLeia semanticObject) {
@@ -445,7 +445,7 @@ public class T5SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     FatorAritmetico returns FatorAritmetico
 	 *
 	 * Constraint:
-	 *     (ref=[Declaracao|ID] | numero=INT | real=REAL | exp=ExpressaoAritmetica)
+	 *     (ref=[Variavel|ID] | numero=INT | real=REAL | exp=ExpressaoAritmetica | str=STRING)
 	 * </pre>
 	 */
 	protected void sequence_FatorAritmetico(ISerializationContext context, FatorAritmetico semanticObject) {
@@ -459,7 +459,7 @@ public class T5SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Identificador returns Identificador
 	 *
 	 * Constraint:
-	 *     dimensoes+=Dimensao+
+	 *     (name=ID parts+=ID* dimensoes+=Dimensao*)
 	 * </pre>
 	 */
 	protected void sequence_Identificador(ISerializationContext context, Identificador semanticObject) {

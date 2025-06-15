@@ -4297,13 +4297,13 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FatorAritmetico__Alternatives"
-    // InternalT5.g:1354:1: rule__FatorAritmetico__Alternatives : ( ( ( rule__FatorAritmetico__Group_0__0 ) ) | ( ( rule__FatorAritmetico__NumeroAssignment_1 ) ) | ( ( rule__FatorAritmetico__RealAssignment_2 ) ) | ( ( rule__FatorAritmetico__Group_3__0 ) ) | ( RULE_STRING ) );
+    // InternalT5.g:1354:1: rule__FatorAritmetico__Alternatives : ( ( ( rule__FatorAritmetico__Group_0__0 ) ) | ( ( rule__FatorAritmetico__NumeroAssignment_1 ) ) | ( ( rule__FatorAritmetico__RealAssignment_2 ) ) | ( ( rule__FatorAritmetico__Group_3__0 ) ) | ( ( rule__FatorAritmetico__StrAssignment_4 ) ) );
     public final void rule__FatorAritmetico__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:1358:1: ( ( ( rule__FatorAritmetico__Group_0__0 ) ) | ( ( rule__FatorAritmetico__NumeroAssignment_1 ) ) | ( ( rule__FatorAritmetico__RealAssignment_2 ) ) | ( ( rule__FatorAritmetico__Group_3__0 ) ) | ( RULE_STRING ) )
+            // InternalT5.g:1358:1: ( ( ( rule__FatorAritmetico__Group_0__0 ) ) | ( ( rule__FatorAritmetico__NumeroAssignment_1 ) ) | ( ( rule__FatorAritmetico__RealAssignment_2 ) ) | ( ( rule__FatorAritmetico__Group_3__0 ) ) | ( ( rule__FatorAritmetico__StrAssignment_4 ) ) )
             int alt9=5;
             switch ( input.LA(1) ) {
             case RULE_ID:
@@ -4441,14 +4441,24 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // InternalT5.g:1383:2: ( RULE_STRING )
+                    // InternalT5.g:1383:2: ( ( rule__FatorAritmetico__StrAssignment_4 ) )
                     {
-                    // InternalT5.g:1383:2: ( RULE_STRING )
-                    // InternalT5.g:1384:3: RULE_STRING
+                    // InternalT5.g:1383:2: ( ( rule__FatorAritmetico__StrAssignment_4 ) )
+                    // InternalT5.g:1384:3: ( rule__FatorAritmetico__StrAssignment_4 )
                     {
-                     before(grammarAccess.getFatorAritmeticoAccess().getSTRINGTerminalRuleCall_4()); 
-                    match(input,RULE_STRING,FOLLOW_2); 
-                     after(grammarAccess.getFatorAritmeticoAccess().getSTRINGTerminalRuleCall_4()); 
+                     before(grammarAccess.getFatorAritmeticoAccess().getStrAssignment_4()); 
+                    // InternalT5.g:1385:3: ( rule__FatorAritmetico__StrAssignment_4 )
+                    // InternalT5.g:1385:4: rule__FatorAritmetico__StrAssignment_4
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__FatorAritmetico__StrAssignment_4();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getFatorAritmeticoAccess().getStrAssignment_4()); 
 
                     }
 
@@ -8037,21 +8047,31 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Identificador__Group__0__Impl"
-    // InternalT5.g:2573:1: rule__Identificador__Group__0__Impl : ( RULE_ID ) ;
+    // InternalT5.g:2573:1: rule__Identificador__Group__0__Impl : ( ( rule__Identificador__NameAssignment_0 ) ) ;
     public final void rule__Identificador__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:2577:1: ( ( RULE_ID ) )
-            // InternalT5.g:2578:1: ( RULE_ID )
+            // InternalT5.g:2577:1: ( ( ( rule__Identificador__NameAssignment_0 ) ) )
+            // InternalT5.g:2578:1: ( ( rule__Identificador__NameAssignment_0 ) )
             {
-            // InternalT5.g:2578:1: ( RULE_ID )
-            // InternalT5.g:2579:2: RULE_ID
+            // InternalT5.g:2578:1: ( ( rule__Identificador__NameAssignment_0 ) )
+            // InternalT5.g:2579:2: ( rule__Identificador__NameAssignment_0 )
             {
-             before(grammarAccess.getIdentificadorAccess().getIDTerminalRuleCall_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getIdentificadorAccess().getIDTerminalRuleCall_0()); 
+             before(grammarAccess.getIdentificadorAccess().getNameAssignment_0()); 
+            // InternalT5.g:2580:2: ( rule__Identificador__NameAssignment_0 )
+            // InternalT5.g:2580:3: rule__Identificador__NameAssignment_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Identificador__NameAssignment_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getIdentificadorAccess().getNameAssignment_0()); 
 
             }
 
@@ -8383,21 +8403,31 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Identificador__Group_1__1__Impl"
-    // InternalT5.g:2680:1: rule__Identificador__Group_1__1__Impl : ( RULE_ID ) ;
+    // InternalT5.g:2680:1: rule__Identificador__Group_1__1__Impl : ( ( rule__Identificador__PartsAssignment_1_1 ) ) ;
     public final void rule__Identificador__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:2684:1: ( ( RULE_ID ) )
-            // InternalT5.g:2685:1: ( RULE_ID )
+            // InternalT5.g:2684:1: ( ( ( rule__Identificador__PartsAssignment_1_1 ) ) )
+            // InternalT5.g:2685:1: ( ( rule__Identificador__PartsAssignment_1_1 ) )
             {
-            // InternalT5.g:2685:1: ( RULE_ID )
-            // InternalT5.g:2686:2: RULE_ID
+            // InternalT5.g:2685:1: ( ( rule__Identificador__PartsAssignment_1_1 ) )
+            // InternalT5.g:2686:2: ( rule__Identificador__PartsAssignment_1_1 )
             {
-             before(grammarAccess.getIdentificadorAccess().getIDTerminalRuleCall_1_1()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getIdentificadorAccess().getIDTerminalRuleCall_1_1()); 
+             before(grammarAccess.getIdentificadorAccess().getPartsAssignment_1_1()); 
+            // InternalT5.g:2687:2: ( rule__Identificador__PartsAssignment_1_1 )
+            // InternalT5.g:2687:3: rule__Identificador__PartsAssignment_1_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__Identificador__PartsAssignment_1_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getIdentificadorAccess().getPartsAssignment_1_1()); 
 
             }
 
@@ -10153,7 +10183,7 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
                 int alt26=2;
                 int LA26_0 = input.LA(1);
 
-                if ( (LA26_0==RULE_ID||LA26_0==49||(LA26_0>=51 && LA26_0<=53)||LA26_0==57||LA26_0==60||LA26_0==63||LA26_0==65||LA26_0==67) ) {
+                if ( (LA26_0==RULE_ID||(LA26_0>=51 && LA26_0<=53)||LA26_0==57||LA26_0==60||LA26_0==63||LA26_0==65||LA26_0==67) ) {
                     alt26=1;
                 }
 
@@ -11801,7 +11831,7 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
                 int alt31=2;
                 int LA31_0 = input.LA(1);
 
-                if ( (LA31_0==RULE_ID||LA31_0==49||(LA31_0>=51 && LA31_0<=53)||LA31_0==57||LA31_0==60||LA31_0==63||LA31_0==65||LA31_0==67) ) {
+                if ( (LA31_0==RULE_ID||(LA31_0>=51 && LA31_0<=53)||LA31_0==57||LA31_0==60||LA31_0==63||LA31_0==65||LA31_0==67) ) {
                     alt31=1;
                 }
 
@@ -12140,7 +12170,7 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
                 int alt33=2;
                 int LA33_0 = input.LA(1);
 
-                if ( (LA33_0==RULE_ID||LA33_0==49||(LA33_0>=51 && LA33_0<=53)||LA33_0==57||LA33_0==60||LA33_0==63||LA33_0==65||LA33_0==67) ) {
+                if ( (LA33_0==RULE_ID||(LA33_0>=51 && LA33_0<=53)||LA33_0==57||LA33_0==60||LA33_0==63||LA33_0==65||LA33_0==67) ) {
                     alt33=1;
                 }
 
@@ -12817,7 +12847,7 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
                 int alt36=2;
                 int LA36_0 = input.LA(1);
 
-                if ( (LA36_0==RULE_ID||LA36_0==49||(LA36_0>=51 && LA36_0<=53)||LA36_0==57||LA36_0==60||LA36_0==63||LA36_0==65||LA36_0==67) ) {
+                if ( (LA36_0==RULE_ID||(LA36_0>=51 && LA36_0<=53)||LA36_0==57||LA36_0==60||LA36_0==63||LA36_0==65||LA36_0==67) ) {
                     alt36=1;
                 }
 
@@ -13475,7 +13505,7 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
                 int alt37=2;
                 int LA37_0 = input.LA(1);
 
-                if ( (LA37_0==RULE_ID||LA37_0==49||(LA37_0>=51 && LA37_0<=53)||LA37_0==57||LA37_0==60||LA37_0==63||LA37_0==65||LA37_0==67) ) {
+                if ( (LA37_0==RULE_ID||(LA37_0>=51 && LA37_0<=53)||LA37_0==57||LA37_0==60||LA37_0==63||LA37_0==65||LA37_0==67) ) {
                     alt37=1;
                 }
 
@@ -13883,7 +13913,7 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
                 int alt38=2;
                 int LA38_0 = input.LA(1);
 
-                if ( (LA38_0==RULE_ID||LA38_0==49||(LA38_0>=51 && LA38_0<=53)||LA38_0==57||LA38_0==60||LA38_0==63||LA38_0==65||LA38_0==67) ) {
+                if ( (LA38_0==RULE_ID||(LA38_0>=51 && LA38_0<=53)||LA38_0==57||LA38_0==60||LA38_0==63||LA38_0==65||LA38_0==67) ) {
                     alt38=1;
                 }
 
@@ -14131,7 +14161,7 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
                 int alt39=2;
                 int LA39_0 = input.LA(1);
 
-                if ( (LA39_0==RULE_ID||LA39_0==49||(LA39_0>=51 && LA39_0<=53)||LA39_0==57||LA39_0==60||LA39_0==63||LA39_0==65||LA39_0==67) ) {
+                if ( (LA39_0==RULE_ID||(LA39_0>=51 && LA39_0<=53)||LA39_0==57||LA39_0==60||LA39_0==63||LA39_0==65||LA39_0==67) ) {
                     alt39=1;
                 }
 
@@ -14341,7 +14371,7 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
             // InternalT5.g:4617:1: ( rule__ComandoAtribuicao__Group__0__Impl rule__ComandoAtribuicao__Group__1 )
             // InternalT5.g:4618:2: rule__ComandoAtribuicao__Group__0__Impl rule__ComandoAtribuicao__Group__1
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_40);
             rule__ComandoAtribuicao__Group__0__Impl();
 
             state._fsp--;
@@ -14370,38 +14400,31 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoAtribuicao__Group__0__Impl"
-    // InternalT5.g:4625:1: rule__ComandoAtribuicao__Group__0__Impl : ( ( '^' )? ) ;
+    // InternalT5.g:4625:1: rule__ComandoAtribuicao__Group__0__Impl : ( ( rule__ComandoAtribuicao__TargetAssignment_0 ) ) ;
     public final void rule__ComandoAtribuicao__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:4629:1: ( ( ( '^' )? ) )
-            // InternalT5.g:4630:1: ( ( '^' )? )
+            // InternalT5.g:4629:1: ( ( ( rule__ComandoAtribuicao__TargetAssignment_0 ) ) )
+            // InternalT5.g:4630:1: ( ( rule__ComandoAtribuicao__TargetAssignment_0 ) )
             {
-            // InternalT5.g:4630:1: ( ( '^' )? )
-            // InternalT5.g:4631:2: ( '^' )?
+            // InternalT5.g:4630:1: ( ( rule__ComandoAtribuicao__TargetAssignment_0 ) )
+            // InternalT5.g:4631:2: ( rule__ComandoAtribuicao__TargetAssignment_0 )
             {
-             before(grammarAccess.getComandoAtribuicaoAccess().getCircumflexAccentKeyword_0()); 
-            // InternalT5.g:4632:2: ( '^' )?
-            int alt40=2;
-            int LA40_0 = input.LA(1);
+             before(grammarAccess.getComandoAtribuicaoAccess().getTargetAssignment_0()); 
+            // InternalT5.g:4632:2: ( rule__ComandoAtribuicao__TargetAssignment_0 )
+            // InternalT5.g:4632:3: rule__ComandoAtribuicao__TargetAssignment_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__ComandoAtribuicao__TargetAssignment_0();
 
-            if ( (LA40_0==49) ) {
-                alt40=1;
-            }
-            switch (alt40) {
-                case 1 :
-                    // InternalT5.g:4632:3: '^'
-                    {
-                    match(input,49,FOLLOW_2); 
+            state._fsp--;
 
-                    }
-                    break;
 
             }
 
-             after(grammarAccess.getComandoAtribuicaoAccess().getCircumflexAccentKeyword_0()); 
+             after(grammarAccess.getComandoAtribuicaoAccess().getTargetAssignment_0()); 
 
             }
 
@@ -14433,7 +14456,7 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
             // InternalT5.g:4644:1: ( rule__ComandoAtribuicao__Group__1__Impl rule__ComandoAtribuicao__Group__2 )
             // InternalT5.g:4645:2: rule__ComandoAtribuicao__Group__1__Impl rule__ComandoAtribuicao__Group__2
             {
-            pushFollow(FOLLOW_40);
+            pushFollow(FOLLOW_33);
             rule__ComandoAtribuicao__Group__1__Impl();
 
             state._fsp--;
@@ -14462,31 +14485,21 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoAtribuicao__Group__1__Impl"
-    // InternalT5.g:4652:1: rule__ComandoAtribuicao__Group__1__Impl : ( ( rule__ComandoAtribuicao__TargetAssignment_1 ) ) ;
+    // InternalT5.g:4652:1: rule__ComandoAtribuicao__Group__1__Impl : ( '<-' ) ;
     public final void rule__ComandoAtribuicao__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:4656:1: ( ( ( rule__ComandoAtribuicao__TargetAssignment_1 ) ) )
-            // InternalT5.g:4657:1: ( ( rule__ComandoAtribuicao__TargetAssignment_1 ) )
+            // InternalT5.g:4656:1: ( ( '<-' ) )
+            // InternalT5.g:4657:1: ( '<-' )
             {
-            // InternalT5.g:4657:1: ( ( rule__ComandoAtribuicao__TargetAssignment_1 ) )
-            // InternalT5.g:4658:2: ( rule__ComandoAtribuicao__TargetAssignment_1 )
+            // InternalT5.g:4657:1: ( '<-' )
+            // InternalT5.g:4658:2: '<-'
             {
-             before(grammarAccess.getComandoAtribuicaoAccess().getTargetAssignment_1()); 
-            // InternalT5.g:4659:2: ( rule__ComandoAtribuicao__TargetAssignment_1 )
-            // InternalT5.g:4659:3: rule__ComandoAtribuicao__TargetAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__ComandoAtribuicao__TargetAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getComandoAtribuicaoAccess().getTargetAssignment_1()); 
+             before(grammarAccess.getComandoAtribuicaoAccess().getLessThanSignHyphenMinusKeyword_1()); 
+            match(input,61,FOLLOW_2); 
+             after(grammarAccess.getComandoAtribuicaoAccess().getLessThanSignHyphenMinusKeyword_1()); 
 
             }
 
@@ -14509,22 +14522,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoAtribuicao__Group__2"
-    // InternalT5.g:4667:1: rule__ComandoAtribuicao__Group__2 : rule__ComandoAtribuicao__Group__2__Impl rule__ComandoAtribuicao__Group__3 ;
+    // InternalT5.g:4667:1: rule__ComandoAtribuicao__Group__2 : rule__ComandoAtribuicao__Group__2__Impl ;
     public final void rule__ComandoAtribuicao__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:4671:1: ( rule__ComandoAtribuicao__Group__2__Impl rule__ComandoAtribuicao__Group__3 )
-            // InternalT5.g:4672:2: rule__ComandoAtribuicao__Group__2__Impl rule__ComandoAtribuicao__Group__3
+            // InternalT5.g:4671:1: ( rule__ComandoAtribuicao__Group__2__Impl )
+            // InternalT5.g:4672:2: rule__ComandoAtribuicao__Group__2__Impl
             {
-            pushFollow(FOLLOW_33);
-            rule__ComandoAtribuicao__Group__2__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__ComandoAtribuicao__Group__3();
+            rule__ComandoAtribuicao__Group__2__Impl();
 
             state._fsp--;
 
@@ -14547,21 +14555,31 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoAtribuicao__Group__2__Impl"
-    // InternalT5.g:4679:1: rule__ComandoAtribuicao__Group__2__Impl : ( '<-' ) ;
+    // InternalT5.g:4678:1: rule__ComandoAtribuicao__Group__2__Impl : ( ( rule__ComandoAtribuicao__ValorAssignment_2 ) ) ;
     public final void rule__ComandoAtribuicao__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:4683:1: ( ( '<-' ) )
-            // InternalT5.g:4684:1: ( '<-' )
+            // InternalT5.g:4682:1: ( ( ( rule__ComandoAtribuicao__ValorAssignment_2 ) ) )
+            // InternalT5.g:4683:1: ( ( rule__ComandoAtribuicao__ValorAssignment_2 ) )
             {
-            // InternalT5.g:4684:1: ( '<-' )
-            // InternalT5.g:4685:2: '<-'
+            // InternalT5.g:4683:1: ( ( rule__ComandoAtribuicao__ValorAssignment_2 ) )
+            // InternalT5.g:4684:2: ( rule__ComandoAtribuicao__ValorAssignment_2 )
             {
-             before(grammarAccess.getComandoAtribuicaoAccess().getLessThanSignHyphenMinusKeyword_2()); 
-            match(input,61,FOLLOW_2); 
-             after(grammarAccess.getComandoAtribuicaoAccess().getLessThanSignHyphenMinusKeyword_2()); 
+             before(grammarAccess.getComandoAtribuicaoAccess().getValorAssignment_2()); 
+            // InternalT5.g:4685:2: ( rule__ComandoAtribuicao__ValorAssignment_2 )
+            // InternalT5.g:4685:3: rule__ComandoAtribuicao__ValorAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__ComandoAtribuicao__ValorAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getComandoAtribuicaoAccess().getValorAssignment_2()); 
 
             }
 
@@ -14583,95 +14601,15 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ComandoAtribuicao__Group__2__Impl"
 
 
-    // $ANTLR start "rule__ComandoAtribuicao__Group__3"
-    // InternalT5.g:4694:1: rule__ComandoAtribuicao__Group__3 : rule__ComandoAtribuicao__Group__3__Impl ;
-    public final void rule__ComandoAtribuicao__Group__3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalT5.g:4698:1: ( rule__ComandoAtribuicao__Group__3__Impl )
-            // InternalT5.g:4699:2: rule__ComandoAtribuicao__Group__3__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__ComandoAtribuicao__Group__3__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ComandoAtribuicao__Group__3"
-
-
-    // $ANTLR start "rule__ComandoAtribuicao__Group__3__Impl"
-    // InternalT5.g:4705:1: rule__ComandoAtribuicao__Group__3__Impl : ( ( rule__ComandoAtribuicao__ValorAssignment_3 ) ) ;
-    public final void rule__ComandoAtribuicao__Group__3__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalT5.g:4709:1: ( ( ( rule__ComandoAtribuicao__ValorAssignment_3 ) ) )
-            // InternalT5.g:4710:1: ( ( rule__ComandoAtribuicao__ValorAssignment_3 ) )
-            {
-            // InternalT5.g:4710:1: ( ( rule__ComandoAtribuicao__ValorAssignment_3 ) )
-            // InternalT5.g:4711:2: ( rule__ComandoAtribuicao__ValorAssignment_3 )
-            {
-             before(grammarAccess.getComandoAtribuicaoAccess().getValorAssignment_3()); 
-            // InternalT5.g:4712:2: ( rule__ComandoAtribuicao__ValorAssignment_3 )
-            // InternalT5.g:4712:3: rule__ComandoAtribuicao__ValorAssignment_3
-            {
-            pushFollow(FOLLOW_2);
-            rule__ComandoAtribuicao__ValorAssignment_3();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getComandoAtribuicaoAccess().getValorAssignment_3()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ComandoAtribuicao__Group__3__Impl"
-
-
     // $ANTLR start "rule__ComandoChamada__Group__0"
-    // InternalT5.g:4721:1: rule__ComandoChamada__Group__0 : rule__ComandoChamada__Group__0__Impl rule__ComandoChamada__Group__1 ;
+    // InternalT5.g:4694:1: rule__ComandoChamada__Group__0 : rule__ComandoChamada__Group__0__Impl rule__ComandoChamada__Group__1 ;
     public final void rule__ComandoChamada__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:4725:1: ( rule__ComandoChamada__Group__0__Impl rule__ComandoChamada__Group__1 )
-            // InternalT5.g:4726:2: rule__ComandoChamada__Group__0__Impl rule__ComandoChamada__Group__1
+            // InternalT5.g:4698:1: ( rule__ComandoChamada__Group__0__Impl rule__ComandoChamada__Group__1 )
+            // InternalT5.g:4699:2: rule__ComandoChamada__Group__0__Impl rule__ComandoChamada__Group__1
             {
             pushFollow(FOLLOW_16);
             rule__ComandoChamada__Group__0__Impl();
@@ -14702,21 +14640,21 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoChamada__Group__0__Impl"
-    // InternalT5.g:4733:1: rule__ComandoChamada__Group__0__Impl : ( ( rule__ComandoChamada__NameAssignment_0 ) ) ;
+    // InternalT5.g:4706:1: rule__ComandoChamada__Group__0__Impl : ( ( rule__ComandoChamada__NameAssignment_0 ) ) ;
     public final void rule__ComandoChamada__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:4737:1: ( ( ( rule__ComandoChamada__NameAssignment_0 ) ) )
-            // InternalT5.g:4738:1: ( ( rule__ComandoChamada__NameAssignment_0 ) )
+            // InternalT5.g:4710:1: ( ( ( rule__ComandoChamada__NameAssignment_0 ) ) )
+            // InternalT5.g:4711:1: ( ( rule__ComandoChamada__NameAssignment_0 ) )
             {
-            // InternalT5.g:4738:1: ( ( rule__ComandoChamada__NameAssignment_0 ) )
-            // InternalT5.g:4739:2: ( rule__ComandoChamada__NameAssignment_0 )
+            // InternalT5.g:4711:1: ( ( rule__ComandoChamada__NameAssignment_0 ) )
+            // InternalT5.g:4712:2: ( rule__ComandoChamada__NameAssignment_0 )
             {
              before(grammarAccess.getComandoChamadaAccess().getNameAssignment_0()); 
-            // InternalT5.g:4740:2: ( rule__ComandoChamada__NameAssignment_0 )
-            // InternalT5.g:4740:3: rule__ComandoChamada__NameAssignment_0
+            // InternalT5.g:4713:2: ( rule__ComandoChamada__NameAssignment_0 )
+            // InternalT5.g:4713:3: rule__ComandoChamada__NameAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__ComandoChamada__NameAssignment_0();
@@ -14749,14 +14687,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoChamada__Group__1"
-    // InternalT5.g:4748:1: rule__ComandoChamada__Group__1 : rule__ComandoChamada__Group__1__Impl rule__ComandoChamada__Group__2 ;
+    // InternalT5.g:4721:1: rule__ComandoChamada__Group__1 : rule__ComandoChamada__Group__1__Impl rule__ComandoChamada__Group__2 ;
     public final void rule__ComandoChamada__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:4752:1: ( rule__ComandoChamada__Group__1__Impl rule__ComandoChamada__Group__2 )
-            // InternalT5.g:4753:2: rule__ComandoChamada__Group__1__Impl rule__ComandoChamada__Group__2
+            // InternalT5.g:4725:1: ( rule__ComandoChamada__Group__1__Impl rule__ComandoChamada__Group__2 )
+            // InternalT5.g:4726:2: rule__ComandoChamada__Group__1__Impl rule__ComandoChamada__Group__2
             {
             pushFollow(FOLLOW_46);
             rule__ComandoChamada__Group__1__Impl();
@@ -14787,17 +14725,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoChamada__Group__1__Impl"
-    // InternalT5.g:4760:1: rule__ComandoChamada__Group__1__Impl : ( '(' ) ;
+    // InternalT5.g:4733:1: rule__ComandoChamada__Group__1__Impl : ( '(' ) ;
     public final void rule__ComandoChamada__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:4764:1: ( ( '(' ) )
-            // InternalT5.g:4765:1: ( '(' )
+            // InternalT5.g:4737:1: ( ( '(' ) )
+            // InternalT5.g:4738:1: ( '(' )
             {
-            // InternalT5.g:4765:1: ( '(' )
-            // InternalT5.g:4766:2: '('
+            // InternalT5.g:4738:1: ( '(' )
+            // InternalT5.g:4739:2: '('
             {
              before(grammarAccess.getComandoChamadaAccess().getLeftParenthesisKeyword_1()); 
             match(input,39,FOLLOW_2); 
@@ -14824,14 +14762,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoChamada__Group__2"
-    // InternalT5.g:4775:1: rule__ComandoChamada__Group__2 : rule__ComandoChamada__Group__2__Impl rule__ComandoChamada__Group__3 ;
+    // InternalT5.g:4748:1: rule__ComandoChamada__Group__2 : rule__ComandoChamada__Group__2__Impl rule__ComandoChamada__Group__3 ;
     public final void rule__ComandoChamada__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:4779:1: ( rule__ComandoChamada__Group__2__Impl rule__ComandoChamada__Group__3 )
-            // InternalT5.g:4780:2: rule__ComandoChamada__Group__2__Impl rule__ComandoChamada__Group__3
+            // InternalT5.g:4752:1: ( rule__ComandoChamada__Group__2__Impl rule__ComandoChamada__Group__3 )
+            // InternalT5.g:4753:2: rule__ComandoChamada__Group__2__Impl rule__ComandoChamada__Group__3
             {
             pushFollow(FOLLOW_46);
             rule__ComandoChamada__Group__2__Impl();
@@ -14862,29 +14800,29 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoChamada__Group__2__Impl"
-    // InternalT5.g:4787:1: rule__ComandoChamada__Group__2__Impl : ( ( rule__ComandoChamada__Group_2__0 )? ) ;
+    // InternalT5.g:4760:1: rule__ComandoChamada__Group__2__Impl : ( ( rule__ComandoChamada__Group_2__0 )? ) ;
     public final void rule__ComandoChamada__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:4791:1: ( ( ( rule__ComandoChamada__Group_2__0 )? ) )
-            // InternalT5.g:4792:1: ( ( rule__ComandoChamada__Group_2__0 )? )
+            // InternalT5.g:4764:1: ( ( ( rule__ComandoChamada__Group_2__0 )? ) )
+            // InternalT5.g:4765:1: ( ( rule__ComandoChamada__Group_2__0 )? )
             {
-            // InternalT5.g:4792:1: ( ( rule__ComandoChamada__Group_2__0 )? )
-            // InternalT5.g:4793:2: ( rule__ComandoChamada__Group_2__0 )?
+            // InternalT5.g:4765:1: ( ( rule__ComandoChamada__Group_2__0 )? )
+            // InternalT5.g:4766:2: ( rule__ComandoChamada__Group_2__0 )?
             {
              before(grammarAccess.getComandoChamadaAccess().getGroup_2()); 
-            // InternalT5.g:4794:2: ( rule__ComandoChamada__Group_2__0 )?
-            int alt41=2;
-            int LA41_0 = input.LA(1);
+            // InternalT5.g:4767:2: ( rule__ComandoChamada__Group_2__0 )?
+            int alt40=2;
+            int LA40_0 = input.LA(1);
 
-            if ( ((LA41_0>=RULE_STRING && LA41_0<=RULE_ID)||LA41_0==39||LA41_0==49||LA41_0==69) ) {
-                alt41=1;
+            if ( ((LA40_0>=RULE_STRING && LA40_0<=RULE_ID)||LA40_0==39||LA40_0==49||LA40_0==69) ) {
+                alt40=1;
             }
-            switch (alt41) {
+            switch (alt40) {
                 case 1 :
-                    // InternalT5.g:4794:3: rule__ComandoChamada__Group_2__0
+                    // InternalT5.g:4767:3: rule__ComandoChamada__Group_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__ComandoChamada__Group_2__0();
@@ -14920,14 +14858,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoChamada__Group__3"
-    // InternalT5.g:4802:1: rule__ComandoChamada__Group__3 : rule__ComandoChamada__Group__3__Impl ;
+    // InternalT5.g:4775:1: rule__ComandoChamada__Group__3 : rule__ComandoChamada__Group__3__Impl ;
     public final void rule__ComandoChamada__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:4806:1: ( rule__ComandoChamada__Group__3__Impl )
-            // InternalT5.g:4807:2: rule__ComandoChamada__Group__3__Impl
+            // InternalT5.g:4779:1: ( rule__ComandoChamada__Group__3__Impl )
+            // InternalT5.g:4780:2: rule__ComandoChamada__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ComandoChamada__Group__3__Impl();
@@ -14953,17 +14891,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoChamada__Group__3__Impl"
-    // InternalT5.g:4813:1: rule__ComandoChamada__Group__3__Impl : ( ')' ) ;
+    // InternalT5.g:4786:1: rule__ComandoChamada__Group__3__Impl : ( ')' ) ;
     public final void rule__ComandoChamada__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:4817:1: ( ( ')' ) )
-            // InternalT5.g:4818:1: ( ')' )
+            // InternalT5.g:4790:1: ( ( ')' ) )
+            // InternalT5.g:4791:1: ( ')' )
             {
-            // InternalT5.g:4818:1: ( ')' )
-            // InternalT5.g:4819:2: ')'
+            // InternalT5.g:4791:1: ( ')' )
+            // InternalT5.g:4792:2: ')'
             {
              before(grammarAccess.getComandoChamadaAccess().getRightParenthesisKeyword_3()); 
             match(input,40,FOLLOW_2); 
@@ -14990,14 +14928,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoChamada__Group_2__0"
-    // InternalT5.g:4829:1: rule__ComandoChamada__Group_2__0 : rule__ComandoChamada__Group_2__0__Impl rule__ComandoChamada__Group_2__1 ;
+    // InternalT5.g:4802:1: rule__ComandoChamada__Group_2__0 : rule__ComandoChamada__Group_2__0__Impl rule__ComandoChamada__Group_2__1 ;
     public final void rule__ComandoChamada__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:4833:1: ( rule__ComandoChamada__Group_2__0__Impl rule__ComandoChamada__Group_2__1 )
-            // InternalT5.g:4834:2: rule__ComandoChamada__Group_2__0__Impl rule__ComandoChamada__Group_2__1
+            // InternalT5.g:4806:1: ( rule__ComandoChamada__Group_2__0__Impl rule__ComandoChamada__Group_2__1 )
+            // InternalT5.g:4807:2: rule__ComandoChamada__Group_2__0__Impl rule__ComandoChamada__Group_2__1
             {
             pushFollow(FOLLOW_9);
             rule__ComandoChamada__Group_2__0__Impl();
@@ -15028,21 +14966,21 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoChamada__Group_2__0__Impl"
-    // InternalT5.g:4841:1: rule__ComandoChamada__Group_2__0__Impl : ( ( rule__ComandoChamada__ArgsAssignment_2_0 ) ) ;
+    // InternalT5.g:4814:1: rule__ComandoChamada__Group_2__0__Impl : ( ( rule__ComandoChamada__ArgsAssignment_2_0 ) ) ;
     public final void rule__ComandoChamada__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:4845:1: ( ( ( rule__ComandoChamada__ArgsAssignment_2_0 ) ) )
-            // InternalT5.g:4846:1: ( ( rule__ComandoChamada__ArgsAssignment_2_0 ) )
+            // InternalT5.g:4818:1: ( ( ( rule__ComandoChamada__ArgsAssignment_2_0 ) ) )
+            // InternalT5.g:4819:1: ( ( rule__ComandoChamada__ArgsAssignment_2_0 ) )
             {
-            // InternalT5.g:4846:1: ( ( rule__ComandoChamada__ArgsAssignment_2_0 ) )
-            // InternalT5.g:4847:2: ( rule__ComandoChamada__ArgsAssignment_2_0 )
+            // InternalT5.g:4819:1: ( ( rule__ComandoChamada__ArgsAssignment_2_0 ) )
+            // InternalT5.g:4820:2: ( rule__ComandoChamada__ArgsAssignment_2_0 )
             {
              before(grammarAccess.getComandoChamadaAccess().getArgsAssignment_2_0()); 
-            // InternalT5.g:4848:2: ( rule__ComandoChamada__ArgsAssignment_2_0 )
-            // InternalT5.g:4848:3: rule__ComandoChamada__ArgsAssignment_2_0
+            // InternalT5.g:4821:2: ( rule__ComandoChamada__ArgsAssignment_2_0 )
+            // InternalT5.g:4821:3: rule__ComandoChamada__ArgsAssignment_2_0
             {
             pushFollow(FOLLOW_2);
             rule__ComandoChamada__ArgsAssignment_2_0();
@@ -15075,14 +15013,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoChamada__Group_2__1"
-    // InternalT5.g:4856:1: rule__ComandoChamada__Group_2__1 : rule__ComandoChamada__Group_2__1__Impl ;
+    // InternalT5.g:4829:1: rule__ComandoChamada__Group_2__1 : rule__ComandoChamada__Group_2__1__Impl ;
     public final void rule__ComandoChamada__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:4860:1: ( rule__ComandoChamada__Group_2__1__Impl )
-            // InternalT5.g:4861:2: rule__ComandoChamada__Group_2__1__Impl
+            // InternalT5.g:4833:1: ( rule__ComandoChamada__Group_2__1__Impl )
+            // InternalT5.g:4834:2: rule__ComandoChamada__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ComandoChamada__Group_2__1__Impl();
@@ -15108,33 +15046,33 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoChamada__Group_2__1__Impl"
-    // InternalT5.g:4867:1: rule__ComandoChamada__Group_2__1__Impl : ( ( rule__ComandoChamada__Group_2_1__0 )* ) ;
+    // InternalT5.g:4840:1: rule__ComandoChamada__Group_2__1__Impl : ( ( rule__ComandoChamada__Group_2_1__0 )* ) ;
     public final void rule__ComandoChamada__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:4871:1: ( ( ( rule__ComandoChamada__Group_2_1__0 )* ) )
-            // InternalT5.g:4872:1: ( ( rule__ComandoChamada__Group_2_1__0 )* )
+            // InternalT5.g:4844:1: ( ( ( rule__ComandoChamada__Group_2_1__0 )* ) )
+            // InternalT5.g:4845:1: ( ( rule__ComandoChamada__Group_2_1__0 )* )
             {
-            // InternalT5.g:4872:1: ( ( rule__ComandoChamada__Group_2_1__0 )* )
-            // InternalT5.g:4873:2: ( rule__ComandoChamada__Group_2_1__0 )*
+            // InternalT5.g:4845:1: ( ( rule__ComandoChamada__Group_2_1__0 )* )
+            // InternalT5.g:4846:2: ( rule__ComandoChamada__Group_2_1__0 )*
             {
              before(grammarAccess.getComandoChamadaAccess().getGroup_2_1()); 
-            // InternalT5.g:4874:2: ( rule__ComandoChamada__Group_2_1__0 )*
-            loop42:
+            // InternalT5.g:4847:2: ( rule__ComandoChamada__Group_2_1__0 )*
+            loop41:
             do {
-                int alt42=2;
-                int LA42_0 = input.LA(1);
+                int alt41=2;
+                int LA41_0 = input.LA(1);
 
-                if ( (LA42_0==34) ) {
-                    alt42=1;
+                if ( (LA41_0==34) ) {
+                    alt41=1;
                 }
 
 
-                switch (alt42) {
+                switch (alt41) {
             	case 1 :
-            	    // InternalT5.g:4874:3: rule__ComandoChamada__Group_2_1__0
+            	    // InternalT5.g:4847:3: rule__ComandoChamada__Group_2_1__0
             	    {
             	    pushFollow(FOLLOW_10);
             	    rule__ComandoChamada__Group_2_1__0();
@@ -15146,7 +15084,7 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop42;
+            	    break loop41;
                 }
             } while (true);
 
@@ -15173,14 +15111,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoChamada__Group_2_1__0"
-    // InternalT5.g:4883:1: rule__ComandoChamada__Group_2_1__0 : rule__ComandoChamada__Group_2_1__0__Impl rule__ComandoChamada__Group_2_1__1 ;
+    // InternalT5.g:4856:1: rule__ComandoChamada__Group_2_1__0 : rule__ComandoChamada__Group_2_1__0__Impl rule__ComandoChamada__Group_2_1__1 ;
     public final void rule__ComandoChamada__Group_2_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:4887:1: ( rule__ComandoChamada__Group_2_1__0__Impl rule__ComandoChamada__Group_2_1__1 )
-            // InternalT5.g:4888:2: rule__ComandoChamada__Group_2_1__0__Impl rule__ComandoChamada__Group_2_1__1
+            // InternalT5.g:4860:1: ( rule__ComandoChamada__Group_2_1__0__Impl rule__ComandoChamada__Group_2_1__1 )
+            // InternalT5.g:4861:2: rule__ComandoChamada__Group_2_1__0__Impl rule__ComandoChamada__Group_2_1__1
             {
             pushFollow(FOLLOW_33);
             rule__ComandoChamada__Group_2_1__0__Impl();
@@ -15211,17 +15149,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoChamada__Group_2_1__0__Impl"
-    // InternalT5.g:4895:1: rule__ComandoChamada__Group_2_1__0__Impl : ( ',' ) ;
+    // InternalT5.g:4868:1: rule__ComandoChamada__Group_2_1__0__Impl : ( ',' ) ;
     public final void rule__ComandoChamada__Group_2_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:4899:1: ( ( ',' ) )
-            // InternalT5.g:4900:1: ( ',' )
+            // InternalT5.g:4872:1: ( ( ',' ) )
+            // InternalT5.g:4873:1: ( ',' )
             {
-            // InternalT5.g:4900:1: ( ',' )
-            // InternalT5.g:4901:2: ','
+            // InternalT5.g:4873:1: ( ',' )
+            // InternalT5.g:4874:2: ','
             {
              before(grammarAccess.getComandoChamadaAccess().getCommaKeyword_2_1_0()); 
             match(input,34,FOLLOW_2); 
@@ -15248,14 +15186,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoChamada__Group_2_1__1"
-    // InternalT5.g:4910:1: rule__ComandoChamada__Group_2_1__1 : rule__ComandoChamada__Group_2_1__1__Impl ;
+    // InternalT5.g:4883:1: rule__ComandoChamada__Group_2_1__1 : rule__ComandoChamada__Group_2_1__1__Impl ;
     public final void rule__ComandoChamada__Group_2_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:4914:1: ( rule__ComandoChamada__Group_2_1__1__Impl )
-            // InternalT5.g:4915:2: rule__ComandoChamada__Group_2_1__1__Impl
+            // InternalT5.g:4887:1: ( rule__ComandoChamada__Group_2_1__1__Impl )
+            // InternalT5.g:4888:2: rule__ComandoChamada__Group_2_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ComandoChamada__Group_2_1__1__Impl();
@@ -15281,21 +15219,21 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoChamada__Group_2_1__1__Impl"
-    // InternalT5.g:4921:1: rule__ComandoChamada__Group_2_1__1__Impl : ( ( rule__ComandoChamada__ArgsAssignment_2_1_1 ) ) ;
+    // InternalT5.g:4894:1: rule__ComandoChamada__Group_2_1__1__Impl : ( ( rule__ComandoChamada__ArgsAssignment_2_1_1 ) ) ;
     public final void rule__ComandoChamada__Group_2_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:4925:1: ( ( ( rule__ComandoChamada__ArgsAssignment_2_1_1 ) ) )
-            // InternalT5.g:4926:1: ( ( rule__ComandoChamada__ArgsAssignment_2_1_1 ) )
+            // InternalT5.g:4898:1: ( ( ( rule__ComandoChamada__ArgsAssignment_2_1_1 ) ) )
+            // InternalT5.g:4899:1: ( ( rule__ComandoChamada__ArgsAssignment_2_1_1 ) )
             {
-            // InternalT5.g:4926:1: ( ( rule__ComandoChamada__ArgsAssignment_2_1_1 ) )
-            // InternalT5.g:4927:2: ( rule__ComandoChamada__ArgsAssignment_2_1_1 )
+            // InternalT5.g:4899:1: ( ( rule__ComandoChamada__ArgsAssignment_2_1_1 ) )
+            // InternalT5.g:4900:2: ( rule__ComandoChamada__ArgsAssignment_2_1_1 )
             {
              before(grammarAccess.getComandoChamadaAccess().getArgsAssignment_2_1_1()); 
-            // InternalT5.g:4928:2: ( rule__ComandoChamada__ArgsAssignment_2_1_1 )
-            // InternalT5.g:4928:3: rule__ComandoChamada__ArgsAssignment_2_1_1
+            // InternalT5.g:4901:2: ( rule__ComandoChamada__ArgsAssignment_2_1_1 )
+            // InternalT5.g:4901:3: rule__ComandoChamada__ArgsAssignment_2_1_1
             {
             pushFollow(FOLLOW_2);
             rule__ComandoChamada__ArgsAssignment_2_1_1();
@@ -15328,14 +15266,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoRetorne__Group__0"
-    // InternalT5.g:4937:1: rule__ComandoRetorne__Group__0 : rule__ComandoRetorne__Group__0__Impl rule__ComandoRetorne__Group__1 ;
+    // InternalT5.g:4910:1: rule__ComandoRetorne__Group__0 : rule__ComandoRetorne__Group__0__Impl rule__ComandoRetorne__Group__1 ;
     public final void rule__ComandoRetorne__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:4941:1: ( rule__ComandoRetorne__Group__0__Impl rule__ComandoRetorne__Group__1 )
-            // InternalT5.g:4942:2: rule__ComandoRetorne__Group__0__Impl rule__ComandoRetorne__Group__1
+            // InternalT5.g:4914:1: ( rule__ComandoRetorne__Group__0__Impl rule__ComandoRetorne__Group__1 )
+            // InternalT5.g:4915:2: rule__ComandoRetorne__Group__0__Impl rule__ComandoRetorne__Group__1
             {
             pushFollow(FOLLOW_33);
             rule__ComandoRetorne__Group__0__Impl();
@@ -15366,17 +15304,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoRetorne__Group__0__Impl"
-    // InternalT5.g:4949:1: rule__ComandoRetorne__Group__0__Impl : ( 'retorne' ) ;
+    // InternalT5.g:4922:1: rule__ComandoRetorne__Group__0__Impl : ( 'retorne' ) ;
     public final void rule__ComandoRetorne__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:4953:1: ( ( 'retorne' ) )
-            // InternalT5.g:4954:1: ( 'retorne' )
+            // InternalT5.g:4926:1: ( ( 'retorne' ) )
+            // InternalT5.g:4927:1: ( 'retorne' )
             {
-            // InternalT5.g:4954:1: ( 'retorne' )
-            // InternalT5.g:4955:2: 'retorne'
+            // InternalT5.g:4927:1: ( 'retorne' )
+            // InternalT5.g:4928:2: 'retorne'
             {
              before(grammarAccess.getComandoRetorneAccess().getRetorneKeyword_0()); 
             match(input,67,FOLLOW_2); 
@@ -15403,14 +15341,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoRetorne__Group__1"
-    // InternalT5.g:4964:1: rule__ComandoRetorne__Group__1 : rule__ComandoRetorne__Group__1__Impl ;
+    // InternalT5.g:4937:1: rule__ComandoRetorne__Group__1 : rule__ComandoRetorne__Group__1__Impl ;
     public final void rule__ComandoRetorne__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:4968:1: ( rule__ComandoRetorne__Group__1__Impl )
-            // InternalT5.g:4969:2: rule__ComandoRetorne__Group__1__Impl
+            // InternalT5.g:4941:1: ( rule__ComandoRetorne__Group__1__Impl )
+            // InternalT5.g:4942:2: rule__ComandoRetorne__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ComandoRetorne__Group__1__Impl();
@@ -15436,21 +15374,21 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoRetorne__Group__1__Impl"
-    // InternalT5.g:4975:1: rule__ComandoRetorne__Group__1__Impl : ( ( rule__ComandoRetorne__ExpAssignment_1 ) ) ;
+    // InternalT5.g:4948:1: rule__ComandoRetorne__Group__1__Impl : ( ( rule__ComandoRetorne__ExpAssignment_1 ) ) ;
     public final void rule__ComandoRetorne__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:4979:1: ( ( ( rule__ComandoRetorne__ExpAssignment_1 ) ) )
-            // InternalT5.g:4980:1: ( ( rule__ComandoRetorne__ExpAssignment_1 ) )
+            // InternalT5.g:4952:1: ( ( ( rule__ComandoRetorne__ExpAssignment_1 ) ) )
+            // InternalT5.g:4953:1: ( ( rule__ComandoRetorne__ExpAssignment_1 ) )
             {
-            // InternalT5.g:4980:1: ( ( rule__ComandoRetorne__ExpAssignment_1 ) )
-            // InternalT5.g:4981:2: ( rule__ComandoRetorne__ExpAssignment_1 )
+            // InternalT5.g:4953:1: ( ( rule__ComandoRetorne__ExpAssignment_1 ) )
+            // InternalT5.g:4954:2: ( rule__ComandoRetorne__ExpAssignment_1 )
             {
              before(grammarAccess.getComandoRetorneAccess().getExpAssignment_1()); 
-            // InternalT5.g:4982:2: ( rule__ComandoRetorne__ExpAssignment_1 )
-            // InternalT5.g:4982:3: rule__ComandoRetorne__ExpAssignment_1
+            // InternalT5.g:4955:2: ( rule__ComandoRetorne__ExpAssignment_1 )
+            // InternalT5.g:4955:3: rule__ComandoRetorne__ExpAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__ComandoRetorne__ExpAssignment_1();
@@ -15483,14 +15421,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Selecao__Group__0"
-    // InternalT5.g:4991:1: rule__Selecao__Group__0 : rule__Selecao__Group__0__Impl rule__Selecao__Group__1 ;
+    // InternalT5.g:4964:1: rule__Selecao__Group__0 : rule__Selecao__Group__0__Impl rule__Selecao__Group__1 ;
     public final void rule__Selecao__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:4995:1: ( rule__Selecao__Group__0__Impl rule__Selecao__Group__1 )
-            // InternalT5.g:4996:2: rule__Selecao__Group__0__Impl rule__Selecao__Group__1
+            // InternalT5.g:4968:1: ( rule__Selecao__Group__0__Impl rule__Selecao__Group__1 )
+            // InternalT5.g:4969:2: rule__Selecao__Group__0__Impl rule__Selecao__Group__1
             {
             pushFollow(FOLLOW_11);
             rule__Selecao__Group__0__Impl();
@@ -15521,24 +15459,24 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Selecao__Group__0__Impl"
-    // InternalT5.g:5003:1: rule__Selecao__Group__0__Impl : ( ( ( rule__Selecao__ItensAssignment_0 ) ) ( ( rule__Selecao__ItensAssignment_0 )* ) ) ;
+    // InternalT5.g:4976:1: rule__Selecao__Group__0__Impl : ( ( ( rule__Selecao__ItensAssignment_0 ) ) ( ( rule__Selecao__ItensAssignment_0 )* ) ) ;
     public final void rule__Selecao__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5007:1: ( ( ( ( rule__Selecao__ItensAssignment_0 ) ) ( ( rule__Selecao__ItensAssignment_0 )* ) ) )
-            // InternalT5.g:5008:1: ( ( ( rule__Selecao__ItensAssignment_0 ) ) ( ( rule__Selecao__ItensAssignment_0 )* ) )
+            // InternalT5.g:4980:1: ( ( ( ( rule__Selecao__ItensAssignment_0 ) ) ( ( rule__Selecao__ItensAssignment_0 )* ) ) )
+            // InternalT5.g:4981:1: ( ( ( rule__Selecao__ItensAssignment_0 ) ) ( ( rule__Selecao__ItensAssignment_0 )* ) )
             {
-            // InternalT5.g:5008:1: ( ( ( rule__Selecao__ItensAssignment_0 ) ) ( ( rule__Selecao__ItensAssignment_0 )* ) )
-            // InternalT5.g:5009:2: ( ( rule__Selecao__ItensAssignment_0 ) ) ( ( rule__Selecao__ItensAssignment_0 )* )
+            // InternalT5.g:4981:1: ( ( ( rule__Selecao__ItensAssignment_0 ) ) ( ( rule__Selecao__ItensAssignment_0 )* ) )
+            // InternalT5.g:4982:2: ( ( rule__Selecao__ItensAssignment_0 ) ) ( ( rule__Selecao__ItensAssignment_0 )* )
             {
-            // InternalT5.g:5009:2: ( ( rule__Selecao__ItensAssignment_0 ) )
-            // InternalT5.g:5010:3: ( rule__Selecao__ItensAssignment_0 )
+            // InternalT5.g:4982:2: ( ( rule__Selecao__ItensAssignment_0 ) )
+            // InternalT5.g:4983:3: ( rule__Selecao__ItensAssignment_0 )
             {
              before(grammarAccess.getSelecaoAccess().getItensAssignment_0()); 
-            // InternalT5.g:5011:3: ( rule__Selecao__ItensAssignment_0 )
-            // InternalT5.g:5011:4: rule__Selecao__ItensAssignment_0
+            // InternalT5.g:4984:3: ( rule__Selecao__ItensAssignment_0 )
+            // InternalT5.g:4984:4: rule__Selecao__ItensAssignment_0
             {
             pushFollow(FOLLOW_39);
             rule__Selecao__ItensAssignment_0();
@@ -15552,24 +15490,24 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
             }
 
-            // InternalT5.g:5014:2: ( ( rule__Selecao__ItensAssignment_0 )* )
-            // InternalT5.g:5015:3: ( rule__Selecao__ItensAssignment_0 )*
+            // InternalT5.g:4987:2: ( ( rule__Selecao__ItensAssignment_0 )* )
+            // InternalT5.g:4988:3: ( rule__Selecao__ItensAssignment_0 )*
             {
              before(grammarAccess.getSelecaoAccess().getItensAssignment_0()); 
-            // InternalT5.g:5016:3: ( rule__Selecao__ItensAssignment_0 )*
-            loop43:
+            // InternalT5.g:4989:3: ( rule__Selecao__ItensAssignment_0 )*
+            loop42:
             do {
-                int alt43=2;
-                int LA43_0 = input.LA(1);
+                int alt42=2;
+                int LA42_0 = input.LA(1);
 
-                if ( (LA43_0==12) ) {
-                    alt43=1;
+                if ( (LA42_0==12) ) {
+                    alt42=1;
                 }
 
 
-                switch (alt43) {
+                switch (alt42) {
             	case 1 :
-            	    // InternalT5.g:5016:4: rule__Selecao__ItensAssignment_0
+            	    // InternalT5.g:4989:4: rule__Selecao__ItensAssignment_0
             	    {
             	    pushFollow(FOLLOW_39);
             	    rule__Selecao__ItensAssignment_0();
@@ -15581,7 +15519,7 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop43;
+            	    break loop42;
                 }
             } while (true);
 
@@ -15611,14 +15549,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Selecao__Group__1"
-    // InternalT5.g:5025:1: rule__Selecao__Group__1 : rule__Selecao__Group__1__Impl rule__Selecao__Group__2 ;
+    // InternalT5.g:4998:1: rule__Selecao__Group__1 : rule__Selecao__Group__1__Impl rule__Selecao__Group__2 ;
     public final void rule__Selecao__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5029:1: ( rule__Selecao__Group__1__Impl rule__Selecao__Group__2 )
-            // InternalT5.g:5030:2: rule__Selecao__Group__1__Impl rule__Selecao__Group__2
+            // InternalT5.g:5002:1: ( rule__Selecao__Group__1__Impl rule__Selecao__Group__2 )
+            // InternalT5.g:5003:2: rule__Selecao__Group__1__Impl rule__Selecao__Group__2
             {
             pushFollow(FOLLOW_36);
             rule__Selecao__Group__1__Impl();
@@ -15649,17 +15587,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Selecao__Group__1__Impl"
-    // InternalT5.g:5037:1: rule__Selecao__Group__1__Impl : ( ':' ) ;
+    // InternalT5.g:5010:1: rule__Selecao__Group__1__Impl : ( ':' ) ;
     public final void rule__Selecao__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5041:1: ( ( ':' ) )
-            // InternalT5.g:5042:1: ( ':' )
+            // InternalT5.g:5014:1: ( ( ':' ) )
+            // InternalT5.g:5015:1: ( ':' )
             {
-            // InternalT5.g:5042:1: ( ':' )
-            // InternalT5.g:5043:2: ':'
+            // InternalT5.g:5015:1: ( ':' )
+            // InternalT5.g:5016:2: ':'
             {
              before(grammarAccess.getSelecaoAccess().getColonKeyword_1()); 
             match(input,36,FOLLOW_2); 
@@ -15686,14 +15624,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Selecao__Group__2"
-    // InternalT5.g:5052:1: rule__Selecao__Group__2 : rule__Selecao__Group__2__Impl ;
+    // InternalT5.g:5025:1: rule__Selecao__Group__2 : rule__Selecao__Group__2__Impl ;
     public final void rule__Selecao__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5056:1: ( rule__Selecao__Group__2__Impl )
-            // InternalT5.g:5057:2: rule__Selecao__Group__2__Impl
+            // InternalT5.g:5029:1: ( rule__Selecao__Group__2__Impl )
+            // InternalT5.g:5030:2: rule__Selecao__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Selecao__Group__2__Impl();
@@ -15719,33 +15657,33 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Selecao__Group__2__Impl"
-    // InternalT5.g:5063:1: rule__Selecao__Group__2__Impl : ( ( rule__Selecao__ComandosAssignment_2 )* ) ;
+    // InternalT5.g:5036:1: rule__Selecao__Group__2__Impl : ( ( rule__Selecao__ComandosAssignment_2 )* ) ;
     public final void rule__Selecao__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5067:1: ( ( ( rule__Selecao__ComandosAssignment_2 )* ) )
-            // InternalT5.g:5068:1: ( ( rule__Selecao__ComandosAssignment_2 )* )
+            // InternalT5.g:5040:1: ( ( ( rule__Selecao__ComandosAssignment_2 )* ) )
+            // InternalT5.g:5041:1: ( ( rule__Selecao__ComandosAssignment_2 )* )
             {
-            // InternalT5.g:5068:1: ( ( rule__Selecao__ComandosAssignment_2 )* )
-            // InternalT5.g:5069:2: ( rule__Selecao__ComandosAssignment_2 )*
+            // InternalT5.g:5041:1: ( ( rule__Selecao__ComandosAssignment_2 )* )
+            // InternalT5.g:5042:2: ( rule__Selecao__ComandosAssignment_2 )*
             {
              before(grammarAccess.getSelecaoAccess().getComandosAssignment_2()); 
-            // InternalT5.g:5070:2: ( rule__Selecao__ComandosAssignment_2 )*
-            loop44:
+            // InternalT5.g:5043:2: ( rule__Selecao__ComandosAssignment_2 )*
+            loop43:
             do {
-                int alt44=2;
-                int LA44_0 = input.LA(1);
+                int alt43=2;
+                int LA43_0 = input.LA(1);
 
-                if ( (LA44_0==RULE_ID||LA44_0==49||(LA44_0>=51 && LA44_0<=53)||LA44_0==57||LA44_0==60||LA44_0==63||LA44_0==65||LA44_0==67) ) {
-                    alt44=1;
+                if ( (LA43_0==RULE_ID||(LA43_0>=51 && LA43_0<=53)||LA43_0==57||LA43_0==60||LA43_0==63||LA43_0==65||LA43_0==67) ) {
+                    alt43=1;
                 }
 
 
-                switch (alt44) {
+                switch (alt43) {
             	case 1 :
-            	    // InternalT5.g:5070:3: rule__Selecao__ComandosAssignment_2
+            	    // InternalT5.g:5043:3: rule__Selecao__ComandosAssignment_2
             	    {
             	    pushFollow(FOLLOW_30);
             	    rule__Selecao__ComandosAssignment_2();
@@ -15757,7 +15695,7 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop44;
+            	    break loop43;
                 }
             } while (true);
 
@@ -15784,14 +15722,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ItemSelecao__Group__0"
-    // InternalT5.g:5079:1: rule__ItemSelecao__Group__0 : rule__ItemSelecao__Group__0__Impl rule__ItemSelecao__Group__1 ;
+    // InternalT5.g:5052:1: rule__ItemSelecao__Group__0 : rule__ItemSelecao__Group__0__Impl rule__ItemSelecao__Group__1 ;
     public final void rule__ItemSelecao__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5083:1: ( rule__ItemSelecao__Group__0__Impl rule__ItemSelecao__Group__1 )
-            // InternalT5.g:5084:2: rule__ItemSelecao__Group__0__Impl rule__ItemSelecao__Group__1
+            // InternalT5.g:5056:1: ( rule__ItemSelecao__Group__0__Impl rule__ItemSelecao__Group__1 )
+            // InternalT5.g:5057:2: rule__ItemSelecao__Group__0__Impl rule__ItemSelecao__Group__1
             {
             pushFollow(FOLLOW_9);
             rule__ItemSelecao__Group__0__Impl();
@@ -15822,21 +15760,21 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ItemSelecao__Group__0__Impl"
-    // InternalT5.g:5091:1: rule__ItemSelecao__Group__0__Impl : ( ( rule__ItemSelecao__FaixasAssignment_0 ) ) ;
+    // InternalT5.g:5064:1: rule__ItemSelecao__Group__0__Impl : ( ( rule__ItemSelecao__FaixasAssignment_0 ) ) ;
     public final void rule__ItemSelecao__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5095:1: ( ( ( rule__ItemSelecao__FaixasAssignment_0 ) ) )
-            // InternalT5.g:5096:1: ( ( rule__ItemSelecao__FaixasAssignment_0 ) )
+            // InternalT5.g:5068:1: ( ( ( rule__ItemSelecao__FaixasAssignment_0 ) ) )
+            // InternalT5.g:5069:1: ( ( rule__ItemSelecao__FaixasAssignment_0 ) )
             {
-            // InternalT5.g:5096:1: ( ( rule__ItemSelecao__FaixasAssignment_0 ) )
-            // InternalT5.g:5097:2: ( rule__ItemSelecao__FaixasAssignment_0 )
+            // InternalT5.g:5069:1: ( ( rule__ItemSelecao__FaixasAssignment_0 ) )
+            // InternalT5.g:5070:2: ( rule__ItemSelecao__FaixasAssignment_0 )
             {
              before(grammarAccess.getItemSelecaoAccess().getFaixasAssignment_0()); 
-            // InternalT5.g:5098:2: ( rule__ItemSelecao__FaixasAssignment_0 )
-            // InternalT5.g:5098:3: rule__ItemSelecao__FaixasAssignment_0
+            // InternalT5.g:5071:2: ( rule__ItemSelecao__FaixasAssignment_0 )
+            // InternalT5.g:5071:3: rule__ItemSelecao__FaixasAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__ItemSelecao__FaixasAssignment_0();
@@ -15869,14 +15807,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ItemSelecao__Group__1"
-    // InternalT5.g:5106:1: rule__ItemSelecao__Group__1 : rule__ItemSelecao__Group__1__Impl ;
+    // InternalT5.g:5079:1: rule__ItemSelecao__Group__1 : rule__ItemSelecao__Group__1__Impl ;
     public final void rule__ItemSelecao__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5110:1: ( rule__ItemSelecao__Group__1__Impl )
-            // InternalT5.g:5111:2: rule__ItemSelecao__Group__1__Impl
+            // InternalT5.g:5083:1: ( rule__ItemSelecao__Group__1__Impl )
+            // InternalT5.g:5084:2: rule__ItemSelecao__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ItemSelecao__Group__1__Impl();
@@ -15902,33 +15840,33 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ItemSelecao__Group__1__Impl"
-    // InternalT5.g:5117:1: rule__ItemSelecao__Group__1__Impl : ( ( rule__ItemSelecao__Group_1__0 )* ) ;
+    // InternalT5.g:5090:1: rule__ItemSelecao__Group__1__Impl : ( ( rule__ItemSelecao__Group_1__0 )* ) ;
     public final void rule__ItemSelecao__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5121:1: ( ( ( rule__ItemSelecao__Group_1__0 )* ) )
-            // InternalT5.g:5122:1: ( ( rule__ItemSelecao__Group_1__0 )* )
+            // InternalT5.g:5094:1: ( ( ( rule__ItemSelecao__Group_1__0 )* ) )
+            // InternalT5.g:5095:1: ( ( rule__ItemSelecao__Group_1__0 )* )
             {
-            // InternalT5.g:5122:1: ( ( rule__ItemSelecao__Group_1__0 )* )
-            // InternalT5.g:5123:2: ( rule__ItemSelecao__Group_1__0 )*
+            // InternalT5.g:5095:1: ( ( rule__ItemSelecao__Group_1__0 )* )
+            // InternalT5.g:5096:2: ( rule__ItemSelecao__Group_1__0 )*
             {
              before(grammarAccess.getItemSelecaoAccess().getGroup_1()); 
-            // InternalT5.g:5124:2: ( rule__ItemSelecao__Group_1__0 )*
-            loop45:
+            // InternalT5.g:5097:2: ( rule__ItemSelecao__Group_1__0 )*
+            loop44:
             do {
-                int alt45=2;
-                int LA45_0 = input.LA(1);
+                int alt44=2;
+                int LA44_0 = input.LA(1);
 
-                if ( (LA45_0==34) ) {
-                    alt45=1;
+                if ( (LA44_0==34) ) {
+                    alt44=1;
                 }
 
 
-                switch (alt45) {
+                switch (alt44) {
             	case 1 :
-            	    // InternalT5.g:5124:3: rule__ItemSelecao__Group_1__0
+            	    // InternalT5.g:5097:3: rule__ItemSelecao__Group_1__0
             	    {
             	    pushFollow(FOLLOW_10);
             	    rule__ItemSelecao__Group_1__0();
@@ -15940,7 +15878,7 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop45;
+            	    break loop44;
                 }
             } while (true);
 
@@ -15967,14 +15905,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ItemSelecao__Group_1__0"
-    // InternalT5.g:5133:1: rule__ItemSelecao__Group_1__0 : rule__ItemSelecao__Group_1__0__Impl rule__ItemSelecao__Group_1__1 ;
+    // InternalT5.g:5106:1: rule__ItemSelecao__Group_1__0 : rule__ItemSelecao__Group_1__0__Impl rule__ItemSelecao__Group_1__1 ;
     public final void rule__ItemSelecao__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5137:1: ( rule__ItemSelecao__Group_1__0__Impl rule__ItemSelecao__Group_1__1 )
-            // InternalT5.g:5138:2: rule__ItemSelecao__Group_1__0__Impl rule__ItemSelecao__Group_1__1
+            // InternalT5.g:5110:1: ( rule__ItemSelecao__Group_1__0__Impl rule__ItemSelecao__Group_1__1 )
+            // InternalT5.g:5111:2: rule__ItemSelecao__Group_1__0__Impl rule__ItemSelecao__Group_1__1
             {
             pushFollow(FOLLOW_47);
             rule__ItemSelecao__Group_1__0__Impl();
@@ -16005,17 +15943,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ItemSelecao__Group_1__0__Impl"
-    // InternalT5.g:5145:1: rule__ItemSelecao__Group_1__0__Impl : ( ',' ) ;
+    // InternalT5.g:5118:1: rule__ItemSelecao__Group_1__0__Impl : ( ',' ) ;
     public final void rule__ItemSelecao__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5149:1: ( ( ',' ) )
-            // InternalT5.g:5150:1: ( ',' )
+            // InternalT5.g:5122:1: ( ( ',' ) )
+            // InternalT5.g:5123:1: ( ',' )
             {
-            // InternalT5.g:5150:1: ( ',' )
-            // InternalT5.g:5151:2: ','
+            // InternalT5.g:5123:1: ( ',' )
+            // InternalT5.g:5124:2: ','
             {
              before(grammarAccess.getItemSelecaoAccess().getCommaKeyword_1_0()); 
             match(input,34,FOLLOW_2); 
@@ -16042,14 +15980,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ItemSelecao__Group_1__1"
-    // InternalT5.g:5160:1: rule__ItemSelecao__Group_1__1 : rule__ItemSelecao__Group_1__1__Impl ;
+    // InternalT5.g:5133:1: rule__ItemSelecao__Group_1__1 : rule__ItemSelecao__Group_1__1__Impl ;
     public final void rule__ItemSelecao__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5164:1: ( rule__ItemSelecao__Group_1__1__Impl )
-            // InternalT5.g:5165:2: rule__ItemSelecao__Group_1__1__Impl
+            // InternalT5.g:5137:1: ( rule__ItemSelecao__Group_1__1__Impl )
+            // InternalT5.g:5138:2: rule__ItemSelecao__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ItemSelecao__Group_1__1__Impl();
@@ -16075,21 +16013,21 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ItemSelecao__Group_1__1__Impl"
-    // InternalT5.g:5171:1: rule__ItemSelecao__Group_1__1__Impl : ( ( rule__ItemSelecao__FaixasAssignment_1_1 ) ) ;
+    // InternalT5.g:5144:1: rule__ItemSelecao__Group_1__1__Impl : ( ( rule__ItemSelecao__FaixasAssignment_1_1 ) ) ;
     public final void rule__ItemSelecao__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5175:1: ( ( ( rule__ItemSelecao__FaixasAssignment_1_1 ) ) )
-            // InternalT5.g:5176:1: ( ( rule__ItemSelecao__FaixasAssignment_1_1 ) )
+            // InternalT5.g:5148:1: ( ( ( rule__ItemSelecao__FaixasAssignment_1_1 ) ) )
+            // InternalT5.g:5149:1: ( ( rule__ItemSelecao__FaixasAssignment_1_1 ) )
             {
-            // InternalT5.g:5176:1: ( ( rule__ItemSelecao__FaixasAssignment_1_1 ) )
-            // InternalT5.g:5177:2: ( rule__ItemSelecao__FaixasAssignment_1_1 )
+            // InternalT5.g:5149:1: ( ( rule__ItemSelecao__FaixasAssignment_1_1 ) )
+            // InternalT5.g:5150:2: ( rule__ItemSelecao__FaixasAssignment_1_1 )
             {
              before(grammarAccess.getItemSelecaoAccess().getFaixasAssignment_1_1()); 
-            // InternalT5.g:5178:2: ( rule__ItemSelecao__FaixasAssignment_1_1 )
-            // InternalT5.g:5178:3: rule__ItemSelecao__FaixasAssignment_1_1
+            // InternalT5.g:5151:2: ( rule__ItemSelecao__FaixasAssignment_1_1 )
+            // InternalT5.g:5151:3: rule__ItemSelecao__FaixasAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__ItemSelecao__FaixasAssignment_1_1();
@@ -16122,14 +16060,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumeroIntervalo__Group__0"
-    // InternalT5.g:5187:1: rule__NumeroIntervalo__Group__0 : rule__NumeroIntervalo__Group__0__Impl rule__NumeroIntervalo__Group__1 ;
+    // InternalT5.g:5160:1: rule__NumeroIntervalo__Group__0 : rule__NumeroIntervalo__Group__0__Impl rule__NumeroIntervalo__Group__1 ;
     public final void rule__NumeroIntervalo__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5191:1: ( rule__NumeroIntervalo__Group__0__Impl rule__NumeroIntervalo__Group__1 )
-            // InternalT5.g:5192:2: rule__NumeroIntervalo__Group__0__Impl rule__NumeroIntervalo__Group__1
+            // InternalT5.g:5164:1: ( rule__NumeroIntervalo__Group__0__Impl rule__NumeroIntervalo__Group__1 )
+            // InternalT5.g:5165:2: rule__NumeroIntervalo__Group__0__Impl rule__NumeroIntervalo__Group__1
             {
             pushFollow(FOLLOW_48);
             rule__NumeroIntervalo__Group__0__Impl();
@@ -16160,21 +16098,21 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumeroIntervalo__Group__0__Impl"
-    // InternalT5.g:5199:1: rule__NumeroIntervalo__Group__0__Impl : ( ( rule__NumeroIntervalo__SinalAssignment_0 ) ) ;
+    // InternalT5.g:5172:1: rule__NumeroIntervalo__Group__0__Impl : ( ( rule__NumeroIntervalo__SinalAssignment_0 ) ) ;
     public final void rule__NumeroIntervalo__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5203:1: ( ( ( rule__NumeroIntervalo__SinalAssignment_0 ) ) )
-            // InternalT5.g:5204:1: ( ( rule__NumeroIntervalo__SinalAssignment_0 ) )
+            // InternalT5.g:5176:1: ( ( ( rule__NumeroIntervalo__SinalAssignment_0 ) ) )
+            // InternalT5.g:5177:1: ( ( rule__NumeroIntervalo__SinalAssignment_0 ) )
             {
-            // InternalT5.g:5204:1: ( ( rule__NumeroIntervalo__SinalAssignment_0 ) )
-            // InternalT5.g:5205:2: ( rule__NumeroIntervalo__SinalAssignment_0 )
+            // InternalT5.g:5177:1: ( ( rule__NumeroIntervalo__SinalAssignment_0 ) )
+            // InternalT5.g:5178:2: ( rule__NumeroIntervalo__SinalAssignment_0 )
             {
              before(grammarAccess.getNumeroIntervaloAccess().getSinalAssignment_0()); 
-            // InternalT5.g:5206:2: ( rule__NumeroIntervalo__SinalAssignment_0 )
-            // InternalT5.g:5206:3: rule__NumeroIntervalo__SinalAssignment_0
+            // InternalT5.g:5179:2: ( rule__NumeroIntervalo__SinalAssignment_0 )
+            // InternalT5.g:5179:3: rule__NumeroIntervalo__SinalAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__NumeroIntervalo__SinalAssignment_0();
@@ -16207,14 +16145,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumeroIntervalo__Group__1"
-    // InternalT5.g:5214:1: rule__NumeroIntervalo__Group__1 : rule__NumeroIntervalo__Group__1__Impl rule__NumeroIntervalo__Group__2 ;
+    // InternalT5.g:5187:1: rule__NumeroIntervalo__Group__1 : rule__NumeroIntervalo__Group__1__Impl rule__NumeroIntervalo__Group__2 ;
     public final void rule__NumeroIntervalo__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5218:1: ( rule__NumeroIntervalo__Group__1__Impl rule__NumeroIntervalo__Group__2 )
-            // InternalT5.g:5219:2: rule__NumeroIntervalo__Group__1__Impl rule__NumeroIntervalo__Group__2
+            // InternalT5.g:5191:1: ( rule__NumeroIntervalo__Group__1__Impl rule__NumeroIntervalo__Group__2 )
+            // InternalT5.g:5192:2: rule__NumeroIntervalo__Group__1__Impl rule__NumeroIntervalo__Group__2
             {
             pushFollow(FOLLOW_49);
             rule__NumeroIntervalo__Group__1__Impl();
@@ -16245,21 +16183,21 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumeroIntervalo__Group__1__Impl"
-    // InternalT5.g:5226:1: rule__NumeroIntervalo__Group__1__Impl : ( ( rule__NumeroIntervalo__StartAssignment_1 ) ) ;
+    // InternalT5.g:5199:1: rule__NumeroIntervalo__Group__1__Impl : ( ( rule__NumeroIntervalo__StartAssignment_1 ) ) ;
     public final void rule__NumeroIntervalo__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5230:1: ( ( ( rule__NumeroIntervalo__StartAssignment_1 ) ) )
-            // InternalT5.g:5231:1: ( ( rule__NumeroIntervalo__StartAssignment_1 ) )
+            // InternalT5.g:5203:1: ( ( ( rule__NumeroIntervalo__StartAssignment_1 ) ) )
+            // InternalT5.g:5204:1: ( ( rule__NumeroIntervalo__StartAssignment_1 ) )
             {
-            // InternalT5.g:5231:1: ( ( rule__NumeroIntervalo__StartAssignment_1 ) )
-            // InternalT5.g:5232:2: ( rule__NumeroIntervalo__StartAssignment_1 )
+            // InternalT5.g:5204:1: ( ( rule__NumeroIntervalo__StartAssignment_1 ) )
+            // InternalT5.g:5205:2: ( rule__NumeroIntervalo__StartAssignment_1 )
             {
              before(grammarAccess.getNumeroIntervaloAccess().getStartAssignment_1()); 
-            // InternalT5.g:5233:2: ( rule__NumeroIntervalo__StartAssignment_1 )
-            // InternalT5.g:5233:3: rule__NumeroIntervalo__StartAssignment_1
+            // InternalT5.g:5206:2: ( rule__NumeroIntervalo__StartAssignment_1 )
+            // InternalT5.g:5206:3: rule__NumeroIntervalo__StartAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__NumeroIntervalo__StartAssignment_1();
@@ -16292,14 +16230,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumeroIntervalo__Group__2"
-    // InternalT5.g:5241:1: rule__NumeroIntervalo__Group__2 : rule__NumeroIntervalo__Group__2__Impl ;
+    // InternalT5.g:5214:1: rule__NumeroIntervalo__Group__2 : rule__NumeroIntervalo__Group__2__Impl ;
     public final void rule__NumeroIntervalo__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5245:1: ( rule__NumeroIntervalo__Group__2__Impl )
-            // InternalT5.g:5246:2: rule__NumeroIntervalo__Group__2__Impl
+            // InternalT5.g:5218:1: ( rule__NumeroIntervalo__Group__2__Impl )
+            // InternalT5.g:5219:2: rule__NumeroIntervalo__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__NumeroIntervalo__Group__2__Impl();
@@ -16325,29 +16263,29 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumeroIntervalo__Group__2__Impl"
-    // InternalT5.g:5252:1: rule__NumeroIntervalo__Group__2__Impl : ( ( rule__NumeroIntervalo__Group_2__0 )? ) ;
+    // InternalT5.g:5225:1: rule__NumeroIntervalo__Group__2__Impl : ( ( rule__NumeroIntervalo__Group_2__0 )? ) ;
     public final void rule__NumeroIntervalo__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5256:1: ( ( ( rule__NumeroIntervalo__Group_2__0 )? ) )
-            // InternalT5.g:5257:1: ( ( rule__NumeroIntervalo__Group_2__0 )? )
+            // InternalT5.g:5229:1: ( ( ( rule__NumeroIntervalo__Group_2__0 )? ) )
+            // InternalT5.g:5230:1: ( ( rule__NumeroIntervalo__Group_2__0 )? )
             {
-            // InternalT5.g:5257:1: ( ( rule__NumeroIntervalo__Group_2__0 )? )
-            // InternalT5.g:5258:2: ( rule__NumeroIntervalo__Group_2__0 )?
+            // InternalT5.g:5230:1: ( ( rule__NumeroIntervalo__Group_2__0 )? )
+            // InternalT5.g:5231:2: ( rule__NumeroIntervalo__Group_2__0 )?
             {
              before(grammarAccess.getNumeroIntervaloAccess().getGroup_2()); 
-            // InternalT5.g:5259:2: ( rule__NumeroIntervalo__Group_2__0 )?
-            int alt46=2;
-            int LA46_0 = input.LA(1);
+            // InternalT5.g:5232:2: ( rule__NumeroIntervalo__Group_2__0 )?
+            int alt45=2;
+            int LA45_0 = input.LA(1);
 
-            if ( (LA46_0==68) ) {
-                alt46=1;
+            if ( (LA45_0==68) ) {
+                alt45=1;
             }
-            switch (alt46) {
+            switch (alt45) {
                 case 1 :
-                    // InternalT5.g:5259:3: rule__NumeroIntervalo__Group_2__0
+                    // InternalT5.g:5232:3: rule__NumeroIntervalo__Group_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__NumeroIntervalo__Group_2__0();
@@ -16383,14 +16321,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumeroIntervalo__Group_2__0"
-    // InternalT5.g:5268:1: rule__NumeroIntervalo__Group_2__0 : rule__NumeroIntervalo__Group_2__0__Impl rule__NumeroIntervalo__Group_2__1 ;
+    // InternalT5.g:5241:1: rule__NumeroIntervalo__Group_2__0 : rule__NumeroIntervalo__Group_2__0__Impl rule__NumeroIntervalo__Group_2__1 ;
     public final void rule__NumeroIntervalo__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5272:1: ( rule__NumeroIntervalo__Group_2__0__Impl rule__NumeroIntervalo__Group_2__1 )
-            // InternalT5.g:5273:2: rule__NumeroIntervalo__Group_2__0__Impl rule__NumeroIntervalo__Group_2__1
+            // InternalT5.g:5245:1: ( rule__NumeroIntervalo__Group_2__0__Impl rule__NumeroIntervalo__Group_2__1 )
+            // InternalT5.g:5246:2: rule__NumeroIntervalo__Group_2__0__Impl rule__NumeroIntervalo__Group_2__1
             {
             pushFollow(FOLLOW_48);
             rule__NumeroIntervalo__Group_2__0__Impl();
@@ -16421,17 +16359,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumeroIntervalo__Group_2__0__Impl"
-    // InternalT5.g:5280:1: rule__NumeroIntervalo__Group_2__0__Impl : ( '..' ) ;
+    // InternalT5.g:5253:1: rule__NumeroIntervalo__Group_2__0__Impl : ( '..' ) ;
     public final void rule__NumeroIntervalo__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5284:1: ( ( '..' ) )
-            // InternalT5.g:5285:1: ( '..' )
+            // InternalT5.g:5257:1: ( ( '..' ) )
+            // InternalT5.g:5258:1: ( '..' )
             {
-            // InternalT5.g:5285:1: ( '..' )
-            // InternalT5.g:5286:2: '..'
+            // InternalT5.g:5258:1: ( '..' )
+            // InternalT5.g:5259:2: '..'
             {
              before(grammarAccess.getNumeroIntervaloAccess().getFullStopFullStopKeyword_2_0()); 
             match(input,68,FOLLOW_2); 
@@ -16458,14 +16396,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumeroIntervalo__Group_2__1"
-    // InternalT5.g:5295:1: rule__NumeroIntervalo__Group_2__1 : rule__NumeroIntervalo__Group_2__1__Impl ;
+    // InternalT5.g:5268:1: rule__NumeroIntervalo__Group_2__1 : rule__NumeroIntervalo__Group_2__1__Impl ;
     public final void rule__NumeroIntervalo__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5299:1: ( rule__NumeroIntervalo__Group_2__1__Impl )
-            // InternalT5.g:5300:2: rule__NumeroIntervalo__Group_2__1__Impl
+            // InternalT5.g:5272:1: ( rule__NumeroIntervalo__Group_2__1__Impl )
+            // InternalT5.g:5273:2: rule__NumeroIntervalo__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__NumeroIntervalo__Group_2__1__Impl();
@@ -16491,21 +16429,21 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumeroIntervalo__Group_2__1__Impl"
-    // InternalT5.g:5306:1: rule__NumeroIntervalo__Group_2__1__Impl : ( ( rule__NumeroIntervalo__EndAssignment_2_1 ) ) ;
+    // InternalT5.g:5279:1: rule__NumeroIntervalo__Group_2__1__Impl : ( ( rule__NumeroIntervalo__EndAssignment_2_1 ) ) ;
     public final void rule__NumeroIntervalo__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5310:1: ( ( ( rule__NumeroIntervalo__EndAssignment_2_1 ) ) )
-            // InternalT5.g:5311:1: ( ( rule__NumeroIntervalo__EndAssignment_2_1 ) )
+            // InternalT5.g:5283:1: ( ( ( rule__NumeroIntervalo__EndAssignment_2_1 ) ) )
+            // InternalT5.g:5284:1: ( ( rule__NumeroIntervalo__EndAssignment_2_1 ) )
             {
-            // InternalT5.g:5311:1: ( ( rule__NumeroIntervalo__EndAssignment_2_1 ) )
-            // InternalT5.g:5312:2: ( rule__NumeroIntervalo__EndAssignment_2_1 )
+            // InternalT5.g:5284:1: ( ( rule__NumeroIntervalo__EndAssignment_2_1 ) )
+            // InternalT5.g:5285:2: ( rule__NumeroIntervalo__EndAssignment_2_1 )
             {
              before(grammarAccess.getNumeroIntervaloAccess().getEndAssignment_2_1()); 
-            // InternalT5.g:5313:2: ( rule__NumeroIntervalo__EndAssignment_2_1 )
-            // InternalT5.g:5313:3: rule__NumeroIntervalo__EndAssignment_2_1
+            // InternalT5.g:5286:2: ( rule__NumeroIntervalo__EndAssignment_2_1 )
+            // InternalT5.g:5286:3: rule__NumeroIntervalo__EndAssignment_2_1
             {
             pushFollow(FOLLOW_2);
             rule__NumeroIntervalo__EndAssignment_2_1();
@@ -16538,14 +16476,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExpressaoAritmetica__Group__0"
-    // InternalT5.g:5322:1: rule__ExpressaoAritmetica__Group__0 : rule__ExpressaoAritmetica__Group__0__Impl rule__ExpressaoAritmetica__Group__1 ;
+    // InternalT5.g:5295:1: rule__ExpressaoAritmetica__Group__0 : rule__ExpressaoAritmetica__Group__0__Impl rule__ExpressaoAritmetica__Group__1 ;
     public final void rule__ExpressaoAritmetica__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5326:1: ( rule__ExpressaoAritmetica__Group__0__Impl rule__ExpressaoAritmetica__Group__1 )
-            // InternalT5.g:5327:2: rule__ExpressaoAritmetica__Group__0__Impl rule__ExpressaoAritmetica__Group__1
+            // InternalT5.g:5299:1: ( rule__ExpressaoAritmetica__Group__0__Impl rule__ExpressaoAritmetica__Group__1 )
+            // InternalT5.g:5300:2: rule__ExpressaoAritmetica__Group__0__Impl rule__ExpressaoAritmetica__Group__1
             {
             pushFollow(FOLLOW_50);
             rule__ExpressaoAritmetica__Group__0__Impl();
@@ -16576,21 +16514,21 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExpressaoAritmetica__Group__0__Impl"
-    // InternalT5.g:5334:1: rule__ExpressaoAritmetica__Group__0__Impl : ( ( rule__ExpressaoAritmetica__TermosAssignment_0 ) ) ;
+    // InternalT5.g:5307:1: rule__ExpressaoAritmetica__Group__0__Impl : ( ( rule__ExpressaoAritmetica__TermosAssignment_0 ) ) ;
     public final void rule__ExpressaoAritmetica__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5338:1: ( ( ( rule__ExpressaoAritmetica__TermosAssignment_0 ) ) )
-            // InternalT5.g:5339:1: ( ( rule__ExpressaoAritmetica__TermosAssignment_0 ) )
+            // InternalT5.g:5311:1: ( ( ( rule__ExpressaoAritmetica__TermosAssignment_0 ) ) )
+            // InternalT5.g:5312:1: ( ( rule__ExpressaoAritmetica__TermosAssignment_0 ) )
             {
-            // InternalT5.g:5339:1: ( ( rule__ExpressaoAritmetica__TermosAssignment_0 ) )
-            // InternalT5.g:5340:2: ( rule__ExpressaoAritmetica__TermosAssignment_0 )
+            // InternalT5.g:5312:1: ( ( rule__ExpressaoAritmetica__TermosAssignment_0 ) )
+            // InternalT5.g:5313:2: ( rule__ExpressaoAritmetica__TermosAssignment_0 )
             {
              before(grammarAccess.getExpressaoAritmeticaAccess().getTermosAssignment_0()); 
-            // InternalT5.g:5341:2: ( rule__ExpressaoAritmetica__TermosAssignment_0 )
-            // InternalT5.g:5341:3: rule__ExpressaoAritmetica__TermosAssignment_0
+            // InternalT5.g:5314:2: ( rule__ExpressaoAritmetica__TermosAssignment_0 )
+            // InternalT5.g:5314:3: rule__ExpressaoAritmetica__TermosAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__ExpressaoAritmetica__TermosAssignment_0();
@@ -16623,14 +16561,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExpressaoAritmetica__Group__1"
-    // InternalT5.g:5349:1: rule__ExpressaoAritmetica__Group__1 : rule__ExpressaoAritmetica__Group__1__Impl ;
+    // InternalT5.g:5322:1: rule__ExpressaoAritmetica__Group__1 : rule__ExpressaoAritmetica__Group__1__Impl ;
     public final void rule__ExpressaoAritmetica__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5353:1: ( rule__ExpressaoAritmetica__Group__1__Impl )
-            // InternalT5.g:5354:2: rule__ExpressaoAritmetica__Group__1__Impl
+            // InternalT5.g:5326:1: ( rule__ExpressaoAritmetica__Group__1__Impl )
+            // InternalT5.g:5327:2: rule__ExpressaoAritmetica__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ExpressaoAritmetica__Group__1__Impl();
@@ -16656,52 +16594,30 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExpressaoAritmetica__Group__1__Impl"
-    // InternalT5.g:5360:1: rule__ExpressaoAritmetica__Group__1__Impl : ( ( rule__ExpressaoAritmetica__OutrosAssignment_1 )* ) ;
+    // InternalT5.g:5333:1: rule__ExpressaoAritmetica__Group__1__Impl : ( ( rule__ExpressaoAritmetica__OutrosAssignment_1 )* ) ;
     public final void rule__ExpressaoAritmetica__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5364:1: ( ( ( rule__ExpressaoAritmetica__OutrosAssignment_1 )* ) )
-            // InternalT5.g:5365:1: ( ( rule__ExpressaoAritmetica__OutrosAssignment_1 )* )
+            // InternalT5.g:5337:1: ( ( ( rule__ExpressaoAritmetica__OutrosAssignment_1 )* ) )
+            // InternalT5.g:5338:1: ( ( rule__ExpressaoAritmetica__OutrosAssignment_1 )* )
             {
-            // InternalT5.g:5365:1: ( ( rule__ExpressaoAritmetica__OutrosAssignment_1 )* )
-            // InternalT5.g:5366:2: ( rule__ExpressaoAritmetica__OutrosAssignment_1 )*
+            // InternalT5.g:5338:1: ( ( rule__ExpressaoAritmetica__OutrosAssignment_1 )* )
+            // InternalT5.g:5339:2: ( rule__ExpressaoAritmetica__OutrosAssignment_1 )*
             {
              before(grammarAccess.getExpressaoAritmeticaAccess().getOutrosAssignment_1()); 
-            // InternalT5.g:5367:2: ( rule__ExpressaoAritmetica__OutrosAssignment_1 )*
-            loop47:
+            // InternalT5.g:5340:2: ( rule__ExpressaoAritmetica__OutrosAssignment_1 )*
+            loop46:
             do {
-                int alt47=2;
-                int LA47_0 = input.LA(1);
+                int alt46=2;
+                int LA46_0 = input.LA(1);
 
-                if ( (LA47_0==12) ) {
-                    int LA47_2 = input.LA(2);
+                if ( (LA46_0==12) ) {
+                    int LA46_2 = input.LA(2);
 
-                    if ( (LA47_2==RULE_INT) ) {
+                    if ( (LA46_2==RULE_INT) ) {
                         switch ( input.LA(3) ) {
-                        case 34:
-                            {
-                            int LA47_5 = input.LA(4);
-
-                            if ( ((LA47_5>=RULE_STRING && LA47_5<=RULE_ID)||LA47_5==39||LA47_5==49||LA47_5==69) ) {
-                                alt47=1;
-                            }
-
-
-                            }
-                            break;
-                        case 12:
-                            {
-                            int LA47_6 = input.LA(4);
-
-                            if ( ((LA47_6>=RULE_STRING && LA47_6<=RULE_ID)||LA47_6==39||LA47_6==49) ) {
-                                alt47=1;
-                            }
-
-
-                            }
-                            break;
                         case EOF:
                         case RULE_ID:
                         case 19:
@@ -16720,7 +16636,6 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
                         case 41:
                         case 43:
                         case 46:
-                        case 49:
                         case 51:
                         case 52:
                         case 53:
@@ -16738,27 +16653,49 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
                         case 66:
                         case 67:
                             {
-                            alt47=1;
+                            alt46=1;
+                            }
+                            break;
+                        case 34:
+                            {
+                            int LA46_5 = input.LA(4);
+
+                            if ( ((LA46_5>=RULE_STRING && LA46_5<=RULE_ID)||LA46_5==39||LA46_5==49||LA46_5==69) ) {
+                                alt46=1;
+                            }
+
+
+                            }
+                            break;
+                        case 12:
+                            {
+                            int LA46_6 = input.LA(4);
+
+                            if ( ((LA46_6>=RULE_STRING && LA46_6<=RULE_ID)||LA46_6==39||LA46_6==49) ) {
+                                alt46=1;
+                            }
+
+
                             }
                             break;
 
                         }
 
                     }
-                    else if ( (LA47_2==RULE_STRING||(LA47_2>=RULE_REAL && LA47_2<=RULE_ID)||LA47_2==39||LA47_2==49) ) {
-                        alt47=1;
+                    else if ( (LA46_2==RULE_STRING||(LA46_2>=RULE_REAL && LA46_2<=RULE_ID)||LA46_2==39||LA46_2==49) ) {
+                        alt46=1;
                     }
 
 
                 }
-                else if ( (LA47_0==19) ) {
-                    alt47=1;
+                else if ( (LA46_0==19) ) {
+                    alt46=1;
                 }
 
 
-                switch (alt47) {
+                switch (alt46) {
             	case 1 :
-            	    // InternalT5.g:5367:3: rule__ExpressaoAritmetica__OutrosAssignment_1
+            	    // InternalT5.g:5340:3: rule__ExpressaoAritmetica__OutrosAssignment_1
             	    {
             	    pushFollow(FOLLOW_51);
             	    rule__ExpressaoAritmetica__OutrosAssignment_1();
@@ -16770,7 +16707,7 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop47;
+            	    break loop46;
                 }
             } while (true);
 
@@ -16797,14 +16734,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OutroTermoAritmetico__Group__0"
-    // InternalT5.g:5376:1: rule__OutroTermoAritmetico__Group__0 : rule__OutroTermoAritmetico__Group__0__Impl rule__OutroTermoAritmetico__Group__1 ;
+    // InternalT5.g:5349:1: rule__OutroTermoAritmetico__Group__0 : rule__OutroTermoAritmetico__Group__0__Impl rule__OutroTermoAritmetico__Group__1 ;
     public final void rule__OutroTermoAritmetico__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5380:1: ( rule__OutroTermoAritmetico__Group__0__Impl rule__OutroTermoAritmetico__Group__1 )
-            // InternalT5.g:5381:2: rule__OutroTermoAritmetico__Group__0__Impl rule__OutroTermoAritmetico__Group__1
+            // InternalT5.g:5353:1: ( rule__OutroTermoAritmetico__Group__0__Impl rule__OutroTermoAritmetico__Group__1 )
+            // InternalT5.g:5354:2: rule__OutroTermoAritmetico__Group__0__Impl rule__OutroTermoAritmetico__Group__1
             {
             pushFollow(FOLLOW_23);
             rule__OutroTermoAritmetico__Group__0__Impl();
@@ -16835,21 +16772,21 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OutroTermoAritmetico__Group__0__Impl"
-    // InternalT5.g:5388:1: rule__OutroTermoAritmetico__Group__0__Impl : ( ( rule__OutroTermoAritmetico__OpAssignment_0 ) ) ;
+    // InternalT5.g:5361:1: rule__OutroTermoAritmetico__Group__0__Impl : ( ( rule__OutroTermoAritmetico__OpAssignment_0 ) ) ;
     public final void rule__OutroTermoAritmetico__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5392:1: ( ( ( rule__OutroTermoAritmetico__OpAssignment_0 ) ) )
-            // InternalT5.g:5393:1: ( ( rule__OutroTermoAritmetico__OpAssignment_0 ) )
+            // InternalT5.g:5365:1: ( ( ( rule__OutroTermoAritmetico__OpAssignment_0 ) ) )
+            // InternalT5.g:5366:1: ( ( rule__OutroTermoAritmetico__OpAssignment_0 ) )
             {
-            // InternalT5.g:5393:1: ( ( rule__OutroTermoAritmetico__OpAssignment_0 ) )
-            // InternalT5.g:5394:2: ( rule__OutroTermoAritmetico__OpAssignment_0 )
+            // InternalT5.g:5366:1: ( ( rule__OutroTermoAritmetico__OpAssignment_0 ) )
+            // InternalT5.g:5367:2: ( rule__OutroTermoAritmetico__OpAssignment_0 )
             {
              before(grammarAccess.getOutroTermoAritmeticoAccess().getOpAssignment_0()); 
-            // InternalT5.g:5395:2: ( rule__OutroTermoAritmetico__OpAssignment_0 )
-            // InternalT5.g:5395:3: rule__OutroTermoAritmetico__OpAssignment_0
+            // InternalT5.g:5368:2: ( rule__OutroTermoAritmetico__OpAssignment_0 )
+            // InternalT5.g:5368:3: rule__OutroTermoAritmetico__OpAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__OutroTermoAritmetico__OpAssignment_0();
@@ -16882,14 +16819,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OutroTermoAritmetico__Group__1"
-    // InternalT5.g:5403:1: rule__OutroTermoAritmetico__Group__1 : rule__OutroTermoAritmetico__Group__1__Impl ;
+    // InternalT5.g:5376:1: rule__OutroTermoAritmetico__Group__1 : rule__OutroTermoAritmetico__Group__1__Impl ;
     public final void rule__OutroTermoAritmetico__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5407:1: ( rule__OutroTermoAritmetico__Group__1__Impl )
-            // InternalT5.g:5408:2: rule__OutroTermoAritmetico__Group__1__Impl
+            // InternalT5.g:5380:1: ( rule__OutroTermoAritmetico__Group__1__Impl )
+            // InternalT5.g:5381:2: rule__OutroTermoAritmetico__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__OutroTermoAritmetico__Group__1__Impl();
@@ -16915,21 +16852,21 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OutroTermoAritmetico__Group__1__Impl"
-    // InternalT5.g:5414:1: rule__OutroTermoAritmetico__Group__1__Impl : ( ( rule__OutroTermoAritmetico__TermoAssignment_1 ) ) ;
+    // InternalT5.g:5387:1: rule__OutroTermoAritmetico__Group__1__Impl : ( ( rule__OutroTermoAritmetico__TermoAssignment_1 ) ) ;
     public final void rule__OutroTermoAritmetico__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5418:1: ( ( ( rule__OutroTermoAritmetico__TermoAssignment_1 ) ) )
-            // InternalT5.g:5419:1: ( ( rule__OutroTermoAritmetico__TermoAssignment_1 ) )
+            // InternalT5.g:5391:1: ( ( ( rule__OutroTermoAritmetico__TermoAssignment_1 ) ) )
+            // InternalT5.g:5392:1: ( ( rule__OutroTermoAritmetico__TermoAssignment_1 ) )
             {
-            // InternalT5.g:5419:1: ( ( rule__OutroTermoAritmetico__TermoAssignment_1 ) )
-            // InternalT5.g:5420:2: ( rule__OutroTermoAritmetico__TermoAssignment_1 )
+            // InternalT5.g:5392:1: ( ( rule__OutroTermoAritmetico__TermoAssignment_1 ) )
+            // InternalT5.g:5393:2: ( rule__OutroTermoAritmetico__TermoAssignment_1 )
             {
              before(grammarAccess.getOutroTermoAritmeticoAccess().getTermoAssignment_1()); 
-            // InternalT5.g:5421:2: ( rule__OutroTermoAritmetico__TermoAssignment_1 )
-            // InternalT5.g:5421:3: rule__OutroTermoAritmetico__TermoAssignment_1
+            // InternalT5.g:5394:2: ( rule__OutroTermoAritmetico__TermoAssignment_1 )
+            // InternalT5.g:5394:3: rule__OutroTermoAritmetico__TermoAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__OutroTermoAritmetico__TermoAssignment_1();
@@ -16962,14 +16899,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TermoAritmetico__Group__0"
-    // InternalT5.g:5430:1: rule__TermoAritmetico__Group__0 : rule__TermoAritmetico__Group__0__Impl rule__TermoAritmetico__Group__1 ;
+    // InternalT5.g:5403:1: rule__TermoAritmetico__Group__0 : rule__TermoAritmetico__Group__0__Impl rule__TermoAritmetico__Group__1 ;
     public final void rule__TermoAritmetico__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5434:1: ( rule__TermoAritmetico__Group__0__Impl rule__TermoAritmetico__Group__1 )
-            // InternalT5.g:5435:2: rule__TermoAritmetico__Group__0__Impl rule__TermoAritmetico__Group__1
+            // InternalT5.g:5407:1: ( rule__TermoAritmetico__Group__0__Impl rule__TermoAritmetico__Group__1 )
+            // InternalT5.g:5408:2: rule__TermoAritmetico__Group__0__Impl rule__TermoAritmetico__Group__1
             {
             pushFollow(FOLLOW_52);
             rule__TermoAritmetico__Group__0__Impl();
@@ -17000,21 +16937,21 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TermoAritmetico__Group__0__Impl"
-    // InternalT5.g:5442:1: rule__TermoAritmetico__Group__0__Impl : ( ( rule__TermoAritmetico__FatoresAssignment_0 ) ) ;
+    // InternalT5.g:5415:1: rule__TermoAritmetico__Group__0__Impl : ( ( rule__TermoAritmetico__FatoresAssignment_0 ) ) ;
     public final void rule__TermoAritmetico__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5446:1: ( ( ( rule__TermoAritmetico__FatoresAssignment_0 ) ) )
-            // InternalT5.g:5447:1: ( ( rule__TermoAritmetico__FatoresAssignment_0 ) )
+            // InternalT5.g:5419:1: ( ( ( rule__TermoAritmetico__FatoresAssignment_0 ) ) )
+            // InternalT5.g:5420:1: ( ( rule__TermoAritmetico__FatoresAssignment_0 ) )
             {
-            // InternalT5.g:5447:1: ( ( rule__TermoAritmetico__FatoresAssignment_0 ) )
-            // InternalT5.g:5448:2: ( rule__TermoAritmetico__FatoresAssignment_0 )
+            // InternalT5.g:5420:1: ( ( rule__TermoAritmetico__FatoresAssignment_0 ) )
+            // InternalT5.g:5421:2: ( rule__TermoAritmetico__FatoresAssignment_0 )
             {
              before(grammarAccess.getTermoAritmeticoAccess().getFatoresAssignment_0()); 
-            // InternalT5.g:5449:2: ( rule__TermoAritmetico__FatoresAssignment_0 )
-            // InternalT5.g:5449:3: rule__TermoAritmetico__FatoresAssignment_0
+            // InternalT5.g:5422:2: ( rule__TermoAritmetico__FatoresAssignment_0 )
+            // InternalT5.g:5422:3: rule__TermoAritmetico__FatoresAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__TermoAritmetico__FatoresAssignment_0();
@@ -17047,14 +16984,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TermoAritmetico__Group__1"
-    // InternalT5.g:5457:1: rule__TermoAritmetico__Group__1 : rule__TermoAritmetico__Group__1__Impl ;
+    // InternalT5.g:5430:1: rule__TermoAritmetico__Group__1 : rule__TermoAritmetico__Group__1__Impl ;
     public final void rule__TermoAritmetico__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5461:1: ( rule__TermoAritmetico__Group__1__Impl )
-            // InternalT5.g:5462:2: rule__TermoAritmetico__Group__1__Impl
+            // InternalT5.g:5434:1: ( rule__TermoAritmetico__Group__1__Impl )
+            // InternalT5.g:5435:2: rule__TermoAritmetico__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TermoAritmetico__Group__1__Impl();
@@ -17080,33 +17017,33 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TermoAritmetico__Group__1__Impl"
-    // InternalT5.g:5468:1: rule__TermoAritmetico__Group__1__Impl : ( ( rule__TermoAritmetico__OutrosAssignment_1 )* ) ;
+    // InternalT5.g:5441:1: rule__TermoAritmetico__Group__1__Impl : ( ( rule__TermoAritmetico__OutrosAssignment_1 )* ) ;
     public final void rule__TermoAritmetico__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5472:1: ( ( ( rule__TermoAritmetico__OutrosAssignment_1 )* ) )
-            // InternalT5.g:5473:1: ( ( rule__TermoAritmetico__OutrosAssignment_1 )* )
+            // InternalT5.g:5445:1: ( ( ( rule__TermoAritmetico__OutrosAssignment_1 )* ) )
+            // InternalT5.g:5446:1: ( ( rule__TermoAritmetico__OutrosAssignment_1 )* )
             {
-            // InternalT5.g:5473:1: ( ( rule__TermoAritmetico__OutrosAssignment_1 )* )
-            // InternalT5.g:5474:2: ( rule__TermoAritmetico__OutrosAssignment_1 )*
+            // InternalT5.g:5446:1: ( ( rule__TermoAritmetico__OutrosAssignment_1 )* )
+            // InternalT5.g:5447:2: ( rule__TermoAritmetico__OutrosAssignment_1 )*
             {
              before(grammarAccess.getTermoAritmeticoAccess().getOutrosAssignment_1()); 
-            // InternalT5.g:5475:2: ( rule__TermoAritmetico__OutrosAssignment_1 )*
-            loop48:
+            // InternalT5.g:5448:2: ( rule__TermoAritmetico__OutrosAssignment_1 )*
+            loop47:
             do {
-                int alt48=2;
-                int LA48_0 = input.LA(1);
+                int alt47=2;
+                int LA47_0 = input.LA(1);
 
-                if ( ((LA48_0>=20 && LA48_0<=21)) ) {
-                    alt48=1;
+                if ( ((LA47_0>=20 && LA47_0<=21)) ) {
+                    alt47=1;
                 }
 
 
-                switch (alt48) {
+                switch (alt47) {
             	case 1 :
-            	    // InternalT5.g:5475:3: rule__TermoAritmetico__OutrosAssignment_1
+            	    // InternalT5.g:5448:3: rule__TermoAritmetico__OutrosAssignment_1
             	    {
             	    pushFollow(FOLLOW_53);
             	    rule__TermoAritmetico__OutrosAssignment_1();
@@ -17118,7 +17055,7 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop48;
+            	    break loop47;
                 }
             } while (true);
 
@@ -17145,14 +17082,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OutroFatorAritmetico__Group__0"
-    // InternalT5.g:5484:1: rule__OutroFatorAritmetico__Group__0 : rule__OutroFatorAritmetico__Group__0__Impl rule__OutroFatorAritmetico__Group__1 ;
+    // InternalT5.g:5457:1: rule__OutroFatorAritmetico__Group__0 : rule__OutroFatorAritmetico__Group__0__Impl rule__OutroFatorAritmetico__Group__1 ;
     public final void rule__OutroFatorAritmetico__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5488:1: ( rule__OutroFatorAritmetico__Group__0__Impl rule__OutroFatorAritmetico__Group__1 )
-            // InternalT5.g:5489:2: rule__OutroFatorAritmetico__Group__0__Impl rule__OutroFatorAritmetico__Group__1
+            // InternalT5.g:5461:1: ( rule__OutroFatorAritmetico__Group__0__Impl rule__OutroFatorAritmetico__Group__1 )
+            // InternalT5.g:5462:2: rule__OutroFatorAritmetico__Group__0__Impl rule__OutroFatorAritmetico__Group__1
             {
             pushFollow(FOLLOW_23);
             rule__OutroFatorAritmetico__Group__0__Impl();
@@ -17183,21 +17120,21 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OutroFatorAritmetico__Group__0__Impl"
-    // InternalT5.g:5496:1: rule__OutroFatorAritmetico__Group__0__Impl : ( ( rule__OutroFatorAritmetico__OpAssignment_0 ) ) ;
+    // InternalT5.g:5469:1: rule__OutroFatorAritmetico__Group__0__Impl : ( ( rule__OutroFatorAritmetico__OpAssignment_0 ) ) ;
     public final void rule__OutroFatorAritmetico__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5500:1: ( ( ( rule__OutroFatorAritmetico__OpAssignment_0 ) ) )
-            // InternalT5.g:5501:1: ( ( rule__OutroFatorAritmetico__OpAssignment_0 ) )
+            // InternalT5.g:5473:1: ( ( ( rule__OutroFatorAritmetico__OpAssignment_0 ) ) )
+            // InternalT5.g:5474:1: ( ( rule__OutroFatorAritmetico__OpAssignment_0 ) )
             {
-            // InternalT5.g:5501:1: ( ( rule__OutroFatorAritmetico__OpAssignment_0 ) )
-            // InternalT5.g:5502:2: ( rule__OutroFatorAritmetico__OpAssignment_0 )
+            // InternalT5.g:5474:1: ( ( rule__OutroFatorAritmetico__OpAssignment_0 ) )
+            // InternalT5.g:5475:2: ( rule__OutroFatorAritmetico__OpAssignment_0 )
             {
              before(grammarAccess.getOutroFatorAritmeticoAccess().getOpAssignment_0()); 
-            // InternalT5.g:5503:2: ( rule__OutroFatorAritmetico__OpAssignment_0 )
-            // InternalT5.g:5503:3: rule__OutroFatorAritmetico__OpAssignment_0
+            // InternalT5.g:5476:2: ( rule__OutroFatorAritmetico__OpAssignment_0 )
+            // InternalT5.g:5476:3: rule__OutroFatorAritmetico__OpAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__OutroFatorAritmetico__OpAssignment_0();
@@ -17230,14 +17167,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OutroFatorAritmetico__Group__1"
-    // InternalT5.g:5511:1: rule__OutroFatorAritmetico__Group__1 : rule__OutroFatorAritmetico__Group__1__Impl ;
+    // InternalT5.g:5484:1: rule__OutroFatorAritmetico__Group__1 : rule__OutroFatorAritmetico__Group__1__Impl ;
     public final void rule__OutroFatorAritmetico__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5515:1: ( rule__OutroFatorAritmetico__Group__1__Impl )
-            // InternalT5.g:5516:2: rule__OutroFatorAritmetico__Group__1__Impl
+            // InternalT5.g:5488:1: ( rule__OutroFatorAritmetico__Group__1__Impl )
+            // InternalT5.g:5489:2: rule__OutroFatorAritmetico__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__OutroFatorAritmetico__Group__1__Impl();
@@ -17263,21 +17200,21 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OutroFatorAritmetico__Group__1__Impl"
-    // InternalT5.g:5522:1: rule__OutroFatorAritmetico__Group__1__Impl : ( ( rule__OutroFatorAritmetico__FatorAssignment_1 ) ) ;
+    // InternalT5.g:5495:1: rule__OutroFatorAritmetico__Group__1__Impl : ( ( rule__OutroFatorAritmetico__FatorAssignment_1 ) ) ;
     public final void rule__OutroFatorAritmetico__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5526:1: ( ( ( rule__OutroFatorAritmetico__FatorAssignment_1 ) ) )
-            // InternalT5.g:5527:1: ( ( rule__OutroFatorAritmetico__FatorAssignment_1 ) )
+            // InternalT5.g:5499:1: ( ( ( rule__OutroFatorAritmetico__FatorAssignment_1 ) ) )
+            // InternalT5.g:5500:1: ( ( rule__OutroFatorAritmetico__FatorAssignment_1 ) )
             {
-            // InternalT5.g:5527:1: ( ( rule__OutroFatorAritmetico__FatorAssignment_1 ) )
-            // InternalT5.g:5528:2: ( rule__OutroFatorAritmetico__FatorAssignment_1 )
+            // InternalT5.g:5500:1: ( ( rule__OutroFatorAritmetico__FatorAssignment_1 ) )
+            // InternalT5.g:5501:2: ( rule__OutroFatorAritmetico__FatorAssignment_1 )
             {
              before(grammarAccess.getOutroFatorAritmeticoAccess().getFatorAssignment_1()); 
-            // InternalT5.g:5529:2: ( rule__OutroFatorAritmetico__FatorAssignment_1 )
-            // InternalT5.g:5529:3: rule__OutroFatorAritmetico__FatorAssignment_1
+            // InternalT5.g:5502:2: ( rule__OutroFatorAritmetico__FatorAssignment_1 )
+            // InternalT5.g:5502:3: rule__OutroFatorAritmetico__FatorAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__OutroFatorAritmetico__FatorAssignment_1();
@@ -17310,14 +17247,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FatorAritmetico__Group_0__0"
-    // InternalT5.g:5538:1: rule__FatorAritmetico__Group_0__0 : rule__FatorAritmetico__Group_0__0__Impl rule__FatorAritmetico__Group_0__1 ;
+    // InternalT5.g:5511:1: rule__FatorAritmetico__Group_0__0 : rule__FatorAritmetico__Group_0__0__Impl rule__FatorAritmetico__Group_0__1 ;
     public final void rule__FatorAritmetico__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5542:1: ( rule__FatorAritmetico__Group_0__0__Impl rule__FatorAritmetico__Group_0__1 )
-            // InternalT5.g:5543:2: rule__FatorAritmetico__Group_0__0__Impl rule__FatorAritmetico__Group_0__1
+            // InternalT5.g:5515:1: ( rule__FatorAritmetico__Group_0__0__Impl rule__FatorAritmetico__Group_0__1 )
+            // InternalT5.g:5516:2: rule__FatorAritmetico__Group_0__0__Impl rule__FatorAritmetico__Group_0__1
             {
             pushFollow(FOLLOW_31);
             rule__FatorAritmetico__Group_0__0__Impl();
@@ -17348,29 +17285,29 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FatorAritmetico__Group_0__0__Impl"
-    // InternalT5.g:5550:1: rule__FatorAritmetico__Group_0__0__Impl : ( ( '^' )? ) ;
+    // InternalT5.g:5523:1: rule__FatorAritmetico__Group_0__0__Impl : ( ( '^' )? ) ;
     public final void rule__FatorAritmetico__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5554:1: ( ( ( '^' )? ) )
-            // InternalT5.g:5555:1: ( ( '^' )? )
+            // InternalT5.g:5527:1: ( ( ( '^' )? ) )
+            // InternalT5.g:5528:1: ( ( '^' )? )
             {
-            // InternalT5.g:5555:1: ( ( '^' )? )
-            // InternalT5.g:5556:2: ( '^' )?
+            // InternalT5.g:5528:1: ( ( '^' )? )
+            // InternalT5.g:5529:2: ( '^' )?
             {
              before(grammarAccess.getFatorAritmeticoAccess().getCircumflexAccentKeyword_0_0()); 
-            // InternalT5.g:5557:2: ( '^' )?
-            int alt49=2;
-            int LA49_0 = input.LA(1);
+            // InternalT5.g:5530:2: ( '^' )?
+            int alt48=2;
+            int LA48_0 = input.LA(1);
 
-            if ( (LA49_0==49) ) {
-                alt49=1;
+            if ( (LA48_0==49) ) {
+                alt48=1;
             }
-            switch (alt49) {
+            switch (alt48) {
                 case 1 :
-                    // InternalT5.g:5557:3: '^'
+                    // InternalT5.g:5530:3: '^'
                     {
                     match(input,49,FOLLOW_2); 
 
@@ -17402,14 +17339,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FatorAritmetico__Group_0__1"
-    // InternalT5.g:5565:1: rule__FatorAritmetico__Group_0__1 : rule__FatorAritmetico__Group_0__1__Impl ;
+    // InternalT5.g:5538:1: rule__FatorAritmetico__Group_0__1 : rule__FatorAritmetico__Group_0__1__Impl ;
     public final void rule__FatorAritmetico__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5569:1: ( rule__FatorAritmetico__Group_0__1__Impl )
-            // InternalT5.g:5570:2: rule__FatorAritmetico__Group_0__1__Impl
+            // InternalT5.g:5542:1: ( rule__FatorAritmetico__Group_0__1__Impl )
+            // InternalT5.g:5543:2: rule__FatorAritmetico__Group_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FatorAritmetico__Group_0__1__Impl();
@@ -17435,21 +17372,21 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FatorAritmetico__Group_0__1__Impl"
-    // InternalT5.g:5576:1: rule__FatorAritmetico__Group_0__1__Impl : ( ( rule__FatorAritmetico__RefAssignment_0_1 ) ) ;
+    // InternalT5.g:5549:1: rule__FatorAritmetico__Group_0__1__Impl : ( ( rule__FatorAritmetico__RefAssignment_0_1 ) ) ;
     public final void rule__FatorAritmetico__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5580:1: ( ( ( rule__FatorAritmetico__RefAssignment_0_1 ) ) )
-            // InternalT5.g:5581:1: ( ( rule__FatorAritmetico__RefAssignment_0_1 ) )
+            // InternalT5.g:5553:1: ( ( ( rule__FatorAritmetico__RefAssignment_0_1 ) ) )
+            // InternalT5.g:5554:1: ( ( rule__FatorAritmetico__RefAssignment_0_1 ) )
             {
-            // InternalT5.g:5581:1: ( ( rule__FatorAritmetico__RefAssignment_0_1 ) )
-            // InternalT5.g:5582:2: ( rule__FatorAritmetico__RefAssignment_0_1 )
+            // InternalT5.g:5554:1: ( ( rule__FatorAritmetico__RefAssignment_0_1 ) )
+            // InternalT5.g:5555:2: ( rule__FatorAritmetico__RefAssignment_0_1 )
             {
              before(grammarAccess.getFatorAritmeticoAccess().getRefAssignment_0_1()); 
-            // InternalT5.g:5583:2: ( rule__FatorAritmetico__RefAssignment_0_1 )
-            // InternalT5.g:5583:3: rule__FatorAritmetico__RefAssignment_0_1
+            // InternalT5.g:5556:2: ( rule__FatorAritmetico__RefAssignment_0_1 )
+            // InternalT5.g:5556:3: rule__FatorAritmetico__RefAssignment_0_1
             {
             pushFollow(FOLLOW_2);
             rule__FatorAritmetico__RefAssignment_0_1();
@@ -17482,14 +17419,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FatorAritmetico__Group_3__0"
-    // InternalT5.g:5592:1: rule__FatorAritmetico__Group_3__0 : rule__FatorAritmetico__Group_3__0__Impl rule__FatorAritmetico__Group_3__1 ;
+    // InternalT5.g:5565:1: rule__FatorAritmetico__Group_3__0 : rule__FatorAritmetico__Group_3__0__Impl rule__FatorAritmetico__Group_3__1 ;
     public final void rule__FatorAritmetico__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5596:1: ( rule__FatorAritmetico__Group_3__0__Impl rule__FatorAritmetico__Group_3__1 )
-            // InternalT5.g:5597:2: rule__FatorAritmetico__Group_3__0__Impl rule__FatorAritmetico__Group_3__1
+            // InternalT5.g:5569:1: ( rule__FatorAritmetico__Group_3__0__Impl rule__FatorAritmetico__Group_3__1 )
+            // InternalT5.g:5570:2: rule__FatorAritmetico__Group_3__0__Impl rule__FatorAritmetico__Group_3__1
             {
             pushFollow(FOLLOW_23);
             rule__FatorAritmetico__Group_3__0__Impl();
@@ -17520,17 +17457,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FatorAritmetico__Group_3__0__Impl"
-    // InternalT5.g:5604:1: rule__FatorAritmetico__Group_3__0__Impl : ( '(' ) ;
+    // InternalT5.g:5577:1: rule__FatorAritmetico__Group_3__0__Impl : ( '(' ) ;
     public final void rule__FatorAritmetico__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5608:1: ( ( '(' ) )
-            // InternalT5.g:5609:1: ( '(' )
+            // InternalT5.g:5581:1: ( ( '(' ) )
+            // InternalT5.g:5582:1: ( '(' )
             {
-            // InternalT5.g:5609:1: ( '(' )
-            // InternalT5.g:5610:2: '('
+            // InternalT5.g:5582:1: ( '(' )
+            // InternalT5.g:5583:2: '('
             {
              before(grammarAccess.getFatorAritmeticoAccess().getLeftParenthesisKeyword_3_0()); 
             match(input,39,FOLLOW_2); 
@@ -17557,14 +17494,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FatorAritmetico__Group_3__1"
-    // InternalT5.g:5619:1: rule__FatorAritmetico__Group_3__1 : rule__FatorAritmetico__Group_3__1__Impl rule__FatorAritmetico__Group_3__2 ;
+    // InternalT5.g:5592:1: rule__FatorAritmetico__Group_3__1 : rule__FatorAritmetico__Group_3__1__Impl rule__FatorAritmetico__Group_3__2 ;
     public final void rule__FatorAritmetico__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5623:1: ( rule__FatorAritmetico__Group_3__1__Impl rule__FatorAritmetico__Group_3__2 )
-            // InternalT5.g:5624:2: rule__FatorAritmetico__Group_3__1__Impl rule__FatorAritmetico__Group_3__2
+            // InternalT5.g:5596:1: ( rule__FatorAritmetico__Group_3__1__Impl rule__FatorAritmetico__Group_3__2 )
+            // InternalT5.g:5597:2: rule__FatorAritmetico__Group_3__1__Impl rule__FatorAritmetico__Group_3__2
             {
             pushFollow(FOLLOW_54);
             rule__FatorAritmetico__Group_3__1__Impl();
@@ -17595,21 +17532,21 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FatorAritmetico__Group_3__1__Impl"
-    // InternalT5.g:5631:1: rule__FatorAritmetico__Group_3__1__Impl : ( ( rule__FatorAritmetico__ExpAssignment_3_1 ) ) ;
+    // InternalT5.g:5604:1: rule__FatorAritmetico__Group_3__1__Impl : ( ( rule__FatorAritmetico__ExpAssignment_3_1 ) ) ;
     public final void rule__FatorAritmetico__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5635:1: ( ( ( rule__FatorAritmetico__ExpAssignment_3_1 ) ) )
-            // InternalT5.g:5636:1: ( ( rule__FatorAritmetico__ExpAssignment_3_1 ) )
+            // InternalT5.g:5608:1: ( ( ( rule__FatorAritmetico__ExpAssignment_3_1 ) ) )
+            // InternalT5.g:5609:1: ( ( rule__FatorAritmetico__ExpAssignment_3_1 ) )
             {
-            // InternalT5.g:5636:1: ( ( rule__FatorAritmetico__ExpAssignment_3_1 ) )
-            // InternalT5.g:5637:2: ( rule__FatorAritmetico__ExpAssignment_3_1 )
+            // InternalT5.g:5609:1: ( ( rule__FatorAritmetico__ExpAssignment_3_1 ) )
+            // InternalT5.g:5610:2: ( rule__FatorAritmetico__ExpAssignment_3_1 )
             {
              before(grammarAccess.getFatorAritmeticoAccess().getExpAssignment_3_1()); 
-            // InternalT5.g:5638:2: ( rule__FatorAritmetico__ExpAssignment_3_1 )
-            // InternalT5.g:5638:3: rule__FatorAritmetico__ExpAssignment_3_1
+            // InternalT5.g:5611:2: ( rule__FatorAritmetico__ExpAssignment_3_1 )
+            // InternalT5.g:5611:3: rule__FatorAritmetico__ExpAssignment_3_1
             {
             pushFollow(FOLLOW_2);
             rule__FatorAritmetico__ExpAssignment_3_1();
@@ -17642,14 +17579,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FatorAritmetico__Group_3__2"
-    // InternalT5.g:5646:1: rule__FatorAritmetico__Group_3__2 : rule__FatorAritmetico__Group_3__2__Impl ;
+    // InternalT5.g:5619:1: rule__FatorAritmetico__Group_3__2 : rule__FatorAritmetico__Group_3__2__Impl ;
     public final void rule__FatorAritmetico__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5650:1: ( rule__FatorAritmetico__Group_3__2__Impl )
-            // InternalT5.g:5651:2: rule__FatorAritmetico__Group_3__2__Impl
+            // InternalT5.g:5623:1: ( rule__FatorAritmetico__Group_3__2__Impl )
+            // InternalT5.g:5624:2: rule__FatorAritmetico__Group_3__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FatorAritmetico__Group_3__2__Impl();
@@ -17675,17 +17612,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FatorAritmetico__Group_3__2__Impl"
-    // InternalT5.g:5657:1: rule__FatorAritmetico__Group_3__2__Impl : ( ')' ) ;
+    // InternalT5.g:5630:1: rule__FatorAritmetico__Group_3__2__Impl : ( ')' ) ;
     public final void rule__FatorAritmetico__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5661:1: ( ( ')' ) )
-            // InternalT5.g:5662:1: ( ')' )
+            // InternalT5.g:5634:1: ( ( ')' ) )
+            // InternalT5.g:5635:1: ( ')' )
             {
-            // InternalT5.g:5662:1: ( ')' )
-            // InternalT5.g:5663:2: ')'
+            // InternalT5.g:5635:1: ( ')' )
+            // InternalT5.g:5636:2: ')'
             {
              before(grammarAccess.getFatorAritmeticoAccess().getRightParenthesisKeyword_3_2()); 
             match(input,40,FOLLOW_2); 
@@ -17712,14 +17649,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expressao__Group__0"
-    // InternalT5.g:5673:1: rule__Expressao__Group__0 : rule__Expressao__Group__0__Impl rule__Expressao__Group__1 ;
+    // InternalT5.g:5646:1: rule__Expressao__Group__0 : rule__Expressao__Group__0__Impl rule__Expressao__Group__1 ;
     public final void rule__Expressao__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5677:1: ( rule__Expressao__Group__0__Impl rule__Expressao__Group__1 )
-            // InternalT5.g:5678:2: rule__Expressao__Group__0__Impl rule__Expressao__Group__1
+            // InternalT5.g:5650:1: ( rule__Expressao__Group__0__Impl rule__Expressao__Group__1 )
+            // InternalT5.g:5651:2: rule__Expressao__Group__0__Impl rule__Expressao__Group__1
             {
             pushFollow(FOLLOW_55);
             rule__Expressao__Group__0__Impl();
@@ -17750,21 +17687,21 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expressao__Group__0__Impl"
-    // InternalT5.g:5685:1: rule__Expressao__Group__0__Impl : ( ( rule__Expressao__LogicosAssignment_0 ) ) ;
+    // InternalT5.g:5658:1: rule__Expressao__Group__0__Impl : ( ( rule__Expressao__LogicosAssignment_0 ) ) ;
     public final void rule__Expressao__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5689:1: ( ( ( rule__Expressao__LogicosAssignment_0 ) ) )
-            // InternalT5.g:5690:1: ( ( rule__Expressao__LogicosAssignment_0 ) )
+            // InternalT5.g:5662:1: ( ( ( rule__Expressao__LogicosAssignment_0 ) ) )
+            // InternalT5.g:5663:1: ( ( rule__Expressao__LogicosAssignment_0 ) )
             {
-            // InternalT5.g:5690:1: ( ( rule__Expressao__LogicosAssignment_0 ) )
-            // InternalT5.g:5691:2: ( rule__Expressao__LogicosAssignment_0 )
+            // InternalT5.g:5663:1: ( ( rule__Expressao__LogicosAssignment_0 ) )
+            // InternalT5.g:5664:2: ( rule__Expressao__LogicosAssignment_0 )
             {
              before(grammarAccess.getExpressaoAccess().getLogicosAssignment_0()); 
-            // InternalT5.g:5692:2: ( rule__Expressao__LogicosAssignment_0 )
-            // InternalT5.g:5692:3: rule__Expressao__LogicosAssignment_0
+            // InternalT5.g:5665:2: ( rule__Expressao__LogicosAssignment_0 )
+            // InternalT5.g:5665:3: rule__Expressao__LogicosAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__Expressao__LogicosAssignment_0();
@@ -17797,14 +17734,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expressao__Group__1"
-    // InternalT5.g:5700:1: rule__Expressao__Group__1 : rule__Expressao__Group__1__Impl ;
+    // InternalT5.g:5673:1: rule__Expressao__Group__1 : rule__Expressao__Group__1__Impl ;
     public final void rule__Expressao__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5704:1: ( rule__Expressao__Group__1__Impl )
-            // InternalT5.g:5705:2: rule__Expressao__Group__1__Impl
+            // InternalT5.g:5677:1: ( rule__Expressao__Group__1__Impl )
+            // InternalT5.g:5678:2: rule__Expressao__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Expressao__Group__1__Impl();
@@ -17830,33 +17767,33 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expressao__Group__1__Impl"
-    // InternalT5.g:5711:1: rule__Expressao__Group__1__Impl : ( ( rule__Expressao__Group_1__0 )* ) ;
+    // InternalT5.g:5684:1: rule__Expressao__Group__1__Impl : ( ( rule__Expressao__Group_1__0 )* ) ;
     public final void rule__Expressao__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5715:1: ( ( ( rule__Expressao__Group_1__0 )* ) )
-            // InternalT5.g:5716:1: ( ( rule__Expressao__Group_1__0 )* )
+            // InternalT5.g:5688:1: ( ( ( rule__Expressao__Group_1__0 )* ) )
+            // InternalT5.g:5689:1: ( ( rule__Expressao__Group_1__0 )* )
             {
-            // InternalT5.g:5716:1: ( ( rule__Expressao__Group_1__0 )* )
-            // InternalT5.g:5717:2: ( rule__Expressao__Group_1__0 )*
+            // InternalT5.g:5689:1: ( ( rule__Expressao__Group_1__0 )* )
+            // InternalT5.g:5690:2: ( rule__Expressao__Group_1__0 )*
             {
              before(grammarAccess.getExpressaoAccess().getGroup_1()); 
-            // InternalT5.g:5718:2: ( rule__Expressao__Group_1__0 )*
-            loop50:
+            // InternalT5.g:5691:2: ( rule__Expressao__Group_1__0 )*
+            loop49:
             do {
-                int alt50=2;
-                int LA50_0 = input.LA(1);
+                int alt49=2;
+                int LA49_0 = input.LA(1);
 
-                if ( ((LA50_0>=28 && LA50_0<=29)) ) {
-                    alt50=1;
+                if ( ((LA49_0>=28 && LA49_0<=29)) ) {
+                    alt49=1;
                 }
 
 
-                switch (alt50) {
+                switch (alt49) {
             	case 1 :
-            	    // InternalT5.g:5718:3: rule__Expressao__Group_1__0
+            	    // InternalT5.g:5691:3: rule__Expressao__Group_1__0
             	    {
             	    pushFollow(FOLLOW_56);
             	    rule__Expressao__Group_1__0();
@@ -17868,7 +17805,7 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop50;
+            	    break loop49;
                 }
             } while (true);
 
@@ -17895,14 +17832,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expressao__Group_1__0"
-    // InternalT5.g:5727:1: rule__Expressao__Group_1__0 : rule__Expressao__Group_1__0__Impl rule__Expressao__Group_1__1 ;
+    // InternalT5.g:5700:1: rule__Expressao__Group_1__0 : rule__Expressao__Group_1__0__Impl rule__Expressao__Group_1__1 ;
     public final void rule__Expressao__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5731:1: ( rule__Expressao__Group_1__0__Impl rule__Expressao__Group_1__1 )
-            // InternalT5.g:5732:2: rule__Expressao__Group_1__0__Impl rule__Expressao__Group_1__1
+            // InternalT5.g:5704:1: ( rule__Expressao__Group_1__0__Impl rule__Expressao__Group_1__1 )
+            // InternalT5.g:5705:2: rule__Expressao__Group_1__0__Impl rule__Expressao__Group_1__1
             {
             pushFollow(FOLLOW_33);
             rule__Expressao__Group_1__0__Impl();
@@ -17933,21 +17870,21 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expressao__Group_1__0__Impl"
-    // InternalT5.g:5739:1: rule__Expressao__Group_1__0__Impl : ( ( rule__Expressao__OpAssignment_1_0 ) ) ;
+    // InternalT5.g:5712:1: rule__Expressao__Group_1__0__Impl : ( ( rule__Expressao__OpAssignment_1_0 ) ) ;
     public final void rule__Expressao__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5743:1: ( ( ( rule__Expressao__OpAssignment_1_0 ) ) )
-            // InternalT5.g:5744:1: ( ( rule__Expressao__OpAssignment_1_0 ) )
+            // InternalT5.g:5716:1: ( ( ( rule__Expressao__OpAssignment_1_0 ) ) )
+            // InternalT5.g:5717:1: ( ( rule__Expressao__OpAssignment_1_0 ) )
             {
-            // InternalT5.g:5744:1: ( ( rule__Expressao__OpAssignment_1_0 ) )
-            // InternalT5.g:5745:2: ( rule__Expressao__OpAssignment_1_0 )
+            // InternalT5.g:5717:1: ( ( rule__Expressao__OpAssignment_1_0 ) )
+            // InternalT5.g:5718:2: ( rule__Expressao__OpAssignment_1_0 )
             {
              before(grammarAccess.getExpressaoAccess().getOpAssignment_1_0()); 
-            // InternalT5.g:5746:2: ( rule__Expressao__OpAssignment_1_0 )
-            // InternalT5.g:5746:3: rule__Expressao__OpAssignment_1_0
+            // InternalT5.g:5719:2: ( rule__Expressao__OpAssignment_1_0 )
+            // InternalT5.g:5719:3: rule__Expressao__OpAssignment_1_0
             {
             pushFollow(FOLLOW_2);
             rule__Expressao__OpAssignment_1_0();
@@ -17980,14 +17917,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expressao__Group_1__1"
-    // InternalT5.g:5754:1: rule__Expressao__Group_1__1 : rule__Expressao__Group_1__1__Impl ;
+    // InternalT5.g:5727:1: rule__Expressao__Group_1__1 : rule__Expressao__Group_1__1__Impl ;
     public final void rule__Expressao__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5758:1: ( rule__Expressao__Group_1__1__Impl )
-            // InternalT5.g:5759:2: rule__Expressao__Group_1__1__Impl
+            // InternalT5.g:5731:1: ( rule__Expressao__Group_1__1__Impl )
+            // InternalT5.g:5732:2: rule__Expressao__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Expressao__Group_1__1__Impl();
@@ -18013,21 +17950,21 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expressao__Group_1__1__Impl"
-    // InternalT5.g:5765:1: rule__Expressao__Group_1__1__Impl : ( ( rule__Expressao__LogicosAssignment_1_1 ) ) ;
+    // InternalT5.g:5738:1: rule__Expressao__Group_1__1__Impl : ( ( rule__Expressao__LogicosAssignment_1_1 ) ) ;
     public final void rule__Expressao__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5769:1: ( ( ( rule__Expressao__LogicosAssignment_1_1 ) ) )
-            // InternalT5.g:5770:1: ( ( rule__Expressao__LogicosAssignment_1_1 ) )
+            // InternalT5.g:5742:1: ( ( ( rule__Expressao__LogicosAssignment_1_1 ) ) )
+            // InternalT5.g:5743:1: ( ( rule__Expressao__LogicosAssignment_1_1 ) )
             {
-            // InternalT5.g:5770:1: ( ( rule__Expressao__LogicosAssignment_1_1 ) )
-            // InternalT5.g:5771:2: ( rule__Expressao__LogicosAssignment_1_1 )
+            // InternalT5.g:5743:1: ( ( rule__Expressao__LogicosAssignment_1_1 ) )
+            // InternalT5.g:5744:2: ( rule__Expressao__LogicosAssignment_1_1 )
             {
              before(grammarAccess.getExpressaoAccess().getLogicosAssignment_1_1()); 
-            // InternalT5.g:5772:2: ( rule__Expressao__LogicosAssignment_1_1 )
-            // InternalT5.g:5772:3: rule__Expressao__LogicosAssignment_1_1
+            // InternalT5.g:5745:2: ( rule__Expressao__LogicosAssignment_1_1 )
+            // InternalT5.g:5745:3: rule__Expressao__LogicosAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__Expressao__LogicosAssignment_1_1();
@@ -18060,14 +17997,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TermoLogico__Group__0"
-    // InternalT5.g:5781:1: rule__TermoLogico__Group__0 : rule__TermoLogico__Group__0__Impl rule__TermoLogico__Group__1 ;
+    // InternalT5.g:5754:1: rule__TermoLogico__Group__0 : rule__TermoLogico__Group__0__Impl rule__TermoLogico__Group__1 ;
     public final void rule__TermoLogico__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5785:1: ( rule__TermoLogico__Group__0__Impl rule__TermoLogico__Group__1 )
-            // InternalT5.g:5786:2: rule__TermoLogico__Group__0__Impl rule__TermoLogico__Group__1
+            // InternalT5.g:5758:1: ( rule__TermoLogico__Group__0__Impl rule__TermoLogico__Group__1 )
+            // InternalT5.g:5759:2: rule__TermoLogico__Group__0__Impl rule__TermoLogico__Group__1
             {
             pushFollow(FOLLOW_33);
             rule__TermoLogico__Group__0__Impl();
@@ -18098,29 +18035,29 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TermoLogico__Group__0__Impl"
-    // InternalT5.g:5793:1: rule__TermoLogico__Group__0__Impl : ( ( 'nao' )? ) ;
+    // InternalT5.g:5766:1: rule__TermoLogico__Group__0__Impl : ( ( 'nao' )? ) ;
     public final void rule__TermoLogico__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5797:1: ( ( ( 'nao' )? ) )
-            // InternalT5.g:5798:1: ( ( 'nao' )? )
+            // InternalT5.g:5770:1: ( ( ( 'nao' )? ) )
+            // InternalT5.g:5771:1: ( ( 'nao' )? )
             {
-            // InternalT5.g:5798:1: ( ( 'nao' )? )
-            // InternalT5.g:5799:2: ( 'nao' )?
+            // InternalT5.g:5771:1: ( ( 'nao' )? )
+            // InternalT5.g:5772:2: ( 'nao' )?
             {
              before(grammarAccess.getTermoLogicoAccess().getNaoKeyword_0()); 
-            // InternalT5.g:5800:2: ( 'nao' )?
-            int alt51=2;
-            int LA51_0 = input.LA(1);
+            // InternalT5.g:5773:2: ( 'nao' )?
+            int alt50=2;
+            int LA50_0 = input.LA(1);
 
-            if ( (LA51_0==69) ) {
-                alt51=1;
+            if ( (LA50_0==69) ) {
+                alt50=1;
             }
-            switch (alt51) {
+            switch (alt50) {
                 case 1 :
-                    // InternalT5.g:5800:3: 'nao'
+                    // InternalT5.g:5773:3: 'nao'
                     {
                     match(input,69,FOLLOW_2); 
 
@@ -18152,14 +18089,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TermoLogico__Group__1"
-    // InternalT5.g:5808:1: rule__TermoLogico__Group__1 : rule__TermoLogico__Group__1__Impl ;
+    // InternalT5.g:5781:1: rule__TermoLogico__Group__1 : rule__TermoLogico__Group__1__Impl ;
     public final void rule__TermoLogico__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5812:1: ( rule__TermoLogico__Group__1__Impl )
-            // InternalT5.g:5813:2: rule__TermoLogico__Group__1__Impl
+            // InternalT5.g:5785:1: ( rule__TermoLogico__Group__1__Impl )
+            // InternalT5.g:5786:2: rule__TermoLogico__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TermoLogico__Group__1__Impl();
@@ -18185,21 +18122,21 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TermoLogico__Group__1__Impl"
-    // InternalT5.g:5819:1: rule__TermoLogico__Group__1__Impl : ( ( rule__TermoLogico__RelAssignment_1 ) ) ;
+    // InternalT5.g:5792:1: rule__TermoLogico__Group__1__Impl : ( ( rule__TermoLogico__RelAssignment_1 ) ) ;
     public final void rule__TermoLogico__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5823:1: ( ( ( rule__TermoLogico__RelAssignment_1 ) ) )
-            // InternalT5.g:5824:1: ( ( rule__TermoLogico__RelAssignment_1 ) )
+            // InternalT5.g:5796:1: ( ( ( rule__TermoLogico__RelAssignment_1 ) ) )
+            // InternalT5.g:5797:1: ( ( rule__TermoLogico__RelAssignment_1 ) )
             {
-            // InternalT5.g:5824:1: ( ( rule__TermoLogico__RelAssignment_1 ) )
-            // InternalT5.g:5825:2: ( rule__TermoLogico__RelAssignment_1 )
+            // InternalT5.g:5797:1: ( ( rule__TermoLogico__RelAssignment_1 ) )
+            // InternalT5.g:5798:2: ( rule__TermoLogico__RelAssignment_1 )
             {
              before(grammarAccess.getTermoLogicoAccess().getRelAssignment_1()); 
-            // InternalT5.g:5826:2: ( rule__TermoLogico__RelAssignment_1 )
-            // InternalT5.g:5826:3: rule__TermoLogico__RelAssignment_1
+            // InternalT5.g:5799:2: ( rule__TermoLogico__RelAssignment_1 )
+            // InternalT5.g:5799:3: rule__TermoLogico__RelAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__TermoLogico__RelAssignment_1();
@@ -18232,14 +18169,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExpressaoRelacional__Group__0"
-    // InternalT5.g:5835:1: rule__ExpressaoRelacional__Group__0 : rule__ExpressaoRelacional__Group__0__Impl rule__ExpressaoRelacional__Group__1 ;
+    // InternalT5.g:5808:1: rule__ExpressaoRelacional__Group__0 : rule__ExpressaoRelacional__Group__0__Impl rule__ExpressaoRelacional__Group__1 ;
     public final void rule__ExpressaoRelacional__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5839:1: ( rule__ExpressaoRelacional__Group__0__Impl rule__ExpressaoRelacional__Group__1 )
-            // InternalT5.g:5840:2: rule__ExpressaoRelacional__Group__0__Impl rule__ExpressaoRelacional__Group__1
+            // InternalT5.g:5812:1: ( rule__ExpressaoRelacional__Group__0__Impl rule__ExpressaoRelacional__Group__1 )
+            // InternalT5.g:5813:2: rule__ExpressaoRelacional__Group__0__Impl rule__ExpressaoRelacional__Group__1
             {
             pushFollow(FOLLOW_57);
             rule__ExpressaoRelacional__Group__0__Impl();
@@ -18270,21 +18207,21 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExpressaoRelacional__Group__0__Impl"
-    // InternalT5.g:5847:1: rule__ExpressaoRelacional__Group__0__Impl : ( ( rule__ExpressaoRelacional__LeftAssignment_0 ) ) ;
+    // InternalT5.g:5820:1: rule__ExpressaoRelacional__Group__0__Impl : ( ( rule__ExpressaoRelacional__LeftAssignment_0 ) ) ;
     public final void rule__ExpressaoRelacional__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5851:1: ( ( ( rule__ExpressaoRelacional__LeftAssignment_0 ) ) )
-            // InternalT5.g:5852:1: ( ( rule__ExpressaoRelacional__LeftAssignment_0 ) )
+            // InternalT5.g:5824:1: ( ( ( rule__ExpressaoRelacional__LeftAssignment_0 ) ) )
+            // InternalT5.g:5825:1: ( ( rule__ExpressaoRelacional__LeftAssignment_0 ) )
             {
-            // InternalT5.g:5852:1: ( ( rule__ExpressaoRelacional__LeftAssignment_0 ) )
-            // InternalT5.g:5853:2: ( rule__ExpressaoRelacional__LeftAssignment_0 )
+            // InternalT5.g:5825:1: ( ( rule__ExpressaoRelacional__LeftAssignment_0 ) )
+            // InternalT5.g:5826:2: ( rule__ExpressaoRelacional__LeftAssignment_0 )
             {
              before(grammarAccess.getExpressaoRelacionalAccess().getLeftAssignment_0()); 
-            // InternalT5.g:5854:2: ( rule__ExpressaoRelacional__LeftAssignment_0 )
-            // InternalT5.g:5854:3: rule__ExpressaoRelacional__LeftAssignment_0
+            // InternalT5.g:5827:2: ( rule__ExpressaoRelacional__LeftAssignment_0 )
+            // InternalT5.g:5827:3: rule__ExpressaoRelacional__LeftAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__ExpressaoRelacional__LeftAssignment_0();
@@ -18317,14 +18254,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExpressaoRelacional__Group__1"
-    // InternalT5.g:5862:1: rule__ExpressaoRelacional__Group__1 : rule__ExpressaoRelacional__Group__1__Impl ;
+    // InternalT5.g:5835:1: rule__ExpressaoRelacional__Group__1 : rule__ExpressaoRelacional__Group__1__Impl ;
     public final void rule__ExpressaoRelacional__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5866:1: ( rule__ExpressaoRelacional__Group__1__Impl )
-            // InternalT5.g:5867:2: rule__ExpressaoRelacional__Group__1__Impl
+            // InternalT5.g:5839:1: ( rule__ExpressaoRelacional__Group__1__Impl )
+            // InternalT5.g:5840:2: rule__ExpressaoRelacional__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ExpressaoRelacional__Group__1__Impl();
@@ -18350,29 +18287,29 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExpressaoRelacional__Group__1__Impl"
-    // InternalT5.g:5873:1: rule__ExpressaoRelacional__Group__1__Impl : ( ( rule__ExpressaoRelacional__Group_1__0 )? ) ;
+    // InternalT5.g:5846:1: rule__ExpressaoRelacional__Group__1__Impl : ( ( rule__ExpressaoRelacional__Group_1__0 )? ) ;
     public final void rule__ExpressaoRelacional__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5877:1: ( ( ( rule__ExpressaoRelacional__Group_1__0 )? ) )
-            // InternalT5.g:5878:1: ( ( rule__ExpressaoRelacional__Group_1__0 )? )
+            // InternalT5.g:5850:1: ( ( ( rule__ExpressaoRelacional__Group_1__0 )? ) )
+            // InternalT5.g:5851:1: ( ( rule__ExpressaoRelacional__Group_1__0 )? )
             {
-            // InternalT5.g:5878:1: ( ( rule__ExpressaoRelacional__Group_1__0 )? )
-            // InternalT5.g:5879:2: ( rule__ExpressaoRelacional__Group_1__0 )?
+            // InternalT5.g:5851:1: ( ( rule__ExpressaoRelacional__Group_1__0 )? )
+            // InternalT5.g:5852:2: ( rule__ExpressaoRelacional__Group_1__0 )?
             {
              before(grammarAccess.getExpressaoRelacionalAccess().getGroup_1()); 
-            // InternalT5.g:5880:2: ( rule__ExpressaoRelacional__Group_1__0 )?
-            int alt52=2;
-            int LA52_0 = input.LA(1);
+            // InternalT5.g:5853:2: ( rule__ExpressaoRelacional__Group_1__0 )?
+            int alt51=2;
+            int LA51_0 = input.LA(1);
 
-            if ( ((LA52_0>=22 && LA52_0<=27)) ) {
-                alt52=1;
+            if ( ((LA51_0>=22 && LA51_0<=27)) ) {
+                alt51=1;
             }
-            switch (alt52) {
+            switch (alt51) {
                 case 1 :
-                    // InternalT5.g:5880:3: rule__ExpressaoRelacional__Group_1__0
+                    // InternalT5.g:5853:3: rule__ExpressaoRelacional__Group_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__ExpressaoRelacional__Group_1__0();
@@ -18408,14 +18345,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExpressaoRelacional__Group_1__0"
-    // InternalT5.g:5889:1: rule__ExpressaoRelacional__Group_1__0 : rule__ExpressaoRelacional__Group_1__0__Impl rule__ExpressaoRelacional__Group_1__1 ;
+    // InternalT5.g:5862:1: rule__ExpressaoRelacional__Group_1__0 : rule__ExpressaoRelacional__Group_1__0__Impl rule__ExpressaoRelacional__Group_1__1 ;
     public final void rule__ExpressaoRelacional__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5893:1: ( rule__ExpressaoRelacional__Group_1__0__Impl rule__ExpressaoRelacional__Group_1__1 )
-            // InternalT5.g:5894:2: rule__ExpressaoRelacional__Group_1__0__Impl rule__ExpressaoRelacional__Group_1__1
+            // InternalT5.g:5866:1: ( rule__ExpressaoRelacional__Group_1__0__Impl rule__ExpressaoRelacional__Group_1__1 )
+            // InternalT5.g:5867:2: rule__ExpressaoRelacional__Group_1__0__Impl rule__ExpressaoRelacional__Group_1__1
             {
             pushFollow(FOLLOW_23);
             rule__ExpressaoRelacional__Group_1__0__Impl();
@@ -18446,21 +18383,21 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExpressaoRelacional__Group_1__0__Impl"
-    // InternalT5.g:5901:1: rule__ExpressaoRelacional__Group_1__0__Impl : ( ( rule__ExpressaoRelacional__OpAssignment_1_0 ) ) ;
+    // InternalT5.g:5874:1: rule__ExpressaoRelacional__Group_1__0__Impl : ( ( rule__ExpressaoRelacional__OpAssignment_1_0 ) ) ;
     public final void rule__ExpressaoRelacional__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5905:1: ( ( ( rule__ExpressaoRelacional__OpAssignment_1_0 ) ) )
-            // InternalT5.g:5906:1: ( ( rule__ExpressaoRelacional__OpAssignment_1_0 ) )
+            // InternalT5.g:5878:1: ( ( ( rule__ExpressaoRelacional__OpAssignment_1_0 ) ) )
+            // InternalT5.g:5879:1: ( ( rule__ExpressaoRelacional__OpAssignment_1_0 ) )
             {
-            // InternalT5.g:5906:1: ( ( rule__ExpressaoRelacional__OpAssignment_1_0 ) )
-            // InternalT5.g:5907:2: ( rule__ExpressaoRelacional__OpAssignment_1_0 )
+            // InternalT5.g:5879:1: ( ( rule__ExpressaoRelacional__OpAssignment_1_0 ) )
+            // InternalT5.g:5880:2: ( rule__ExpressaoRelacional__OpAssignment_1_0 )
             {
              before(grammarAccess.getExpressaoRelacionalAccess().getOpAssignment_1_0()); 
-            // InternalT5.g:5908:2: ( rule__ExpressaoRelacional__OpAssignment_1_0 )
-            // InternalT5.g:5908:3: rule__ExpressaoRelacional__OpAssignment_1_0
+            // InternalT5.g:5881:2: ( rule__ExpressaoRelacional__OpAssignment_1_0 )
+            // InternalT5.g:5881:3: rule__ExpressaoRelacional__OpAssignment_1_0
             {
             pushFollow(FOLLOW_2);
             rule__ExpressaoRelacional__OpAssignment_1_0();
@@ -18493,14 +18430,14 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExpressaoRelacional__Group_1__1"
-    // InternalT5.g:5916:1: rule__ExpressaoRelacional__Group_1__1 : rule__ExpressaoRelacional__Group_1__1__Impl ;
+    // InternalT5.g:5889:1: rule__ExpressaoRelacional__Group_1__1 : rule__ExpressaoRelacional__Group_1__1__Impl ;
     public final void rule__ExpressaoRelacional__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5920:1: ( rule__ExpressaoRelacional__Group_1__1__Impl )
-            // InternalT5.g:5921:2: rule__ExpressaoRelacional__Group_1__1__Impl
+            // InternalT5.g:5893:1: ( rule__ExpressaoRelacional__Group_1__1__Impl )
+            // InternalT5.g:5894:2: rule__ExpressaoRelacional__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ExpressaoRelacional__Group_1__1__Impl();
@@ -18526,21 +18463,21 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExpressaoRelacional__Group_1__1__Impl"
-    // InternalT5.g:5927:1: rule__ExpressaoRelacional__Group_1__1__Impl : ( ( rule__ExpressaoRelacional__RightAssignment_1_1 ) ) ;
+    // InternalT5.g:5900:1: rule__ExpressaoRelacional__Group_1__1__Impl : ( ( rule__ExpressaoRelacional__RightAssignment_1_1 ) ) ;
     public final void rule__ExpressaoRelacional__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5931:1: ( ( ( rule__ExpressaoRelacional__RightAssignment_1_1 ) ) )
-            // InternalT5.g:5932:1: ( ( rule__ExpressaoRelacional__RightAssignment_1_1 ) )
+            // InternalT5.g:5904:1: ( ( ( rule__ExpressaoRelacional__RightAssignment_1_1 ) ) )
+            // InternalT5.g:5905:1: ( ( rule__ExpressaoRelacional__RightAssignment_1_1 ) )
             {
-            // InternalT5.g:5932:1: ( ( rule__ExpressaoRelacional__RightAssignment_1_1 ) )
-            // InternalT5.g:5933:2: ( rule__ExpressaoRelacional__RightAssignment_1_1 )
+            // InternalT5.g:5905:1: ( ( rule__ExpressaoRelacional__RightAssignment_1_1 ) )
+            // InternalT5.g:5906:2: ( rule__ExpressaoRelacional__RightAssignment_1_1 )
             {
              before(grammarAccess.getExpressaoRelacionalAccess().getRightAssignment_1_1()); 
-            // InternalT5.g:5934:2: ( rule__ExpressaoRelacional__RightAssignment_1_1 )
-            // InternalT5.g:5934:3: rule__ExpressaoRelacional__RightAssignment_1_1
+            // InternalT5.g:5907:2: ( rule__ExpressaoRelacional__RightAssignment_1_1 )
+            // InternalT5.g:5907:3: rule__ExpressaoRelacional__RightAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__ExpressaoRelacional__RightAssignment_1_1();
@@ -18573,17 +18510,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Programa__DeclaracoesAssignment_1"
-    // InternalT5.g:5943:1: rule__Programa__DeclaracoesAssignment_1 : ( ruleDeclaracao ) ;
+    // InternalT5.g:5916:1: rule__Programa__DeclaracoesAssignment_1 : ( ruleDeclaracao ) ;
     public final void rule__Programa__DeclaracoesAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5947:1: ( ( ruleDeclaracao ) )
-            // InternalT5.g:5948:2: ( ruleDeclaracao )
+            // InternalT5.g:5920:1: ( ( ruleDeclaracao ) )
+            // InternalT5.g:5921:2: ( ruleDeclaracao )
             {
-            // InternalT5.g:5948:2: ( ruleDeclaracao )
-            // InternalT5.g:5949:3: ruleDeclaracao
+            // InternalT5.g:5921:2: ( ruleDeclaracao )
+            // InternalT5.g:5922:3: ruleDeclaracao
             {
              before(grammarAccess.getProgramaAccess().getDeclaracoesDeclaracaoParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -18614,17 +18551,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Programa__CorpoAssignment_3"
-    // InternalT5.g:5958:1: rule__Programa__CorpoAssignment_3 : ( ruleCorpo ) ;
+    // InternalT5.g:5931:1: rule__Programa__CorpoAssignment_3 : ( ruleCorpo ) ;
     public final void rule__Programa__CorpoAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5962:1: ( ( ruleCorpo ) )
-            // InternalT5.g:5963:2: ( ruleCorpo )
+            // InternalT5.g:5935:1: ( ( ruleCorpo ) )
+            // InternalT5.g:5936:2: ( ruleCorpo )
             {
-            // InternalT5.g:5963:2: ( ruleCorpo )
-            // InternalT5.g:5964:3: ruleCorpo
+            // InternalT5.g:5936:2: ( ruleCorpo )
+            // InternalT5.g:5937:3: ruleCorpo
             {
              before(grammarAccess.getProgramaAccess().getCorpoCorpoParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -18655,17 +18592,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DeclaracaoLocal__VariaveisAssignment_0_1"
-    // InternalT5.g:5973:1: rule__DeclaracaoLocal__VariaveisAssignment_0_1 : ( ruleVariavel ) ;
+    // InternalT5.g:5946:1: rule__DeclaracaoLocal__VariaveisAssignment_0_1 : ( ruleVariavel ) ;
     public final void rule__DeclaracaoLocal__VariaveisAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5977:1: ( ( ruleVariavel ) )
-            // InternalT5.g:5978:2: ( ruleVariavel )
+            // InternalT5.g:5950:1: ( ( ruleVariavel ) )
+            // InternalT5.g:5951:2: ( ruleVariavel )
             {
-            // InternalT5.g:5978:2: ( ruleVariavel )
-            // InternalT5.g:5979:3: ruleVariavel
+            // InternalT5.g:5951:2: ( ruleVariavel )
+            // InternalT5.g:5952:3: ruleVariavel
             {
              before(grammarAccess.getDeclaracaoLocalAccess().getVariaveisVariavelParserRuleCall_0_1_0()); 
             pushFollow(FOLLOW_2);
@@ -18696,17 +18633,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DeclaracaoLocal__VariaveisAssignment_0_2_1"
-    // InternalT5.g:5988:1: rule__DeclaracaoLocal__VariaveisAssignment_0_2_1 : ( ruleVariavel ) ;
+    // InternalT5.g:5961:1: rule__DeclaracaoLocal__VariaveisAssignment_0_2_1 : ( ruleVariavel ) ;
     public final void rule__DeclaracaoLocal__VariaveisAssignment_0_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:5992:1: ( ( ruleVariavel ) )
-            // InternalT5.g:5993:2: ( ruleVariavel )
+            // InternalT5.g:5965:1: ( ( ruleVariavel ) )
+            // InternalT5.g:5966:2: ( ruleVariavel )
             {
-            // InternalT5.g:5993:2: ( ruleVariavel )
-            // InternalT5.g:5994:3: ruleVariavel
+            // InternalT5.g:5966:2: ( ruleVariavel )
+            // InternalT5.g:5967:3: ruleVariavel
             {
              before(grammarAccess.getDeclaracaoLocalAccess().getVariaveisVariavelParserRuleCall_0_2_1_0()); 
             pushFollow(FOLLOW_2);
@@ -18737,17 +18674,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DeclaracaoLocal__NameAssignment_1_1"
-    // InternalT5.g:6003:1: rule__DeclaracaoLocal__NameAssignment_1_1 : ( RULE_ID ) ;
+    // InternalT5.g:5976:1: rule__DeclaracaoLocal__NameAssignment_1_1 : ( RULE_ID ) ;
     public final void rule__DeclaracaoLocal__NameAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6007:1: ( ( RULE_ID ) )
-            // InternalT5.g:6008:2: ( RULE_ID )
+            // InternalT5.g:5980:1: ( ( RULE_ID ) )
+            // InternalT5.g:5981:2: ( RULE_ID )
             {
-            // InternalT5.g:6008:2: ( RULE_ID )
-            // InternalT5.g:6009:3: RULE_ID
+            // InternalT5.g:5981:2: ( RULE_ID )
+            // InternalT5.g:5982:3: RULE_ID
             {
              before(grammarAccess.getDeclaracaoLocalAccess().getNameIDTerminalRuleCall_1_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -18774,17 +18711,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DeclaracaoLocal__TipoBasicoAssignment_1_3"
-    // InternalT5.g:6018:1: rule__DeclaracaoLocal__TipoBasicoAssignment_1_3 : ( ruleTipoBasico ) ;
+    // InternalT5.g:5991:1: rule__DeclaracaoLocal__TipoBasicoAssignment_1_3 : ( ruleTipoBasico ) ;
     public final void rule__DeclaracaoLocal__TipoBasicoAssignment_1_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6022:1: ( ( ruleTipoBasico ) )
-            // InternalT5.g:6023:2: ( ruleTipoBasico )
+            // InternalT5.g:5995:1: ( ( ruleTipoBasico ) )
+            // InternalT5.g:5996:2: ( ruleTipoBasico )
             {
-            // InternalT5.g:6023:2: ( ruleTipoBasico )
-            // InternalT5.g:6024:3: ruleTipoBasico
+            // InternalT5.g:5996:2: ( ruleTipoBasico )
+            // InternalT5.g:5997:3: ruleTipoBasico
             {
              before(grammarAccess.getDeclaracaoLocalAccess().getTipoBasicoTipoBasicoParserRuleCall_1_3_0()); 
             pushFollow(FOLLOW_2);
@@ -18815,17 +18752,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DeclaracaoLocal__ValorAssignment_1_5"
-    // InternalT5.g:6033:1: rule__DeclaracaoLocal__ValorAssignment_1_5 : ( ruleValorConstante ) ;
+    // InternalT5.g:6006:1: rule__DeclaracaoLocal__ValorAssignment_1_5 : ( ruleValorConstante ) ;
     public final void rule__DeclaracaoLocal__ValorAssignment_1_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6037:1: ( ( ruleValorConstante ) )
-            // InternalT5.g:6038:2: ( ruleValorConstante )
+            // InternalT5.g:6010:1: ( ( ruleValorConstante ) )
+            // InternalT5.g:6011:2: ( ruleValorConstante )
             {
-            // InternalT5.g:6038:2: ( ruleValorConstante )
-            // InternalT5.g:6039:3: ruleValorConstante
+            // InternalT5.g:6011:2: ( ruleValorConstante )
+            // InternalT5.g:6012:3: ruleValorConstante
             {
              before(grammarAccess.getDeclaracaoLocalAccess().getValorValorConstanteParserRuleCall_1_5_0()); 
             pushFollow(FOLLOW_2);
@@ -18856,17 +18793,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DeclaracaoLocal__NameAssignment_2_1"
-    // InternalT5.g:6048:1: rule__DeclaracaoLocal__NameAssignment_2_1 : ( RULE_ID ) ;
+    // InternalT5.g:6021:1: rule__DeclaracaoLocal__NameAssignment_2_1 : ( RULE_ID ) ;
     public final void rule__DeclaracaoLocal__NameAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6052:1: ( ( RULE_ID ) )
-            // InternalT5.g:6053:2: ( RULE_ID )
+            // InternalT5.g:6025:1: ( ( RULE_ID ) )
+            // InternalT5.g:6026:2: ( RULE_ID )
             {
-            // InternalT5.g:6053:2: ( RULE_ID )
-            // InternalT5.g:6054:3: RULE_ID
+            // InternalT5.g:6026:2: ( RULE_ID )
+            // InternalT5.g:6027:3: RULE_ID
             {
              before(grammarAccess.getDeclaracaoLocalAccess().getNameIDTerminalRuleCall_2_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -18893,17 +18830,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DeclaracaoLocal__TipoDefAssignment_2_3"
-    // InternalT5.g:6063:1: rule__DeclaracaoLocal__TipoDefAssignment_2_3 : ( ruleTipo ) ;
+    // InternalT5.g:6036:1: rule__DeclaracaoLocal__TipoDefAssignment_2_3 : ( ruleTipo ) ;
     public final void rule__DeclaracaoLocal__TipoDefAssignment_2_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6067:1: ( ( ruleTipo ) )
-            // InternalT5.g:6068:2: ( ruleTipo )
+            // InternalT5.g:6040:1: ( ( ruleTipo ) )
+            // InternalT5.g:6041:2: ( ruleTipo )
             {
-            // InternalT5.g:6068:2: ( ruleTipo )
-            // InternalT5.g:6069:3: ruleTipo
+            // InternalT5.g:6041:2: ( ruleTipo )
+            // InternalT5.g:6042:3: ruleTipo
             {
              before(grammarAccess.getDeclaracaoLocalAccess().getTipoDefTipoParserRuleCall_2_3_0()); 
             pushFollow(FOLLOW_2);
@@ -18934,17 +18871,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DeclaracaoGlobal__NameAssignment_0_1"
-    // InternalT5.g:6078:1: rule__DeclaracaoGlobal__NameAssignment_0_1 : ( RULE_ID ) ;
+    // InternalT5.g:6051:1: rule__DeclaracaoGlobal__NameAssignment_0_1 : ( RULE_ID ) ;
     public final void rule__DeclaracaoGlobal__NameAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6082:1: ( ( RULE_ID ) )
-            // InternalT5.g:6083:2: ( RULE_ID )
+            // InternalT5.g:6055:1: ( ( RULE_ID ) )
+            // InternalT5.g:6056:2: ( RULE_ID )
             {
-            // InternalT5.g:6083:2: ( RULE_ID )
-            // InternalT5.g:6084:3: RULE_ID
+            // InternalT5.g:6056:2: ( RULE_ID )
+            // InternalT5.g:6057:3: RULE_ID
             {
              before(grammarAccess.getDeclaracaoGlobalAccess().getNameIDTerminalRuleCall_0_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -18971,17 +18908,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DeclaracaoGlobal__ParametrosAssignment_0_3"
-    // InternalT5.g:6093:1: rule__DeclaracaoGlobal__ParametrosAssignment_0_3 : ( ruleParametros ) ;
+    // InternalT5.g:6066:1: rule__DeclaracaoGlobal__ParametrosAssignment_0_3 : ( ruleParametros ) ;
     public final void rule__DeclaracaoGlobal__ParametrosAssignment_0_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6097:1: ( ( ruleParametros ) )
-            // InternalT5.g:6098:2: ( ruleParametros )
+            // InternalT5.g:6070:1: ( ( ruleParametros ) )
+            // InternalT5.g:6071:2: ( ruleParametros )
             {
-            // InternalT5.g:6098:2: ( ruleParametros )
-            // InternalT5.g:6099:3: ruleParametros
+            // InternalT5.g:6071:2: ( ruleParametros )
+            // InternalT5.g:6072:3: ruleParametros
             {
              before(grammarAccess.getDeclaracaoGlobalAccess().getParametrosParametrosParserRuleCall_0_3_0()); 
             pushFollow(FOLLOW_2);
@@ -19012,17 +18949,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DeclaracaoGlobal__CorpoAssignment_0_5"
-    // InternalT5.g:6108:1: rule__DeclaracaoGlobal__CorpoAssignment_0_5 : ( ruleCorpo ) ;
+    // InternalT5.g:6081:1: rule__DeclaracaoGlobal__CorpoAssignment_0_5 : ( ruleCorpo ) ;
     public final void rule__DeclaracaoGlobal__CorpoAssignment_0_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6112:1: ( ( ruleCorpo ) )
-            // InternalT5.g:6113:2: ( ruleCorpo )
+            // InternalT5.g:6085:1: ( ( ruleCorpo ) )
+            // InternalT5.g:6086:2: ( ruleCorpo )
             {
-            // InternalT5.g:6113:2: ( ruleCorpo )
-            // InternalT5.g:6114:3: ruleCorpo
+            // InternalT5.g:6086:2: ( ruleCorpo )
+            // InternalT5.g:6087:3: ruleCorpo
             {
              before(grammarAccess.getDeclaracaoGlobalAccess().getCorpoCorpoParserRuleCall_0_5_0()); 
             pushFollow(FOLLOW_2);
@@ -19053,17 +18990,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DeclaracaoGlobal__NameAssignment_1_1"
-    // InternalT5.g:6123:1: rule__DeclaracaoGlobal__NameAssignment_1_1 : ( RULE_ID ) ;
+    // InternalT5.g:6096:1: rule__DeclaracaoGlobal__NameAssignment_1_1 : ( RULE_ID ) ;
     public final void rule__DeclaracaoGlobal__NameAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6127:1: ( ( RULE_ID ) )
-            // InternalT5.g:6128:2: ( RULE_ID )
+            // InternalT5.g:6100:1: ( ( RULE_ID ) )
+            // InternalT5.g:6101:2: ( RULE_ID )
             {
-            // InternalT5.g:6128:2: ( RULE_ID )
-            // InternalT5.g:6129:3: RULE_ID
+            // InternalT5.g:6101:2: ( RULE_ID )
+            // InternalT5.g:6102:3: RULE_ID
             {
              before(grammarAccess.getDeclaracaoGlobalAccess().getNameIDTerminalRuleCall_1_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -19090,17 +19027,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DeclaracaoGlobal__ParametrosAssignment_1_3"
-    // InternalT5.g:6138:1: rule__DeclaracaoGlobal__ParametrosAssignment_1_3 : ( ruleParametros ) ;
+    // InternalT5.g:6111:1: rule__DeclaracaoGlobal__ParametrosAssignment_1_3 : ( ruleParametros ) ;
     public final void rule__DeclaracaoGlobal__ParametrosAssignment_1_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6142:1: ( ( ruleParametros ) )
-            // InternalT5.g:6143:2: ( ruleParametros )
+            // InternalT5.g:6115:1: ( ( ruleParametros ) )
+            // InternalT5.g:6116:2: ( ruleParametros )
             {
-            // InternalT5.g:6143:2: ( ruleParametros )
-            // InternalT5.g:6144:3: ruleParametros
+            // InternalT5.g:6116:2: ( ruleParametros )
+            // InternalT5.g:6117:3: ruleParametros
             {
              before(grammarAccess.getDeclaracaoGlobalAccess().getParametrosParametrosParserRuleCall_1_3_0()); 
             pushFollow(FOLLOW_2);
@@ -19131,17 +19068,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DeclaracaoGlobal__TipoRetornoAssignment_1_6"
-    // InternalT5.g:6153:1: rule__DeclaracaoGlobal__TipoRetornoAssignment_1_6 : ( ruleTipoEstendido ) ;
+    // InternalT5.g:6126:1: rule__DeclaracaoGlobal__TipoRetornoAssignment_1_6 : ( ruleTipoEstendido ) ;
     public final void rule__DeclaracaoGlobal__TipoRetornoAssignment_1_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6157:1: ( ( ruleTipoEstendido ) )
-            // InternalT5.g:6158:2: ( ruleTipoEstendido )
+            // InternalT5.g:6130:1: ( ( ruleTipoEstendido ) )
+            // InternalT5.g:6131:2: ( ruleTipoEstendido )
             {
-            // InternalT5.g:6158:2: ( ruleTipoEstendido )
-            // InternalT5.g:6159:3: ruleTipoEstendido
+            // InternalT5.g:6131:2: ( ruleTipoEstendido )
+            // InternalT5.g:6132:3: ruleTipoEstendido
             {
              before(grammarAccess.getDeclaracaoGlobalAccess().getTipoRetornoTipoEstendidoParserRuleCall_1_6_0()); 
             pushFollow(FOLLOW_2);
@@ -19172,17 +19109,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DeclaracaoGlobal__CorpoAssignment_1_7"
-    // InternalT5.g:6168:1: rule__DeclaracaoGlobal__CorpoAssignment_1_7 : ( ruleCorpo ) ;
+    // InternalT5.g:6141:1: rule__DeclaracaoGlobal__CorpoAssignment_1_7 : ( ruleCorpo ) ;
     public final void rule__DeclaracaoGlobal__CorpoAssignment_1_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6172:1: ( ( ruleCorpo ) )
-            // InternalT5.g:6173:2: ( ruleCorpo )
+            // InternalT5.g:6145:1: ( ( ruleCorpo ) )
+            // InternalT5.g:6146:2: ( ruleCorpo )
             {
-            // InternalT5.g:6173:2: ( ruleCorpo )
-            // InternalT5.g:6174:3: ruleCorpo
+            // InternalT5.g:6146:2: ( ruleCorpo )
+            // InternalT5.g:6147:3: ruleCorpo
             {
              before(grammarAccess.getDeclaracaoGlobalAccess().getCorpoCorpoParserRuleCall_1_7_0()); 
             pushFollow(FOLLOW_2);
@@ -19213,17 +19150,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Variavel__IdAssignment_0"
-    // InternalT5.g:6183:1: rule__Variavel__IdAssignment_0 : ( ruleIdentificador ) ;
+    // InternalT5.g:6156:1: rule__Variavel__IdAssignment_0 : ( ruleIdentificador ) ;
     public final void rule__Variavel__IdAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6187:1: ( ( ruleIdentificador ) )
-            // InternalT5.g:6188:2: ( ruleIdentificador )
+            // InternalT5.g:6160:1: ( ( ruleIdentificador ) )
+            // InternalT5.g:6161:2: ( ruleIdentificador )
             {
-            // InternalT5.g:6188:2: ( ruleIdentificador )
-            // InternalT5.g:6189:3: ruleIdentificador
+            // InternalT5.g:6161:2: ( ruleIdentificador )
+            // InternalT5.g:6162:3: ruleIdentificador
             {
              before(grammarAccess.getVariavelAccess().getIdIdentificadorParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -19254,17 +19191,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Variavel__TipoVarAssignment_2"
-    // InternalT5.g:6198:1: rule__Variavel__TipoVarAssignment_2 : ( ruleTipo ) ;
+    // InternalT5.g:6171:1: rule__Variavel__TipoVarAssignment_2 : ( ruleTipo ) ;
     public final void rule__Variavel__TipoVarAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6202:1: ( ( ruleTipo ) )
-            // InternalT5.g:6203:2: ( ruleTipo )
+            // InternalT5.g:6175:1: ( ( ruleTipo ) )
+            // InternalT5.g:6176:2: ( ruleTipo )
             {
-            // InternalT5.g:6203:2: ( ruleTipo )
-            // InternalT5.g:6204:3: ruleTipo
+            // InternalT5.g:6176:2: ( ruleTipo )
+            // InternalT5.g:6177:3: ruleTipo
             {
              before(grammarAccess.getVariavelAccess().getTipoVarTipoParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -19294,18 +19231,92 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Variavel__TipoVarAssignment_2"
 
 
+    // $ANTLR start "rule__Identificador__NameAssignment_0"
+    // InternalT5.g:6186:1: rule__Identificador__NameAssignment_0 : ( RULE_ID ) ;
+    public final void rule__Identificador__NameAssignment_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalT5.g:6190:1: ( ( RULE_ID ) )
+            // InternalT5.g:6191:2: ( RULE_ID )
+            {
+            // InternalT5.g:6191:2: ( RULE_ID )
+            // InternalT5.g:6192:3: RULE_ID
+            {
+             before(grammarAccess.getIdentificadorAccess().getNameIDTerminalRuleCall_0_0()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getIdentificadorAccess().getNameIDTerminalRuleCall_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Identificador__NameAssignment_0"
+
+
+    // $ANTLR start "rule__Identificador__PartsAssignment_1_1"
+    // InternalT5.g:6201:1: rule__Identificador__PartsAssignment_1_1 : ( RULE_ID ) ;
+    public final void rule__Identificador__PartsAssignment_1_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalT5.g:6205:1: ( ( RULE_ID ) )
+            // InternalT5.g:6206:2: ( RULE_ID )
+            {
+            // InternalT5.g:6206:2: ( RULE_ID )
+            // InternalT5.g:6207:3: RULE_ID
+            {
+             before(grammarAccess.getIdentificadorAccess().getPartsIDTerminalRuleCall_1_1_0()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getIdentificadorAccess().getPartsIDTerminalRuleCall_1_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Identificador__PartsAssignment_1_1"
+
+
     // $ANTLR start "rule__Identificador__DimensoesAssignment_2"
-    // InternalT5.g:6213:1: rule__Identificador__DimensoesAssignment_2 : ( ruleDimensao ) ;
+    // InternalT5.g:6216:1: rule__Identificador__DimensoesAssignment_2 : ( ruleDimensao ) ;
     public final void rule__Identificador__DimensoesAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6217:1: ( ( ruleDimensao ) )
-            // InternalT5.g:6218:2: ( ruleDimensao )
+            // InternalT5.g:6220:1: ( ( ruleDimensao ) )
+            // InternalT5.g:6221:2: ( ruleDimensao )
             {
-            // InternalT5.g:6218:2: ( ruleDimensao )
-            // InternalT5.g:6219:3: ruleDimensao
+            // InternalT5.g:6221:2: ( ruleDimensao )
+            // InternalT5.g:6222:3: ruleDimensao
             {
              before(grammarAccess.getIdentificadorAccess().getDimensoesDimensaoParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -19336,17 +19347,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Dimensao__ExpAssignment_1"
-    // InternalT5.g:6228:1: rule__Dimensao__ExpAssignment_1 : ( ruleExpressaoAritmetica ) ;
+    // InternalT5.g:6231:1: rule__Dimensao__ExpAssignment_1 : ( ruleExpressaoAritmetica ) ;
     public final void rule__Dimensao__ExpAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6232:1: ( ( ruleExpressaoAritmetica ) )
-            // InternalT5.g:6233:2: ( ruleExpressaoAritmetica )
+            // InternalT5.g:6235:1: ( ( ruleExpressaoAritmetica ) )
+            // InternalT5.g:6236:2: ( ruleExpressaoAritmetica )
             {
-            // InternalT5.g:6233:2: ( ruleExpressaoAritmetica )
-            // InternalT5.g:6234:3: ruleExpressaoAritmetica
+            // InternalT5.g:6236:2: ( ruleExpressaoAritmetica )
+            // InternalT5.g:6237:3: ruleExpressaoAritmetica
             {
              before(grammarAccess.getDimensaoAccess().getExpExpressaoAritmeticaParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -19377,17 +19388,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Tipo__RegistroAssignment_0"
-    // InternalT5.g:6243:1: rule__Tipo__RegistroAssignment_0 : ( ruleRegistro ) ;
+    // InternalT5.g:6246:1: rule__Tipo__RegistroAssignment_0 : ( ruleRegistro ) ;
     public final void rule__Tipo__RegistroAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6247:1: ( ( ruleRegistro ) )
-            // InternalT5.g:6248:2: ( ruleRegistro )
+            // InternalT5.g:6250:1: ( ( ruleRegistro ) )
+            // InternalT5.g:6251:2: ( ruleRegistro )
             {
-            // InternalT5.g:6248:2: ( ruleRegistro )
-            // InternalT5.g:6249:3: ruleRegistro
+            // InternalT5.g:6251:2: ( ruleRegistro )
+            // InternalT5.g:6252:3: ruleRegistro
             {
              before(grammarAccess.getTipoAccess().getRegistroRegistroParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -19418,17 +19429,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Tipo__TipoExtAssignment_1"
-    // InternalT5.g:6258:1: rule__Tipo__TipoExtAssignment_1 : ( ruleTipoEstendido ) ;
+    // InternalT5.g:6261:1: rule__Tipo__TipoExtAssignment_1 : ( ruleTipoEstendido ) ;
     public final void rule__Tipo__TipoExtAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6262:1: ( ( ruleTipoEstendido ) )
-            // InternalT5.g:6263:2: ( ruleTipoEstendido )
+            // InternalT5.g:6265:1: ( ( ruleTipoEstendido ) )
+            // InternalT5.g:6266:2: ( ruleTipoEstendido )
             {
-            // InternalT5.g:6263:2: ( ruleTipoEstendido )
-            // InternalT5.g:6264:3: ruleTipoEstendido
+            // InternalT5.g:6266:2: ( ruleTipoEstendido )
+            // InternalT5.g:6267:3: ruleTipoEstendido
             {
              before(grammarAccess.getTipoAccess().getTipoExtTipoEstendidoParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -19459,17 +19470,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Registro__CamposAssignment_1"
-    // InternalT5.g:6273:1: rule__Registro__CamposAssignment_1 : ( ruleVariavel ) ;
+    // InternalT5.g:6276:1: rule__Registro__CamposAssignment_1 : ( ruleVariavel ) ;
     public final void rule__Registro__CamposAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6277:1: ( ( ruleVariavel ) )
-            // InternalT5.g:6278:2: ( ruleVariavel )
+            // InternalT5.g:6280:1: ( ( ruleVariavel ) )
+            // InternalT5.g:6281:2: ( ruleVariavel )
             {
-            // InternalT5.g:6278:2: ( ruleVariavel )
-            // InternalT5.g:6279:3: ruleVariavel
+            // InternalT5.g:6281:2: ( ruleVariavel )
+            // InternalT5.g:6282:3: ruleVariavel
             {
              before(grammarAccess.getRegistroAccess().getCamposVariavelParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -19500,17 +19511,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TipoEstendido__BasicAssignment_1_0"
-    // InternalT5.g:6288:1: rule__TipoEstendido__BasicAssignment_1_0 : ( ruleTipoBasico ) ;
+    // InternalT5.g:6291:1: rule__TipoEstendido__BasicAssignment_1_0 : ( ruleTipoBasico ) ;
     public final void rule__TipoEstendido__BasicAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6292:1: ( ( ruleTipoBasico ) )
-            // InternalT5.g:6293:2: ( ruleTipoBasico )
+            // InternalT5.g:6295:1: ( ( ruleTipoBasico ) )
+            // InternalT5.g:6296:2: ( ruleTipoBasico )
             {
-            // InternalT5.g:6293:2: ( ruleTipoBasico )
-            // InternalT5.g:6294:3: ruleTipoBasico
+            // InternalT5.g:6296:2: ( ruleTipoBasico )
+            // InternalT5.g:6297:3: ruleTipoBasico
             {
              before(grammarAccess.getTipoEstendidoAccess().getBasicTipoBasicoParserRuleCall_1_0_0()); 
             pushFollow(FOLLOW_2);
@@ -19541,21 +19552,21 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TipoEstendido__RefAssignment_1_1"
-    // InternalT5.g:6303:1: rule__TipoEstendido__RefAssignment_1_1 : ( ( RULE_ID ) ) ;
+    // InternalT5.g:6306:1: rule__TipoEstendido__RefAssignment_1_1 : ( ( RULE_ID ) ) ;
     public final void rule__TipoEstendido__RefAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6307:1: ( ( ( RULE_ID ) ) )
-            // InternalT5.g:6308:2: ( ( RULE_ID ) )
+            // InternalT5.g:6310:1: ( ( ( RULE_ID ) ) )
+            // InternalT5.g:6311:2: ( ( RULE_ID ) )
             {
-            // InternalT5.g:6308:2: ( ( RULE_ID ) )
-            // InternalT5.g:6309:3: ( RULE_ID )
+            // InternalT5.g:6311:2: ( ( RULE_ID ) )
+            // InternalT5.g:6312:3: ( RULE_ID )
             {
              before(grammarAccess.getTipoEstendidoAccess().getRefDeclaracaoCrossReference_1_1_0()); 
-            // InternalT5.g:6310:3: ( RULE_ID )
-            // InternalT5.g:6311:4: RULE_ID
+            // InternalT5.g:6313:3: ( RULE_ID )
+            // InternalT5.g:6314:4: RULE_ID
             {
              before(grammarAccess.getTipoEstendidoAccess().getRefDeclaracaoIDTerminalRuleCall_1_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -19586,17 +19597,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Parametros__ParametroAssignment_0"
-    // InternalT5.g:6322:1: rule__Parametros__ParametroAssignment_0 : ( ruleParametro ) ;
+    // InternalT5.g:6325:1: rule__Parametros__ParametroAssignment_0 : ( ruleParametro ) ;
     public final void rule__Parametros__ParametroAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6326:1: ( ( ruleParametro ) )
-            // InternalT5.g:6327:2: ( ruleParametro )
+            // InternalT5.g:6329:1: ( ( ruleParametro ) )
+            // InternalT5.g:6330:2: ( ruleParametro )
             {
-            // InternalT5.g:6327:2: ( ruleParametro )
-            // InternalT5.g:6328:3: ruleParametro
+            // InternalT5.g:6330:2: ( ruleParametro )
+            // InternalT5.g:6331:3: ruleParametro
             {
              before(grammarAccess.getParametrosAccess().getParametroParametroParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -19627,17 +19638,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Parametros__ParametroAssignment_1_1"
-    // InternalT5.g:6337:1: rule__Parametros__ParametroAssignment_1_1 : ( ruleParametro ) ;
+    // InternalT5.g:6340:1: rule__Parametros__ParametroAssignment_1_1 : ( ruleParametro ) ;
     public final void rule__Parametros__ParametroAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6341:1: ( ( ruleParametro ) )
-            // InternalT5.g:6342:2: ( ruleParametro )
+            // InternalT5.g:6344:1: ( ( ruleParametro ) )
+            // InternalT5.g:6345:2: ( ruleParametro )
             {
-            // InternalT5.g:6342:2: ( ruleParametro )
-            // InternalT5.g:6343:3: ruleParametro
+            // InternalT5.g:6345:2: ( ruleParametro )
+            // InternalT5.g:6346:3: ruleParametro
             {
              before(grammarAccess.getParametrosAccess().getParametroParametroParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -19668,17 +19679,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Parametro__IdsAssignment_1"
-    // InternalT5.g:6352:1: rule__Parametro__IdsAssignment_1 : ( ruleIdentificador ) ;
+    // InternalT5.g:6355:1: rule__Parametro__IdsAssignment_1 : ( ruleIdentificador ) ;
     public final void rule__Parametro__IdsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6356:1: ( ( ruleIdentificador ) )
-            // InternalT5.g:6357:2: ( ruleIdentificador )
+            // InternalT5.g:6359:1: ( ( ruleIdentificador ) )
+            // InternalT5.g:6360:2: ( ruleIdentificador )
             {
-            // InternalT5.g:6357:2: ( ruleIdentificador )
-            // InternalT5.g:6358:3: ruleIdentificador
+            // InternalT5.g:6360:2: ( ruleIdentificador )
+            // InternalT5.g:6361:3: ruleIdentificador
             {
              before(grammarAccess.getParametroAccess().getIdsIdentificadorParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -19709,17 +19720,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Parametro__IdsAssignment_2_1"
-    // InternalT5.g:6367:1: rule__Parametro__IdsAssignment_2_1 : ( ruleIdentificador ) ;
+    // InternalT5.g:6370:1: rule__Parametro__IdsAssignment_2_1 : ( ruleIdentificador ) ;
     public final void rule__Parametro__IdsAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6371:1: ( ( ruleIdentificador ) )
-            // InternalT5.g:6372:2: ( ruleIdentificador )
+            // InternalT5.g:6374:1: ( ( ruleIdentificador ) )
+            // InternalT5.g:6375:2: ( ruleIdentificador )
             {
-            // InternalT5.g:6372:2: ( ruleIdentificador )
-            // InternalT5.g:6373:3: ruleIdentificador
+            // InternalT5.g:6375:2: ( ruleIdentificador )
+            // InternalT5.g:6376:3: ruleIdentificador
             {
              before(grammarAccess.getParametroAccess().getIdsIdentificadorParserRuleCall_2_1_0()); 
             pushFollow(FOLLOW_2);
@@ -19750,17 +19761,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Parametro__TipoParamAssignment_4"
-    // InternalT5.g:6382:1: rule__Parametro__TipoParamAssignment_4 : ( ruleTipoEstendido ) ;
+    // InternalT5.g:6385:1: rule__Parametro__TipoParamAssignment_4 : ( ruleTipoEstendido ) ;
     public final void rule__Parametro__TipoParamAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6386:1: ( ( ruleTipoEstendido ) )
-            // InternalT5.g:6387:2: ( ruleTipoEstendido )
+            // InternalT5.g:6389:1: ( ( ruleTipoEstendido ) )
+            // InternalT5.g:6390:2: ( ruleTipoEstendido )
             {
-            // InternalT5.g:6387:2: ( ruleTipoEstendido )
-            // InternalT5.g:6388:3: ruleTipoEstendido
+            // InternalT5.g:6390:2: ( ruleTipoEstendido )
+            // InternalT5.g:6391:3: ruleTipoEstendido
             {
              before(grammarAccess.getParametroAccess().getTipoParamTipoEstendidoParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -19791,17 +19802,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Corpo__LocaisAssignment_0"
-    // InternalT5.g:6397:1: rule__Corpo__LocaisAssignment_0 : ( ruleDeclaracaoLocal ) ;
+    // InternalT5.g:6400:1: rule__Corpo__LocaisAssignment_0 : ( ruleDeclaracaoLocal ) ;
     public final void rule__Corpo__LocaisAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6401:1: ( ( ruleDeclaracaoLocal ) )
-            // InternalT5.g:6402:2: ( ruleDeclaracaoLocal )
+            // InternalT5.g:6404:1: ( ( ruleDeclaracaoLocal ) )
+            // InternalT5.g:6405:2: ( ruleDeclaracaoLocal )
             {
-            // InternalT5.g:6402:2: ( ruleDeclaracaoLocal )
-            // InternalT5.g:6403:3: ruleDeclaracaoLocal
+            // InternalT5.g:6405:2: ( ruleDeclaracaoLocal )
+            // InternalT5.g:6406:3: ruleDeclaracaoLocal
             {
              before(grammarAccess.getCorpoAccess().getLocaisDeclaracaoLocalParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -19832,17 +19843,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Corpo__ComandosAssignment_1"
-    // InternalT5.g:6412:1: rule__Corpo__ComandosAssignment_1 : ( ruleComando ) ;
+    // InternalT5.g:6415:1: rule__Corpo__ComandosAssignment_1 : ( ruleComando ) ;
     public final void rule__Corpo__ComandosAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6416:1: ( ( ruleComando ) )
-            // InternalT5.g:6417:2: ( ruleComando )
+            // InternalT5.g:6419:1: ( ( ruleComando ) )
+            // InternalT5.g:6420:2: ( ruleComando )
             {
-            // InternalT5.g:6417:2: ( ruleComando )
-            // InternalT5.g:6418:3: ruleComando
+            // InternalT5.g:6420:2: ( ruleComando )
+            // InternalT5.g:6421:3: ruleComando
             {
              before(grammarAccess.getCorpoAccess().getComandosComandoParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -19873,29 +19884,29 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoLeia__AlvoAssignment_3"
-    // InternalT5.g:6427:1: rule__ComandoLeia__AlvoAssignment_3 : ( ( RULE_ID ) ) ;
+    // InternalT5.g:6430:1: rule__ComandoLeia__AlvoAssignment_3 : ( ( RULE_ID ) ) ;
     public final void rule__ComandoLeia__AlvoAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6431:1: ( ( ( RULE_ID ) ) )
-            // InternalT5.g:6432:2: ( ( RULE_ID ) )
+            // InternalT5.g:6434:1: ( ( ( RULE_ID ) ) )
+            // InternalT5.g:6435:2: ( ( RULE_ID ) )
             {
-            // InternalT5.g:6432:2: ( ( RULE_ID ) )
-            // InternalT5.g:6433:3: ( RULE_ID )
+            // InternalT5.g:6435:2: ( ( RULE_ID ) )
+            // InternalT5.g:6436:3: ( RULE_ID )
             {
-             before(grammarAccess.getComandoLeiaAccess().getAlvoDeclaracaoCrossReference_3_0()); 
-            // InternalT5.g:6434:3: ( RULE_ID )
-            // InternalT5.g:6435:4: RULE_ID
+             before(grammarAccess.getComandoLeiaAccess().getAlvoVariavelCrossReference_3_0()); 
+            // InternalT5.g:6437:3: ( RULE_ID )
+            // InternalT5.g:6438:4: RULE_ID
             {
-             before(grammarAccess.getComandoLeiaAccess().getAlvoDeclaracaoIDTerminalRuleCall_3_0_1()); 
+             before(grammarAccess.getComandoLeiaAccess().getAlvoVariavelIDTerminalRuleCall_3_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getComandoLeiaAccess().getAlvoDeclaracaoIDTerminalRuleCall_3_0_1()); 
+             after(grammarAccess.getComandoLeiaAccess().getAlvoVariavelIDTerminalRuleCall_3_0_1()); 
 
             }
 
-             after(grammarAccess.getComandoLeiaAccess().getAlvoDeclaracaoCrossReference_3_0()); 
+             after(grammarAccess.getComandoLeiaAccess().getAlvoVariavelCrossReference_3_0()); 
 
             }
 
@@ -19918,29 +19929,29 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoLeia__AlvoAssignment_4_2"
-    // InternalT5.g:6446:1: rule__ComandoLeia__AlvoAssignment_4_2 : ( ( RULE_ID ) ) ;
+    // InternalT5.g:6449:1: rule__ComandoLeia__AlvoAssignment_4_2 : ( ( RULE_ID ) ) ;
     public final void rule__ComandoLeia__AlvoAssignment_4_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6450:1: ( ( ( RULE_ID ) ) )
-            // InternalT5.g:6451:2: ( ( RULE_ID ) )
+            // InternalT5.g:6453:1: ( ( ( RULE_ID ) ) )
+            // InternalT5.g:6454:2: ( ( RULE_ID ) )
             {
-            // InternalT5.g:6451:2: ( ( RULE_ID ) )
-            // InternalT5.g:6452:3: ( RULE_ID )
+            // InternalT5.g:6454:2: ( ( RULE_ID ) )
+            // InternalT5.g:6455:3: ( RULE_ID )
             {
-             before(grammarAccess.getComandoLeiaAccess().getAlvoDeclaracaoCrossReference_4_2_0()); 
-            // InternalT5.g:6453:3: ( RULE_ID )
-            // InternalT5.g:6454:4: RULE_ID
+             before(grammarAccess.getComandoLeiaAccess().getAlvoVariavelCrossReference_4_2_0()); 
+            // InternalT5.g:6456:3: ( RULE_ID )
+            // InternalT5.g:6457:4: RULE_ID
             {
-             before(grammarAccess.getComandoLeiaAccess().getAlvoDeclaracaoIDTerminalRuleCall_4_2_0_1()); 
+             before(grammarAccess.getComandoLeiaAccess().getAlvoVariavelIDTerminalRuleCall_4_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getComandoLeiaAccess().getAlvoDeclaracaoIDTerminalRuleCall_4_2_0_1()); 
+             after(grammarAccess.getComandoLeiaAccess().getAlvoVariavelIDTerminalRuleCall_4_2_0_1()); 
 
             }
 
-             after(grammarAccess.getComandoLeiaAccess().getAlvoDeclaracaoCrossReference_4_2_0()); 
+             after(grammarAccess.getComandoLeiaAccess().getAlvoVariavelCrossReference_4_2_0()); 
 
             }
 
@@ -19963,17 +19974,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoEscreva__ExpAssignment_2"
-    // InternalT5.g:6465:1: rule__ComandoEscreva__ExpAssignment_2 : ( ruleExpressao ) ;
+    // InternalT5.g:6468:1: rule__ComandoEscreva__ExpAssignment_2 : ( ruleExpressao ) ;
     public final void rule__ComandoEscreva__ExpAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6469:1: ( ( ruleExpressao ) )
-            // InternalT5.g:6470:2: ( ruleExpressao )
+            // InternalT5.g:6472:1: ( ( ruleExpressao ) )
+            // InternalT5.g:6473:2: ( ruleExpressao )
             {
-            // InternalT5.g:6470:2: ( ruleExpressao )
-            // InternalT5.g:6471:3: ruleExpressao
+            // InternalT5.g:6473:2: ( ruleExpressao )
+            // InternalT5.g:6474:3: ruleExpressao
             {
              before(grammarAccess.getComandoEscrevaAccess().getExpExpressaoParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -20004,17 +20015,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoEscreva__ExpAssignment_3_1"
-    // InternalT5.g:6480:1: rule__ComandoEscreva__ExpAssignment_3_1 : ( ruleExpressao ) ;
+    // InternalT5.g:6483:1: rule__ComandoEscreva__ExpAssignment_3_1 : ( ruleExpressao ) ;
     public final void rule__ComandoEscreva__ExpAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6484:1: ( ( ruleExpressao ) )
-            // InternalT5.g:6485:2: ( ruleExpressao )
+            // InternalT5.g:6487:1: ( ( ruleExpressao ) )
+            // InternalT5.g:6488:2: ( ruleExpressao )
             {
-            // InternalT5.g:6485:2: ( ruleExpressao )
-            // InternalT5.g:6486:3: ruleExpressao
+            // InternalT5.g:6488:2: ( ruleExpressao )
+            // InternalT5.g:6489:3: ruleExpressao
             {
              before(grammarAccess.getComandoEscrevaAccess().getExpExpressaoParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -20045,17 +20056,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoSe__CondAssignment_1"
-    // InternalT5.g:6495:1: rule__ComandoSe__CondAssignment_1 : ( ruleExpressao ) ;
+    // InternalT5.g:6498:1: rule__ComandoSe__CondAssignment_1 : ( ruleExpressao ) ;
     public final void rule__ComandoSe__CondAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6499:1: ( ( ruleExpressao ) )
-            // InternalT5.g:6500:2: ( ruleExpressao )
+            // InternalT5.g:6502:1: ( ( ruleExpressao ) )
+            // InternalT5.g:6503:2: ( ruleExpressao )
             {
-            // InternalT5.g:6500:2: ( ruleExpressao )
-            // InternalT5.g:6501:3: ruleExpressao
+            // InternalT5.g:6503:2: ( ruleExpressao )
+            // InternalT5.g:6504:3: ruleExpressao
             {
              before(grammarAccess.getComandoSeAccess().getCondExpressaoParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -20086,17 +20097,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoSe__ComandosAssignment_3"
-    // InternalT5.g:6510:1: rule__ComandoSe__ComandosAssignment_3 : ( ruleComando ) ;
+    // InternalT5.g:6513:1: rule__ComandoSe__ComandosAssignment_3 : ( ruleComando ) ;
     public final void rule__ComandoSe__ComandosAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6514:1: ( ( ruleComando ) )
-            // InternalT5.g:6515:2: ( ruleComando )
+            // InternalT5.g:6517:1: ( ( ruleComando ) )
+            // InternalT5.g:6518:2: ( ruleComando )
             {
-            // InternalT5.g:6515:2: ( ruleComando )
-            // InternalT5.g:6516:3: ruleComando
+            // InternalT5.g:6518:2: ( ruleComando )
+            // InternalT5.g:6519:3: ruleComando
             {
              before(grammarAccess.getComandoSeAccess().getComandosComandoParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -20127,17 +20138,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoSe__ComandosElseAssignment_4_1"
-    // InternalT5.g:6525:1: rule__ComandoSe__ComandosElseAssignment_4_1 : ( ruleComando ) ;
+    // InternalT5.g:6528:1: rule__ComandoSe__ComandosElseAssignment_4_1 : ( ruleComando ) ;
     public final void rule__ComandoSe__ComandosElseAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6529:1: ( ( ruleComando ) )
-            // InternalT5.g:6530:2: ( ruleComando )
+            // InternalT5.g:6532:1: ( ( ruleComando ) )
+            // InternalT5.g:6533:2: ( ruleComando )
             {
-            // InternalT5.g:6530:2: ( ruleComando )
-            // InternalT5.g:6531:3: ruleComando
+            // InternalT5.g:6533:2: ( ruleComando )
+            // InternalT5.g:6534:3: ruleComando
             {
              before(grammarAccess.getComandoSeAccess().getComandosElseComandoParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -20168,17 +20179,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoCaso__ExpAssignment_1"
-    // InternalT5.g:6540:1: rule__ComandoCaso__ExpAssignment_1 : ( ruleExpressaoAritmetica ) ;
+    // InternalT5.g:6543:1: rule__ComandoCaso__ExpAssignment_1 : ( ruleExpressaoAritmetica ) ;
     public final void rule__ComandoCaso__ExpAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6544:1: ( ( ruleExpressaoAritmetica ) )
-            // InternalT5.g:6545:2: ( ruleExpressaoAritmetica )
+            // InternalT5.g:6547:1: ( ( ruleExpressaoAritmetica ) )
+            // InternalT5.g:6548:2: ( ruleExpressaoAritmetica )
             {
-            // InternalT5.g:6545:2: ( ruleExpressaoAritmetica )
-            // InternalT5.g:6546:3: ruleExpressaoAritmetica
+            // InternalT5.g:6548:2: ( ruleExpressaoAritmetica )
+            // InternalT5.g:6549:3: ruleExpressaoAritmetica
             {
              before(grammarAccess.getComandoCasoAccess().getExpExpressaoAritmeticaParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -20209,17 +20220,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoCaso__SelecaoAssignment_3"
-    // InternalT5.g:6555:1: rule__ComandoCaso__SelecaoAssignment_3 : ( ruleSelecao ) ;
+    // InternalT5.g:6558:1: rule__ComandoCaso__SelecaoAssignment_3 : ( ruleSelecao ) ;
     public final void rule__ComandoCaso__SelecaoAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6559:1: ( ( ruleSelecao ) )
-            // InternalT5.g:6560:2: ( ruleSelecao )
+            // InternalT5.g:6562:1: ( ( ruleSelecao ) )
+            // InternalT5.g:6563:2: ( ruleSelecao )
             {
-            // InternalT5.g:6560:2: ( ruleSelecao )
-            // InternalT5.g:6561:3: ruleSelecao
+            // InternalT5.g:6563:2: ( ruleSelecao )
+            // InternalT5.g:6564:3: ruleSelecao
             {
              before(grammarAccess.getComandoCasoAccess().getSelecaoSelecaoParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -20250,17 +20261,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoCaso__ComandosElseAssignment_4_1"
-    // InternalT5.g:6570:1: rule__ComandoCaso__ComandosElseAssignment_4_1 : ( ruleComando ) ;
+    // InternalT5.g:6573:1: rule__ComandoCaso__ComandosElseAssignment_4_1 : ( ruleComando ) ;
     public final void rule__ComandoCaso__ComandosElseAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6574:1: ( ( ruleComando ) )
-            // InternalT5.g:6575:2: ( ruleComando )
+            // InternalT5.g:6577:1: ( ( ruleComando ) )
+            // InternalT5.g:6578:2: ( ruleComando )
             {
-            // InternalT5.g:6575:2: ( ruleComando )
-            // InternalT5.g:6576:3: ruleComando
+            // InternalT5.g:6578:2: ( ruleComando )
+            // InternalT5.g:6579:3: ruleComando
             {
              before(grammarAccess.getComandoCasoAccess().getComandosElseComandoParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -20291,17 +20302,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoPara__VarAssignment_1"
-    // InternalT5.g:6585:1: rule__ComandoPara__VarAssignment_1 : ( RULE_ID ) ;
+    // InternalT5.g:6588:1: rule__ComandoPara__VarAssignment_1 : ( RULE_ID ) ;
     public final void rule__ComandoPara__VarAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6589:1: ( ( RULE_ID ) )
-            // InternalT5.g:6590:2: ( RULE_ID )
+            // InternalT5.g:6592:1: ( ( RULE_ID ) )
+            // InternalT5.g:6593:2: ( RULE_ID )
             {
-            // InternalT5.g:6590:2: ( RULE_ID )
-            // InternalT5.g:6591:3: RULE_ID
+            // InternalT5.g:6593:2: ( RULE_ID )
+            // InternalT5.g:6594:3: RULE_ID
             {
              before(grammarAccess.getComandoParaAccess().getVarIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -20328,17 +20339,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoPara__InicioAssignment_3"
-    // InternalT5.g:6600:1: rule__ComandoPara__InicioAssignment_3 : ( ruleExpressaoAritmetica ) ;
+    // InternalT5.g:6603:1: rule__ComandoPara__InicioAssignment_3 : ( ruleExpressaoAritmetica ) ;
     public final void rule__ComandoPara__InicioAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6604:1: ( ( ruleExpressaoAritmetica ) )
-            // InternalT5.g:6605:2: ( ruleExpressaoAritmetica )
+            // InternalT5.g:6607:1: ( ( ruleExpressaoAritmetica ) )
+            // InternalT5.g:6608:2: ( ruleExpressaoAritmetica )
             {
-            // InternalT5.g:6605:2: ( ruleExpressaoAritmetica )
-            // InternalT5.g:6606:3: ruleExpressaoAritmetica
+            // InternalT5.g:6608:2: ( ruleExpressaoAritmetica )
+            // InternalT5.g:6609:3: ruleExpressaoAritmetica
             {
              before(grammarAccess.getComandoParaAccess().getInicioExpressaoAritmeticaParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -20369,17 +20380,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoPara__FimAssignment_5"
-    // InternalT5.g:6615:1: rule__ComandoPara__FimAssignment_5 : ( ruleExpressaoAritmetica ) ;
+    // InternalT5.g:6618:1: rule__ComandoPara__FimAssignment_5 : ( ruleExpressaoAritmetica ) ;
     public final void rule__ComandoPara__FimAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6619:1: ( ( ruleExpressaoAritmetica ) )
-            // InternalT5.g:6620:2: ( ruleExpressaoAritmetica )
+            // InternalT5.g:6622:1: ( ( ruleExpressaoAritmetica ) )
+            // InternalT5.g:6623:2: ( ruleExpressaoAritmetica )
             {
-            // InternalT5.g:6620:2: ( ruleExpressaoAritmetica )
-            // InternalT5.g:6621:3: ruleExpressaoAritmetica
+            // InternalT5.g:6623:2: ( ruleExpressaoAritmetica )
+            // InternalT5.g:6624:3: ruleExpressaoAritmetica
             {
              before(grammarAccess.getComandoParaAccess().getFimExpressaoAritmeticaParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -20410,17 +20421,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoPara__ComandosAssignment_7"
-    // InternalT5.g:6630:1: rule__ComandoPara__ComandosAssignment_7 : ( ruleComando ) ;
+    // InternalT5.g:6633:1: rule__ComandoPara__ComandosAssignment_7 : ( ruleComando ) ;
     public final void rule__ComandoPara__ComandosAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6634:1: ( ( ruleComando ) )
-            // InternalT5.g:6635:2: ( ruleComando )
+            // InternalT5.g:6637:1: ( ( ruleComando ) )
+            // InternalT5.g:6638:2: ( ruleComando )
             {
-            // InternalT5.g:6635:2: ( ruleComando )
-            // InternalT5.g:6636:3: ruleComando
+            // InternalT5.g:6638:2: ( ruleComando )
+            // InternalT5.g:6639:3: ruleComando
             {
              before(grammarAccess.getComandoParaAccess().getComandosComandoParserRuleCall_7_0()); 
             pushFollow(FOLLOW_2);
@@ -20451,17 +20462,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoEnquanto__CondAssignment_1"
-    // InternalT5.g:6645:1: rule__ComandoEnquanto__CondAssignment_1 : ( ruleExpressao ) ;
+    // InternalT5.g:6648:1: rule__ComandoEnquanto__CondAssignment_1 : ( ruleExpressao ) ;
     public final void rule__ComandoEnquanto__CondAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6649:1: ( ( ruleExpressao ) )
-            // InternalT5.g:6650:2: ( ruleExpressao )
+            // InternalT5.g:6652:1: ( ( ruleExpressao ) )
+            // InternalT5.g:6653:2: ( ruleExpressao )
             {
-            // InternalT5.g:6650:2: ( ruleExpressao )
-            // InternalT5.g:6651:3: ruleExpressao
+            // InternalT5.g:6653:2: ( ruleExpressao )
+            // InternalT5.g:6654:3: ruleExpressao
             {
              before(grammarAccess.getComandoEnquantoAccess().getCondExpressaoParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -20492,17 +20503,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoEnquanto__ComandosAssignment_3"
-    // InternalT5.g:6660:1: rule__ComandoEnquanto__ComandosAssignment_3 : ( ruleComando ) ;
+    // InternalT5.g:6663:1: rule__ComandoEnquanto__ComandosAssignment_3 : ( ruleComando ) ;
     public final void rule__ComandoEnquanto__ComandosAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6664:1: ( ( ruleComando ) )
-            // InternalT5.g:6665:2: ( ruleComando )
+            // InternalT5.g:6667:1: ( ( ruleComando ) )
+            // InternalT5.g:6668:2: ( ruleComando )
             {
-            // InternalT5.g:6665:2: ( ruleComando )
-            // InternalT5.g:6666:3: ruleComando
+            // InternalT5.g:6668:2: ( ruleComando )
+            // InternalT5.g:6669:3: ruleComando
             {
              before(grammarAccess.getComandoEnquantoAccess().getComandosComandoParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -20533,17 +20544,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoFaca__ComandosAssignment_1"
-    // InternalT5.g:6675:1: rule__ComandoFaca__ComandosAssignment_1 : ( ruleComando ) ;
+    // InternalT5.g:6678:1: rule__ComandoFaca__ComandosAssignment_1 : ( ruleComando ) ;
     public final void rule__ComandoFaca__ComandosAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6679:1: ( ( ruleComando ) )
-            // InternalT5.g:6680:2: ( ruleComando )
+            // InternalT5.g:6682:1: ( ( ruleComando ) )
+            // InternalT5.g:6683:2: ( ruleComando )
             {
-            // InternalT5.g:6680:2: ( ruleComando )
-            // InternalT5.g:6681:3: ruleComando
+            // InternalT5.g:6683:2: ( ruleComando )
+            // InternalT5.g:6684:3: ruleComando
             {
              before(grammarAccess.getComandoFacaAccess().getComandosComandoParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -20574,17 +20585,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoFaca__CondAssignment_3"
-    // InternalT5.g:6690:1: rule__ComandoFaca__CondAssignment_3 : ( ruleExpressao ) ;
+    // InternalT5.g:6693:1: rule__ComandoFaca__CondAssignment_3 : ( ruleExpressao ) ;
     public final void rule__ComandoFaca__CondAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6694:1: ( ( ruleExpressao ) )
-            // InternalT5.g:6695:2: ( ruleExpressao )
+            // InternalT5.g:6697:1: ( ( ruleExpressao ) )
+            // InternalT5.g:6698:2: ( ruleExpressao )
             {
-            // InternalT5.g:6695:2: ( ruleExpressao )
-            // InternalT5.g:6696:3: ruleExpressao
+            // InternalT5.g:6698:2: ( ruleExpressao )
+            // InternalT5.g:6699:3: ruleExpressao
             {
              before(grammarAccess.getComandoFacaAccess().getCondExpressaoParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -20614,30 +20625,30 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ComandoFaca__CondAssignment_3"
 
 
-    // $ANTLR start "rule__ComandoAtribuicao__TargetAssignment_1"
-    // InternalT5.g:6705:1: rule__ComandoAtribuicao__TargetAssignment_1 : ( ( RULE_ID ) ) ;
-    public final void rule__ComandoAtribuicao__TargetAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__ComandoAtribuicao__TargetAssignment_0"
+    // InternalT5.g:6708:1: rule__ComandoAtribuicao__TargetAssignment_0 : ( ( RULE_ID ) ) ;
+    public final void rule__ComandoAtribuicao__TargetAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6709:1: ( ( ( RULE_ID ) ) )
-            // InternalT5.g:6710:2: ( ( RULE_ID ) )
+            // InternalT5.g:6712:1: ( ( ( RULE_ID ) ) )
+            // InternalT5.g:6713:2: ( ( RULE_ID ) )
             {
-            // InternalT5.g:6710:2: ( ( RULE_ID ) )
-            // InternalT5.g:6711:3: ( RULE_ID )
+            // InternalT5.g:6713:2: ( ( RULE_ID ) )
+            // InternalT5.g:6714:3: ( RULE_ID )
             {
-             before(grammarAccess.getComandoAtribuicaoAccess().getTargetDeclaracaoCrossReference_1_0()); 
-            // InternalT5.g:6712:3: ( RULE_ID )
-            // InternalT5.g:6713:4: RULE_ID
+             before(grammarAccess.getComandoAtribuicaoAccess().getTargetVariavelCrossReference_0_0()); 
+            // InternalT5.g:6715:3: ( RULE_ID )
+            // InternalT5.g:6716:4: RULE_ID
             {
-             before(grammarAccess.getComandoAtribuicaoAccess().getTargetDeclaracaoIDTerminalRuleCall_1_0_1()); 
+             before(grammarAccess.getComandoAtribuicaoAccess().getTargetVariavelIDTerminalRuleCall_0_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getComandoAtribuicaoAccess().getTargetDeclaracaoIDTerminalRuleCall_1_0_1()); 
+             after(grammarAccess.getComandoAtribuicaoAccess().getTargetVariavelIDTerminalRuleCall_0_0_1()); 
 
             }
 
-             after(grammarAccess.getComandoAtribuicaoAccess().getTargetDeclaracaoCrossReference_1_0()); 
+             after(grammarAccess.getComandoAtribuicaoAccess().getTargetVariavelCrossReference_0_0()); 
 
             }
 
@@ -20656,29 +20667,29 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ComandoAtribuicao__TargetAssignment_1"
+    // $ANTLR end "rule__ComandoAtribuicao__TargetAssignment_0"
 
 
-    // $ANTLR start "rule__ComandoAtribuicao__ValorAssignment_3"
-    // InternalT5.g:6724:1: rule__ComandoAtribuicao__ValorAssignment_3 : ( ruleExpressao ) ;
-    public final void rule__ComandoAtribuicao__ValorAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__ComandoAtribuicao__ValorAssignment_2"
+    // InternalT5.g:6727:1: rule__ComandoAtribuicao__ValorAssignment_2 : ( ruleExpressao ) ;
+    public final void rule__ComandoAtribuicao__ValorAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6728:1: ( ( ruleExpressao ) )
-            // InternalT5.g:6729:2: ( ruleExpressao )
+            // InternalT5.g:6731:1: ( ( ruleExpressao ) )
+            // InternalT5.g:6732:2: ( ruleExpressao )
             {
-            // InternalT5.g:6729:2: ( ruleExpressao )
-            // InternalT5.g:6730:3: ruleExpressao
+            // InternalT5.g:6732:2: ( ruleExpressao )
+            // InternalT5.g:6733:3: ruleExpressao
             {
-             before(grammarAccess.getComandoAtribuicaoAccess().getValorExpressaoParserRuleCall_3_0()); 
+             before(grammarAccess.getComandoAtribuicaoAccess().getValorExpressaoParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
             ruleExpressao();
 
             state._fsp--;
 
-             after(grammarAccess.getComandoAtribuicaoAccess().getValorExpressaoParserRuleCall_3_0()); 
+             after(grammarAccess.getComandoAtribuicaoAccess().getValorExpressaoParserRuleCall_2_0()); 
 
             }
 
@@ -20697,21 +20708,21 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ComandoAtribuicao__ValorAssignment_3"
+    // $ANTLR end "rule__ComandoAtribuicao__ValorAssignment_2"
 
 
     // $ANTLR start "rule__ComandoChamada__NameAssignment_0"
-    // InternalT5.g:6739:1: rule__ComandoChamada__NameAssignment_0 : ( RULE_ID ) ;
+    // InternalT5.g:6742:1: rule__ComandoChamada__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__ComandoChamada__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6743:1: ( ( RULE_ID ) )
-            // InternalT5.g:6744:2: ( RULE_ID )
+            // InternalT5.g:6746:1: ( ( RULE_ID ) )
+            // InternalT5.g:6747:2: ( RULE_ID )
             {
-            // InternalT5.g:6744:2: ( RULE_ID )
-            // InternalT5.g:6745:3: RULE_ID
+            // InternalT5.g:6747:2: ( RULE_ID )
+            // InternalT5.g:6748:3: RULE_ID
             {
              before(grammarAccess.getComandoChamadaAccess().getNameIDTerminalRuleCall_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -20738,17 +20749,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoChamada__ArgsAssignment_2_0"
-    // InternalT5.g:6754:1: rule__ComandoChamada__ArgsAssignment_2_0 : ( ruleExpressao ) ;
+    // InternalT5.g:6757:1: rule__ComandoChamada__ArgsAssignment_2_0 : ( ruleExpressao ) ;
     public final void rule__ComandoChamada__ArgsAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6758:1: ( ( ruleExpressao ) )
-            // InternalT5.g:6759:2: ( ruleExpressao )
+            // InternalT5.g:6761:1: ( ( ruleExpressao ) )
+            // InternalT5.g:6762:2: ( ruleExpressao )
             {
-            // InternalT5.g:6759:2: ( ruleExpressao )
-            // InternalT5.g:6760:3: ruleExpressao
+            // InternalT5.g:6762:2: ( ruleExpressao )
+            // InternalT5.g:6763:3: ruleExpressao
             {
              before(grammarAccess.getComandoChamadaAccess().getArgsExpressaoParserRuleCall_2_0_0()); 
             pushFollow(FOLLOW_2);
@@ -20779,17 +20790,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoChamada__ArgsAssignment_2_1_1"
-    // InternalT5.g:6769:1: rule__ComandoChamada__ArgsAssignment_2_1_1 : ( ruleExpressao ) ;
+    // InternalT5.g:6772:1: rule__ComandoChamada__ArgsAssignment_2_1_1 : ( ruleExpressao ) ;
     public final void rule__ComandoChamada__ArgsAssignment_2_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6773:1: ( ( ruleExpressao ) )
-            // InternalT5.g:6774:2: ( ruleExpressao )
+            // InternalT5.g:6776:1: ( ( ruleExpressao ) )
+            // InternalT5.g:6777:2: ( ruleExpressao )
             {
-            // InternalT5.g:6774:2: ( ruleExpressao )
-            // InternalT5.g:6775:3: ruleExpressao
+            // InternalT5.g:6777:2: ( ruleExpressao )
+            // InternalT5.g:6778:3: ruleExpressao
             {
              before(grammarAccess.getComandoChamadaAccess().getArgsExpressaoParserRuleCall_2_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -20820,17 +20831,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandoRetorne__ExpAssignment_1"
-    // InternalT5.g:6784:1: rule__ComandoRetorne__ExpAssignment_1 : ( ruleExpressao ) ;
+    // InternalT5.g:6787:1: rule__ComandoRetorne__ExpAssignment_1 : ( ruleExpressao ) ;
     public final void rule__ComandoRetorne__ExpAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6788:1: ( ( ruleExpressao ) )
-            // InternalT5.g:6789:2: ( ruleExpressao )
+            // InternalT5.g:6791:1: ( ( ruleExpressao ) )
+            // InternalT5.g:6792:2: ( ruleExpressao )
             {
-            // InternalT5.g:6789:2: ( ruleExpressao )
-            // InternalT5.g:6790:3: ruleExpressao
+            // InternalT5.g:6792:2: ( ruleExpressao )
+            // InternalT5.g:6793:3: ruleExpressao
             {
              before(grammarAccess.getComandoRetorneAccess().getExpExpressaoParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -20861,17 +20872,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Selecao__ItensAssignment_0"
-    // InternalT5.g:6799:1: rule__Selecao__ItensAssignment_0 : ( ruleItemSelecao ) ;
+    // InternalT5.g:6802:1: rule__Selecao__ItensAssignment_0 : ( ruleItemSelecao ) ;
     public final void rule__Selecao__ItensAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6803:1: ( ( ruleItemSelecao ) )
-            // InternalT5.g:6804:2: ( ruleItemSelecao )
+            // InternalT5.g:6806:1: ( ( ruleItemSelecao ) )
+            // InternalT5.g:6807:2: ( ruleItemSelecao )
             {
-            // InternalT5.g:6804:2: ( ruleItemSelecao )
-            // InternalT5.g:6805:3: ruleItemSelecao
+            // InternalT5.g:6807:2: ( ruleItemSelecao )
+            // InternalT5.g:6808:3: ruleItemSelecao
             {
              before(grammarAccess.getSelecaoAccess().getItensItemSelecaoParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -20902,17 +20913,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Selecao__ComandosAssignment_2"
-    // InternalT5.g:6814:1: rule__Selecao__ComandosAssignment_2 : ( ruleComando ) ;
+    // InternalT5.g:6817:1: rule__Selecao__ComandosAssignment_2 : ( ruleComando ) ;
     public final void rule__Selecao__ComandosAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6818:1: ( ( ruleComando ) )
-            // InternalT5.g:6819:2: ( ruleComando )
+            // InternalT5.g:6821:1: ( ( ruleComando ) )
+            // InternalT5.g:6822:2: ( ruleComando )
             {
-            // InternalT5.g:6819:2: ( ruleComando )
-            // InternalT5.g:6820:3: ruleComando
+            // InternalT5.g:6822:2: ( ruleComando )
+            // InternalT5.g:6823:3: ruleComando
             {
              before(grammarAccess.getSelecaoAccess().getComandosComandoParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -20943,17 +20954,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ItemSelecao__FaixasAssignment_0"
-    // InternalT5.g:6829:1: rule__ItemSelecao__FaixasAssignment_0 : ( ruleNumeroIntervalo ) ;
+    // InternalT5.g:6832:1: rule__ItemSelecao__FaixasAssignment_0 : ( ruleNumeroIntervalo ) ;
     public final void rule__ItemSelecao__FaixasAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6833:1: ( ( ruleNumeroIntervalo ) )
-            // InternalT5.g:6834:2: ( ruleNumeroIntervalo )
+            // InternalT5.g:6836:1: ( ( ruleNumeroIntervalo ) )
+            // InternalT5.g:6837:2: ( ruleNumeroIntervalo )
             {
-            // InternalT5.g:6834:2: ( ruleNumeroIntervalo )
-            // InternalT5.g:6835:3: ruleNumeroIntervalo
+            // InternalT5.g:6837:2: ( ruleNumeroIntervalo )
+            // InternalT5.g:6838:3: ruleNumeroIntervalo
             {
              before(grammarAccess.getItemSelecaoAccess().getFaixasNumeroIntervaloParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -20984,17 +20995,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ItemSelecao__FaixasAssignment_1_1"
-    // InternalT5.g:6844:1: rule__ItemSelecao__FaixasAssignment_1_1 : ( ruleNumeroIntervalo ) ;
+    // InternalT5.g:6847:1: rule__ItemSelecao__FaixasAssignment_1_1 : ( ruleNumeroIntervalo ) ;
     public final void rule__ItemSelecao__FaixasAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6848:1: ( ( ruleNumeroIntervalo ) )
-            // InternalT5.g:6849:2: ( ruleNumeroIntervalo )
+            // InternalT5.g:6851:1: ( ( ruleNumeroIntervalo ) )
+            // InternalT5.g:6852:2: ( ruleNumeroIntervalo )
             {
-            // InternalT5.g:6849:2: ( ruleNumeroIntervalo )
-            // InternalT5.g:6850:3: ruleNumeroIntervalo
+            // InternalT5.g:6852:2: ( ruleNumeroIntervalo )
+            // InternalT5.g:6853:3: ruleNumeroIntervalo
             {
              before(grammarAccess.getItemSelecaoAccess().getFaixasNumeroIntervaloParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -21025,17 +21036,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumeroIntervalo__SinalAssignment_0"
-    // InternalT5.g:6859:1: rule__NumeroIntervalo__SinalAssignment_0 : ( ruleOpUnario ) ;
+    // InternalT5.g:6862:1: rule__NumeroIntervalo__SinalAssignment_0 : ( ruleOpUnario ) ;
     public final void rule__NumeroIntervalo__SinalAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6863:1: ( ( ruleOpUnario ) )
-            // InternalT5.g:6864:2: ( ruleOpUnario )
+            // InternalT5.g:6866:1: ( ( ruleOpUnario ) )
+            // InternalT5.g:6867:2: ( ruleOpUnario )
             {
-            // InternalT5.g:6864:2: ( ruleOpUnario )
-            // InternalT5.g:6865:3: ruleOpUnario
+            // InternalT5.g:6867:2: ( ruleOpUnario )
+            // InternalT5.g:6868:3: ruleOpUnario
             {
              before(grammarAccess.getNumeroIntervaloAccess().getSinalOpUnarioParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -21066,17 +21077,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumeroIntervalo__StartAssignment_1"
-    // InternalT5.g:6874:1: rule__NumeroIntervalo__StartAssignment_1 : ( RULE_INT ) ;
+    // InternalT5.g:6877:1: rule__NumeroIntervalo__StartAssignment_1 : ( RULE_INT ) ;
     public final void rule__NumeroIntervalo__StartAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6878:1: ( ( RULE_INT ) )
-            // InternalT5.g:6879:2: ( RULE_INT )
+            // InternalT5.g:6881:1: ( ( RULE_INT ) )
+            // InternalT5.g:6882:2: ( RULE_INT )
             {
-            // InternalT5.g:6879:2: ( RULE_INT )
-            // InternalT5.g:6880:3: RULE_INT
+            // InternalT5.g:6882:2: ( RULE_INT )
+            // InternalT5.g:6883:3: RULE_INT
             {
              before(grammarAccess.getNumeroIntervaloAccess().getStartINTTerminalRuleCall_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -21103,17 +21114,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumeroIntervalo__EndAssignment_2_1"
-    // InternalT5.g:6889:1: rule__NumeroIntervalo__EndAssignment_2_1 : ( RULE_INT ) ;
+    // InternalT5.g:6892:1: rule__NumeroIntervalo__EndAssignment_2_1 : ( RULE_INT ) ;
     public final void rule__NumeroIntervalo__EndAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6893:1: ( ( RULE_INT ) )
-            // InternalT5.g:6894:2: ( RULE_INT )
+            // InternalT5.g:6896:1: ( ( RULE_INT ) )
+            // InternalT5.g:6897:2: ( RULE_INT )
             {
-            // InternalT5.g:6894:2: ( RULE_INT )
-            // InternalT5.g:6895:3: RULE_INT
+            // InternalT5.g:6897:2: ( RULE_INT )
+            // InternalT5.g:6898:3: RULE_INT
             {
              before(grammarAccess.getNumeroIntervaloAccess().getEndINTTerminalRuleCall_2_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -21140,17 +21151,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExpressaoAritmetica__TermosAssignment_0"
-    // InternalT5.g:6904:1: rule__ExpressaoAritmetica__TermosAssignment_0 : ( ruleTermoAritmetico ) ;
+    // InternalT5.g:6907:1: rule__ExpressaoAritmetica__TermosAssignment_0 : ( ruleTermoAritmetico ) ;
     public final void rule__ExpressaoAritmetica__TermosAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6908:1: ( ( ruleTermoAritmetico ) )
-            // InternalT5.g:6909:2: ( ruleTermoAritmetico )
+            // InternalT5.g:6911:1: ( ( ruleTermoAritmetico ) )
+            // InternalT5.g:6912:2: ( ruleTermoAritmetico )
             {
-            // InternalT5.g:6909:2: ( ruleTermoAritmetico )
-            // InternalT5.g:6910:3: ruleTermoAritmetico
+            // InternalT5.g:6912:2: ( ruleTermoAritmetico )
+            // InternalT5.g:6913:3: ruleTermoAritmetico
             {
              before(grammarAccess.getExpressaoAritmeticaAccess().getTermosTermoAritmeticoParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -21181,17 +21192,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExpressaoAritmetica__OutrosAssignment_1"
-    // InternalT5.g:6919:1: rule__ExpressaoAritmetica__OutrosAssignment_1 : ( ruleOutroTermoAritmetico ) ;
+    // InternalT5.g:6922:1: rule__ExpressaoAritmetica__OutrosAssignment_1 : ( ruleOutroTermoAritmetico ) ;
     public final void rule__ExpressaoAritmetica__OutrosAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6923:1: ( ( ruleOutroTermoAritmetico ) )
-            // InternalT5.g:6924:2: ( ruleOutroTermoAritmetico )
+            // InternalT5.g:6926:1: ( ( ruleOutroTermoAritmetico ) )
+            // InternalT5.g:6927:2: ( ruleOutroTermoAritmetico )
             {
-            // InternalT5.g:6924:2: ( ruleOutroTermoAritmetico )
-            // InternalT5.g:6925:3: ruleOutroTermoAritmetico
+            // InternalT5.g:6927:2: ( ruleOutroTermoAritmetico )
+            // InternalT5.g:6928:3: ruleOutroTermoAritmetico
             {
              before(grammarAccess.getExpressaoAritmeticaAccess().getOutrosOutroTermoAritmeticoParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -21222,17 +21233,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OutroTermoAritmetico__OpAssignment_0"
-    // InternalT5.g:6934:1: rule__OutroTermoAritmetico__OpAssignment_0 : ( ruleOpArit1 ) ;
+    // InternalT5.g:6937:1: rule__OutroTermoAritmetico__OpAssignment_0 : ( ruleOpArit1 ) ;
     public final void rule__OutroTermoAritmetico__OpAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6938:1: ( ( ruleOpArit1 ) )
-            // InternalT5.g:6939:2: ( ruleOpArit1 )
+            // InternalT5.g:6941:1: ( ( ruleOpArit1 ) )
+            // InternalT5.g:6942:2: ( ruleOpArit1 )
             {
-            // InternalT5.g:6939:2: ( ruleOpArit1 )
-            // InternalT5.g:6940:3: ruleOpArit1
+            // InternalT5.g:6942:2: ( ruleOpArit1 )
+            // InternalT5.g:6943:3: ruleOpArit1
             {
              before(grammarAccess.getOutroTermoAritmeticoAccess().getOpOpArit1ParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -21263,17 +21274,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OutroTermoAritmetico__TermoAssignment_1"
-    // InternalT5.g:6949:1: rule__OutroTermoAritmetico__TermoAssignment_1 : ( ruleTermoAritmetico ) ;
+    // InternalT5.g:6952:1: rule__OutroTermoAritmetico__TermoAssignment_1 : ( ruleTermoAritmetico ) ;
     public final void rule__OutroTermoAritmetico__TermoAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6953:1: ( ( ruleTermoAritmetico ) )
-            // InternalT5.g:6954:2: ( ruleTermoAritmetico )
+            // InternalT5.g:6956:1: ( ( ruleTermoAritmetico ) )
+            // InternalT5.g:6957:2: ( ruleTermoAritmetico )
             {
-            // InternalT5.g:6954:2: ( ruleTermoAritmetico )
-            // InternalT5.g:6955:3: ruleTermoAritmetico
+            // InternalT5.g:6957:2: ( ruleTermoAritmetico )
+            // InternalT5.g:6958:3: ruleTermoAritmetico
             {
              before(grammarAccess.getOutroTermoAritmeticoAccess().getTermoTermoAritmeticoParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -21304,17 +21315,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TermoAritmetico__FatoresAssignment_0"
-    // InternalT5.g:6964:1: rule__TermoAritmetico__FatoresAssignment_0 : ( ruleFatorAritmetico ) ;
+    // InternalT5.g:6967:1: rule__TermoAritmetico__FatoresAssignment_0 : ( ruleFatorAritmetico ) ;
     public final void rule__TermoAritmetico__FatoresAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6968:1: ( ( ruleFatorAritmetico ) )
-            // InternalT5.g:6969:2: ( ruleFatorAritmetico )
+            // InternalT5.g:6971:1: ( ( ruleFatorAritmetico ) )
+            // InternalT5.g:6972:2: ( ruleFatorAritmetico )
             {
-            // InternalT5.g:6969:2: ( ruleFatorAritmetico )
-            // InternalT5.g:6970:3: ruleFatorAritmetico
+            // InternalT5.g:6972:2: ( ruleFatorAritmetico )
+            // InternalT5.g:6973:3: ruleFatorAritmetico
             {
              before(grammarAccess.getTermoAritmeticoAccess().getFatoresFatorAritmeticoParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -21345,17 +21356,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TermoAritmetico__OutrosAssignment_1"
-    // InternalT5.g:6979:1: rule__TermoAritmetico__OutrosAssignment_1 : ( ruleOutroFatorAritmetico ) ;
+    // InternalT5.g:6982:1: rule__TermoAritmetico__OutrosAssignment_1 : ( ruleOutroFatorAritmetico ) ;
     public final void rule__TermoAritmetico__OutrosAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6983:1: ( ( ruleOutroFatorAritmetico ) )
-            // InternalT5.g:6984:2: ( ruleOutroFatorAritmetico )
+            // InternalT5.g:6986:1: ( ( ruleOutroFatorAritmetico ) )
+            // InternalT5.g:6987:2: ( ruleOutroFatorAritmetico )
             {
-            // InternalT5.g:6984:2: ( ruleOutroFatorAritmetico )
-            // InternalT5.g:6985:3: ruleOutroFatorAritmetico
+            // InternalT5.g:6987:2: ( ruleOutroFatorAritmetico )
+            // InternalT5.g:6988:3: ruleOutroFatorAritmetico
             {
              before(grammarAccess.getTermoAritmeticoAccess().getOutrosOutroFatorAritmeticoParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -21386,17 +21397,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OutroFatorAritmetico__OpAssignment_0"
-    // InternalT5.g:6994:1: rule__OutroFatorAritmetico__OpAssignment_0 : ( ruleOpArit2 ) ;
+    // InternalT5.g:6997:1: rule__OutroFatorAritmetico__OpAssignment_0 : ( ruleOpArit2 ) ;
     public final void rule__OutroFatorAritmetico__OpAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:6998:1: ( ( ruleOpArit2 ) )
-            // InternalT5.g:6999:2: ( ruleOpArit2 )
+            // InternalT5.g:7001:1: ( ( ruleOpArit2 ) )
+            // InternalT5.g:7002:2: ( ruleOpArit2 )
             {
-            // InternalT5.g:6999:2: ( ruleOpArit2 )
-            // InternalT5.g:7000:3: ruleOpArit2
+            // InternalT5.g:7002:2: ( ruleOpArit2 )
+            // InternalT5.g:7003:3: ruleOpArit2
             {
              before(grammarAccess.getOutroFatorAritmeticoAccess().getOpOpArit2ParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -21427,17 +21438,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OutroFatorAritmetico__FatorAssignment_1"
-    // InternalT5.g:7009:1: rule__OutroFatorAritmetico__FatorAssignment_1 : ( ruleFatorAritmetico ) ;
+    // InternalT5.g:7012:1: rule__OutroFatorAritmetico__FatorAssignment_1 : ( ruleFatorAritmetico ) ;
     public final void rule__OutroFatorAritmetico__FatorAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:7013:1: ( ( ruleFatorAritmetico ) )
-            // InternalT5.g:7014:2: ( ruleFatorAritmetico )
+            // InternalT5.g:7016:1: ( ( ruleFatorAritmetico ) )
+            // InternalT5.g:7017:2: ( ruleFatorAritmetico )
             {
-            // InternalT5.g:7014:2: ( ruleFatorAritmetico )
-            // InternalT5.g:7015:3: ruleFatorAritmetico
+            // InternalT5.g:7017:2: ( ruleFatorAritmetico )
+            // InternalT5.g:7018:3: ruleFatorAritmetico
             {
              before(grammarAccess.getOutroFatorAritmeticoAccess().getFatorFatorAritmeticoParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -21468,29 +21479,29 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FatorAritmetico__RefAssignment_0_1"
-    // InternalT5.g:7024:1: rule__FatorAritmetico__RefAssignment_0_1 : ( ( RULE_ID ) ) ;
+    // InternalT5.g:7027:1: rule__FatorAritmetico__RefAssignment_0_1 : ( ( RULE_ID ) ) ;
     public final void rule__FatorAritmetico__RefAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:7028:1: ( ( ( RULE_ID ) ) )
-            // InternalT5.g:7029:2: ( ( RULE_ID ) )
+            // InternalT5.g:7031:1: ( ( ( RULE_ID ) ) )
+            // InternalT5.g:7032:2: ( ( RULE_ID ) )
             {
-            // InternalT5.g:7029:2: ( ( RULE_ID ) )
-            // InternalT5.g:7030:3: ( RULE_ID )
+            // InternalT5.g:7032:2: ( ( RULE_ID ) )
+            // InternalT5.g:7033:3: ( RULE_ID )
             {
-             before(grammarAccess.getFatorAritmeticoAccess().getRefDeclaracaoCrossReference_0_1_0()); 
-            // InternalT5.g:7031:3: ( RULE_ID )
-            // InternalT5.g:7032:4: RULE_ID
+             before(grammarAccess.getFatorAritmeticoAccess().getRefVariavelCrossReference_0_1_0()); 
+            // InternalT5.g:7034:3: ( RULE_ID )
+            // InternalT5.g:7035:4: RULE_ID
             {
-             before(grammarAccess.getFatorAritmeticoAccess().getRefDeclaracaoIDTerminalRuleCall_0_1_0_1()); 
+             before(grammarAccess.getFatorAritmeticoAccess().getRefVariavelIDTerminalRuleCall_0_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getFatorAritmeticoAccess().getRefDeclaracaoIDTerminalRuleCall_0_1_0_1()); 
+             after(grammarAccess.getFatorAritmeticoAccess().getRefVariavelIDTerminalRuleCall_0_1_0_1()); 
 
             }
 
-             after(grammarAccess.getFatorAritmeticoAccess().getRefDeclaracaoCrossReference_0_1_0()); 
+             after(grammarAccess.getFatorAritmeticoAccess().getRefVariavelCrossReference_0_1_0()); 
 
             }
 
@@ -21513,17 +21524,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FatorAritmetico__NumeroAssignment_1"
-    // InternalT5.g:7043:1: rule__FatorAritmetico__NumeroAssignment_1 : ( RULE_INT ) ;
+    // InternalT5.g:7046:1: rule__FatorAritmetico__NumeroAssignment_1 : ( RULE_INT ) ;
     public final void rule__FatorAritmetico__NumeroAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:7047:1: ( ( RULE_INT ) )
-            // InternalT5.g:7048:2: ( RULE_INT )
+            // InternalT5.g:7050:1: ( ( RULE_INT ) )
+            // InternalT5.g:7051:2: ( RULE_INT )
             {
-            // InternalT5.g:7048:2: ( RULE_INT )
-            // InternalT5.g:7049:3: RULE_INT
+            // InternalT5.g:7051:2: ( RULE_INT )
+            // InternalT5.g:7052:3: RULE_INT
             {
              before(grammarAccess.getFatorAritmeticoAccess().getNumeroINTTerminalRuleCall_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -21550,17 +21561,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FatorAritmetico__RealAssignment_2"
-    // InternalT5.g:7058:1: rule__FatorAritmetico__RealAssignment_2 : ( RULE_REAL ) ;
+    // InternalT5.g:7061:1: rule__FatorAritmetico__RealAssignment_2 : ( RULE_REAL ) ;
     public final void rule__FatorAritmetico__RealAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:7062:1: ( ( RULE_REAL ) )
-            // InternalT5.g:7063:2: ( RULE_REAL )
+            // InternalT5.g:7065:1: ( ( RULE_REAL ) )
+            // InternalT5.g:7066:2: ( RULE_REAL )
             {
-            // InternalT5.g:7063:2: ( RULE_REAL )
-            // InternalT5.g:7064:3: RULE_REAL
+            // InternalT5.g:7066:2: ( RULE_REAL )
+            // InternalT5.g:7067:3: RULE_REAL
             {
              before(grammarAccess.getFatorAritmeticoAccess().getRealREALTerminalRuleCall_2_0()); 
             match(input,RULE_REAL,FOLLOW_2); 
@@ -21587,17 +21598,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FatorAritmetico__ExpAssignment_3_1"
-    // InternalT5.g:7073:1: rule__FatorAritmetico__ExpAssignment_3_1 : ( ruleExpressaoAritmetica ) ;
+    // InternalT5.g:7076:1: rule__FatorAritmetico__ExpAssignment_3_1 : ( ruleExpressaoAritmetica ) ;
     public final void rule__FatorAritmetico__ExpAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:7077:1: ( ( ruleExpressaoAritmetica ) )
-            // InternalT5.g:7078:2: ( ruleExpressaoAritmetica )
+            // InternalT5.g:7080:1: ( ( ruleExpressaoAritmetica ) )
+            // InternalT5.g:7081:2: ( ruleExpressaoAritmetica )
             {
-            // InternalT5.g:7078:2: ( ruleExpressaoAritmetica )
-            // InternalT5.g:7079:3: ruleExpressaoAritmetica
+            // InternalT5.g:7081:2: ( ruleExpressaoAritmetica )
+            // InternalT5.g:7082:3: ruleExpressaoAritmetica
             {
              before(grammarAccess.getFatorAritmeticoAccess().getExpExpressaoAritmeticaParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -21627,18 +21638,55 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__FatorAritmetico__ExpAssignment_3_1"
 
 
+    // $ANTLR start "rule__FatorAritmetico__StrAssignment_4"
+    // InternalT5.g:7091:1: rule__FatorAritmetico__StrAssignment_4 : ( RULE_STRING ) ;
+    public final void rule__FatorAritmetico__StrAssignment_4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalT5.g:7095:1: ( ( RULE_STRING ) )
+            // InternalT5.g:7096:2: ( RULE_STRING )
+            {
+            // InternalT5.g:7096:2: ( RULE_STRING )
+            // InternalT5.g:7097:3: RULE_STRING
+            {
+             before(grammarAccess.getFatorAritmeticoAccess().getStrSTRINGTerminalRuleCall_4_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getFatorAritmeticoAccess().getStrSTRINGTerminalRuleCall_4_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__FatorAritmetico__StrAssignment_4"
+
+
     // $ANTLR start "rule__Expressao__LogicosAssignment_0"
-    // InternalT5.g:7088:1: rule__Expressao__LogicosAssignment_0 : ( ruleTermoLogico ) ;
+    // InternalT5.g:7106:1: rule__Expressao__LogicosAssignment_0 : ( ruleTermoLogico ) ;
     public final void rule__Expressao__LogicosAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:7092:1: ( ( ruleTermoLogico ) )
-            // InternalT5.g:7093:2: ( ruleTermoLogico )
+            // InternalT5.g:7110:1: ( ( ruleTermoLogico ) )
+            // InternalT5.g:7111:2: ( ruleTermoLogico )
             {
-            // InternalT5.g:7093:2: ( ruleTermoLogico )
-            // InternalT5.g:7094:3: ruleTermoLogico
+            // InternalT5.g:7111:2: ( ruleTermoLogico )
+            // InternalT5.g:7112:3: ruleTermoLogico
             {
              before(grammarAccess.getExpressaoAccess().getLogicosTermoLogicoParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -21669,17 +21717,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expressao__OpAssignment_1_0"
-    // InternalT5.g:7103:1: rule__Expressao__OpAssignment_1_0 : ( ruleOpBool ) ;
+    // InternalT5.g:7121:1: rule__Expressao__OpAssignment_1_0 : ( ruleOpBool ) ;
     public final void rule__Expressao__OpAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:7107:1: ( ( ruleOpBool ) )
-            // InternalT5.g:7108:2: ( ruleOpBool )
+            // InternalT5.g:7125:1: ( ( ruleOpBool ) )
+            // InternalT5.g:7126:2: ( ruleOpBool )
             {
-            // InternalT5.g:7108:2: ( ruleOpBool )
-            // InternalT5.g:7109:3: ruleOpBool
+            // InternalT5.g:7126:2: ( ruleOpBool )
+            // InternalT5.g:7127:3: ruleOpBool
             {
              before(grammarAccess.getExpressaoAccess().getOpOpBoolParserRuleCall_1_0_0()); 
             pushFollow(FOLLOW_2);
@@ -21710,17 +21758,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expressao__LogicosAssignment_1_1"
-    // InternalT5.g:7118:1: rule__Expressao__LogicosAssignment_1_1 : ( ruleTermoLogico ) ;
+    // InternalT5.g:7136:1: rule__Expressao__LogicosAssignment_1_1 : ( ruleTermoLogico ) ;
     public final void rule__Expressao__LogicosAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:7122:1: ( ( ruleTermoLogico ) )
-            // InternalT5.g:7123:2: ( ruleTermoLogico )
+            // InternalT5.g:7140:1: ( ( ruleTermoLogico ) )
+            // InternalT5.g:7141:2: ( ruleTermoLogico )
             {
-            // InternalT5.g:7123:2: ( ruleTermoLogico )
-            // InternalT5.g:7124:3: ruleTermoLogico
+            // InternalT5.g:7141:2: ( ruleTermoLogico )
+            // InternalT5.g:7142:3: ruleTermoLogico
             {
              before(grammarAccess.getExpressaoAccess().getLogicosTermoLogicoParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -21751,17 +21799,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TermoLogico__RelAssignment_1"
-    // InternalT5.g:7133:1: rule__TermoLogico__RelAssignment_1 : ( ruleExpressaoRelacional ) ;
+    // InternalT5.g:7151:1: rule__TermoLogico__RelAssignment_1 : ( ruleExpressaoRelacional ) ;
     public final void rule__TermoLogico__RelAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:7137:1: ( ( ruleExpressaoRelacional ) )
-            // InternalT5.g:7138:2: ( ruleExpressaoRelacional )
+            // InternalT5.g:7155:1: ( ( ruleExpressaoRelacional ) )
+            // InternalT5.g:7156:2: ( ruleExpressaoRelacional )
             {
-            // InternalT5.g:7138:2: ( ruleExpressaoRelacional )
-            // InternalT5.g:7139:3: ruleExpressaoRelacional
+            // InternalT5.g:7156:2: ( ruleExpressaoRelacional )
+            // InternalT5.g:7157:3: ruleExpressaoRelacional
             {
              before(grammarAccess.getTermoLogicoAccess().getRelExpressaoRelacionalParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -21792,17 +21840,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExpressaoRelacional__LeftAssignment_0"
-    // InternalT5.g:7148:1: rule__ExpressaoRelacional__LeftAssignment_0 : ( ruleExpressaoAritmetica ) ;
+    // InternalT5.g:7166:1: rule__ExpressaoRelacional__LeftAssignment_0 : ( ruleExpressaoAritmetica ) ;
     public final void rule__ExpressaoRelacional__LeftAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:7152:1: ( ( ruleExpressaoAritmetica ) )
-            // InternalT5.g:7153:2: ( ruleExpressaoAritmetica )
+            // InternalT5.g:7170:1: ( ( ruleExpressaoAritmetica ) )
+            // InternalT5.g:7171:2: ( ruleExpressaoAritmetica )
             {
-            // InternalT5.g:7153:2: ( ruleExpressaoAritmetica )
-            // InternalT5.g:7154:3: ruleExpressaoAritmetica
+            // InternalT5.g:7171:2: ( ruleExpressaoAritmetica )
+            // InternalT5.g:7172:3: ruleExpressaoAritmetica
             {
              before(grammarAccess.getExpressaoRelacionalAccess().getLeftExpressaoAritmeticaParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -21833,17 +21881,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExpressaoRelacional__OpAssignment_1_0"
-    // InternalT5.g:7163:1: rule__ExpressaoRelacional__OpAssignment_1_0 : ( ruleOpRel ) ;
+    // InternalT5.g:7181:1: rule__ExpressaoRelacional__OpAssignment_1_0 : ( ruleOpRel ) ;
     public final void rule__ExpressaoRelacional__OpAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:7167:1: ( ( ruleOpRel ) )
-            // InternalT5.g:7168:2: ( ruleOpRel )
+            // InternalT5.g:7185:1: ( ( ruleOpRel ) )
+            // InternalT5.g:7186:2: ( ruleOpRel )
             {
-            // InternalT5.g:7168:2: ( ruleOpRel )
-            // InternalT5.g:7169:3: ruleOpRel
+            // InternalT5.g:7186:2: ( ruleOpRel )
+            // InternalT5.g:7187:3: ruleOpRel
             {
              before(grammarAccess.getExpressaoRelacionalAccess().getOpOpRelParserRuleCall_1_0_0()); 
             pushFollow(FOLLOW_2);
@@ -21874,17 +21922,17 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExpressaoRelacional__RightAssignment_1_1"
-    // InternalT5.g:7178:1: rule__ExpressaoRelacional__RightAssignment_1_1 : ( ruleExpressaoAritmetica ) ;
+    // InternalT5.g:7196:1: rule__ExpressaoRelacional__RightAssignment_1_1 : ( ruleExpressaoAritmetica ) ;
     public final void rule__ExpressaoRelacional__RightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT5.g:7182:1: ( ( ruleExpressaoAritmetica ) )
-            // InternalT5.g:7183:2: ( ruleExpressaoAritmetica )
+            // InternalT5.g:7200:1: ( ( ruleExpressaoAritmetica ) )
+            // InternalT5.g:7201:2: ( ruleExpressaoAritmetica )
             {
-            // InternalT5.g:7183:2: ( ruleExpressaoAritmetica )
-            // InternalT5.g:7184:3: ruleExpressaoAritmetica
+            // InternalT5.g:7201:2: ( ruleExpressaoAritmetica )
+            // InternalT5.g:7202:3: ruleExpressaoAritmetica
             {
              before(grammarAccess.getExpressaoRelacionalAccess().getRightExpressaoAritmeticaParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -21918,12 +21966,12 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
 
     protected DFA8 dfa8 = new DFA8(this);
     static final String dfa_1s = "\14\uffff";
-    static final String dfa_2s = "\1\7\10\uffff\1\47\2\uffff";
-    static final String dfa_3s = "\1\103\10\uffff\1\75\2\uffff";
-    static final String dfa_4s = "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\uffff\1\12\1\11";
+    static final String dfa_2s = "\1\7\7\uffff\1\47\3\uffff";
+    static final String dfa_3s = "\1\103\7\uffff\1\75\3\uffff";
+    static final String dfa_4s = "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\uffff\1\12\1\11\1\10";
     static final String dfa_5s = "\14\uffff}>";
     static final String[] dfa_6s = {
-            "\1\11\51\uffff\1\10\1\uffff\1\1\1\2\1\3\3\uffff\1\4\2\uffff\1\5\2\uffff\1\7\1\uffff\1\6\1\uffff\1\12",
+            "\1\10\53\uffff\1\1\1\2\1\3\3\uffff\1\4\2\uffff\1\5\2\uffff\1\7\1\uffff\1\6\1\uffff\1\11",
             "",
             "",
             "",
@@ -21931,8 +21979,8 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
             "",
             "",
             "",
+            "\1\12\25\uffff\1\13",
             "",
-            "\1\13\25\uffff\1\10",
             "",
             ""
     };
@@ -21968,7 +22016,7 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000046A00000000L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000080000000L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000046A00000002L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x923A002A00000080L,0x000000000000000AL});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x9238002A00000080L,0x000000000000000AL});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000100000000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000080L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000400000000L});
@@ -21992,22 +22040,22 @@ public class InternalT5Parser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0004000000000080L});
     public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000001400000000L});
     public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000002A00000002L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x923A000000000082L,0x000000000000000AL});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x9238000000000082L,0x000000000000000AL});
     public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0002000000000080L});
     public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000010400000000L});
     public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x00020080000000F0L,0x0000000000000020L});
     public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0040000000000000L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x93BA000000000080L,0x000000000000000AL});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x923A000000000080L,0x000000000000000AL});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x93B8000000000080L,0x000000000000000AL});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x9238000000000080L,0x000000000000000AL});
     public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0400000000000000L});
     public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0900000000001000L});
     public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000001002L});
     public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x2000000000000000L});
     public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x4000000000000000L});
     public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x8000000000000000L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x923A000000000080L,0x000000000000000BL});
-    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x923A000000000080L,0x000000000000000EL});
-    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0xD23A000000000080L,0x000000000000000AL});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x9238000000000080L,0x000000000000000BL});
+    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x9238000000000080L,0x000000000000000EL});
+    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0xD238000000000080L,0x000000000000000AL});
     public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x00020180000000F0L,0x0000000000000020L});
     public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000000000001000L});
     public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0000000000000020L});

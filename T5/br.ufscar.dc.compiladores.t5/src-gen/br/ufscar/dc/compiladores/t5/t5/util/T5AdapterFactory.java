@@ -76,11 +76,6 @@ public class T5AdapterFactory extends AdapterFactoryImpl
     new T5Switch<Adapter>()
     {
       @Override
-      public Adapter caseModel(Model object)
-      {
-        return createModelAdapter();
-      }
-      @Override
       public Adapter casePrograma(Programa object)
       {
         return createProgramaAdapter();
@@ -276,21 +271,6 @@ public class T5AdapterFactory extends AdapterFactoryImpl
     return modelSwitch.doSwitch((EObject)target);
   }
 
-
-  /**
-   * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.Model <em>Model</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see br.ufscar.dc.compiladores.t5.t5.Model
-   * @generated
-   */
-  public Adapter createModelAdapter()
-  {
-    return null;
-  }
 
   /**
    * Creates a new adapter for an object of class '{@link br.ufscar.dc.compiladores.t5.t5.Programa <em>Programa</em>}'.

@@ -24,15 +24,6 @@ public interface T5Factory extends EFactory
   T5Factory eINSTANCE = br.ufscar.dc.compiladores.t5.t5.impl.T5FactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Model</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Model</em>'.
-   * @generated
-   */
-  Model createModel();
-
-  /**
    * Returns a new object of class '<em>Programa</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

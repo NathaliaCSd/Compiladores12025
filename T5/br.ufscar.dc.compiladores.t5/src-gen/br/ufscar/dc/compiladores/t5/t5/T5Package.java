@@ -58,34 +58,6 @@ public interface T5Package extends EPackage
   T5Package eINSTANCE = br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl.init();
 
   /**
-   * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ModelImpl <em>Model</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see br.ufscar.dc.compiladores.t5.t5.impl.ModelImpl
-   * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getModel()
-   * @generated
-   */
-  int MODEL = 0;
-
-  /**
-   * The feature id for the '<em><b>Programa</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__PROGRAMA = 0;
-
-  /**
-   * The number of structural features of the '<em>Model</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ProgramaImpl <em>Programa</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -93,7 +65,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getPrograma()
    * @generated
    */
-  int PROGRAMA = 1;
+  int PROGRAMA = 0;
 
   /**
    * The feature id for the '<em><b>Declaracoes</b></em>' containment reference list.
@@ -130,7 +102,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getDeclaracao()
    * @generated
    */
-  int DECLARACAO = 2;
+  int DECLARACAO = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -158,7 +130,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getDeclaracaoLocal()
    * @generated
    */
-  int DECLARACAO_LOCAL = 3;
+  int DECLARACAO_LOCAL = 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -222,7 +194,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getDeclaracaoGlobal()
    * @generated
    */
-  int DECLARACAO_GLOBAL = 4;
+  int DECLARACAO_GLOBAL = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -277,7 +249,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getVariavel()
    * @generated
    */
-  int VARIAVEL = 5;
+  int VARIAVEL = 4;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -314,7 +286,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getIdentificador()
    * @generated
    */
-  int IDENTIFICADOR = 6;
+  int IDENTIFICADOR = 5;
 
   /**
    * The feature id for the '<em><b>Dimensoes</b></em>' containment reference list.
@@ -342,7 +314,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getDimensao()
    * @generated
    */
-  int DIMENSAO = 7;
+  int DIMENSAO = 6;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -370,7 +342,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getTipo()
    * @generated
    */
-  int TIPO = 8;
+  int TIPO = 7;
 
   /**
    * The feature id for the '<em><b>Registro</b></em>' containment reference.
@@ -407,7 +379,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getRegistro()
    * @generated
    */
-  int REGISTRO = 9;
+  int REGISTRO = 8;
 
   /**
    * The feature id for the '<em><b>Campos</b></em>' containment reference list.
@@ -435,7 +407,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getTipoEstendido()
    * @generated
    */
-  int TIPO_ESTENDIDO = 10;
+  int TIPO_ESTENDIDO = 9;
 
   /**
    * The feature id for the '<em><b>Basic</b></em>' attribute.
@@ -472,7 +444,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getParametros()
    * @generated
    */
-  int PARAMETROS = 11;
+  int PARAMETROS = 10;
 
   /**
    * The feature id for the '<em><b>Parametro</b></em>' containment reference list.
@@ -500,7 +472,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getParametro()
    * @generated
    */
-  int PARAMETRO = 12;
+  int PARAMETRO = 11;
 
   /**
    * The feature id for the '<em><b>Ids</b></em>' containment reference list.
@@ -537,7 +509,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getCorpo()
    * @generated
    */
-  int CORPO = 13;
+  int CORPO = 12;
 
   /**
    * The feature id for the '<em><b>Locais</b></em>' containment reference list.
@@ -574,7 +546,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComando()
    * @generated
    */
-  int COMANDO = 14;
+  int COMANDO = 13;
 
   /**
    * The number of structural features of the '<em>Comando</em>' class.
@@ -593,7 +565,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoLeia()
    * @generated
    */
-  int COMANDO_LEIA = 15;
+  int COMANDO_LEIA = 14;
 
   /**
    * The feature id for the '<em><b>Alvo</b></em>' reference.
@@ -621,7 +593,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoEscreva()
    * @generated
    */
-  int COMANDO_ESCREVA = 16;
+  int COMANDO_ESCREVA = 15;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -649,7 +621,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoSe()
    * @generated
    */
-  int COMANDO_SE = 17;
+  int COMANDO_SE = 16;
 
   /**
    * The feature id for the '<em><b>Cond</b></em>' containment reference.
@@ -695,7 +667,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoCaso()
    * @generated
    */
-  int COMANDO_CASO = 18;
+  int COMANDO_CASO = 17;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -741,7 +713,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoPara()
    * @generated
    */
-  int COMANDO_PARA = 19;
+  int COMANDO_PARA = 18;
 
   /**
    * The feature id for the '<em><b>Var</b></em>' attribute.
@@ -796,7 +768,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoEnquanto()
    * @generated
    */
-  int COMANDO_ENQUANTO = 20;
+  int COMANDO_ENQUANTO = 19;
 
   /**
    * The feature id for the '<em><b>Cond</b></em>' containment reference.
@@ -833,7 +805,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoFaca()
    * @generated
    */
-  int COMANDO_FACA = 21;
+  int COMANDO_FACA = 20;
 
   /**
    * The feature id for the '<em><b>Comandos</b></em>' containment reference list.
@@ -870,7 +842,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoAtribuicao()
    * @generated
    */
-  int COMANDO_ATRIBUICAO = 22;
+  int COMANDO_ATRIBUICAO = 21;
 
   /**
    * The feature id for the '<em><b>Target</b></em>' reference.
@@ -907,7 +879,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoChamada()
    * @generated
    */
-  int COMANDO_CHAMADA = 23;
+  int COMANDO_CHAMADA = 22;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -944,7 +916,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getComandoRetorne()
    * @generated
    */
-  int COMANDO_RETORNE = 24;
+  int COMANDO_RETORNE = 23;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -972,7 +944,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getSelecao()
    * @generated
    */
-  int SELECAO = 25;
+  int SELECAO = 24;
 
   /**
    * The feature id for the '<em><b>Itens</b></em>' containment reference list.
@@ -1009,7 +981,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getItemSelecao()
    * @generated
    */
-  int ITEM_SELECAO = 26;
+  int ITEM_SELECAO = 25;
 
   /**
    * The feature id for the '<em><b>Faixas</b></em>' containment reference list.
@@ -1037,7 +1009,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getNumeroIntervalo()
    * @generated
    */
-  int NUMERO_INTERVALO = 27;
+  int NUMERO_INTERVALO = 26;
 
   /**
    * The feature id for the '<em><b>Sinal</b></em>' attribute.
@@ -1083,7 +1055,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getExpressaoAritmetica()
    * @generated
    */
-  int EXPRESSAO_ARITMETICA = 28;
+  int EXPRESSAO_ARITMETICA = 27;
 
   /**
    * The feature id for the '<em><b>Termos</b></em>' containment reference list.
@@ -1120,7 +1092,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getOutroTermoAritmetico()
    * @generated
    */
-  int OUTRO_TERMO_ARITMETICO = 29;
+  int OUTRO_TERMO_ARITMETICO = 28;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1157,7 +1129,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getTermoAritmetico()
    * @generated
    */
-  int TERMO_ARITMETICO = 30;
+  int TERMO_ARITMETICO = 29;
 
   /**
    * The feature id for the '<em><b>Fatores</b></em>' containment reference list.
@@ -1194,7 +1166,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getOutroFatorAritmetico()
    * @generated
    */
-  int OUTRO_FATOR_ARITMETICO = 31;
+  int OUTRO_FATOR_ARITMETICO = 30;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1231,7 +1203,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getFatorAritmetico()
    * @generated
    */
-  int FATOR_ARITMETICO = 32;
+  int FATOR_ARITMETICO = 31;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' reference.
@@ -1286,7 +1258,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getExpressao()
    * @generated
    */
-  int EXPRESSAO = 33;
+  int EXPRESSAO = 32;
 
   /**
    * The feature id for the '<em><b>Logicos</b></em>' containment reference list.
@@ -1323,7 +1295,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getTermoLogico()
    * @generated
    */
-  int TERMO_LOGICO = 34;
+  int TERMO_LOGICO = 33;
 
   /**
    * The feature id for the '<em><b>Rel</b></em>' containment reference.
@@ -1351,7 +1323,7 @@ public interface T5Package extends EPackage
    * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getExpressaoRelacional()
    * @generated
    */
-  int EXPRESSAO_RELACIONAL = 35;
+  int EXPRESSAO_RELACIONAL = 34;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1389,27 +1361,6 @@ public interface T5Package extends EPackage
    */
   int EXPRESSAO_RELACIONAL_FEATURE_COUNT = 3;
 
-
-  /**
-   * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.Model <em>Model</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Model</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.Model
-   * @generated
-   */
-  EClass getModel();
-
-  /**
-   * Returns the meta object for the containment reference '{@link br.ufscar.dc.compiladores.t5.t5.Model#getPrograma <em>Programa</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Programa</em>'.
-   * @see br.ufscar.dc.compiladores.t5.t5.Model#getPrograma()
-   * @see #getModel()
-   * @generated
-   */
-  EReference getModel_Programa();
 
   /**
    * Returns the meta object for class '{@link br.ufscar.dc.compiladores.t5.t5.Programa <em>Programa</em>}'.
@@ -2543,24 +2494,6 @@ public interface T5Package extends EPackage
    */
   interface Literals
   {
-    /**
-     * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ModelImpl <em>Model</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see br.ufscar.dc.compiladores.t5.t5.impl.ModelImpl
-     * @see br.ufscar.dc.compiladores.t5.t5.impl.T5PackageImpl#getModel()
-     * @generated
-     */
-    EClass MODEL = eINSTANCE.getModel();
-
-    /**
-     * The meta object literal for the '<em><b>Programa</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MODEL__PROGRAMA = eINSTANCE.getModel_Programa();
-
     /**
      * The meta object literal for the '{@link br.ufscar.dc.compiladores.t5.t5.impl.ProgramaImpl <em>Programa</em>}' class.
      * <!-- begin-user-doc -->

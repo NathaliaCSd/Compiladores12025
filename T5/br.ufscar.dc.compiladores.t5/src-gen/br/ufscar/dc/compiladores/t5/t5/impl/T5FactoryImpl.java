@@ -65,7 +65,6 @@ public class T5FactoryImpl extends EFactoryImpl implements T5Factory
   {
     switch (eClass.getClassifierID())
     {
-      case T5Package.MODEL: return createModel();
       case T5Package.PROGRAMA: return createPrograma();
       case T5Package.DECLARACAO: return createDeclaracao();
       case T5Package.DECLARACAO_LOCAL: return createDeclaracaoLocal();
@@ -104,18 +103,6 @@ public class T5FactoryImpl extends EFactoryImpl implements T5Factory
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Model createModel()
-  {
-    ModelImpl model = new ModelImpl();
-    return model;
   }
 
   /**

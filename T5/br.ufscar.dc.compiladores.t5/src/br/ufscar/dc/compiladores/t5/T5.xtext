@@ -2,9 +2,6 @@ grammar br.ufscar.dc.compiladores.t5.T5 with org.eclipse.xtext.common.Terminals
 
 generate t5 "http://www.ufscar.br/dc/compiladores/t5/T5"
 
-Model:
-    programa=Programa
-;
 
 Programa:
     'DECLARACOES' declaracoes+=Declaracao+

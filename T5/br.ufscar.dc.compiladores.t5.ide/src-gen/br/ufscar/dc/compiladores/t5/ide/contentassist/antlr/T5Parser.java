@@ -94,7 +94,6 @@ public class T5Parser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getTermoLogicoAccess().getGroup(), "rule__TermoLogico__Group__0");
 			builder.put(grammarAccess.getExpressaoRelacionalAccess().getGroup(), "rule__ExpressaoRelacional__Group__0");
 			builder.put(grammarAccess.getExpressaoRelacionalAccess().getGroup_1(), "rule__ExpressaoRelacional__Group_1__0");
-			builder.put(grammarAccess.getModelAccess().getProgramaAssignment(), "rule__Model__ProgramaAssignment");
 			builder.put(grammarAccess.getProgramaAccess().getDeclaracoesAssignment_1(), "rule__Programa__DeclaracoesAssignment_1");
 			builder.put(grammarAccess.getProgramaAccess().getCorpoAssignment_3(), "rule__Programa__CorpoAssignment_3");
 			builder.put(grammarAccess.getDeclaracaoLocalAccess().getVariaveisAssignment_0_1(), "rule__DeclaracaoLocal__VariaveisAssignment_0_1");

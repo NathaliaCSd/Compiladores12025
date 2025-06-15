@@ -3,13 +3,14 @@
  */
 package br.ufscar.dc.compiladores.alguma;
 
+import br.ufscar.dc.compiladores.t5.T5StandaloneSetupGenerated;
 
 /**
  * Initialization support for running Xtext languages without Equinox extension registry.
  */
-public class AlgumaStandaloneSetup extends AlgumaStandaloneSetupGenerated {
+public class T5StandaloneSetup extends T5StandaloneSetupGenerated {
 
 	public static void doSetup() {
-		new AlgumaStandaloneSetup().createInjectorAndDoEMFRegistration();
+		new T5StandaloneSetup().createInjectorAndDoEMFRegistration();
 	}
 }

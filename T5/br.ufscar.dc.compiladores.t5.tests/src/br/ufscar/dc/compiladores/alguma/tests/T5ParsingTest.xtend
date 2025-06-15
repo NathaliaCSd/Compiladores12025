@@ -3,7 +3,8 @@
  */
 package br.ufscar.dc.compiladores.alguma.tests
 
-import br.ufscar.dc.compiladores.alguma.alguma.Model
+import br.ufscar.dc.compiladores.t5.t5.Model
+
 import com.google.inject.Inject
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.extensions.InjectionExtension
@@ -11,10 +12,12 @@ import org.eclipse.xtext.testing.util.ParseHelper
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.^extension.ExtendWith
+import br.ufscar.dc.compiladores.t5.tests.T5InjectorProvider
 
 @ExtendWith(InjectionExtension)
-@InjectWith(AlgumaInjectorProvider)
-class AlgumaParsingTest {
+@InjectWith(T5InjectorProvider)
+
+class T5ParsingTest {
 	@Inject
 	ParseHelper<Model> parseHelper
 	

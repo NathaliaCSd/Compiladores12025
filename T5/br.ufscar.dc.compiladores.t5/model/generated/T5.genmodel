@@ -6,9 +6,6 @@
     complianceLevel="17.0" copyrightFields="false" runtimeVersion="2.36">
   <genPackages prefix="T5" basePackage="br.ufscar.dc.compiladores.t5" disposableProviderFactory="true"
       fileExtensions="et5" ecorePackage="T5.ecore#/">
-    <genClasses ecoreClass="T5.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T5.ecore#//Model/programa"/>
-    </genClasses>
     <genClasses ecoreClass="T5.ecore#//Programa">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T5.ecore#//Programa/declaracoes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T5.ecore#//Programa/corpo"/>

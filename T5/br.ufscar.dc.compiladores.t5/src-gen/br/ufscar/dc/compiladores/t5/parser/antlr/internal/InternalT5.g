@@ -43,7 +43,7 @@ import br.ufscar.dc.compiladores.t5.services.T5GrammarAccess;
 
     @Override
     protected String getFirstRuleName() {
-    	return "Model";
+    	return "Programa";
    	}
 
    	@Override
@@ -59,42 +59,6 @@ import br.ufscar.dc.compiladores.t5.services.T5GrammarAccess;
         appendSkippedTokens();
     }
 }
-
-// Entry rule entryRuleModel
-entryRuleModel returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getModelRule()); }
-	iv_ruleModel=ruleModel
-	{ $current=$iv_ruleModel.current; }
-	EOF;
-
-// Rule Model
-ruleModel returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				newCompositeNode(grammarAccess.getModelAccess().getProgramaProgramaParserRuleCall_0());
-			}
-			lv_programa_0_0=rulePrograma
-			{
-				if ($current==null) {
-					$current = createModelElementForParent(grammarAccess.getModelRule());
-				}
-				set(
-					$current,
-					"programa",
-					lv_programa_0_0,
-					"br.ufscar.dc.compiladores.t5.T5.Programa");
-				afterParserOrEnumRuleCall();
-			}
-		)
-	)
-;
 
 // Entry rule entryRulePrograma
 entryRulePrograma returns [EObject current=null]:

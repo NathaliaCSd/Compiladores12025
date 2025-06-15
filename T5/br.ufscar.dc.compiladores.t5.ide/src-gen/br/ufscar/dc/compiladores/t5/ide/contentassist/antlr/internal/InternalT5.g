@@ -49,31 +49,6 @@ import br.ufscar.dc.compiladores.t5.services.T5GrammarAccess;
 	}
 }
 
-// Entry rule entryRuleModel
-entryRuleModel
-:
-{ before(grammarAccess.getModelRule()); }
-	 ruleModel
-{ after(grammarAccess.getModelRule()); } 
-	 EOF 
-;
-
-// Rule Model
-ruleModel 
-	@init {
-		int stackSize = keepStackSize();
-	}
-	:
-	(
-		{ before(grammarAccess.getModelAccess().getProgramaAssignment()); }
-		(rule__Model__ProgramaAssignment)
-		{ after(grammarAccess.getModelAccess().getProgramaAssignment()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 // Entry rule entryRulePrograma
 entryRulePrograma
 :
@@ -5964,21 +5939,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-
-rule__Model__ProgramaAssignment
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getModelAccess().getProgramaProgramaParserRuleCall_0()); }
-		rulePrograma
-		{ after(grammarAccess.getModelAccess().getProgramaProgramaParserRuleCall_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
 
 rule__Programa__DeclaracoesAssignment_1
 	@init {

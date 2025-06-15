@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="t5" nsURI="http://www.ufscar.br/dc/compiladores/t5/T5" nsPrefix="t5">
-  <eClassifiers xsi:type="ecore:EClass" name="Model">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="programa" eType="#//Programa"
-        containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Programa">
     <eStructuralFeatures xsi:type="ecore:EReference" name="declaracoes" upperBound="-1"
         eType="#//Declaracao" containment="true"/>

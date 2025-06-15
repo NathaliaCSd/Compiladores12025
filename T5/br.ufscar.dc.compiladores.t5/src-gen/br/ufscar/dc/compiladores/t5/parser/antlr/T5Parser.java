@@ -27,7 +27,7 @@ public class T5Parser extends AbstractAntlrParser {
 
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Model";
+		return "Programa";
 	}
 
 	public T5GrammarAccess getGrammarAccess() {

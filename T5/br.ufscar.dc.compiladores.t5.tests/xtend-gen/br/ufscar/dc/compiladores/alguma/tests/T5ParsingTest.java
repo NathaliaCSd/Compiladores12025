@@ -3,6 +3,7 @@
  */
 package br.ufscar.dc.compiladores.alguma.tests;
 
+import br.ufscar.dc.compiladores.t5.tests.T5InjectorProvider;
 import com.google.inject.Inject;
 import org.eclipse.xtext.testing.InjectWith;
 import org.eclipse.xtext.testing.extensions.InjectionExtension;
@@ -10,17 +11,17 @@ import org.eclipse.xtext.testing.util.ParseHelper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-@ExtendWith(InjectionExtension.class)/* 
-@InjectWith(_AlgumaInjectorProvider) */
+@ExtendWith(InjectionExtension.class)
+@InjectWith(T5InjectorProvider.class)
 @SuppressWarnings("all")
-public class AlgumaParsingTest {
+public class T5ParsingTest {
   @Inject
   private /* ParseHelper<Model> */Object parseHelper;
 
   @Test
   public void loadModel() {
     throw new Error("Unresolved compilation problems:"
-      + "\nThe field AlgumaParsingTest.parseHelper refers to the missing type Model"
+      + "\nThe field T5ParsingTest.parseHelper refers to the missing type Model"
       + "\neResource cannot be resolved"
       + "\nerrors cannot be resolved"
       + "\nisEmpty cannot be resolved"

@@ -23,22 +23,6 @@ import org.eclipse.xtext.service.GrammarProvider;
 @Singleton
 public class T5GrammarAccess extends AbstractElementFinder.AbstractGrammarElementFinder {
 	
-	public class ModelElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.ufscar.dc.compiladores.t5.T5.Model");
-		private final Assignment cProgramaAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cProgramaProgramaParserRuleCall_0 = (RuleCall)cProgramaAssignment.eContents().get(0);
-		
-		//Model:
-		//    programa=Programa
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//programa=Programa
-		public Assignment getProgramaAssignment() { return cProgramaAssignment; }
-		
-		//Programa
-		public RuleCall getProgramaProgramaParserRuleCall_0() { return cProgramaProgramaParserRuleCall_0; }
-	}
 	public class ProgramaElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.ufscar.dc.compiladores.t5.T5.Programa");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1775,7 +1759,6 @@ public class T5GrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	}
 	
 	
-	private final ModelElements pModel;
 	private final ProgramaElements pPrograma;
 	private final DeclaracaoElements pDeclaracao;
 	private final DeclaracaoLocalElements pDeclaracaoLocal;
@@ -1829,7 +1812,6 @@ public class T5GrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 			TerminalsGrammarAccess gaTerminals) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
-		this.pModel = new ModelElements();
 		this.pPrograma = new ProgramaElements();
 		this.pDeclaracao = new DeclaracaoElements();
 		this.pDeclaracaoLocal = new DeclaracaoLocalElements();
@@ -1901,17 +1883,6 @@ public class T5GrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		return gaTerminals;
 	}
 
-	
-	//Model:
-	//    programa=Programa
-	//;
-	public ModelElements getModelAccess() {
-		return pModel;
-	}
-	
-	public ParserRule getModelRule() {
-		return getModelAccess().getRule();
-	}
 	
 	//Programa:
 	//    'DECLARACOES' declaracoes+=Declaracao+

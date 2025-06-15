@@ -25,7 +25,6 @@ import br.ufscar.dc.compiladores.t5.t5.ExpressaoRelacional;
 import br.ufscar.dc.compiladores.t5.t5.FatorAritmetico;
 import br.ufscar.dc.compiladores.t5.t5.Identificador;
 import br.ufscar.dc.compiladores.t5.t5.ItemSelecao;
-import br.ufscar.dc.compiladores.t5.t5.Model;
 import br.ufscar.dc.compiladores.t5.t5.NumeroIntervalo;
 import br.ufscar.dc.compiladores.t5.t5.OutroFatorAritmetico;
 import br.ufscar.dc.compiladores.t5.t5.OutroTermoAritmetico;
@@ -57,13 +56,6 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  */
 public class T5PackageImpl extends EPackageImpl implements T5Package
 {
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass modelEClass = null;
-
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -369,28 +361,6 @@ public class T5PackageImpl extends EPackageImpl implements T5Package
     // Update the registry and return the package
     EPackage.Registry.INSTANCE.put(T5Package.eNS_URI, theT5Package);
     return theT5Package;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getModel()
-  {
-    return modelEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getModel_Programa()
-  {
-    return (EReference)modelEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1568,9 +1538,6 @@ public class T5PackageImpl extends EPackageImpl implements T5Package
     isCreated = true;
 
     // Create classes and their features
-    modelEClass = createEClass(MODEL);
-    createEReference(modelEClass, MODEL__PROGRAMA);
-
     programaEClass = createEClass(PROGRAMA);
     createEReference(programaEClass, PROGRAMA__DECLARACOES);
     createEReference(programaEClass, PROGRAMA__CORPO);
@@ -1754,9 +1721,6 @@ public class T5PackageImpl extends EPackageImpl implements T5Package
     comandoRetorneEClass.getESuperTypes().add(this.getComando());
 
     // Initialize classes and features; add operations and parameters
-    initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_Programa(), this.getPrograma(), null, "programa", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(programaEClass, Programa.class, "Programa", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPrograma_Declaracoes(), this.getDeclaracao(), null, "declaracoes", null, 0, -1, Programa.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPrograma_Corpo(), this.getCorpo(), null, "corpo", null, 0, 1, Programa.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

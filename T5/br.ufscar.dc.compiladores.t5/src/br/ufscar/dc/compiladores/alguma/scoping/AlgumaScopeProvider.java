@@ -3,6 +3,7 @@
  */
 package br.ufscar.dc.compiladores.alguma.scoping;
 
+import br.ufscar.dc.compiladores.t5.scoping.AbstractT5ScopeProvider;
 
 /**
  * This class contains custom scoping description.
@@ -10,6 +11,6 @@ package br.ufscar.dc.compiladores.alguma.scoping;
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#scoping
  * on how and when to use it.
  */
-public class AlgumaScopeProvider extends AbstractAlgumaScopeProvider {
+public class AlgumaScopeProvider extends AbstractT5ScopeProvider {
 
 }

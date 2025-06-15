@@ -24,7 +24,6 @@ import br.ufscar.dc.compiladores.t5.t5.ExpressaoRelacional;
 import br.ufscar.dc.compiladores.t5.t5.FatorAritmetico;
 import br.ufscar.dc.compiladores.t5.t5.Identificador;
 import br.ufscar.dc.compiladores.t5.t5.ItemSelecao;
-import br.ufscar.dc.compiladores.t5.t5.Model;
 import br.ufscar.dc.compiladores.t5.t5.NumeroIntervalo;
 import br.ufscar.dc.compiladores.t5.t5.OutroFatorAritmetico;
 import br.ufscar.dc.compiladores.t5.t5.OutroTermoAritmetico;
@@ -124,9 +123,6 @@ public class T5SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case T5Package.ITEM_SELECAO:
 				sequence_ItemSelecao(context, (ItemSelecao) semanticObject); 
-				return; 
-			case T5Package.MODEL:
-				sequence_Model(context, (Model) semanticObject); 
 				return; 
 			case T5Package.NUMERO_INTERVALO:
 				sequence_NumeroIntervalo(context, (NumeroIntervalo) semanticObject); 
@@ -482,26 +478,6 @@ public class T5SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_ItemSelecao(ISerializationContext context, ItemSelecao semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Model returns Model
-	 *
-	 * Constraint:
-	 *     programa=Programa
-	 * </pre>
-	 */
-	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, T5Package.Literals.MODEL__PROGRAMA) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, T5Package.Literals.MODEL__PROGRAMA));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getModelAccess().getProgramaProgramaParserRuleCall_0(), semanticObject.getPrograma());
-		feeder.finish();
 	}
 	
 	

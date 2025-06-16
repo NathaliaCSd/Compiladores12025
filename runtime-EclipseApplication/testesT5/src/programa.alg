@@ -1,6 +1,7 @@
 DECLARACOES
-    declare x: inteiro
+  declare
+    x: inteiro
 ALGORITMO
-    leia(x)
-    escreva(x)
+  leia(x)
+  escreva(x)
 FIM_ALGORITMO

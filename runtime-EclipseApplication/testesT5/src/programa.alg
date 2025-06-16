@@ -1,6 +1,6 @@
 DECLARACOES
-    declare x: literal
+    declare x: inteiro
 ALGORITMO
-    atribua x <- "teste"
+    leia(x)
     escreva(x)
 FIM_ALGORITMO

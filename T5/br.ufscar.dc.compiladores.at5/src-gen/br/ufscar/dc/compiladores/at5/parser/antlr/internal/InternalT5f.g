@@ -1364,7 +1364,7 @@ ruleComandoLeia returns [EObject current=null]
 				}
 				otherlv_3=RULE_ID
 				{
-					newLeafNode(otherlv_3, grammarAccess.getComandoLeiaAccess().getAlvoVariavelCrossReference_3_0());
+					newLeafNode(otherlv_3, grammarAccess.getComandoLeiaAccess().getAlvoIdentificadorCrossReference_3_0());
 				}
 			)
 		)
@@ -1388,7 +1388,7 @@ ruleComandoLeia returns [EObject current=null]
 					}
 					otherlv_6=RULE_ID
 					{
-						newLeafNode(otherlv_6, grammarAccess.getComandoLeiaAccess().getAlvoVariavelCrossReference_4_2_0());
+						newLeafNode(otherlv_6, grammarAccess.getComandoLeiaAccess().getAlvoIdentificadorCrossReference_4_2_0());
 					}
 				)
 			)
@@ -1940,7 +1940,7 @@ ruleComandoAtribuicao returns [EObject current=null]
 				}
 				otherlv_1=RULE_ID
 				{
-					newLeafNode(otherlv_1, grammarAccess.getComandoAtribuicaoAccess().getTargetVariavelCrossReference_1_0());
+					newLeafNode(otherlv_1, grammarAccess.getComandoAtribuicaoAccess().getTargetIdentificadorCrossReference_1_0());
 				}
 			)
 		)
@@ -2593,7 +2593,7 @@ ruleFatorAritmetico returns [EObject current=null]
 					}
 					otherlv_1=RULE_ID
 					{
-						newLeafNode(otherlv_1, grammarAccess.getFatorAritmeticoAccess().getRefVariavelCrossReference_0_1_0());
+						newLeafNode(otherlv_1, grammarAccess.getFatorAritmeticoAccess().getRefIdentificadorCrossReference_0_1_0());
 					}
 				)
 			)

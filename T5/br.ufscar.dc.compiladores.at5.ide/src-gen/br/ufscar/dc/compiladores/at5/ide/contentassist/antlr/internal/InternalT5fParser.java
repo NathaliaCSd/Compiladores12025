@@ -20260,17 +20260,17 @@ public class InternalT5fParser extends AbstractInternalContentAssistParser {
             // InternalT5f.g:6543:2: ( ( RULE_ID ) )
             // InternalT5f.g:6544:3: ( RULE_ID )
             {
-             before(grammarAccess.getComandoLeiaAccess().getAlvoVariavelCrossReference_3_0()); 
+             before(grammarAccess.getComandoLeiaAccess().getAlvoIdentificadorCrossReference_3_0()); 
             // InternalT5f.g:6545:3: ( RULE_ID )
             // InternalT5f.g:6546:4: RULE_ID
             {
-             before(grammarAccess.getComandoLeiaAccess().getAlvoVariavelIDTerminalRuleCall_3_0_1()); 
+             before(grammarAccess.getComandoLeiaAccess().getAlvoIdentificadorIDTerminalRuleCall_3_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getComandoLeiaAccess().getAlvoVariavelIDTerminalRuleCall_3_0_1()); 
+             after(grammarAccess.getComandoLeiaAccess().getAlvoIdentificadorIDTerminalRuleCall_3_0_1()); 
 
             }
 
-             after(grammarAccess.getComandoLeiaAccess().getAlvoVariavelCrossReference_3_0()); 
+             after(grammarAccess.getComandoLeiaAccess().getAlvoIdentificadorCrossReference_3_0()); 
 
             }
 
@@ -20305,17 +20305,17 @@ public class InternalT5fParser extends AbstractInternalContentAssistParser {
             // InternalT5f.g:6562:2: ( ( RULE_ID ) )
             // InternalT5f.g:6563:3: ( RULE_ID )
             {
-             before(grammarAccess.getComandoLeiaAccess().getAlvoVariavelCrossReference_4_2_0()); 
+             before(grammarAccess.getComandoLeiaAccess().getAlvoIdentificadorCrossReference_4_2_0()); 
             // InternalT5f.g:6564:3: ( RULE_ID )
             // InternalT5f.g:6565:4: RULE_ID
             {
-             before(grammarAccess.getComandoLeiaAccess().getAlvoVariavelIDTerminalRuleCall_4_2_0_1()); 
+             before(grammarAccess.getComandoLeiaAccess().getAlvoIdentificadorIDTerminalRuleCall_4_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getComandoLeiaAccess().getAlvoVariavelIDTerminalRuleCall_4_2_0_1()); 
+             after(grammarAccess.getComandoLeiaAccess().getAlvoIdentificadorIDTerminalRuleCall_4_2_0_1()); 
 
             }
 
-             after(grammarAccess.getComandoLeiaAccess().getAlvoVariavelCrossReference_4_2_0()); 
+             after(grammarAccess.getComandoLeiaAccess().getAlvoIdentificadorCrossReference_4_2_0()); 
 
             }
 
@@ -21002,17 +21002,17 @@ public class InternalT5fParser extends AbstractInternalContentAssistParser {
             // InternalT5f.g:6821:2: ( ( RULE_ID ) )
             // InternalT5f.g:6822:3: ( RULE_ID )
             {
-             before(grammarAccess.getComandoAtribuicaoAccess().getTargetVariavelCrossReference_1_0()); 
+             before(grammarAccess.getComandoAtribuicaoAccess().getTargetIdentificadorCrossReference_1_0()); 
             // InternalT5f.g:6823:3: ( RULE_ID )
             // InternalT5f.g:6824:4: RULE_ID
             {
-             before(grammarAccess.getComandoAtribuicaoAccess().getTargetVariavelIDTerminalRuleCall_1_0_1()); 
+             before(grammarAccess.getComandoAtribuicaoAccess().getTargetIdentificadorIDTerminalRuleCall_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getComandoAtribuicaoAccess().getTargetVariavelIDTerminalRuleCall_1_0_1()); 
+             after(grammarAccess.getComandoAtribuicaoAccess().getTargetIdentificadorIDTerminalRuleCall_1_0_1()); 
 
             }
 
-             after(grammarAccess.getComandoAtribuicaoAccess().getTargetVariavelCrossReference_1_0()); 
+             after(grammarAccess.getComandoAtribuicaoAccess().getTargetIdentificadorCrossReference_1_0()); 
 
             }
 
@@ -21855,17 +21855,17 @@ public class InternalT5fParser extends AbstractInternalContentAssistParser {
             // InternalT5f.g:7140:2: ( ( RULE_ID ) )
             // InternalT5f.g:7141:3: ( RULE_ID )
             {
-             before(grammarAccess.getFatorAritmeticoAccess().getRefVariavelCrossReference_0_1_0()); 
+             before(grammarAccess.getFatorAritmeticoAccess().getRefIdentificadorCrossReference_0_1_0()); 
             // InternalT5f.g:7142:3: ( RULE_ID )
             // InternalT5f.g:7143:4: RULE_ID
             {
-             before(grammarAccess.getFatorAritmeticoAccess().getRefVariavelIDTerminalRuleCall_0_1_0_1()); 
+             before(grammarAccess.getFatorAritmeticoAccess().getRefIdentificadorIDTerminalRuleCall_0_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getFatorAritmeticoAccess().getRefVariavelIDTerminalRuleCall_0_1_0_1()); 
+             after(grammarAccess.getFatorAritmeticoAccess().getRefIdentificadorIDTerminalRuleCall_0_1_0_1()); 
 
             }
 
-             after(grammarAccess.getFatorAritmeticoAccess().getRefVariavelCrossReference_0_1_0()); 
+             after(grammarAccess.getFatorAritmeticoAccess().getRefIdentificadorCrossReference_0_1_0()); 
 
             }
 

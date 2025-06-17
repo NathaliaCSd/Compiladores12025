@@ -1824,7 +1824,7 @@ public class T5fPackageImpl extends EPackageImpl implements T5fPackage
     initEClass(comandoEClass, Comando.class, "Comando", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(comandoLeiaEClass, ComandoLeia.class, "ComandoLeia", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getComandoLeia_Alvo(), this.getVariavel(), null, "alvo", null, 0, -1, ComandoLeia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComandoLeia_Alvo(), this.getIdentificador(), null, "alvo", null, 0, -1, ComandoLeia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(comandoEscrevaEClass, ComandoEscreva.class, "ComandoEscreva", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getComandoEscreva_Exp(), this.getExpressao(), null, "exp", null, 0, -1, ComandoEscreva.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1854,7 +1854,7 @@ public class T5fPackageImpl extends EPackageImpl implements T5fPackage
     initEReference(getComandoFaca_Cond(), this.getExpressao(), null, "cond", null, 0, 1, ComandoFaca.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(comandoAtribuicaoEClass, ComandoAtribuicao.class, "ComandoAtribuicao", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getComandoAtribuicao_Target(), this.getVariavel(), null, "target", null, 0, 1, ComandoAtribuicao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComandoAtribuicao_Target(), this.getIdentificador(), null, "target", null, 0, 1, ComandoAtribuicao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getComandoAtribuicao_Valor(), this.getExpressao(), null, "valor", null, 0, 1, ComandoAtribuicao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(comandoChamadaEClass, ComandoChamada.class, "ComandoChamada", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1893,7 +1893,7 @@ public class T5fPackageImpl extends EPackageImpl implements T5fPackage
     initEReference(getOutroFatorAritmetico_Fator(), this.getFatorAritmetico(), null, "fator", null, 0, 1, OutroFatorAritmetico.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(fatorAritmeticoEClass, FatorAritmetico.class, "FatorAritmetico", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFatorAritmetico_Ref(), this.getVariavel(), null, "ref", null, 0, 1, FatorAritmetico.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFatorAritmetico_Ref(), this.getIdentificador(), null, "ref", null, 0, 1, FatorAritmetico.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFatorAritmetico_Numero(), ecorePackage.getEInt(), "numero", null, 0, 1, FatorAritmetico.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFatorAritmetico_Real(), ecorePackage.getEString(), "real", null, 0, 1, FatorAritmetico.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFatorAritmetico_Exp(), this.getExpressaoAritmetica(), null, "exp", null, 0, 1, FatorAritmetico.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

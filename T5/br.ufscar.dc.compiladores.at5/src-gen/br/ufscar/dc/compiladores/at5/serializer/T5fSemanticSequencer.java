@@ -175,7 +175,7 @@ public class T5fSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ComandoAtribuicao returns ComandoAtribuicao
 	 *
 	 * Constraint:
-	 *     (target=[Variavel|ID] valor=Expressao)
+	 *     (target=[Identificador|ID] valor=Expressao)
 	 * </pre>
 	 */
 	protected void sequence_ComandoAtribuicao(ISerializationContext context, ComandoAtribuicao semanticObject) {
@@ -186,7 +186,7 @@ public class T5fSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, T5fPackage.Literals.COMANDO_ATRIBUICAO__VALOR));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getComandoAtribuicaoAccess().getTargetVariavelIDTerminalRuleCall_1_0_1(), semanticObject.eGet(T5fPackage.Literals.COMANDO_ATRIBUICAO__TARGET, false));
+		feeder.accept(grammarAccess.getComandoAtribuicaoAccess().getTargetIdentificadorIDTerminalRuleCall_1_0_1(), semanticObject.eGet(T5fPackage.Literals.COMANDO_ATRIBUICAO__TARGET, false));
 		feeder.accept(grammarAccess.getComandoAtribuicaoAccess().getValorExpressaoParserRuleCall_3_0(), semanticObject.getValor());
 		feeder.finish();
 	}
@@ -274,7 +274,7 @@ public class T5fSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ComandoLeia returns ComandoLeia
 	 *
 	 * Constraint:
-	 *     (alvo+=[Variavel|ID] alvo+=[Variavel|ID]*)
+	 *     (alvo+=[Identificador|ID] alvo+=[Identificador|ID]*)
 	 * </pre>
 	 */
 	protected void sequence_ComandoLeia(ISerializationContext context, ComandoLeia semanticObject) {
@@ -445,7 +445,7 @@ public class T5fSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     FatorAritmetico returns FatorAritmetico
 	 *
 	 * Constraint:
-	 *     (ref=[Variavel|ID] | numero=INT | real=REAL | exp=ExpressaoAritmetica | str=STRING)
+	 *     (ref=[Identificador|ID] | numero=INT | real=REAL | exp=ExpressaoAritmetica | str=STRING)
 	 * </pre>
 	 */
 	protected void sequence_FatorAritmetico(ISerializationContext context, FatorAritmetico semanticObject) {

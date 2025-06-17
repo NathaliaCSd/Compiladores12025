@@ -3550,7 +3550,7 @@ public class InternalT5fParser extends AbstractInternalAntlrParser {
             				
             otherlv_3=(Token)match(input,RULE_ID,FOLLOW_32); 
 
-            					newLeafNode(otherlv_3, grammarAccess.getComandoLeiaAccess().getAlvoVariavelCrossReference_3_0());
+            					newLeafNode(otherlv_3, grammarAccess.getComandoLeiaAccess().getAlvoIdentificadorCrossReference_3_0());
             				
 
             }
@@ -3611,7 +3611,7 @@ public class InternalT5fParser extends AbstractInternalAntlrParser {
             	    					
             	    otherlv_6=(Token)match(input,RULE_ID,FOLLOW_32); 
 
-            	    						newLeafNode(otherlv_6, grammarAccess.getComandoLeiaAccess().getAlvoVariavelCrossReference_4_2_0());
+            	    						newLeafNode(otherlv_6, grammarAccess.getComandoLeiaAccess().getAlvoIdentificadorCrossReference_4_2_0());
             	    					
 
             	    }
@@ -4988,7 +4988,7 @@ public class InternalT5fParser extends AbstractInternalAntlrParser {
             				
             otherlv_1=(Token)match(input,RULE_ID,FOLLOW_40); 
 
-            					newLeafNode(otherlv_1, grammarAccess.getComandoAtribuicaoAccess().getTargetVariavelCrossReference_1_0());
+            					newLeafNode(otherlv_1, grammarAccess.getComandoAtribuicaoAccess().getTargetIdentificadorCrossReference_1_0());
             				
 
             }
@@ -6745,7 +6745,7 @@ public class InternalT5fParser extends AbstractInternalAntlrParser {
                     					
                     otherlv_1=(Token)match(input,RULE_ID,FOLLOW_2); 
 
-                    						newLeafNode(otherlv_1, grammarAccess.getFatorAritmeticoAccess().getRefVariavelCrossReference_0_1_0());
+                    						newLeafNode(otherlv_1, grammarAccess.getFatorAritmeticoAccess().getRefIdentificadorCrossReference_0_1_0());
                     					
 
                     }

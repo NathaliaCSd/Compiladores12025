@@ -5,8 +5,8 @@ package br.ufscar.dc.compiladores.at5.t5f.impl;
 
 import br.ufscar.dc.compiladores.at5.t5f.ExpressaoAritmetica;
 import br.ufscar.dc.compiladores.at5.t5f.FatorAritmetico;
+import br.ufscar.dc.compiladores.at5.t5f.Identificador;
 import br.ufscar.dc.compiladores.at5.t5f.T5fPackage;
-import br.ufscar.dc.compiladores.at5.t5f.Variavel;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -44,7 +44,7 @@ public class FatorAritmeticoImpl extends MinimalEObjectImpl.Container implements
    * @generated
    * @ordered
    */
-  protected Variavel ref;
+  protected Identificador ref;
 
   /**
    * The default value of the '{@link #getNumero() <em>Numero</em>}' attribute.
@@ -143,12 +143,12 @@ public class FatorAritmeticoImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
-  public Variavel getRef()
+  public Identificador getRef()
   {
     if (ref != null && ref.eIsProxy())
     {
       InternalEObject oldRef = (InternalEObject)ref;
-      ref = (Variavel)eResolveProxy(oldRef);
+      ref = (Identificador)eResolveProxy(oldRef);
       if (ref != oldRef)
       {
         if (eNotificationRequired())
@@ -163,7 +163,7 @@ public class FatorAritmeticoImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public Variavel basicGetRef()
+  public Identificador basicGetRef()
   {
     return ref;
   }
@@ -174,9 +174,9 @@ public class FatorAritmeticoImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
-  public void setRef(Variavel newRef)
+  public void setRef(Identificador newRef)
   {
-    Variavel oldRef = ref;
+    Identificador oldRef = ref;
     ref = newRef;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, T5fPackage.FATOR_ARITMETICO__REF, oldRef, ref));
@@ -359,7 +359,7 @@ public class FatorAritmeticoImpl extends MinimalEObjectImpl.Container implements
     switch (featureID)
     {
       case T5fPackage.FATOR_ARITMETICO__REF:
-        setRef((Variavel)newValue);
+        setRef((Identificador)newValue);
         return;
       case T5fPackage.FATOR_ARITMETICO__NUMERO:
         setNumero((Integer)newValue);
@@ -388,7 +388,7 @@ public class FatorAritmeticoImpl extends MinimalEObjectImpl.Container implements
     switch (featureID)
     {
       case T5fPackage.FATOR_ARITMETICO__REF:
-        setRef((Variavel)null);
+        setRef((Identificador)null);
         return;
       case T5fPackage.FATOR_ARITMETICO__NUMERO:
         setNumero(NUMERO_EDEFAULT);

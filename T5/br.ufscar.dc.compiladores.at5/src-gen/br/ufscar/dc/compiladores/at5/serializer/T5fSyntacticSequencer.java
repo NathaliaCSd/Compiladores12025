@@ -103,7 +103,7 @@ public class T5fSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     '^'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'leia' '(' (ambiguity) alvo+=[Variavel|ID]
+	 *     (rule start) 'leia' '(' (ambiguity) alvo+=[Identificador|ID]
 	 
 	 * </pre>
 	 */
@@ -117,7 +117,7 @@ public class T5fSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     '^'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     alvo+=[Variavel|ID] ',' (ambiguity) alvo+=[Variavel|ID]
+	 *     alvo+=[Identificador|ID] ',' (ambiguity) alvo+=[Identificador|ID]
 	 
 	 * </pre>
 	 */
@@ -146,7 +146,7 @@ public class T5fSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     '^'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) ref=[Variavel|ID]
+	 *     (rule start) (ambiguity) ref=[Identificador|ID]
 	 
 	 * </pre>
 	 */

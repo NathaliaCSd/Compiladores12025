@@ -32,12 +32,12 @@ public interface FatorAritmetico extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Ref</em>' reference.
-   * @see #setRef(Variavel)
+   * @see #setRef(Identificador)
    * @see br.ufscar.dc.compiladores.at5.t5f.T5fPackage#getFatorAritmetico_Ref()
    * @model
    * @generated
    */
-  Variavel getRef();
+  Identificador getRef();
 
   /**
    * Sets the value of the '{@link br.ufscar.dc.compiladores.at5.t5f.FatorAritmetico#getRef <em>Ref</em>}' reference.
@@ -47,7 +47,7 @@ public interface FatorAritmetico extends EObject
    * @see #getRef()
    * @generated
    */
-  void setRef(Variavel value);
+  void setRef(Identificador value);
 
   /**
    * Returns the value of the '<em><b>Numero</b></em>' attribute.

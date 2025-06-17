@@ -4,8 +4,8 @@
 package br.ufscar.dc.compiladores.at5.t5f.impl;
 
 import br.ufscar.dc.compiladores.at5.t5f.ComandoLeia;
+import br.ufscar.dc.compiladores.at5.t5f.Identificador;
 import br.ufscar.dc.compiladores.at5.t5f.T5fPackage;
-import br.ufscar.dc.compiladores.at5.t5f.Variavel;
 
 import java.util.Collection;
 
@@ -38,7 +38,7 @@ public class ComandoLeiaImpl extends ComandoImpl implements ComandoLeia
    * @generated
    * @ordered
    */
-  protected EList<Variavel> alvo;
+  protected EList<Identificador> alvo;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,11 +67,11 @@ public class ComandoLeiaImpl extends ComandoImpl implements ComandoLeia
    * @generated
    */
   @Override
-  public EList<Variavel> getAlvo()
+  public EList<Identificador> getAlvo()
   {
     if (alvo == null)
     {
-      alvo = new EObjectResolvingEList<Variavel>(Variavel.class, this, T5fPackage.COMANDO_LEIA__ALVO);
+      alvo = new EObjectResolvingEList<Identificador>(Identificador.class, this, T5fPackage.COMANDO_LEIA__ALVO);
     }
     return alvo;
   }
@@ -105,7 +105,7 @@ public class ComandoLeiaImpl extends ComandoImpl implements ComandoLeia
     {
       case T5fPackage.COMANDO_LEIA__ALVO:
         getAlvo().clear();
-        getAlvo().addAll((Collection<? extends Variavel>)newValue);
+        getAlvo().addAll((Collection<? extends Identificador>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

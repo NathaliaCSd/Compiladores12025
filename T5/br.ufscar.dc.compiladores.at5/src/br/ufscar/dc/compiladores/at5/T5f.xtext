@@ -83,7 +83,7 @@ Comando:
 ;
 
 ComandoLeia:
-  'leia' '(' ('^')? alvo+=[Variavel|ID] (',' ('^')? alvo+=[Variavel|ID])* ')'
+'leia' '(' ('^')? alvo+=[Identificador|ID] (',' ('^')? alvo+=[Identificador|ID])* ')'
 ;
 
 ComandoEscreva:
@@ -111,7 +111,7 @@ ComandoFaca:
 ;
 
 ComandoAtribuicao:
-     'atribua' target=[Variavel|ID] '<-' valor=Expressao
+     'atribua' target=[Identificador|ID] '<-' valor=Expressao
    ;
 
 ComandoChamada:
@@ -155,7 +155,7 @@ OutroFatorAritmetico:
 ;
 
 FatorAritmetico:
-    ('^')? ref=[Variavel|ID]
+    ('^')? ref=[Identificador|ID]
   | numero=INT
   | real=REAL
   | '(' exp=ExpressaoAritmetica ')'

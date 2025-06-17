@@ -781,22 +781,22 @@ public class T5fGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cCircumflexAccentKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cAlvoAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cAlvoVariavelCrossReference_3_0 = (CrossReference)cAlvoAssignment_3.eContents().get(0);
-		private final RuleCall cAlvoVariavelIDTerminalRuleCall_3_0_1 = (RuleCall)cAlvoVariavelCrossReference_3_0.eContents().get(1);
+		private final CrossReference cAlvoIdentificadorCrossReference_3_0 = (CrossReference)cAlvoAssignment_3.eContents().get(0);
+		private final RuleCall cAlvoIdentificadorIDTerminalRuleCall_3_0_1 = (RuleCall)cAlvoIdentificadorCrossReference_3_0.eContents().get(1);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cCommaKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Keyword cCircumflexAccentKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
 		private final Assignment cAlvoAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final CrossReference cAlvoVariavelCrossReference_4_2_0 = (CrossReference)cAlvoAssignment_4_2.eContents().get(0);
-		private final RuleCall cAlvoVariavelIDTerminalRuleCall_4_2_0_1 = (RuleCall)cAlvoVariavelCrossReference_4_2_0.eContents().get(1);
+		private final CrossReference cAlvoIdentificadorCrossReference_4_2_0 = (CrossReference)cAlvoAssignment_4_2.eContents().get(0);
+		private final RuleCall cAlvoIdentificadorIDTerminalRuleCall_4_2_0_1 = (RuleCall)cAlvoIdentificadorCrossReference_4_2_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//ComandoLeia:
-		//  'leia' '(' ('^')? alvo+=[Variavel|ID] (',' ('^')? alvo+=[Variavel|ID])* ')'
+		//'leia' '(' ('^')? alvo+=[Identificador|ID] (',' ('^')? alvo+=[Identificador|ID])* ')'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'leia' '(' ('^')? alvo+=[Variavel|ID] (',' ('^')? alvo+=[Variavel|ID])* ')'
+		//'leia' '(' ('^')? alvo+=[Identificador|ID] (',' ('^')? alvo+=[Identificador|ID])* ')'
 		public Group getGroup() { return cGroup; }
 		
 		//'leia'
@@ -808,16 +808,16 @@ public class T5fGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//('^')?
 		public Keyword getCircumflexAccentKeyword_2() { return cCircumflexAccentKeyword_2; }
 		
-		//alvo+=[Variavel|ID]
+		//alvo+=[Identificador|ID]
 		public Assignment getAlvoAssignment_3() { return cAlvoAssignment_3; }
 		
-		//[Variavel|ID]
-		public CrossReference getAlvoVariavelCrossReference_3_0() { return cAlvoVariavelCrossReference_3_0; }
+		//[Identificador|ID]
+		public CrossReference getAlvoIdentificadorCrossReference_3_0() { return cAlvoIdentificadorCrossReference_3_0; }
 		
 		//ID
-		public RuleCall getAlvoVariavelIDTerminalRuleCall_3_0_1() { return cAlvoVariavelIDTerminalRuleCall_3_0_1; }
+		public RuleCall getAlvoIdentificadorIDTerminalRuleCall_3_0_1() { return cAlvoIdentificadorIDTerminalRuleCall_3_0_1; }
 		
-		//(',' ('^')? alvo+=[Variavel|ID])*
+		//(',' ('^')? alvo+=[Identificador|ID])*
 		public Group getGroup_4() { return cGroup_4; }
 		
 		//','
@@ -826,14 +826,14 @@ public class T5fGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//('^')?
 		public Keyword getCircumflexAccentKeyword_4_1() { return cCircumflexAccentKeyword_4_1; }
 		
-		//alvo+=[Variavel|ID]
+		//alvo+=[Identificador|ID]
 		public Assignment getAlvoAssignment_4_2() { return cAlvoAssignment_4_2; }
 		
-		//[Variavel|ID]
-		public CrossReference getAlvoVariavelCrossReference_4_2_0() { return cAlvoVariavelCrossReference_4_2_0; }
+		//[Identificador|ID]
+		public CrossReference getAlvoIdentificadorCrossReference_4_2_0() { return cAlvoIdentificadorCrossReference_4_2_0; }
 		
 		//ID
-		public RuleCall getAlvoVariavelIDTerminalRuleCall_4_2_0_1() { return cAlvoVariavelIDTerminalRuleCall_4_2_0_1; }
+		public RuleCall getAlvoIdentificadorIDTerminalRuleCall_4_2_0_1() { return cAlvoIdentificadorIDTerminalRuleCall_4_2_0_1; }
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
@@ -1143,31 +1143,31 @@ public class T5fGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cAtribuaKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cTargetAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cTargetVariavelCrossReference_1_0 = (CrossReference)cTargetAssignment_1.eContents().get(0);
-		private final RuleCall cTargetVariavelIDTerminalRuleCall_1_0_1 = (RuleCall)cTargetVariavelCrossReference_1_0.eContents().get(1);
+		private final CrossReference cTargetIdentificadorCrossReference_1_0 = (CrossReference)cTargetAssignment_1.eContents().get(0);
+		private final RuleCall cTargetIdentificadorIDTerminalRuleCall_1_0_1 = (RuleCall)cTargetIdentificadorCrossReference_1_0.eContents().get(1);
 		private final Keyword cLessThanSignHyphenMinusKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cValorAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cValorExpressaoParserRuleCall_3_0 = (RuleCall)cValorAssignment_3.eContents().get(0);
 		
 		//ComandoAtribuicao:
-		//     'atribua' target=[Variavel|ID] '<-' valor=Expressao
+		//     'atribua' target=[Identificador|ID] '<-' valor=Expressao
 		//   ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'atribua' target=[Variavel|ID] '<-' valor=Expressao
+		//'atribua' target=[Identificador|ID] '<-' valor=Expressao
 		public Group getGroup() { return cGroup; }
 		
 		//'atribua'
 		public Keyword getAtribuaKeyword_0() { return cAtribuaKeyword_0; }
 		
-		//target=[Variavel|ID]
+		//target=[Identificador|ID]
 		public Assignment getTargetAssignment_1() { return cTargetAssignment_1; }
 		
-		//[Variavel|ID]
-		public CrossReference getTargetVariavelCrossReference_1_0() { return cTargetVariavelCrossReference_1_0; }
+		//[Identificador|ID]
+		public CrossReference getTargetIdentificadorCrossReference_1_0() { return cTargetIdentificadorCrossReference_1_0; }
 		
 		//ID
-		public RuleCall getTargetVariavelIDTerminalRuleCall_1_0_1() { return cTargetVariavelIDTerminalRuleCall_1_0_1; }
+		public RuleCall getTargetIdentificadorIDTerminalRuleCall_1_0_1() { return cTargetIdentificadorIDTerminalRuleCall_1_0_1; }
 		
 		//'<-'
 		public Keyword getLessThanSignHyphenMinusKeyword_2() { return cLessThanSignHyphenMinusKeyword_2; }
@@ -1504,8 +1504,8 @@ public class T5fGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Keyword cCircumflexAccentKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
 		private final Assignment cRefAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final CrossReference cRefVariavelCrossReference_0_1_0 = (CrossReference)cRefAssignment_0_1.eContents().get(0);
-		private final RuleCall cRefVariavelIDTerminalRuleCall_0_1_0_1 = (RuleCall)cRefVariavelCrossReference_0_1_0.eContents().get(1);
+		private final CrossReference cRefIdentificadorCrossReference_0_1_0 = (CrossReference)cRefAssignment_0_1.eContents().get(0);
+		private final RuleCall cRefIdentificadorIDTerminalRuleCall_0_1_0_1 = (RuleCall)cRefIdentificadorCrossReference_0_1_0.eContents().get(1);
 		private final Assignment cNumeroAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
 		private final RuleCall cNumeroINTTerminalRuleCall_1_0 = (RuleCall)cNumeroAssignment_1.eContents().get(0);
 		private final Assignment cRealAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
@@ -1519,7 +1519,7 @@ public class T5fGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final RuleCall cStrSTRINGTerminalRuleCall_4_0 = (RuleCall)cStrAssignment_4.eContents().get(0);
 		
 		//FatorAritmetico:
-		//    ('^')? ref=[Variavel|ID]
+		//    ('^')? ref=[Identificador|ID]
 		//  | numero=INT
 		//  | real=REAL
 		//  | '(' exp=ExpressaoAritmetica ')'
@@ -1527,27 +1527,27 @@ public class T5fGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//  ('^')? ref=[Variavel|ID]
+		//  ('^')? ref=[Identificador|ID]
 		//| numero=INT
 		//| real=REAL
 		//| '(' exp=ExpressaoAritmetica ')'
 		//| str=STRING
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//('^')? ref=[Variavel|ID]
+		//('^')? ref=[Identificador|ID]
 		public Group getGroup_0() { return cGroup_0; }
 		
 		//('^')?
 		public Keyword getCircumflexAccentKeyword_0_0() { return cCircumflexAccentKeyword_0_0; }
 		
-		//ref=[Variavel|ID]
+		//ref=[Identificador|ID]
 		public Assignment getRefAssignment_0_1() { return cRefAssignment_0_1; }
 		
-		//[Variavel|ID]
-		public CrossReference getRefVariavelCrossReference_0_1_0() { return cRefVariavelCrossReference_0_1_0; }
+		//[Identificador|ID]
+		public CrossReference getRefIdentificadorCrossReference_0_1_0() { return cRefIdentificadorCrossReference_0_1_0; }
 		
 		//ID
-		public RuleCall getRefVariavelIDTerminalRuleCall_0_1_0_1() { return cRefVariavelIDTerminalRuleCall_0_1_0_1; }
+		public RuleCall getRefIdentificadorIDTerminalRuleCall_0_1_0_1() { return cRefIdentificadorIDTerminalRuleCall_0_1_0_1; }
 		
 		//numero=INT
 		public Assignment getNumeroAssignment_1() { return cNumeroAssignment_1; }
@@ -2117,7 +2117,7 @@ public class T5fGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//ComandoLeia:
-	//  'leia' '(' ('^')? alvo+=[Variavel|ID] (',' ('^')? alvo+=[Variavel|ID])* ')'
+	//'leia' '(' ('^')? alvo+=[Identificador|ID] (',' ('^')? alvo+=[Identificador|ID])* ')'
 	//;
 	public ComandoLeiaElements getComandoLeiaAccess() {
 		return pComandoLeia;
@@ -2194,7 +2194,7 @@ public class T5fGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//ComandoAtribuicao:
-	//     'atribua' target=[Variavel|ID] '<-' valor=Expressao
+	//     'atribua' target=[Identificador|ID] '<-' valor=Expressao
 	//   ;
 	public ComandoAtribuicaoElements getComandoAtribuicaoAccess() {
 		return pComandoAtribuicao;
@@ -2315,7 +2315,7 @@ public class T5fGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//FatorAritmetico:
-	//    ('^')? ref=[Variavel|ID]
+	//    ('^')? ref=[Identificador|ID]
 	//  | numero=INT
 	//  | real=REAL
 	//  | '(' exp=ExpressaoAritmetica ')'

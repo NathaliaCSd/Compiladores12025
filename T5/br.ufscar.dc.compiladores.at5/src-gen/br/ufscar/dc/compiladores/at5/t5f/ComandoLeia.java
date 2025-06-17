@@ -25,7 +25,7 @@ public interface ComandoLeia extends Comando
 {
   /**
    * Returns the value of the '<em><b>Alvo</b></em>' reference list.
-   * The list contents are of type {@link br.ufscar.dc.compiladores.at5.t5f.Variavel}.
+   * The list contents are of type {@link br.ufscar.dc.compiladores.at5.t5f.Identificador}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Alvo</em>' reference list.
@@ -33,6 +33,6 @@ public interface ComandoLeia extends Comando
    * @model
    * @generated
    */
-  EList<Variavel> getAlvo();
+  EList<Identificador> getAlvo();
 
 } // ComandoLeia

@@ -10,7 +10,6 @@ import org.antlr.v4.runtime.tree.TerminalNode;
 public class T5Semantico extends T5BaseVisitor<Void> {
 
     private Escopos pilhaDeTabelas = new Escopos();
-    // guarda aqui o escopo global antes de fechá-lo
     private TabelaDeSimbolos tabelaGlobal;
 
     
@@ -22,8 +21,6 @@ public Void visitPrograma(ProgramaContext ctx) {
     return null;
 }
 
-
-
     @Override
     public Void visitCorpo(T5Parser.CorpoContext ctx) {
         pilhaDeTabelas.criarNovoEscopo(); // abre escopo do corpo
@@ -32,18 +29,14 @@ public Void visitPrograma(ProgramaContext ctx) {
         return null;
     }
 
-
-
     @Override
     public Void visitDeclaracao_local(T5Parser.Declaracao_localContext ctx) {
         TabelaDeSimbolos escopoAtual = pilhaDeTabelas.obterEscopoAtual();
 
-        // Caso 1: “declare variavel”
         if (ctx.DECLARE() != null) {
             T5Parser.VariavelContext varCtx = ctx.var1;
             String strTipoVar = varCtx.tipo().getText().toLowerCase();
 
-            // 1.1) tipo não declarado?
             if (!T5SemanticoUtils.ehTipoBasico(strTipoVar)) {
                 String erro = "tipo " + strTipoVar + " nao declarado";
                 T5SemanticoUtils.adicionarErroSemantico(varCtx.tipo().start, erro);
@@ -94,15 +87,12 @@ public Void visitPrograma(ProgramaContext ctx) {
                     }
                 }
             }
-
-        // Caso 2: “constante IDENT : tipo_basico = valor”
         } else if (ctx.CONSTANTE() != null) {
             TerminalNode idNode = (TerminalNode) ctx.var2;
             Token tokenConst = idNode.getSymbol();
             String nomeConst = idNode.getText();
             String strTipoConst = ctx.tipo_basico().getText().toLowerCase();
 
-            // 2.1) tipo básico válido?
             if (!T5SemanticoUtils.ehTipoBasico(strTipoConst)) {
                 String erro = "tipo " + strTipoConst + " nao declarado";
                 T5SemanticoUtils.adicionarErroSemantico(ctx.tipo_basico().start, erro);
@@ -134,7 +124,6 @@ public Void visitPrograma(ProgramaContext ctx) {
                 }
             }
 
-        // Caso 3: “tipo IDENT : tipo”
         } else if (ctx.TIPO() != null) {
             TerminalNode idNode = (TerminalNode) ctx.var3;
             Token tokenTipo = idNode.getSymbol();
@@ -229,7 +218,6 @@ public Void visitPrograma(ProgramaContext ctx) {
 
     @Override
     public Void visitCmdAtribuicao(T5Parser.CmdAtribuicaoContext ctx) {
-        // 1) Checa existência do identificador à esquerda
         String nomeVar = ctx.identificador().getText();
         Token tokenVar = ctx.identificador().start;
         boolean encontrado = false;
@@ -245,7 +233,6 @@ public Void visitPrograma(ProgramaContext ctx) {
             String erro = "identificador " + nomeVar + " nao declarado";
             T5SemanticoUtils.adicionarErroSemantico(tokenVar, erro);
         } else {
-            // 2) Verifica compatibilidade de tipos
             TipoT5 tipoExpressao = T5SemanticoUtils.verificarTipo(pilhaDeTabelas, ctx.expressao());
             TipoT5 tipoId = escEncontrado.verificar(nomeVar);
 

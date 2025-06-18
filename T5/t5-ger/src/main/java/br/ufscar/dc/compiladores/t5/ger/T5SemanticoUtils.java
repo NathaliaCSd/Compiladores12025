@@ -4,10 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import org.antlr.v4.runtime.Token;
 
-import br.ufscar.dc.compiladores.t5.ger.T5Parser;
-import br.ufscar.dc.compiladores.t5.ger.Escopos;
-
-
 import br.ufscar.dc.compiladores.t5.ger.TabelaDeSimbolos.TipoT5;
 
 public class T5SemanticoUtils {
@@ -27,17 +23,13 @@ public class T5SemanticoUtils {
     }
 
     public static boolean ehTipoNumeral(TipoT5 a, TipoT5 b) {
-        // inteiro↔real (qualquer direção) é permitido
         return (a == TipoT5.INTEIRO && b == TipoT5.REAL) ||
                (a == TipoT5.REAL    && b == TipoT5.INTEIRO);
     }
 
     public static boolean ehTipoInteiroEmReal(TipoT5 a, TipoT5 b) {
-        // permite atribuir um inteiro a uma variável real
         return (a == TipoT5.REAL && b == TipoT5.INTEIRO);
     }
-
-    // ---------------------- EXPRESSÃO LÓGICA ----------------------
 
     public static TipoT5 verificarTipo(Escopos pilhaDeTabelas, T5Parser.ExpressaoContext ctx) {
         TipoT5 ret = null;
@@ -88,16 +80,11 @@ public class T5SemanticoUtils {
 
 public static TipoT5 verificarTipo(Escopos pilhaDeTabelas,
                                    T5Parser.TermoRelacionalContext ctx) {
-    // se estiver no formato "( subExpr )"
     if (ctx.expressaoRelacional() != null) {
         return verificarTipo(pilhaDeTabelas, ctx.expressaoRelacional());
     }
-    // senão: é o resultado de um comparador → tipo lógico
     return TipoT5.LOGICO;
 }
-
-
-    // ---------------------- EXPRESSÃO ARITMÉTICA ----------------------
 
     public static TipoT5 verificarTipo(Escopos pilhaDeTabelas, T5Parser.ExpressaoAritmeticaContext ctx) {
         TipoT5 tipo = null;
@@ -106,20 +93,16 @@ public static TipoT5 verificarTipo(Escopos pilhaDeTabelas,
             if (tipo == null) {
                 tipo = aux;
             } else if (tipo != aux && aux != TipoT5.INVALIDO) {
-                // Se for int↔real, converte para REAL
                 if (ehTipoNumeral(tipo, aux)) {
                     tipo = TipoT5.REAL;
                 }
-                // Se qualquer dos dois for LITERAL combinado com algo NÃO LITERAL, é INVÁLIDO
                 else if ((tipo == TipoT5.LITERAL && aux != TipoT5.LITERAL) ||
                          (aux == TipoT5.LITERAL && tipo != TipoT5.LITERAL)) {
                     tipo = TipoT5.INVALIDO;
                 }
-                // Se ambos são LITERAL → mantém LITERAL
                 else if (tipo == TipoT5.LITERAL && aux == TipoT5.LITERAL) {
                     tipo = TipoT5.LITERAL;
                 }
-                // Caso contrário (por exemplo, real+real ou inteiro+inteiro), se iguais, mantém
                 else if (tipo == aux) {
                     // mantém “tipo”
                 } else {
@@ -205,7 +188,7 @@ public static TipoT5 verificarTipo(Escopos pilhaDeTabelas,
             }
             return TipoT5.INVALIDO;
         }
-        // p2 = chamada de funcao; para simplificar, assumimos chamada válida sempre retorna REAL
+        // p2 = chamada de funcao; 
         if (ctx.p2 != null) {
             return TipoT5.REAL;
         }

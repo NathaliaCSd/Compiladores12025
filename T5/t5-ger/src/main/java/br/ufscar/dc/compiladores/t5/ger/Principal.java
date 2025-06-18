@@ -7,8 +7,6 @@ import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 
-import br.ufscar.dc.compiladores.t5.ger.T5Lexer;
-import br.ufscar.dc.compiladores.t5.ger.T5Parser;
 import br.ufscar.dc.compiladores.t5.ger.T5Parser.ProgramaContext;
 
 public class Principal {

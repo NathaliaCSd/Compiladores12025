@@ -1,5 +1,6 @@
 package br.ufscar.dc.compiladores.t5.ger;
 
+import br.ufscar.dc.compiladores.t5.ger.T5Parser.ProgramaContext;
 import br.ufscar.dc.compiladores.t5.ger.TabelaDeSimbolos.TipoT5;
 
 import org.antlr.v4.runtime.Token;
@@ -9,15 +10,19 @@ import org.antlr.v4.runtime.tree.TerminalNode;
 public class T5Semantico extends T5BaseVisitor<Void> {
 
     private Escopos pilhaDeTabelas = new Escopos();
+    // guarda aqui o escopo global antes de fechá-lo
+    private TabelaDeSimbolos tabelaGlobal;
 
+    
     @Override
-    public Void visitPrograma(T5Parser.ProgramaContext ctx) {
-        T5SemanticoUtils.errosSemanticos.clear();
-        pilhaDeTabelas.criarNovoEscopo(); // abre escopo global
-        super.visitPrograma(ctx);
-        pilhaDeTabelas.abandonarEscopo();
-        return null;
-    }
+public Void visitPrograma(ProgramaContext ctx) {
+    T5SemanticoUtils.errosSemanticos.clear();
+    super.visitPrograma(ctx);
+    tabelaGlobal = pilhaDeTabelas.obterEscopoAtual();
+    return null;
+}
+
+
 
     @Override
     public Void visitCorpo(T5Parser.CorpoContext ctx) {
@@ -26,6 +31,8 @@ public class T5Semantico extends T5BaseVisitor<Void> {
         pilhaDeTabelas.abandonarEscopo();
         return null;
     }
+
+
 
     @Override
     public Void visitDeclaracao_local(T5Parser.Declaracao_localContext ctx) {
@@ -276,4 +283,9 @@ public class T5Semantico extends T5BaseVisitor<Void> {
         }
         return super.visitParcela_unario(ctx);
     }
+
+    public TabelaDeSimbolos getTabela() {
+        return tabelaGlobal;
+    }
+
 }

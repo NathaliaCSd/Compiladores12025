@@ -40,6 +40,12 @@ public class TabelaDeSimbolos {
     }
     
     public TipoT5 verificar(String nome) {
-        return tabela.get(nome).tipo;
+    EntradaTabelaDeSimbolos entrada = tabela.get(nome);
+    if (entrada == null) {
+        // evita NullPointerException e sinaliza que não existe
+        return TipoT5.INVALIDO;
     }
+    return entrada.tipo;
+}
+
 }

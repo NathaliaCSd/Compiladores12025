@@ -88,8 +88,9 @@ cmdLeia
     ;
 
 cmdEscreva
-    : ESCREVA '(' expressao (',' (expressao))* ')'
-    ;
+  : ESCREVA '(' (expressaoAritmetica | expressao) (',' (expressaoAritmetica | expressao))* ')'
+  ;
+
 
 cmdSe
     : SE expressao ENTAO (cmd)* (SENAO (cmd)*)? FIM_SE

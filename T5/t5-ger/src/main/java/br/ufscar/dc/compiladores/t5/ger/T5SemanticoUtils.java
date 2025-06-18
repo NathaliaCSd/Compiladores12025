@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import org.antlr.v4.runtime.Token;
 
+import br.ufscar.dc.compiladores.t5.ger.T5Parser;
+import br.ufscar.dc.compiladores.t5.ger.Escopos;
+
+
 import br.ufscar.dc.compiladores.t5.ger.TabelaDeSimbolos.TipoT5;
 
 public class T5SemanticoUtils {
@@ -73,13 +77,25 @@ public class T5SemanticoUtils {
         }
     }
 
-    public static TipoT5 verificarTipo(Escopos pilhaDeTabelas, T5Parser.ExpressaoRelacionalContext ctx) {
-        if (ctx.op_logico() != null) {
-            return TipoT5.LOGICO;
-        } else {
-            return verificarTipo(pilhaDeTabelas, ctx.ExpressaoRelacional(0));
-        }
+    public static TipoT5 verificarTipo(Escopos pilhaDeTabelas,
+                                   T5Parser.ExpressaoRelacionalContext ctx) {
+    if (!ctx.op_logico().isEmpty()) {
+        return TipoT5.LOGICO;
+    } else {
+        return verificarTipo(pilhaDeTabelas, ctx.termoRelacional(0));
     }
+}
+
+public static TipoT5 verificarTipo(Escopos pilhaDeTabelas,
+                                   T5Parser.TermoRelacionalContext ctx) {
+    // se estiver no formato "( subExpr )"
+    if (ctx.expressaoRelacional() != null) {
+        return verificarTipo(pilhaDeTabelas, ctx.expressaoRelacional());
+    }
+    // senão: é o resultado de um comparador → tipo lógico
+    return TipoT5.LOGICO;
+}
+
 
     // ---------------------- EXPRESSÃO ARITMÉTICA ----------------------
 
@@ -208,4 +224,6 @@ public class T5SemanticoUtils {
     public static TipoT5 verificarTipo(TabelaDeSimbolos tabela, String nomeVar) {
         return tabela.verificar(nomeVar);
     }
+
+    
 }

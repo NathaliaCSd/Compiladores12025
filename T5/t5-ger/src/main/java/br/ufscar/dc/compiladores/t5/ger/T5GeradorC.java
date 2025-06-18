@@ -1,98 +1,147 @@
 package br.ufscar.dc.compiladores.t5.ger;
 
+import br.ufscar.dc.compiladores.t5.ger.T5Parser.CmdEscrevaContext;
+import br.ufscar.dc.compiladores.t5.ger.T5Parser.CmdLeiaContext;
+import br.ufscar.dc.compiladores.t5.ger.T5Parser.IdentificadorContext;
 import br.ufscar.dc.compiladores.t5.ger.TabelaDeSimbolos.TipoT5;
-
 import java.util.List;
-import java.io.IOException;
+import org.antlr.v4.runtime.tree.TerminalNode;
 
+/**
+ * Visitor que gera o código C a partir da árvore T5,
+ * usando as informações da tabela de símbolos
+ * construída pela fase semântica.
+ */
 public class T5GeradorC extends T5BaseVisitor<Void> {
 
-    StringBuilder saida;
-    TabelaDeSimbolos tabela;
+    private final Escopos pilhaDeTabelas;
+    private final TabelaDeSimbolos tabela;
+    private final StringBuilder saida = new StringBuilder();
 
-    public T5GeradorC() {
-        saida = new StringBuilder();
-        this.tabela = new TabelaDeSimbolos();
+    public T5GeradorC(TabelaDeSimbolos tabelaGlobal) {
+        this.tabela = tabelaGlobal;
+        // monta a pilha de escopos já com todos os símbolos declarados
+        this.pilhaDeTabelas = new Escopos(tabelaGlobal);
     }
+
+    /*
+     * @Override
+     * public Void visitPrograma(T5Parser.ProgramaContext ctx) {
+     * saida.append("#include <stdio.h>\n");
+     * saida.append("#include <stdlib.h>\n");
+     * ctx.declaracoes().forEach(dec -> visitDeclaracoes(dec));
+     * saida.append("\nint main() {\n");
+     * for (T5Parser.CmdContext c : ctx.corpo().cmd()) {
+     * visitCmd(c);
+     * }
+     * saida.append("  return 0;\n}\n");
+     * return null;
+     * }
+     */
 
     @Override
     public Void visitPrograma(T5Parser.ProgramaContext ctx) {
-        saida.append("#include <stdio.h>\n");
-        saida.append("#include <stdlib.h>\n");
-        saida.append("\n");
+        // 1) includes
+        saida.append("#include <stdio.h>\n")
+                .append("#include <stdlib.h>\n\n");
+        // 2) declarações globais (se houver)
         ctx.declaracoes().forEach(dec -> visitDeclaracoes(dec));
-        saida.append("\n");
-        saida.append("int main() {\n");
-        for (T5Parser.CmdContext c : ctx.corpo().cmd()) {
-            visitCmd(c);
-        }
-        saida.append("}\n");
+        // 3) abre main
+        saida.append("\nint main() {\n");
+        // 4) corpo (variáveis + comandos)
+        visitCorpo(ctx.corpo());
+        // 5) fechamento
+        saida.append("  return 0;\n")
+                .append("}\n");
+        return null;
+    }
 
+    @Override
+    public Void visitCorpo(T5Parser.CorpoContext ctx) {
+        // 0) abre escopo local no gerador
+        pilhaDeTabelas.criarNovoEscopo();
+
+        // 1) declarações locais: registra no escopo E gera C
+        for (T5Parser.Declaracao_localContext loc : ctx.declaracao_local()) {
+            // extrai o nome e o tipo
+            if (loc.var1 != null) {
+                String nome = loc.var1.identificador(0).getText();
+                String txtTipo = loc.var1.tipo().getText().toLowerCase();
+                TipoT5 tipo = txtTipo.equals("real") ? TipoT5.REAL
+                        : txtTipo.equals("literal") ? TipoT5.LITERAL
+                                : TipoT5.INTEIRO;
+                pilhaDeTabelas.obterEscopoAtual().adicionar(nome, tipo);
+            }
+            visitDeclaracao_local(loc);
+        }
+
+        // 2) comandos
+        for (T5Parser.CmdContext cmd : ctx.cmd()) {
+            visitCmd(cmd);
+        }
+
+        // 3) fecha escopo local
+        pilhaDeTabelas.abandonarEscopo();
         return null;
     }
 
     @Override
     public Void visitDeclaracoes(T5Parser.DeclaracoesContext ctx) {
-        // Se for uma declaração local (variável, constante ou tipo)
+        // Declaração local (variável, constante ou tipo)
         if (ctx.declaracao_local() != null) {
             T5Parser.Declaracao_localContext d = ctx.declaracao_local();
 
-            // Caso seja uma CONSTANTE (var2 != null)
+            // Caso CONSTANTE: var2 != null
             if (d.var2 != null) {
-                String nomeVar = d.var2.getText();
-                String strTipoVar = d.tipo_basico().getText().toLowerCase();
-                TabelaDeSimbolos.TipoT5 tipoVar = TabelaDeSimbolos.TipoT5.INVALIDO;
-
-                // Mapeia o tipo do T5 para o tipo C
-                switch (strTipoVar) {
+                String nome = d.var2.getText();
+                String strTipo = d.tipo_basico().getText().toLowerCase();
+                String cTipo;
+                switch (strTipo) {
                     case "inteiro":
-                        tipoVar = TabelaDeSimbolos.TipoT5.INTEIRO;
-                        strTipoVar = "int";
+                        cTipo = "int";
                         break;
                     case "real":
-                        tipoVar = TabelaDeSimbolos.TipoT5.REAL;
-                        strTipoVar = "float";
+                        cTipo = "float";
                         break;
                     default:
-                        // nunca chega aqui, pois a gramática só permite literal, inteiro, real, lógico
-                        // ou registro
-                        break;
+                        cTipo = "int";
                 }
-
-                // Adiciona na tabela e gera a declaração em C
-                tabela.adicionar(nomeVar, tipoVar);
-                saida.append(strTipoVar)
+                // gera: <tipo> <nome> = <valor>;
+                saida.append(cTipo)
                         .append(" ")
-                        .append(nomeVar)
+                        .append(nome)
                         .append(" = ")
                         .append(d.valor_constante().getText())
                         .append(";\n");
 
-                // Caso seja uma VARIÁVEL (declaração com 'declare')
+                // Caso VARIÁVEL (declare): var1 != null
             } else if (d.var1 != null) {
-                // d.var1 é o contexto da regra variavel
-                List<T5Parser.IdentificadorContext> ids = d.var1.identificador();
-                String strTipoVar = d.var1.tipo().getText().toLowerCase();
-                String cTipo = strTipoVar.equals("real") ? "float" : "int";
-                TabelaDeSimbolos.TipoT5 tipoVar = strTipoVar.equals("real") ? TabelaDeSimbolos.TipoT5.REAL
-                        : TabelaDeSimbolos.TipoT5.INTEIRO;
-
-                // Para cada identificador declarado, gera e adiciona na tabela
-                for (T5Parser.IdentificadorContext idCtx : ids) {
-                    String nomeVar = idCtx.getText();
-                    tabela.adicionar(nomeVar, tipoVar);
-                    saida.append(cTipo)
-                            .append(" ")
-                            .append(nomeVar)
-                            .append(";\n");
+                String strTipo = d.var1.tipo().getText().toLowerCase();
+                if (strTipo.equals("literal")) {
+                    // gera char x[80];
+                    for (IdentificadorContext idCtx : d.var1.identificador()) {
+                        String nome = idCtx.getText();
+                        saida.append("char ").append(nome).append("[80];\n");
+                    }
+                } else {
+                    // seu código existente:
+                    String cTipo = strTipo.equals("real") ? "float" : "int";
+                    for (IdentificadorContext idCtx : d.var1.identificador()) {
+                        String nome = idCtx.getText();
+                        saida.append(cTipo).append(" ").append(nome).append(";\n");
+                    }
                 }
-            }
-            // (caso “tipo” — definição de record — você pode gerar struct aqui)
 
-            // Se for uma declaração global (procedimento ou função)
+            } else {
+                // ex. d.var3 é o IDENT do tipo, d.tipo é a regra de registro
+                // …
+            }
+
+            // Declaração global (procedimento/função)
         } else if (ctx.declaracao_global() != null) {
             visitDeclaracao_global(ctx.declaracao_global());
         }
+
         return null;
     }
 
@@ -113,9 +162,61 @@ public class T5GeradorC extends T5BaseVisitor<Void> {
     }
 
     @Override
+    public Void visitCmdLeia(CmdLeiaContext ctx) {
+        for (IdentificadorContext idCtx : ctx.identificador()) {
+            String nome = idCtx.getText();
+
+            // 1) Encontra o tipo da variável na pilha de escopos
+            TipoT5 tipoVariavel = TipoT5.INVALIDO;
+            for (TabelaDeSimbolos esc : pilhaDeTabelas.percorrerEscoposAninhados()) {
+                if (esc.existe(nome)) {
+                    tipoVariavel = esc.verificar(nome);
+                    break;
+                }
+            }
+
+            // 2) Gera o código de leitura adequado
+            if (tipoVariavel == TipoT5.LITERAL) {
+                saida.append("gets(").append(nome).append(");\n");
+            } else {
+                String fmt = (tipoVariavel == TipoT5.REAL ? "%f" : "%d");
+                saida.append("scanf(\"").append(fmt).append("\", &").append(nome).append(");\n");
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public Void visitCmdEscreva(CmdEscrevaContext ctx) {
+        var exprA = ctx.expressaoAritmetica();
+        var exprL = ctx.expressao();
+        int total = Math.max(exprA.size(), exprL.size());
+        for (int i = 0; i < total; i++) {
+            // 1) determina tipo
+            TipoT5 tipo = (i < exprA.size())
+                    ? T5SemanticoUtils.verificarTipo(pilhaDeTabelas, exprA.get(i))
+                    : T5SemanticoUtils.verificarTipo(pilhaDeTabelas, exprL.get(i));
+            // 2) pega o texto que vai no printf
+            String arg = (i < exprA.size())
+                    ? exprA.get(i).getText()
+                    : exprL.get(i).getText();
+            // 3) gera o printf adequado
+            if (tipo == TipoT5.LITERAL) {
+                saida.append("printf(\"%s\", ").append(arg).append(");\n");
+            } else {
+                String fmt = (tipo == TipoT5.REAL ? "%f" : "%d");
+                saida.append("printf(\"").append(fmt)
+                        .append("\\n\", ").append(arg).append(");\n");
+            }
+        }
+        return null;
+    }
+
+    @Override
     public Void visitCmdAtribuicao(T5Parser.CmdAtribuicaoContext ctx) {
-        saida.append(ctx.VARIAVEL().getText() + " = ");
-        visitExpressaoAritmetica(ctx.expressaoAritmetica());
+        String nomeVar = ctx.identificador().getText();
+        saida.append(nomeVar).append(" = ");
+        visitExpressao(ctx.expressao());
         saida.append(";\n");
         return null;
     }
@@ -123,158 +224,35 @@ public class T5GeradorC extends T5BaseVisitor<Void> {
     @Override
     public Void visitCmdSe(T5Parser.CmdSeContext ctx) {
         saida.append("if(");
-        visitExpressaoRelacional(ctx.expressaoRelacional());
-        saida.append(")\n");
+        visitExpressao(ctx.expressao());
+        saida.append(") ");
         visitCmd(ctx.cmd(0));
-        if (ctx.cmd().size() > 1) { // tem else
-            saida.append("else\n");
+        if (ctx.cmd().size() > 1) {
+            saida.append("else ");
             visitCmd(ctx.cmd(1));
         }
         return null;
     }
 
     @Override
-    public Void visitCmdLeia(T5Parser.CmdLeiaContext ctx) {
-        String nomeVar = ctx.VARIAVEL().getText();
-        TipoT5 tipoVariavel = T5SemanticoUtils.verificarTipo(tabela, nomeVar);
-        String aux = "";
-        switch (tipoVariavel) {
-            case INTEIRO:
-                aux = "%d";
-                break;
-            case REAL:
-                aux = "%f";
-                break;
-        }
-        saida.append("scanf(\"" + aux + "\", &" + nomeVar + ");\n");
-        return null;
-    }
-
-    @Override
     public Void visitCmdEnquanto(T5Parser.CmdEnquantoContext ctx) {
         saida.append("while(");
-        visitExpressaoRelacional(ctx.expressaoRelacional());
-        saida.append(")\n");
-        visitCmd(ctx.cmd());
+        visitExpressao(ctx.expressao());
+        saida.append(") {\n");
+        for (T5Parser.CmdContext c : ctx.cmd()) {
+            visitCmd(c);
+        }
+        saida.append("}\n");
         return null;
     }
 
-    @Override
-    public Void visitCmdEscreva(T5Parser.CmdEscrevaContext ctx) {
-        if (ctx.pn2() != null) {
-            String aux = ctx.pn2().getText();
-            aux = aux.substring(1, aux.length() - 1);
-            saida.append("printf(\"" + aux + "\\n\");\n");
-        } else {
-            TipoT5 tipoExpressao = T5SemanticoUtils.verificarTipo(tabela, ctx.expressaoAritmetica());
-            String aux = "";
-            switch (tipoExpressao) {
-                case INTEIRO:
-                    aux = "%d";
-                    break;
-                case REAL:
-                    aux = "%f";
-                    break;
-            }
-            saida.append("printf(\"" + aux + "\\n\",");
-            visitExpressaoAritmetica(ctx.expressaoAritmetica());
-            saida.append(");\n");
-        }
-        return null;
-    }
+    // … demais visitadores de expressões aritméticas, fator, parcela, relacional …
+    // (copie exatamente o que você já havia implementado antes) …
 
-    @Override
-    public Void visitExpressaoAritmetica(T5Parser.ExpressaoAritmeticaContext ctx) {
-        visitTermoAritmetico(ctx.termoAritmetico(0));
-        for (int i = 0; i < ctx.op1().size(); i++) {
-            saida.append(" " + ctx.op1(i).getText() + " ");
-            visitTermoAritmetico(ctx.termoAritmetico(i + 1));
-        }
-        return null;
-    }
-
-    @Override
-    public Void visitTermoAritmetico(T5Parser.TermoAritmeticoContext ctx) {
-        visitFatorAritmetico(ctx.fatorAritmetico(0));
-        for (int i = 0; i < ctx.op2().size(); i++) {
-            saida.append(" " + ctx.op2(i).getText() + " ");
-            visitFatorAritmetico(ctx.fatorAritmetico(i + 1));
-        }
-        return null;
-    }
-
-    @Override
-    public Void visitFatorAritmetico(T5Parser.FatorAritmeticoContext ctx) {
-        // primeira parcela
-        visitParcela_unario(ctx.parcelas.get(0));
-
-        // repete para cada '%'
-        for (int i = 0; i < ctx.op3.size(); i++) {
-            saida.append(" ").append(ctx.op3.get(i).getText()).append(" ");
-            visitParcela_unario(ctx.parcelas.get(i + 1));
-        }
-        return null;
-    }
-
-    @Override
-    public Void visitParcela_unario(T5Parser.Parcela_unarioContext ctx) {
-        if (ctx.p3 != null) {
-            saida.append(ctx.p3.getText()); // NUM_INT
-        } else if (ctx.p4 != null) {
-            saida.append(ctx.p4.getText()); // NUM_REAL
-        } else if (ctx.p1 != null) {
-            saida.append(ctx.p1.getText()); // identificador
-        } else if (ctx.p2 != null) {
-            // ctx.p2 é o IDENT da chamada; ctx.expressao() lista os parâmetros
-            saida.append(ctx.p2.getText()).append("(");
-            for (int i = 0; i < ctx.expressao().size(); i++) {
-                if (i > 0)
-                    saida.append(", ");
-                visitExpressao(ctx.expressao(i));
-            }
-            saida.append(")");
-        } else {
-            // parênteses: ctx.p5 é a sub-expressão
-            saida.append("(");
-            visitExpressao(ctx.p5);
-            saida.append(")");
-        }
-        return null;
-    }
-
-    @Override
-    public Void visitExpressaoRelacional(T5Parser.ExpressaoRelacionalContext ctx) {
-        visitTermoRelacional(ctx.termoRelacional(0));
-        for (int i = 0; i < ctx.op_logico().size(); i++) {
-            String aux = null;
-            if (ctx.op_logico(i).getText().equals("E")) {
-                aux = "&&";
-            } else {
-                aux = "||";
-            }
-            saida.append(" " + aux + " ");
-            visitTermoRelacional(ctx.termoRelacional(i + 1));
-        }
-        return null;
-    }
-
-    @Override
-    public Void visitTermoRelacional(T5Parser.TermoRelacionalContext ctx) {
-        if (ctx.expressaoRelacional() != null) {
-            saida.append("(");
-            visitExpressaoRelacional(ctx.expressaoRelacional());
-            saida.append(")");
-        } else {
-            visitExpressaoAritmetica(ctx.expressaoAritmetica(0));
-            String aux = ctx.op_relacional().getText();
-            if (aux.equals("<>")) {
-                aux = "!=";
-            } else if (aux.equals("=")) {
-                aux = "==";
-            }
-            saida.append(" " + aux + " ");
-            visitExpressaoAritmetica(ctx.expressaoAritmetica(1));
-        }
-        return null;
+    /**
+     * Recupera todo o código C gerado até aqui.
+     */
+    public String getSaida() {
+        return saida.toString();
     }
 }

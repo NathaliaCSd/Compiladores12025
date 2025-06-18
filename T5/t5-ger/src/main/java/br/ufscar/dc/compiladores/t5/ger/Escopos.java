@@ -13,6 +13,11 @@ public class Escopos {
         criarNovoEscopo();
     }
 
+    public Escopos(TabelaDeSimbolos tabelaGlobal) {
+        pilhaDeTabelas = new LinkedList<>();
+        pilhaDeTabelas.push(tabelaGlobal);
+    }
+
     public void criarNovoEscopo() {
         pilhaDeTabelas.push(new TabelaDeSimbolos());
     }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 { dados o nome, o preço e o tipo dos vinhos (indicados aqui por "T" para tinto, "B" para branco ou "R" para rosê, descrever o vinho mais caro; não são considerados vinhos de preços iguais; fim dos dados indicado por nome = "fim" }
 
 algoritmo
@@ -27,4 +28,12 @@ algoritmo
 	senao
 		escreva(vinhoCaro.nome, vinhoCaro.preco, vinhocaro.tipoVinho)
 	fim_se
+=======
+algoritmo
+  declare
+    x: literal
+  leia(x)
+  escreva(x)
+>>>>>>> 2340f6c7bc576b30cc6eacfdb352399f46db4836
 fim_algoritmo
+

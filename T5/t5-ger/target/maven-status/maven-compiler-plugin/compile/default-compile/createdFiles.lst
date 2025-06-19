@@ -30,6 +30,7 @@ br/ufscar/dc/compiladores/t5/ger/T5Parser$CmdEnquantoContext.class
 br/ufscar/dc/compiladores/t5/ger/T5Visitor.class
 br/ufscar/dc/compiladores/t5/ger/T5Semantico.class
 br/ufscar/dc/compiladores/t5/ger/T5BaseVisitor.class
+br/ufscar/dc/compiladores/t5/ger/Principal$2.class
 br/ufscar/dc/compiladores/t5/ger/T5Parser$Op_relacionalContext.class
 br/ufscar/dc/compiladores/t5/ger/T5Parser$ExpressaoRelacionalContext.class
 br/ufscar/dc/compiladores/t5/ger/T5Parser$CorpoContext.class
@@ -59,5 +60,6 @@ br/ufscar/dc/compiladores/t5/ger/T5Parser$Declaracao_localContext.class
 br/ufscar/dc/compiladores/t5/ger/T5SemanticoUtils.class
 br/ufscar/dc/compiladores/t5/ger/T5Parser$ParcelaContext.class
 br/ufscar/dc/compiladores/t5/ger/T5Parser.class
+br/ufscar/dc/compiladores/t5/ger/Principal$1.class
 br/ufscar/dc/compiladores/t5/ger/T5Parser$VariavelContext.class
 br/ufscar/dc/compiladores/t5/ger/T5Parser$CmdSeContext.class

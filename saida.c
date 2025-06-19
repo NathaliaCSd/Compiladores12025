@@ -2,8 +2,8 @@
 #include <stdlib.h>
 
 int main() {
-  char x[80];
-gets(x);
-printf("%s", x);
+  float x;
+scanf("%f", &x);
+printf("%f\n", x);
   return 0;
 }

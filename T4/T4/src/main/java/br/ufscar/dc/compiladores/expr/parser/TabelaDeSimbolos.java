@@ -3,25 +3,36 @@ package br.ufscar.dc.compiladores.expr.parser;
 import java.util.HashMap;
 import java.util.Map;
 
-//classe tabela de simbolos disponibilizada pelo professor no github da disciplina 
-
 public class TabelaDeSimbolos {
     public enum TipoAlguma {
+        LITERAL,
         INTEIRO,
         REAL,
-        LITERAL,
-        INVALIDO, 
         LOGICO,
-        REGISTRO
+        ENDERECO,
+        REGISTRO,
+        INVALIDO
+    }
+
+    public enum TipoEntrada{
+        VARIAVEL,
+        TIPO
     }
     
     class EntradaTabelaDeSimbolos {
         String nome;
         TipoAlguma tipo;
+        boolean ehPonteiro;
+        TabelaDeSimbolos registro;
+        TipoEntrada tipoEntrada;
 
-        private EntradaTabelaDeSimbolos(String nome, TipoAlguma tipo) {
+        private EntradaTabelaDeSimbolos(String nome, TipoAlguma tipo, boolean ehPonteiro,
+                                        TabelaDeSimbolos registro, TipoEntrada tipoEntrada) {
             this.nome = nome;
             this.tipo = tipo;
+            this.ehPonteiro = ehPonteiro;
+            this.registro = registro;
+            this.tipoEntrada = tipoEntrada;
         }
     }
     
@@ -31,8 +42,9 @@ public class TabelaDeSimbolos {
         this.tabela = new HashMap<>();
     }
     
-    public void adicionar(String nome, TipoAlguma tipo) {
-        tabela.put(nome, new EntradaTabelaDeSimbolos(nome, tipo));
+    public void adicionar(String nome, TipoAlguma tipo, boolean ehPonteiro, 
+                            TabelaDeSimbolos registro, TipoEntrada tipoEntrada) {
+        tabela.put(nome, new EntradaTabelaDeSimbolos(nome, tipo, ehPonteiro, registro, tipoEntrada));
     }
     
     public boolean existe(String nome) {
@@ -41,5 +53,13 @@ public class TabelaDeSimbolos {
     
     public TipoAlguma verificar(String nome) {
         return tabela.get(nome).tipo;
+    }
+
+    public boolean verificarPonteiro(String nome){
+        return tabela.get(nome).ehPonteiro;
+    }
+
+    public TabelaDeSimbolos verificarRegistro(String nome){
+        return tabela.get(nome).registro;
     }
 }

@@ -6,8 +6,7 @@ import java.util.List;
 public class Escopos {
 
     private LinkedList<TabelaDeSimbolos> pilhaDeTabelas;
-    public Object obterEscopoAtual;
-//classe escopos disponibilizada pelo professor no github da disciplina 
+
     public Escopos() {
         pilhaDeTabelas = new LinkedList<>();
         criarNovoEscopo();

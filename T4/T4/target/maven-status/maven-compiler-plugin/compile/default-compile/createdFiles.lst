@@ -7,6 +7,7 @@ br\ufscar\dc\compiladores\expr\parser\AlgumaVisitor.class
 br\ufscar\dc\compiladores\expr\parser\AlgumaParser$CmdChamadaContext.class
 br\ufscar\dc\compiladores\expr\parser\AlgumaParser$Fator_logicoContext.class
 br\ufscar\dc\compiladores\expr\parser\AlgumaParser$ProgramaContext.class
+br\ufscar\dc\compiladores\expr\parser\TabelaDeSimbolos$TipoEntrada.class
 br\ufscar\dc\compiladores\expr\parser\AlgumaParser$CmdSeContext.class
 br\ufscar\dc\compiladores\expr\parser\AlgumaParser$ParametrosContext.class
 br\ufscar\dc\compiladores\expr\parser\AlgumaParser$Op2Context.class

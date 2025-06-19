@@ -2,8 +2,9 @@
 #include <stdlib.h>
 
 int main() {
-  float x;
-scanf("%f", &x);
-printf("%f\n", x);
+  int x;
+scanf("%d", &x);
+printf("%s", "O valor fornecido foi: ");
+printf("%d\n", x);
   return 0;
 }

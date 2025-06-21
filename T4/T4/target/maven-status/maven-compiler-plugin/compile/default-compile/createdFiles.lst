@@ -58,6 +58,7 @@ br\ufscar\dc\compiladores\expr\parser\AlgumaSemantico.class
 br\ufscar\dc\compiladores\expr\parser\AlgumaBaseListener.class
 br\ufscar\dc\compiladores\expr\parser\Escopos.class
 br\ufscar\dc\compiladores\expr\parser\AlgumaParser$CmdParaContext.class
+br\ufscar\dc\compiladores\expr\parser\InfoIdentificador.class
 br\ufscar\dc\compiladores\expr\parser\Principal.class
 br\ufscar\dc\compiladores\expr\parser\AlgumaParser$ParcelaContext.class
 br\ufscar\dc\compiladores\expr\parser\AlgumaParser$Parcela_nao_unarioContext.class

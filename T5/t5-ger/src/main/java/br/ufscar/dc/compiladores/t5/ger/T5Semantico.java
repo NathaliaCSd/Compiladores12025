@@ -1,278 +1,228 @@
 package br.ufscar.dc.compiladores.t5.ger;
 
-import br.ufscar.dc.compiladores.t5.ger.T5Parser.ProgramaContext;
 import br.ufscar.dc.compiladores.t5.ger.TabelaDeSimbolos.TipoT5;
 
-import org.antlr.v4.runtime.Token;
-import org.antlr.v4.runtime.tree.TerminalNode;
+import br.ufscar.dc.compiladores.t5.ger.T5Parser.CmdChamadaContext;
+import br.ufscar.dc.compiladores.t5.ger. T5Parser.Declaracao_globalContext;
+import br.ufscar.dc.compiladores.t5.ger. T5Parser.Declaracao_localContext;
+import br.ufscar.dc.compiladores.t5.ger. T5Parser.ParametroContext;
+import br.ufscar.dc.compiladores.t5.ger. T5Parser.VariavelContext;
+import br.ufscar.dc.compiladores.t5.ger.TabelaDeSimbolos.EntradaTabelaDeSimbolos;
+import br.ufscar.dc.compiladores.t5.ger.TabelaDeSimbolos.TipoEntrada;
 
-// Construído usando Visitor
 public class T5Semantico extends T5BaseVisitor<Void> {
+    Escopos pilhaDeTabelas = new Escopos();
+    private EntradaTabelaDeSimbolos subRotinaAtual = null;
 
-    private Escopos pilhaDeTabelas = new Escopos();
-    private TabelaDeSimbolos tabelaGlobal;
+    @Override public Void visitPrograma(T5Parser.ProgramaContext ctx) { super.visitPrograma(ctx); return null; }
 
+    @Override
+    public Void visitDeclaracao_global(Declaracao_globalContext ctx) {
+        TabelaDeSimbolos escopoGlobal = pilhaDeTabelas.obterEscopoAtual();
+        String nomeSubRotina = ctx.IDENT().getText();
+        if (escopoGlobal.existe(nomeSubRotina)) {
+            T5SemanticoUtils.adicionarErroSemantico(ctx.start, "identificador " + nomeSubRotina + " ja declarado anteriormente");
+            return null;
+        }
+
+        if (ctx.start.getText().equals("funcao")) {
+            TipoT5 tipoRetorno = T5SemanticoUtils.getTipo(ctx.tipo_estendido().getText());
+            escopoGlobal.adicionarFuncao(nomeSubRotina, tipoRetorno);
+        } else {
+            escopoGlobal.adicionarProcedimento(nomeSubRotina);
+        }
+        subRotinaAtual = escopoGlobal.getEntrada(nomeSubRotina);
+
+        pilhaDeTabelas.criarNovoEscopo();
+        TabelaDeSimbolos escopoLocal = pilhaDeTabelas.obterEscopoAtual();
+
+        if (ctx.parametros() != null) {
+            for (ParametroContext pCtx : ctx.parametros().parametro()) {
+                boolean ehVarParam = pCtx.VAR() != null;
+                String nomeTipoParam = pCtx.tipo_estendido().getText();
+                boolean ehPonteiro = nomeTipoParam.startsWith("^");
+                if(ehPonteiro) nomeTipoParam = nomeTipoParam.substring(1);
+                
+                TipoT5 tipoParam = TipoT5.INVALIDO;
+                TabelaDeSimbolos tabelaDoTipoParam = null;
+
+                if(T5SemanticoUtils.ehTipoBasico(nomeTipoParam)) {
+                    tipoParam = T5SemanticoUtils.getTipo(nomeTipoParam);
+                } else {
+                    EntradaTabelaDeSimbolos entradaTipo = pilhaDeTabelas.obterEntrada(nomeTipoParam);
+                    if(entradaTipo != null && entradaTipo.getTipoEntrada() == TipoEntrada.TIPO) {
+                        tipoParam = entradaTipo.getTipo();
+                        tabelaDoTipoParam = entradaTipo.getRegistro();
+                    } else {
+                        T5SemanticoUtils.adicionarErroSemantico(pCtx.tipo_estendido().start, "tipo " + nomeTipoParam + " nao declarado");
+                    }
+                }
+
+                if(tipoParam != TipoT5.INVALIDO) {
+                    for(var idCtx : pCtx.identificador()){
+                        String nomeParam = idCtx.IDENT(0).getText();
+                        boolean ehVetorParam = !idCtx.dimensao().getText().isEmpty();
+                        if(escopoLocal.existe(nomeParam)) {
+                            T5SemanticoUtils.adicionarErroSemantico(idCtx.start, "identificador " + nomeParam + " ja declarado anteriormente");
+                        } else {
+                            escopoLocal.adicionar(nomeParam, TipoEntrada.VARIAVEL, tipoParam, ehPonteiro, tabelaDoTipoParam, ehVetorParam, ehVarParam);
+                            escopoGlobal.adicionarParametro(nomeSubRotina, escopoLocal.getEntrada(nomeParam));
+                        }
+                    }
+                }
+            }
+        }
+        
+        for(var decl : ctx.declaracao_local()) visitDeclaracao_local(decl);
+        for(var cmd : ctx.cmd()) visitCmd(cmd);
+        pilhaDeTabelas.abandonarEscopo();
+        subRotinaAtual = null;
+        return null;
+    }
+
+    @Override
+    public Void visitCmdRetorne(T5Parser.CmdRetorneContext ctx) {
+        if (subRotinaAtual == null || subRotinaAtual.getTipoEntrada() != TipoEntrada.FUNCAO) {
+            T5SemanticoUtils.adicionarErroSemantico(ctx.start, "comando retorne nao permitido nesse escopo");
+        } else {
+            TipoT5 tipoRetornoEsperado = subRotinaAtual.getTipoRetorno();
+            TipoT5 tipoRetornoVerificado = T5SemanticoUtils.verificarTipo(pilhaDeTabelas, ctx.expressao());
+            if (tipoRetornoVerificado != tipoRetornoEsperado && !T5SemanticoUtils.ehTipoInteiroEmReal(tipoRetornoEsperado, tipoRetornoVerificado)) {
+                T5SemanticoUtils.adicionarErroSemantico(ctx.start, "tipo de retorno incompativel");
+            }
+        }
+        return super.visitCmdRetorne(ctx);
+    }
+    
+    @Override public Void visitCorpo(T5Parser.CorpoContext ctx) { pilhaDeTabelas.criarNovoEscopo(); super.visitCorpo(ctx); pilhaDeTabelas.abandonarEscopo(); return null; }
+    
+    public void declaracaoVariavel(VariavelContext ctx){
+        TabelaDeSimbolos escopoAtual = pilhaDeTabelas.obterEscopoAtual();
+        String nomeTipo = ctx.tipo().getText();
+        TipoT5 tipoVar = TipoT5.INVALIDO;
+        TabelaDeSimbolos tabelaDoTipo = null;
+        boolean ehPonteiro = false;
+
+        if (ctx.tipo().tipo_estendido() != null && ctx.tipo().tipo_estendido().getText().startsWith("^")) {
+            ehPonteiro = true;
+            nomeTipo = nomeTipo.substring(1);
+        }
+        if (ctx.tipo().registro() != null) {
+            tipoVar = TipoT5.REGISTRO;
+            pilhaDeTabelas.criarNovoEscopo();
+            for (var v : ctx.tipo().registro().variavel()) declaracaoVariavel(v);
+            tabelaDoTipo = pilhaDeTabelas.obterEscopoAtual();
+            pilhaDeTabelas.abandonarEscopo();
+        } else { 
+            if (T5SemanticoUtils.ehTipoBasico(nomeTipo)) tipoVar = T5SemanticoUtils.getTipo(nomeTipo);
+            else {
+                EntradaTabelaDeSimbolos entrada = pilhaDeTabelas.obterEntrada(nomeTipo);
+                if(entrada != null && entrada.getTipoEntrada() == TipoEntrada.TIPO) {
+                    tipoVar = entrada.getTipo();
+                    tabelaDoTipo = entrada.getRegistro();
+                } else {
+                    T5SemanticoUtils.adicionarErroSemantico(ctx.tipo().start, "tipo " + nomeTipo + " nao declarado");
+                    return;
+                }
+            }
+        }
+        for (var idCtx : ctx.identificador()){
+            String nomeVariavel = idCtx.IDENT(0).getText();
+            // Verificação hierárquica para evitar conflito com constantes ou sub-rotinas globais.
+            if (pilhaDeTabelas.obterEntrada(nomeVariavel) != null) {
+                T5SemanticoUtils.adicionarErroSemantico(idCtx.start, "identificador " + nomeVariavel + " ja declarado anteriormente");
+            } else {
+                boolean ehVetor = !idCtx.dimensao().getText().isEmpty();
+                escopoAtual.adicionar(nomeVariavel, TipoEntrada.VARIAVEL, tipoVar, ehPonteiro, tabelaDoTipo, ehVetor, false);
+            }
+        }
+    }
+    
+    // NOVO MÉTODO
+    public void declaracaoConstante(Declaracao_localContext ctx) {
+        TabelaDeSimbolos escopoAtual = pilhaDeTabelas.obterEscopoAtual();
+        String nomeConst = ctx.var2.getText();
+
+        // Verificação hierárquica
+        if (pilhaDeTabelas.obterEntrada(nomeConst) != null) {
+            T5SemanticoUtils.adicionarErroSemantico(ctx.var2, "identificador " + nomeConst + " ja declarado anteriormente");
+        } else {
+            TipoT5 tipoConst = T5SemanticoUtils.getTipo(ctx.tipo_basico().getText());
+            // O valor não é armazenado pois não é usado na análise semântica, mas poderia ser.
+            escopoAtual.adicionarConstante(nomeConst, tipoConst, null);
+        }
+    }
+
+    public void declaracaoTipo(Declaracao_localContext ctx){
+        TabelaDeSimbolos escopoAtual = pilhaDeTabelas.obterEscopoAtual();
+        String nomeTipo = ctx.var3.getText();
+        if (pilhaDeTabelas.obterEntrada(nomeTipo) != null) {
+            T5SemanticoUtils.adicionarErroSemantico(ctx.start, "tipo " + nomeTipo + " ja declarado anteriormente");
+            return;
+        }
+        T5Parser.TipoContext tipoCtx = ctx.tipo();
+        if (tipoCtx.registro() != null) {
+            pilhaDeTabelas.criarNovoEscopo();
+            for(var variavelRegistro : tipoCtx.registro().variavel()) declaracaoVariavel(variavelRegistro);
+            TabelaDeSimbolos tabelaDoRegistro = pilhaDeTabelas.obterEscopoAtual();
+            pilhaDeTabelas.abandonarEscopo();
+            escopoAtual.adicionar(nomeTipo, TipoEntrada.TIPO, TipoT5.REGISTRO, false, tabelaDoRegistro, false, false);
+        }
+    }
+    
+    @Override public Void visitDeclaracao_local(Declaracao_localContext ctx){
+        if (ctx.var1 != null) {
+            declaracaoVariavel(ctx.var1);
+        } else if (ctx.var2 != null) {
+            declaracaoConstante(ctx);
+        } else if (ctx.var3 != null) {
+            declaracaoTipo(ctx);
+        }
+        return null;
+    }
+    
+    @Override public Void visitCmdLeia(T5Parser.CmdLeiaContext ctx){ for (var v : ctx.identificador()) T5SemanticoUtils.verificarIdentificador(pilhaDeTabelas, v); return null; }
+    @Override public Void visitCmdEscreva(T5Parser.CmdEscrevaContext ctx){ for (var e : ctx.expressao()) T5SemanticoUtils.verificarTipo(pilhaDeTabelas, e); return null; }
     
     @Override
-public Void visitPrograma(ProgramaContext ctx) {
-    T5SemanticoUtils.errosSemanticos.clear();
-    super.visitPrograma(ctx);
-    tabelaGlobal = pilhaDeTabelas.obterEscopoAtual();
-    return null;
-}
-
-    @Override
-    public Void visitCorpo(T5Parser.CorpoContext ctx) {
-        pilhaDeTabelas.criarNovoEscopo(); // abre escopo do corpo
-        super.visitCorpo(ctx);
-        pilhaDeTabelas.abandonarEscopo();
-        return null;
-    }
-
-    @Override
-    public Void visitDeclaracao_local(T5Parser.Declaracao_localContext ctx) {
-        TabelaDeSimbolos escopoAtual = pilhaDeTabelas.obterEscopoAtual();
-
-        if (ctx.DECLARE() != null) {
-            T5Parser.VariavelContext varCtx = ctx.var1;
-            String strTipoVar = varCtx.tipo().getText().toLowerCase();
-
-            if (!T5SemanticoUtils.ehTipoBasico(strTipoVar)) {
-                String erro = "tipo " + strTipoVar + " nao declarado";
-                T5SemanticoUtils.adicionarErroSemantico(varCtx.tipo().start, erro);
-                // cadastra tudo como INVALIDO para evitar cascata
-                for (T5Parser.IdentificadorContext idCtx : varCtx.identificador()) {
-                    String nomeVar = idCtx.getText();
-                    Token t = idCtx.start;
-                    if (escopoAtual.existe(nomeVar)) {
-                        String erroRedeclara = "identificador " + nomeVar + " ja declarado anteriormente";
-                        T5SemanticoUtils.adicionarErroSemantico(t, erroRedeclara);
-                    } else {
-                        escopoAtual.adicionar(nomeVar, TipoT5.INVALIDO);
-                    }
-                }
-            } else {
-                // 1.2) converte para enum
-                TipoT5 tipoVar = TipoT5.INVALIDO;
-                switch (strTipoVar) {
-                    case "inteiro":
-                        tipoVar = TipoT5.INTEIRO;
-                        break;
-                    case "real":
-                        tipoVar = TipoT5.REAL;
-                        break;
-                    case "literal":
-                        tipoVar = TipoT5.LITERAL;
-                        break;
-                    case "logico":
-                        tipoVar = TipoT5.LOGICO;
-                        break;
-                    case "registro":
-                        tipoVar = TipoT5.REGISTRO;
-                        break;
-                    default:
-                        // Nunca irá acontecer, pois o analisador sintático
-                        // não permite
-                        break;
-                }
-                // 1.3) adiciona cada identificador, checando redeclaração
-                for (T5Parser.IdentificadorContext idCtx : varCtx.identificador()) {
-                    String nomeVar = idCtx.getText();
-                    Token t = idCtx.start;
-                    if (escopoAtual.existe(nomeVar)) {
-                        String erroRedeclara = "identificador " + nomeVar + " ja declarado anteriormente";
-                        T5SemanticoUtils.adicionarErroSemantico(t, erroRedeclara);
-                    } else {
-                        escopoAtual.adicionar(nomeVar, tipoVar);
-                    }
-                }
-            }
-        } else if (ctx.CONSTANTE() != null) {
-            TerminalNode idNode = (TerminalNode) ctx.var2;
-            Token tokenConst = idNode.getSymbol();
-            String nomeConst = idNode.getText();
-            String strTipoConst = ctx.tipo_basico().getText().toLowerCase();
-
-            if (!T5SemanticoUtils.ehTipoBasico(strTipoConst)) {
-                String erro = "tipo " + strTipoConst + " nao declarado";
-                T5SemanticoUtils.adicionarErroSemantico(ctx.tipo_basico().start, erro);
-                if (escopoAtual.existe(nomeConst)) {
-                    String erroRedeclara = "identificador " + nomeConst + " ja declarado anteriormente";
-                    T5SemanticoUtils.adicionarErroSemantico(tokenConst, erroRedeclara);
-                } else {
-                    escopoAtual.adicionar(nomeConst, TipoT5.INVALIDO);
-                }
-            } else {
-                TipoT5 tipoConst = TipoT5.INVALIDO;
-                switch (strTipoConst) {
-                    case "inteiro": tipoConst = TipoT5.INTEIRO; 
-                    break;
-                    case "registro": tipoConst = TipoT5.REGISTRO; 
-                    break;
-                    case "real":    tipoConst = TipoT5.REAL;    
-                    break;
-                    case "literal": tipoConst = TipoT5.LITERAL; 
-                    break;
-                    case "logico":  tipoConst = TipoT5.LOGICO;  
-                    break;
-                }
-                if (escopoAtual.existe(nomeConst)) {
-                    String erroRedeclara = "identificador " + nomeConst + " ja declarado anteriormente";
-                    T5SemanticoUtils.adicionarErroSemantico(tokenConst, erroRedeclara);
-                } else {
-                    escopoAtual.adicionar(nomeConst, tipoConst);
-                }
-            }
-
-        } else if (ctx.TIPO() != null) {
-            TerminalNode idNode = (TerminalNode) ctx.var3;
-            Token tokenTipo = idNode.getSymbol();
-            String nomeTipo = idNode.getText();
-            T5Parser.TipoContext tipoCtx = ctx.tipo();
-
-            boolean tipoValido = false;
-            if (tipoCtx.registro() != null) {
-                tipoValido = true;
-            } else if (tipoCtx.tipo_estendido() != null) {
-                T5Parser.Tipo_estendidoContext teCtx = tipoCtx.tipo_estendido();
-                if (teCtx.PONTEIRO() != null) {
-                    String apontado = teCtx.tipo_basico_ident().getText().toLowerCase();
-                    if (T5SemanticoUtils.ehTipoBasico(apontado)) {
-                        tipoValido = true;
-                    } else {
-                        for (TabelaDeSimbolos esc : pilhaDeTabelas.percorrerEscoposAninhados()) {
-                            if (esc.existe(apontado)) {
-                                tipoValido = true;
-                                break;
-                            }
-                        }
-                    }
-                } else {
-                    String nomeIdTipo = teCtx.getText().toLowerCase();
-                    if (T5SemanticoUtils.ehTipoBasico(nomeIdTipo)) {
-                        tipoValido = true;
-                    } else {
-                        for (TabelaDeSimbolos esc : pilhaDeTabelas.percorrerEscoposAninhados()) {
-                            if (esc.existe(nomeIdTipo)) {
-                                tipoValido = true;
-                                break;
-                            }
-                        }
-                    }
-                }
-            }
-
-            if (!tipoValido) {
-                String erro = "tipo " + tipoCtx.getText().toLowerCase() + " nao declarado";
-                T5SemanticoUtils.adicionarErroSemantico(tokenTipo, erro);
-                if (escopoAtual.existe(nomeTipo)) {
-                    String erroRedeclara = "identificador " + nomeTipo + " ja declarado anteriormente";
-                    T5SemanticoUtils.adicionarErroSemantico(tokenTipo, erroRedeclara);
-                } else {
-                    escopoAtual.adicionar(nomeTipo, TipoT5.INVALIDO);
-                }
-            } else {
-                if (escopoAtual.existe(nomeTipo)) {
-                    String erroRedeclara = "identificador " + nomeTipo + " ja declarado anteriormente";
-                    T5SemanticoUtils.adicionarErroSemantico(tokenTipo, erroRedeclara);
-                } else {
-                    if (tipoCtx.registro() != null) {
-                        escopoAtual.adicionar(nomeTipo, TipoT5.REGISTRO);
-                    } else {
-                        // Alias de tipo existente ou tipo básico: marcamos INVALIDO para não quebrar navegação
-                        escopoAtual.adicionar(nomeTipo, TipoT5.INVALIDO);
-                    }
-                }
-            }
-        }
-
-        return super.visitDeclaracao_local(ctx);
-    }
-
-    @Override
-    public Void visitCmdLeia(T5Parser.CmdLeiaContext ctx) {
-        for (T5Parser.IdentificadorContext idCtx : ctx.identificador()) {
-            String nomeId = idCtx.getText();
-            boolean encontrado = false;
-            for (TabelaDeSimbolos esc : pilhaDeTabelas.percorrerEscoposAninhados()) {
-                if (esc.existe(nomeId)) {
-                    encontrado = true;
-                    break;
-                }
-            }
-            if (!encontrado) {
-                String erro = "identificador " + nomeId + " nao declarado";
-                T5SemanticoUtils.adicionarErroSemantico(idCtx.start, erro);
-            }
-        }
-        return null;
-    }
-
-    @Override
-    public Void visitCmdEscreva(T5Parser.CmdEscrevaContext ctx) {
-        for (T5Parser.ExpressaoContext exprCtx : ctx.expressao()) {
-            visitExpressao(exprCtx);
-        }
-        return null;
-    }
-
-    @Override
-    public Void visitCmdAtribuicao(T5Parser.CmdAtribuicaoContext ctx) {
-        String nomeVar = ctx.identificador().getText();
-        Token tokenVar = ctx.identificador().start;
-        boolean encontrado = false;
-        TabelaDeSimbolos escEncontrado = null;
-        for (TabelaDeSimbolos esc : pilhaDeTabelas.percorrerEscoposAninhados()) {
-            if (esc.existe(nomeVar)) {
-                encontrado = true;
-                escEncontrado = esc;
-                break;
-            }
-        }
-        if (!encontrado) {
-            String erro = "identificador " + nomeVar + " nao declarado";
-            T5SemanticoUtils.adicionarErroSemantico(tokenVar, erro);
+    public Void visitCmdAtribuicao(T5Parser.CmdAtribuicaoContext ctx) { 
+        InfoIdentificador infoLhs = T5SemanticoUtils.verificarIdentificador(pilhaDeTabelas, ctx.identificador());
+        if (infoLhs.tipo == TipoT5.INVALIDO) return null;
+        TipoT5 tipoRhs = T5SemanticoUtils.verificarTipo(pilhaDeTabelas, ctx.expressao());
+        boolean isLhsDereferenced = ctx.getText().startsWith("^");
+        String nomeLhs = ctx.identificador().getText();
+        if (isLhsDereferenced) { 
+            if (!infoLhs.ehPonteiro) { T5SemanticoUtils.adicionarErroSemantico(ctx.start, "identificador " + nomeLhs + " nao e um ponteiro"); return null; }
+            TipoT5 tipoBaseLhs = infoLhs.tipo;
+            if (!tipoRhs.equals(tipoBaseLhs) && !T5SemanticoUtils.ehTipoInteiroEmReal(tipoBaseLhs, tipoRhs)) T5SemanticoUtils.adicionarErroSemantico(ctx.start, "atribuicao nao compativel para ^" + nomeLhs);
         } else {
-            TipoT5 tipoExpressao = T5SemanticoUtils.verificarTipo(pilhaDeTabelas, ctx.expressao());
-            TipoT5 tipoId = escEncontrado.verificar(nomeVar);
-
-            if (tipoExpressao == TipoT5.INVALIDO
-                    || !(tipoExpressao.equals(tipoId)
-                         || T5SemanticoUtils.ehTipoInteiroEmReal(tipoId, tipoExpressao))) {
-                String erro = "atribuicao nao compativel para " + nomeVar;
-                T5SemanticoUtils.adicionarErroSemantico(tokenVar, erro);
+            if (tipoRhs == TipoT5.ENDERECO) {
+                if (!infoLhs.ehPonteiro) T5SemanticoUtils.adicionarErroSemantico(ctx.start, "atribuicao nao compativel para " + nomeLhs);
+                else {
+                    T5Parser.Parcela_nao_unarioContext pnuCtx = ctx.expressao().termo_logico(0).fator_logico(0).parcela_logica().exp_relacional().exp_aritmetica(0).termo(0).fator(0).parcela(0).parcela_nao_unario();
+                    if(pnuCtx != null && pnuCtx.pn1 != null) { 
+                        InfoIdentificador infoRhs = T5SemanticoUtils.verificarIdentificador(pilhaDeTabelas, pnuCtx.pn1);
+                        if (infoRhs.tipo != TipoT5.INVALIDO && infoLhs.tipo != infoRhs.tipo) T5SemanticoUtils.adicionarErroSemantico(ctx.start, "atribuicao nao compativel para " + nomeLhs);
+                    }
+                }
+            } else {
+                if (infoLhs.ehPonteiro) { T5SemanticoUtils.adicionarErroSemantico(ctx.start, "atribuicao nao compativel para " + nomeLhs); return null; }
+                if (infoLhs.tipo == TipoT5.REGISTRO && tipoRhs == TipoT5.REGISTRO) return null;
+                if (!tipoRhs.equals(infoLhs.tipo) && !T5SemanticoUtils.ehTipoInteiroEmReal(infoLhs.tipo, tipoRhs)) T5SemanticoUtils.adicionarErroSemantico(ctx.start, "atribuicao nao compativel para " + nomeLhs);
             }
         }
         return null;
     }
 
+    @Override public Void visitCmdSe(T5Parser.CmdSeContext ctx) { T5SemanticoUtils.verificarTipo(pilhaDeTabelas, ctx.expressao()); super.visitCmdSe(ctx); return null; }
+    
     @Override
-    public Void visitExpressaoAritmetica(T5Parser.ExpressaoAritmeticaContext ctx) {
-        T5SemanticoUtils.verificarTipo(pilhaDeTabelas, ctx);
-        return super.visitExpressaoAritmetica(ctx);
+    public Void visitCmdChamada(CmdChamadaContext ctx) {
+        String nomeProc = ctx.IDENT().getText();
+        EntradaTabelaDeSimbolos entrada = pilhaDeTabelas.obterEntrada(nomeProc);
+        if(entrada == null) { T5SemanticoUtils.adicionarErroSemantico(ctx.start, "identificador " + nomeProc + " nao declarado"); return null; }
+        if(entrada.getTipoEntrada() != TipoEntrada.PROCEDIMENTO) { T5SemanticoUtils.adicionarErroSemantico(ctx.start, "identificador " + nomeProc + " nao e um procedimento"); return null; }
+        T5SemanticoUtils.verificarParametros(pilhaDeTabelas, entrada, ctx.expressao(), ctx.start);
+        return null;
     }
-
-    @Override
-    public Void visitParcela_unario(T5Parser.Parcela_unarioContext ctx) {
-        if (ctx.p1 != null) {
-            String nomeId = ctx.p1.getText();
-            boolean encontrado = false;
-            for (TabelaDeSimbolos esc : pilhaDeTabelas.percorrerEscoposAninhados()) {
-                if (esc.existe(nomeId)) {
-                    encontrado = true;
-                    break;
-                }
-            }
-            if (!encontrado) {
-                String erro = "identificador " + nomeId + " nao declarado";
-                T5SemanticoUtils.adicionarErroSemantico(ctx.p1.start, erro);
-            }
-        }
-        return super.visitParcela_unario(ctx);
-    }
-
-    public TabelaDeSimbolos getTabela() {
-        return tabelaGlobal;
-    }
-
 }

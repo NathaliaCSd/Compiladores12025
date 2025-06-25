@@ -50,7 +50,7 @@ public class Principal {
                 return;
             }
 
-            T5GeradorC ger = new T5GeradorC(sem.getTabela());
+            T5GeradorC ger = new T5GeradorC(sem.pilhaDeTabelas);
             ger.visit(arvore);
             pw.print(ger.getSaida());
         }

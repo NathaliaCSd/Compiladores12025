@@ -328,35 +328,35 @@ public interface T5Listener extends ParseTreeListener {
 	 */
 	void exitOp_unario(T5Parser.Op_unarioContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link T5Parser#expressaoAritmetica}.
+	 * Enter a parse tree produced by {@link T5Parser#exp_aritmetica}.
 	 * @param ctx the parse tree
 	 */
-	void enterExpressaoAritmetica(T5Parser.ExpressaoAritmeticaContext ctx);
+	void enterExp_aritmetica(T5Parser.Exp_aritmeticaContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link T5Parser#expressaoAritmetica}.
+	 * Exit a parse tree produced by {@link T5Parser#exp_aritmetica}.
 	 * @param ctx the parse tree
 	 */
-	void exitExpressaoAritmetica(T5Parser.ExpressaoAritmeticaContext ctx);
+	void exitExp_aritmetica(T5Parser.Exp_aritmeticaContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link T5Parser#termoAritmetico}.
+	 * Enter a parse tree produced by {@link T5Parser#termo}.
 	 * @param ctx the parse tree
 	 */
-	void enterTermoAritmetico(T5Parser.TermoAritmeticoContext ctx);
+	void enterTermo(T5Parser.TermoContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link T5Parser#termoAritmetico}.
+	 * Exit a parse tree produced by {@link T5Parser#termo}.
 	 * @param ctx the parse tree
 	 */
-	void exitTermoAritmetico(T5Parser.TermoAritmeticoContext ctx);
+	void exitTermo(T5Parser.TermoContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link T5Parser#fatorAritmetico}.
+	 * Enter a parse tree produced by {@link T5Parser#fator}.
 	 * @param ctx the parse tree
 	 */
-	void enterFatorAritmetico(T5Parser.FatorAritmeticoContext ctx);
+	void enterFator(T5Parser.FatorContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link T5Parser#fatorAritmetico}.
+	 * Exit a parse tree produced by {@link T5Parser#fator}.
 	 * @param ctx the parse tree
 	 */
-	void exitFatorAritmetico(T5Parser.FatorAritmeticoContext ctx);
+	void exitFator(T5Parser.FatorContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link T5Parser#op1}.
 	 * @param ctx the parse tree
@@ -418,25 +418,15 @@ public interface T5Listener extends ParseTreeListener {
 	 */
 	void exitParcela_nao_unario(T5Parser.Parcela_nao_unarioContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link T5Parser#expressaoRelacional}.
+	 * Enter a parse tree produced by {@link T5Parser#exp_relacional}.
 	 * @param ctx the parse tree
 	 */
-	void enterExpressaoRelacional(T5Parser.ExpressaoRelacionalContext ctx);
+	void enterExp_relacional(T5Parser.Exp_relacionalContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link T5Parser#expressaoRelacional}.
+	 * Exit a parse tree produced by {@link T5Parser#exp_relacional}.
 	 * @param ctx the parse tree
 	 */
-	void exitExpressaoRelacional(T5Parser.ExpressaoRelacionalContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link T5Parser#termoRelacional}.
-	 * @param ctx the parse tree
-	 */
-	void enterTermoRelacional(T5Parser.TermoRelacionalContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link T5Parser#termoRelacional}.
-	 * @param ctx the parse tree
-	 */
-	void exitTermoRelacional(T5Parser.TermoRelacionalContext ctx);
+	void exitExp_relacional(T5Parser.Exp_relacionalContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link T5Parser#op_relacional}.
 	 * @param ctx the parse tree
@@ -488,13 +478,23 @@ public interface T5Listener extends ParseTreeListener {
 	 */
 	void exitParcela_logica(T5Parser.Parcela_logicaContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link T5Parser#op_logico}.
+	 * Enter a parse tree produced by {@link T5Parser#op_logico_1}.
 	 * @param ctx the parse tree
 	 */
-	void enterOp_logico(T5Parser.Op_logicoContext ctx);
+	void enterOp_logico_1(T5Parser.Op_logico_1Context ctx);
 	/**
-	 * Exit a parse tree produced by {@link T5Parser#op_logico}.
+	 * Exit a parse tree produced by {@link T5Parser#op_logico_1}.
 	 * @param ctx the parse tree
 	 */
-	void exitOp_logico(T5Parser.Op_logicoContext ctx);
+	void exitOp_logico_1(T5Parser.Op_logico_1Context ctx);
+	/**
+	 * Enter a parse tree produced by {@link T5Parser#op_logico_2}.
+	 * @param ctx the parse tree
+	 */
+	void enterOp_logico_2(T5Parser.Op_logico_2Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link T5Parser#op_logico_2}.
+	 * @param ctx the parse tree
+	 */
+	void exitOp_logico_2(T5Parser.Op_logico_2Context ctx);
 }

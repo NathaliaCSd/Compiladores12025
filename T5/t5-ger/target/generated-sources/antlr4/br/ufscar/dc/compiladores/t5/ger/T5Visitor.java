@@ -203,23 +203,23 @@ public interface T5Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitOp_unario(T5Parser.Op_unarioContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link T5Parser#expressaoAritmetica}.
+	 * Visit a parse tree produced by {@link T5Parser#exp_aritmetica}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitExpressaoAritmetica(T5Parser.ExpressaoAritmeticaContext ctx);
+	T visitExp_aritmetica(T5Parser.Exp_aritmeticaContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link T5Parser#termoAritmetico}.
+	 * Visit a parse tree produced by {@link T5Parser#termo}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitTermoAritmetico(T5Parser.TermoAritmeticoContext ctx);
+	T visitTermo(T5Parser.TermoContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link T5Parser#fatorAritmetico}.
+	 * Visit a parse tree produced by {@link T5Parser#fator}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitFatorAritmetico(T5Parser.FatorAritmeticoContext ctx);
+	T visitFator(T5Parser.FatorContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link T5Parser#op1}.
 	 * @param ctx the parse tree
@@ -257,17 +257,11 @@ public interface T5Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitParcela_nao_unario(T5Parser.Parcela_nao_unarioContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link T5Parser#expressaoRelacional}.
+	 * Visit a parse tree produced by {@link T5Parser#exp_relacional}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitExpressaoRelacional(T5Parser.ExpressaoRelacionalContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link T5Parser#termoRelacional}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitTermoRelacional(T5Parser.TermoRelacionalContext ctx);
+	T visitExp_relacional(T5Parser.Exp_relacionalContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link T5Parser#op_relacional}.
 	 * @param ctx the parse tree
@@ -299,9 +293,15 @@ public interface T5Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitParcela_logica(T5Parser.Parcela_logicaContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link T5Parser#op_logico}.
+	 * Visit a parse tree produced by {@link T5Parser#op_logico_1}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitOp_logico(T5Parser.Op_logicoContext ctx);
+	T visitOp_logico_1(T5Parser.Op_logico_1Context ctx);
+	/**
+	 * Visit a parse tree produced by {@link T5Parser#op_logico_2}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOp_logico_2(T5Parser.Op_logico_2Context ctx);
 }

@@ -401,37 +401,37 @@ public class T5BaseListener implements T5Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExpressaoAritmetica(T5Parser.ExpressaoAritmeticaContext ctx) { }
+	@Override public void enterExp_aritmetica(T5Parser.Exp_aritmeticaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExpressaoAritmetica(T5Parser.ExpressaoAritmeticaContext ctx) { }
+	@Override public void exitExp_aritmetica(T5Parser.Exp_aritmeticaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTermoAritmetico(T5Parser.TermoAritmeticoContext ctx) { }
+	@Override public void enterTermo(T5Parser.TermoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTermoAritmetico(T5Parser.TermoAritmeticoContext ctx) { }
+	@Override public void exitTermo(T5Parser.TermoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFatorAritmetico(T5Parser.FatorAritmeticoContext ctx) { }
+	@Override public void enterFator(T5Parser.FatorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFatorAritmetico(T5Parser.FatorAritmeticoContext ctx) { }
+	@Override public void exitFator(T5Parser.FatorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -509,25 +509,13 @@ public class T5BaseListener implements T5Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExpressaoRelacional(T5Parser.ExpressaoRelacionalContext ctx) { }
+	@Override public void enterExp_relacional(T5Parser.Exp_relacionalContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExpressaoRelacional(T5Parser.ExpressaoRelacionalContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterTermoRelacional(T5Parser.TermoRelacionalContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitTermoRelacional(T5Parser.TermoRelacionalContext ctx) { }
+	@Override public void exitExp_relacional(T5Parser.Exp_relacionalContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -593,13 +581,25 @@ public class T5BaseListener implements T5Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterOp_logico(T5Parser.Op_logicoContext ctx) { }
+	@Override public void enterOp_logico_1(T5Parser.Op_logico_1Context ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitOp_logico(T5Parser.Op_logicoContext ctx) { }
+	@Override public void exitOp_logico_1(T5Parser.Op_logico_1Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterOp_logico_2(T5Parser.Op_logico_2Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitOp_logico_2(T5Parser.Op_logico_2Context ctx) { }
 
 	/**
 	 * {@inheritDoc}

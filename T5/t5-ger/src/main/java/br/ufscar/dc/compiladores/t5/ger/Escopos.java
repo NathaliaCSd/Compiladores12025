@@ -4,18 +4,18 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Escopos {
-
     private LinkedList<TabelaDeSimbolos> pilhaDeTabelas;
-    public Object obterEscopoAtual;
-//classe escopos disponibilizada pelo professor no github da disciplina 
+
+    // Construtor padrão: inicia com escopo vazio
     public Escopos() {
         pilhaDeTabelas = new LinkedList<>();
         criarNovoEscopo();
     }
 
-    public Escopos(TabelaDeSimbolos tabelaGlobal) {
+    // Novo construtor: inicia com um escopo global existente
+    public Escopos(TabelaDeSimbolos escopoGlobal) {
         pilhaDeTabelas = new LinkedList<>();
-        pilhaDeTabelas.push(tabelaGlobal);
+        pilhaDeTabelas.push(escopoGlobal);
     }
 
     public void criarNovoEscopo() {
@@ -32,5 +32,14 @@ public class Escopos {
 
     public void abandonarEscopo() {
         pilhaDeTabelas.pop();
+    }
+
+    public TabelaDeSimbolos.EntradaTabelaDeSimbolos obterEntrada(String nome) {
+        for (TabelaDeSimbolos escopo : pilhaDeTabelas) {
+            if (escopo.existe(nome)) {
+                return escopo.getEntrada(nome);
+            }
+        }
+        return null;
     }
 }

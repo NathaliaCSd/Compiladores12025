@@ -242,21 +242,21 @@ public class T5BaseVisitor<T> extends AbstractParseTreeVisitor<T> implements T5V
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitExpressaoAritmetica(T5Parser.ExpressaoAritmeticaContext ctx) { return visitChildren(ctx); }
+	@Override public T visitExp_aritmetica(T5Parser.Exp_aritmeticaContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitTermoAritmetico(T5Parser.TermoAritmeticoContext ctx) { return visitChildren(ctx); }
+	@Override public T visitTermo(T5Parser.TermoContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitFatorAritmetico(T5Parser.FatorAritmeticoContext ctx) { return visitChildren(ctx); }
+	@Override public T visitFator(T5Parser.FatorContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -305,14 +305,7 @@ public class T5BaseVisitor<T> extends AbstractParseTreeVisitor<T> implements T5V
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitExpressaoRelacional(T5Parser.ExpressaoRelacionalContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitTermoRelacional(T5Parser.TermoRelacionalContext ctx) { return visitChildren(ctx); }
+	@Override public T visitExp_relacional(T5Parser.Exp_relacionalContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -354,5 +347,12 @@ public class T5BaseVisitor<T> extends AbstractParseTreeVisitor<T> implements T5V
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitOp_logico(T5Parser.Op_logicoContext ctx) { return visitChildren(ctx); }
+	@Override public T visitOp_logico_1(T5Parser.Op_logico_1Context ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitOp_logico_2(T5Parser.Op_logico_2Context ctx) { return visitChildren(ctx); }
 }

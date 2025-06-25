@@ -25,7 +25,7 @@ identificador
     ;
 
 dimensao
-    : ('[' expressaoAritmetica ']')*
+    : ('[' exp_aritmetica ']')*
     ;
 
 // Tipos básicos e registros
@@ -88,20 +88,19 @@ cmdLeia
     ;
 
 cmdEscreva
-  : ESCREVA '(' (expressaoAritmetica | expressao) (',' (expressaoAritmetica | expressao))* ')'
-  ;
-
+    : ESCREVA '(' expressao (',' (expressao))* ')'
+    ;
 
 cmdSe
     : SE expressao ENTAO (cmd)* (SENAO (cmd)*)? FIM_SE
     ;
 
 cmdCaso
-    : CASO expressaoAritmetica SEJA selecao (SENAO (cmd)*)? FIM_CASO
+    : CASO exp_aritmetica SEJA selecao (SENAO (cmd)*)? FIM_CASO
     ;
 
 cmdPara
-    : PARA IDENT '<-' expressaoAritmetica ATE expressaoAritmetica FACA (cmd)* FIM_PARA
+    : PARA IDENT '<-' exp_aritmetica ATE exp_aritmetica FACA (cmd)* FIM_PARA
     ;
 
 cmdEnquanto
@@ -146,13 +145,13 @@ op_unario
     ;
 
 // EXPRESSÃO ARITMÉTICA
-expressaoAritmetica
-    : termoAritmetico (op1 termoAritmetico)*
+exp_aritmetica
+    : termo (op1 termo)*
     ;
 
-termoAritmetico: fatores+=fatorAritmetico (op2 fatores+=fatorAritmetico)*;
+termo: fatores+=fator (op2 fatores+=fator)*;
 
-fatorAritmetico: parcelas+=parcela (op3 parcelas+=parcela)*;
+fator: parcelas+=parcela (op3 parcelas+=parcela)*;
 
 // Operadores aritméticos
 op1:'+' | '-';
@@ -173,14 +172,9 @@ parcela_unario: ('^')? p1=identificador
 parcela_nao_unario: '&' pn1=identificador | pn2=CADEIA;
 
 // EXPRESSÃO RELACIONAL e LÓGICA
-expressaoRelacional
-  : termoRelacional (op_logico termoRelacional)*
-  ;
-
-termoRelacional
-  : expressaoAritmetica op_relacional expressaoAritmetica
-  | '(' expressaoRelacional ')'
-  ;
+exp_relacional
+    : exp_aritmetica (op_relacional exp_aritmetica)?
+    ;
 
 op_relacional: 
               '=' 
@@ -191,11 +185,11 @@ op_relacional:
             | '<';
 
 expressao
-    : termo_logico (op_logico termo_logico)*
+    : termo_logico (op_logico_1 termo_logico)*
     ;
 
 termo_logico
-    : fator_logico (op_logico fator_logico)*
+    : fator_logico (op_logico_2 fator_logico)*
     ;
 
 fator_logico
@@ -204,11 +198,14 @@ fator_logico
 
 parcela_logica: 
       pl1=( 'verdadeiro' | 'falso' ) 
-    | pl2=expressaoRelacional;
+    | pl2=exp_relacional;
 
 
-op_logico : OU | E;
+op_logico_1 : OU;
 
+op_logico_2
+    : E
+    ;
 
 // Tokens literais e símbolos
 ALGORITMO     : 'algoritmo';

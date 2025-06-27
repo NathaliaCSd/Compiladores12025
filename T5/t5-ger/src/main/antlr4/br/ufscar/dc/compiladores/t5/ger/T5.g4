@@ -246,6 +246,7 @@ CONSTANTE     : 'constante';
 FALSO         : 'falso';
 VERDADEIRO    : 'verdadeiro';
 
+
 DOIS_PONTOS   : ':';
 ABRE_PAR      : '(';
 FECHA_PAR     : ')';
@@ -257,6 +258,7 @@ REFERENCIA    : '&';
 PONTO         : '.';
 ABRE_COLCH    : '[';
 FECHA_COLCH   : ']';
+
 
 MAIS          : '+';
 MENOS         : '-';

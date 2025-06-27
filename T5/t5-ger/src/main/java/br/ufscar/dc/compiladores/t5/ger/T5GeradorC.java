@@ -6,7 +6,8 @@ import br.ufscar.dc.compiladores.t5.ger.T5Parser.CmdContext;
 import br.ufscar.dc.compiladores.t5.ger.T5Parser.CmdEnquantoContext;
 import br.ufscar.dc.compiladores.t5.ger.T5Parser.CmdEscrevaContext;
 import br.ufscar.dc.compiladores.t5.ger.T5Parser.CmdLeiaContext;
-import br.ufscar.dc.compiladores.t5.ger.T5Parser.CmdSeContext;
+import br.ufscar.dc.compiladores.t5.ger.T5Parser.CmdParaContext;
+import br.ufscar.dc.compiladores.t5.ger.T5Parser.CmdSeContext; // Importar CmdParaContext
 import br.ufscar.dc.compiladores.t5.ger.T5Parser.CorpoContext;
 import br.ufscar.dc.compiladores.t5.ger.T5Parser.Declaracao_localContext;
 import br.ufscar.dc.compiladores.t5.ger.T5Parser.DeclaracoesContext;
@@ -38,7 +39,7 @@ public class T5GeradorC extends T5BaseVisitor<Void> {
         }
         saida.append("\nint main() {\n");
         visitCorpo(ctx.corpo());
-        saida.append("  return 0;\n")
+        saida.append("   return 0;\n")
                 .append("}\n");
         return null;
     }
@@ -61,13 +62,13 @@ public class T5GeradorC extends T5BaseVisitor<Void> {
                     pilhaDeTabelas.obterEscopoAtual().adicionar(nome, tipo);
                     // gera declaração em C
                     if (tipo == TipoT5.LITERAL) {
-                        saida.append("  char ");
+                        saida.append("   char ");
                         if (ehPonteiro)
                             saida.append("*");
                         saida.append(nome).append("[80];\n");
                     } else {
                         String cTipo = (tipo == TipoT5.REAL ? "float" : "int");
-                        saida.append("  ").append(cTipo).append(" ");
+                        saida.append("   ").append(cTipo).append(" ");
                         if (ehPonteiro)
                             saida.append("*");
                         saida.append(nome).append(";\n");
@@ -144,6 +145,8 @@ public class T5GeradorC extends T5BaseVisitor<Void> {
             return visitCmdEnquanto(ctx.cmdEnquanto());
         } else if (ctx.cmdCaso() != null) {
             return visitCmdCaso(ctx.cmdCaso());
+        } else if (ctx.cmdPara() != null) { // Adicionar tratamento para cmdPara
+            return visitCmdPara(ctx.cmdPara());
         }
         // chute para cmdPara, cmdPara, cmdFaca, cmdChamada, cmdRetorne…
         return null;
@@ -203,11 +206,22 @@ public class T5GeradorC extends T5BaseVisitor<Void> {
     public Void visitCmdSe(CmdSeContext ctx) {
         saida.append("if(");
         visitExpressao(ctx.expressao());
-        saida.append(") ");
-        visitCmd(ctx.cmd(0));
-        if (ctx.SENAO() != null && !ctx.cmd(1).isEmpty()) {
-            saida.append("else ");
-            visitCmd(ctx.cmd(1));
+        saida.append(") {\n"); // Adicionado chave de abertura
+        for (CmdContext c : ctx.cmd()) { // Iterar sobre os comandos
+            visitCmd(c);
+        }
+        saida.append("}\n"); // Adicionado chave de fechamento
+        if (ctx.SENAO() != null && !ctx.cmd().isEmpty()) { // Verificar se existe SENAO e se há comandos
+            saida.append("else {\n"); // Adicionado chave de abertura
+            // O cmd(1) só existe se houver SENAO
+            // A gramática indica que cmdSe pode ter um ou dois blocos cmd
+            // ctx.cmd() retorna uma lista, então precisamos pegar os comandos após o ENTAO e SENAO
+            if (ctx.cmd().size() > 1) { // Se houver um segundo bloco de comandos (para o SENAO)
+                for (int i = 1; i < ctx.cmd().size(); i++) {
+                    visitCmd(ctx.cmd(i));
+                }
+            }
+            saida.append("}\n"); // Adicionado chave de fechamento
         }
         return null;
     }
@@ -223,6 +237,24 @@ public class T5GeradorC extends T5BaseVisitor<Void> {
         saida.append("}\n");
         return null;
     }
+
+    @Override
+    public Void visitCmdPara(CmdParaContext ctx) {
+        String varControle = ctx.IDENT().getText();
+        String exprInicial = ctx.exp_aritmetica(0).getText();
+        String exprFinal = ctx.exp_aritmetica(1).getText();
+
+        saida.append("for (").append(varControle).append(" = ").append(exprInicial)
+                .append("; ").append(varControle).append(" <= ").append(exprFinal)
+                .append("; ").append(varControle).append("++) {\n");
+
+        for (CmdContext c : ctx.cmd()) {
+            visitCmd(c);
+        }
+        saida.append("}\n");
+        return null;
+    }
+
 
     @Override
     public Void visitCmdCaso(CmdCasoContext ctx) {
@@ -242,29 +274,29 @@ public class T5GeradorC extends T5BaseVisitor<Void> {
                     int ini = Integer.parseInt(p[0]);
                     int fim = Integer.parseInt(p[1]);
                     for (int v = ini; v <= fim; v++) {
-                        saida.append("    case ").append(v).append(":\n");
+                        saida.append("      case ").append(v).append(":\n");
                     }
                 } else {
-                    saida.append("    case ").append(txt).append(":\n");
+                    saida.append("      case ").append(txt).append(":\n");
                 }
             }
             // comandos do case
             for (CmdContext cmd : item.cmd()) {
                 // identa um nível extra para ficar bonitinho
-                saida.append("        ");
+                saida.append("         "); // 4 espaços para indentação, ajuste se necessário
                 visitCmd(cmd);
             }
-            saida.append("        break;\n");
+            saida.append("         break;\n"); // 4 espaços para indentação, ajuste se necessário
         }
 
         // bloco senao vira default
         if (ctx.SENAO() != null) {
-            saida.append("    default:\n");
+            saida.append("   default:\n");
             for (CmdContext cmd : ctx.cmd()) {
-                saida.append("        ");
+                saida.append("      "); // 4 espaços para indentação, ajuste se necessário
                 visitCmd(cmd);
             }
-            saida.append("        break;\n");
+            saida.append("      break;\n");
         }
 
         saida.append("}\n");

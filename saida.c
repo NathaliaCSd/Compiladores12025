@@ -1,26 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define teste 8
 
 int main() {
-switch(teste) {
-    case 0:
-    case 1:
-    case 2:
-    case 3:
-    case 4:
-    case 5:
-    case 6:
-    case 7:
-        printf("%s","ERRO");fflush(stdout);
-        break;
-    case 8:
-        printf("%s","OK");fflush(stdout);
-        break;
-    default:
-        printf("%s","ERRO");fflush(stdout);
-        break;
+if(4 == 3) {
+printf("%s","4 eh igual a 3");fflush(stdout);
+printf("%s","4 eh diferente de 3");fflush(stdout);
 }
-  return 0;
+else {
+printf("%s","4 eh diferente de 3");fflush(stdout);
+}
+   return 0;
 }

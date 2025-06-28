@@ -193,7 +193,7 @@ termo_logico
     ;
 
 fator_logico
-    : ('NAO')? parcela_logica
+    : NAO? parcela_logica
     ;
 
 parcela_logica: 

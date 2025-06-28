@@ -7,17 +7,22 @@ import br.ufscar.dc.compiladores.t5.ger.T5Parser.CmdEnquantoContext;
 import br.ufscar.dc.compiladores.t5.ger.T5Parser.CmdEscrevaContext;
 import br.ufscar.dc.compiladores.t5.ger.T5Parser.CmdLeiaContext;
 import br.ufscar.dc.compiladores.t5.ger.T5Parser.CmdParaContext;
-import br.ufscar.dc.compiladores.t5.ger.T5Parser.CmdSeContext; // Importar CmdParaContext
+import br.ufscar.dc.compiladores.t5.ger.T5Parser.CmdSeContext; 
 import br.ufscar.dc.compiladores.t5.ger.T5Parser.CorpoContext;
 import br.ufscar.dc.compiladores.t5.ger.T5Parser.Declaracao_localContext;
 import br.ufscar.dc.compiladores.t5.ger.T5Parser.DeclaracoesContext;
+import br.ufscar.dc.compiladores.t5.ger.T5Parser.Exp_relacionalContext;
 import br.ufscar.dc.compiladores.t5.ger.T5Parser.ExpressaoContext;
+import br.ufscar.dc.compiladores.t5.ger.T5Parser.Fator_logicoContext;
 import br.ufscar.dc.compiladores.t5.ger.T5Parser.IdentificadorContext;
 import br.ufscar.dc.compiladores.t5.ger.T5Parser.Item_selecaoContext;
 import br.ufscar.dc.compiladores.t5.ger.T5Parser.Numero_intervaloContext;
+import br.ufscar.dc.compiladores.t5.ger.T5Parser.Parcela_logicaContext;
 import br.ufscar.dc.compiladores.t5.ger.T5Parser.ProgramaContext;
+import br.ufscar.dc.compiladores.t5.ger.T5Parser.Termo_logicoContext;
 import br.ufscar.dc.compiladores.t5.ger.T5Parser.VariavelContext;
 import br.ufscar.dc.compiladores.t5.ger.TabelaDeSimbolos.TipoT5;
+
 
 public class T5GeradorC extends T5BaseVisitor<Void> {
 
@@ -145,10 +150,9 @@ public class T5GeradorC extends T5BaseVisitor<Void> {
             return visitCmdEnquanto(ctx.cmdEnquanto());
         } else if (ctx.cmdCaso() != null) {
             return visitCmdCaso(ctx.cmdCaso());
-        } else if (ctx.cmdPara() != null) { // Adicionar tratamento para cmdPara
+        } else if (ctx.cmdPara() != null) {
             return visitCmdPara(ctx.cmdPara());
         }
-        // chute para cmdPara, cmdPara, cmdFaca, cmdChamada, cmdRetorne…
         return null;
     }
 
@@ -178,7 +182,7 @@ public class T5GeradorC extends T5BaseVisitor<Void> {
             if (tipo == TipoT5.LITERAL) {
                 saida.append("printf(\"%s\",").append(txt).append(");");
             } else {
-                String fmt = (tipo == TipoT5.REAL ? "%.6f" : "%d");
+                String fmt = (tipo == TipoT5.REAL ? "%f" : "%d");
                 saida.append("printf(\"").append(fmt)
                         .append("\",").append(txt).append(");\n");
             }
@@ -215,7 +219,8 @@ public class T5GeradorC extends T5BaseVisitor<Void> {
             saida.append("else {\n"); // Adicionado chave de abertura
             // O cmd(1) só existe se houver SENAO
             // A gramática indica que cmdSe pode ter um ou dois blocos cmd
-            // ctx.cmd() retorna uma lista, então precisamos pegar os comandos após o ENTAO e SENAO
+            // ctx.cmd() retorna uma lista, então precisamos pegar os comandos após o ENTAO
+            // e SENAO
             if (ctx.cmd().size() > 1) { // Se houver um segundo bloco de comandos (para o SENAO)
                 for (int i = 1; i < ctx.cmd().size(); i++) {
                     visitCmd(ctx.cmd(i));
@@ -255,18 +260,14 @@ public class T5GeradorC extends T5BaseVisitor<Void> {
         return null;
     }
 
-
     @Override
     public Void visitCmdCaso(CmdCasoContext ctx) {
-        // abre o switch
         String expr = ctx.exp_aritmetica().getText();
         saida.append("switch(")
                 .append(expr)
                 .append(") {\n");
 
-        // cada item (cada conjunto de constantes)
         for (Item_selecaoContext item : ctx.selecao().item_selecao()) {
-            // para cada intervalo ou valor único
             for (Numero_intervaloContext ni : item.constantes().numero_intervalo()) {
                 String txt = ni.getText();
                 if (txt.contains("..")) {
@@ -305,12 +306,137 @@ public class T5GeradorC extends T5BaseVisitor<Void> {
 
     @Override
     public Void visitExpressao(ExpressaoContext ctx) {
-        // imprime literalmente: por simplicidade, usamos getText()
-        saida.append(ctx.getText());
+        visitTermo_logico(ctx.termo_logico(0));
+        for (int i = 0; i < ctx.op_logico_1().size(); i++) {
+            saida.append(" || ");
+            visitTermo_logico(ctx.termo_logico(i + 1));
+        }
         return null;
     }
 
     public String getSaida() {
         return saida.toString();
     }
+
+    @Override
+    public Void visitTermo_logico(Termo_logicoContext ctx) {
+        visitFator_logico(ctx.fator_logico(0));
+        for (int i = 0; i < ctx.op_logico_2().size(); i++) {
+            saida.append(" && ");
+            visitFator_logico(ctx.fator_logico(i + 1));
+        }
+        return null;
+    }
+
+    @Override
+public Void visitFator_logico(Fator_logicoContext ctx) {
+    if (ctx.NAO() != null) {
+        saida.append("!");
+    }
+    visitParcela_logica(ctx.parcela_logica());
+    return null;
+}
+
+
+    @Override
+    public Void visitParcela_logica(Parcela_logicaContext ctx) {
+        if (ctx.pl1 != null) {
+            saida.append(ctx.pl1.getText().equals("verdadeiro") ? "1" : "0");
+        } else {
+            visitExp_relacional(ctx.pl2);
+        }
+        return null;
+    }
+
+    @Override
+    public Void visitExp_relacional(Exp_relacionalContext ctx) {
+        visitExp_aritmetica(ctx.exp_aritmetica(0));
+        if (ctx.op_relacional() != null) {
+            String op = ctx.op_relacional().getText().equals("=") ? "==" : ctx.op_relacional().getText();
+            saida.append(" ").append(op).append(" ");
+            visitExp_aritmetica(ctx.exp_aritmetica(1));
+        }
+        return null;
+    }
+
+    @Override
+public Void visitExp_aritmetica(T5Parser.Exp_aritmeticaContext ctx) {
+    visitTermo(ctx.termo(0));
+    for (int i = 0; i < ctx.op1().size(); i++) {
+        saida.append(" ").append(ctx.op1(i).getText()).append(" ");
+        visitTermo(ctx.termo(i + 1));
+    }
+    return null;
+}
+
+@Override
+public Void visitTermo(T5Parser.TermoContext ctx) {
+    visitFator(ctx.fator(0));
+    for (int i = 0; i < ctx.op2().size(); i++) {
+        saida.append(" ").append(ctx.op2(i).getText()).append(" ");
+        visitFator(ctx.fator(i + 1));
+    }
+    return null;
+}
+
+@Override
+public Void visitFator(T5Parser.FatorContext ctx) {
+    visitParcela(ctx.parcela(0));
+    for (int i = 0; i < ctx.op3().size(); i++) {
+        saida.append(" ").append(ctx.op3(i).getText()).append(" ");
+        visitParcela(ctx.parcela(i + 1));
+    }
+    return null;
+}
+
+@Override
+public Void visitParcela(T5Parser.ParcelaContext ctx) {
+    if (ctx.op_unario() != null) {
+        saida.append(ctx.op_unario().getText());
+    }
+    if (ctx.parcela_unario() != null) {
+        visitParcela_unario(ctx.parcela_unario());
+    } else {
+        visitParcela_nao_unario(ctx.parcela_nao_unario());
+    }
+    return null;
+}
+
+@Override
+public Void visitParcela_unario(T5Parser.Parcela_unarioContext ctx) {
+    if (ctx.p1 != null) {
+        if (ctx.PONTEIRO() != null) saida.append("*");
+        saida.append(ctx.p1.getText());
+    } else if (ctx.p2 != null) {
+        saida.append(ctx.p2.getText()).append("(");
+        for (int i = 0; i < ctx.expressao().size(); i++) {
+            if (i > 0) saida.append(", ");
+            visitExpressao(ctx.expressao(i));
+        }
+        saida.append(")");
+    } else if (ctx.p3 != null) {
+        saida.append(ctx.p3.getText());
+    } else if (ctx.p4 != null) {
+        saida.append(ctx.p4.getText());
+    } else {
+        // '(' expressao ')'
+        saida.append("(");
+        visitExpressao(ctx.p5);
+        saida.append(")");
+    }
+    return null;
+}
+
+@Override
+public Void visitParcela_nao_unario(T5Parser.Parcela_nao_unarioContext ctx) {
+    // &identificador ou cadeia
+    if (ctx.pn1 != null) {
+        saida.append("&").append(ctx.pn1.getText());
+    } else {
+        saida.append(ctx.pn2.getText());
+    }
+    return null;
+}
+
+
 }

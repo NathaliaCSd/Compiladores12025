@@ -1,0 +1,12 @@
+br\ufscar\dc\compiladores\expr\parser\receitasParser$UnidadeContext.class
+br\ufscar\dc\compiladores\expr\parser\receitasBaseVisitor.class
+br\ufscar\dc\compiladores\expr\parser\receitasParser$Declaracao_ingredientesContext.class
+br\ufscar\dc\compiladores\expr\parser\receitasLexer.class
+br\ufscar\dc\compiladores\expr\parser\receitasParser$ProgramaContext.class
+br\ufscar\dc\compiladores\expr\parser\receitasVisitor.class
+br\ufscar\dc\compiladores\expr\parser\receitasBaseListener.class
+br\ufscar\dc\compiladores\expr\parser\receitasParser$Lista_ingredientesContext.class
+br\ufscar\dc\compiladores\expr\parser\receitasParser$Declaracao_receitaContext.class
+br\ufscar\dc\compiladores\expr\parser\receitasParser$IngredienteContext.class
+br\ufscar\dc\compiladores\expr\parser\receitasListener.class
+br\ufscar\dc\compiladores\expr\parser\receitasParser.class

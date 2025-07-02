@@ -117,6 +117,8 @@ public class TabelaDeSimbolos {
         tabela.put(nome, new EntradaTabelaDeSimbolos(nome, tipoEntrada, tipo, ehPonteiro, registro, ehVetor, ehVar));
     }
 
+    
+
     public void adicionarConstante(String nome, TipoT5 tipo, Object valor) {
         tabela.put(nome, new EntradaTabelaDeSimbolos(nome, TipoEntrada.CONSTANTE, tipo, valor));
     }
@@ -142,4 +144,9 @@ public class TabelaDeSimbolos {
     public EntradaTabelaDeSimbolos getEntrada(String nome) {
         return tabela.get(nome);
     }
-}
+
+    public List<EntradaTabelaDeSimbolos> entradas() {
+        return new ArrayList<>(tabela.values());
+    }
+
+}   

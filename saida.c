@@ -1,13 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int dobro(int x) {
-    return 2 * x;
-}
+#include <string.h>
 
 
 int main() {
-printf("%d",dobro(4));
-fflush(stdout);
+if(4 == 3) {
+    printf("4 eh igual a 3");
+}
+else {
+    printf("4 eh diferente de 3");
+}
    return 0;
 }

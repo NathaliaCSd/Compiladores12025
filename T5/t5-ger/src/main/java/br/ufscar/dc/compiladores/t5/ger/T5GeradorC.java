@@ -3,6 +3,10 @@ package br.ufscar.dc.compiladores.t5.ger;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.antlr.v4.runtime.tree.TerminalNode;
+import org.antlr.v4.runtime.tree.ParseTree;
+
+
 import br.ufscar.dc.compiladores.t5.ger.T5Parser.CmdAtribuicaoContext;
 import br.ufscar.dc.compiladores.t5.ger.T5Parser.CmdCasoContext;
 import br.ufscar.dc.compiladores.t5.ger.T5Parser.CmdContext;
@@ -26,8 +30,12 @@ import br.ufscar.dc.compiladores.t5.ger.T5Parser.ParametroContext;
 import br.ufscar.dc.compiladores.t5.ger.T5Parser.ParametrosContext;
 import br.ufscar.dc.compiladores.t5.ger.T5Parser.Parcela_logicaContext;
 import br.ufscar.dc.compiladores.t5.ger.T5Parser.ProgramaContext;
+import br.ufscar.dc.compiladores.t5.ger.T5Parser.RegistroContext;
 import br.ufscar.dc.compiladores.t5.ger.T5Parser.Termo_logicoContext;
+import br.ufscar.dc.compiladores.t5.ger.T5Parser.TipoContext;
+import br.ufscar.dc.compiladores.t5.ger.T5Parser.Tipo_estendidoContext;
 import br.ufscar.dc.compiladores.t5.ger.T5Parser.VariavelContext;
+import br.ufscar.dc.compiladores.t5.ger.TabelaDeSimbolos.TipoEntrada;
 import br.ufscar.dc.compiladores.t5.ger.TabelaDeSimbolos.TipoT5;
 
 public class T5GeradorC extends T5BaseVisitor<Void> {
@@ -44,7 +52,8 @@ public class T5GeradorC extends T5BaseVisitor<Void> {
     @Override
     public Void visitPrograma(ProgramaContext ctx) {
         saida.append("#include <stdio.h>\n")
-                .append("#include <stdlib.h>\n\n");
+                .append("#include <stdlib.h>\n\n")
+                .append("#include <string.h>\n\n");
         for (DeclaracoesContext dec : ctx.declaracoes()) {
             visitDeclaracoes(dec);
         }
@@ -58,36 +67,108 @@ public class T5GeradorC extends T5BaseVisitor<Void> {
     @Override
     public Void visitCorpo(CorpoContext ctx) {
         pilhaDeTabelas.criarNovoEscopo();
-        // Declarações locais (var1)
+
         for (Declaracao_localContext loc : ctx.declaracao_local()) {
             if (loc.var1 != null) {
                 VariavelContext var = loc.var1;
-                boolean ehPonteiro = var.tipo().tipo_estendido().PONTEIRO() != null;
-                // pega o texto do tipo básico ou IDENT
-                String base = var.tipo().tipo_estendido().tipo_basico_ident().getText().toLowerCase();
+                TipoContext typeCtx = var.tipo();
+
+                // ── 1) registro inline ─────────────────────────────
+                if (typeCtx.registro() != null) {
+                    // 1.a) obtém o ctx do registro
+                    T5Parser.RegistroContext regCtx = typeCtx.registro();
+
+                    // 1.b) constrói TabelaDeSimbolos só com os campos
+                    TabelaDeSimbolos registroTable = new TabelaDeSimbolos();
+                    for (VariavelContext campo : regCtx.variavel()) {
+                        Tipo_estendidoContext te = campo.tipo().tipo_estendido();
+                        String base = te.tipo_basico_ident().getText().toLowerCase();
+                        TipoT5 tipoCampo = base.equals("literal") ? TipoT5.LITERAL
+                                : base.equals("real") ? TipoT5.REAL
+                                        : TipoT5.INTEIRO;
+                        for (IdentificadorContext id : campo.identificador()) {
+                            registroTable.adicionar(
+                                    id.getText(), // nome do campo
+                                    TipoEntrada.VARIAVEL,
+                                    tipoCampo,
+                                    te.PONTEIRO() != null,
+                                    null,
+                                    false,
+                                    false);
+                        }
+                    }
+
+                    // 1.c) para cada variável declarada desse tipo
+                    for (IdentificadorContext idCtx : var.identificador()) {
+                        String varName = idCtx.getText();
+
+                        // emite struct inline
+                        saida.append("    struct {\n");
+                        for (TabelaDeSimbolos.EntradaTabelaDeSimbolos campo : registroTable.entradas()) {
+                            String cTipo = campo.getTipo() == TipoT5.REAL ? "float"
+                                    : campo.getTipo() == TipoT5.LITERAL ? "char"
+                                            : "int";
+                            boolean ptr = campo.isPonteiro();
+                            String nomeCampo = campo.nome;
+                            String dimension = (campo.getTipo() == TipoT5.LITERAL ? "[80]" : "");
+                            saida.append("        ")
+                                    .append(cTipo)
+                                    .append(ptr ? "*" : "")
+                                    .append(" ")
+                                    .append(nomeCampo)
+                                    .append(dimension)
+                                    .append(";\n");
+                        }
+                        saida.append("    } ")
+                                .append(varName)
+                                .append(";\n");
+
+                        // 1.d) registra no escopo
+                        pilhaDeTabelas.obterEscopoAtual().adicionar(
+                                varName,
+                                TipoEntrada.VARIAVEL,
+                                TipoT5.REGISTRO,
+                                false,
+                                registroTable,
+                                false,
+                                false);
+                    }
+
+                    continue; // pula o tratamento dos básicos
+                }
+
+                // ── 2) Caso básico: inteiro, real, literal ─────────
+                Tipo_estendidoContext te = typeCtx.tipo_estendido();
+                if (te == null) {
+                    continue; // sem tipo reconhecido
+                }
+                boolean ehPonteiro = te.PONTEIRO() != null;
+                String base = te.tipo_basico_ident().getText().toLowerCase();
                 TipoT5 tipo = base.equals("literal") ? TipoT5.LITERAL
                         : base.equals("real") ? TipoT5.REAL
                                 : TipoT5.INTEIRO;
+                String cTipo = (tipo == TipoT5.LITERAL ? "char"
+                        : tipo == TipoT5.REAL ? "float"
+                                : "int");
                 for (IdentificadorContext idCtx : var.identificador()) {
                     String nome = idCtx.getText();
                     pilhaDeTabelas.obterEscopoAtual().adicionar(nome, tipo);
-                    // gera declaração em C
                     if (tipo == TipoT5.LITERAL) {
-                        saida.append("   char ");
-                        if (ehPonteiro)
-                            saida.append("*");
-                        saida.append(nome).append("[80];\n");
+                        saida.append("    ").append(cTipo)
+                                .append(ehPonteiro ? "*" : "")
+                                .append(" ").append(nome)
+                                .append("[80];\n");
                     } else {
-                        String cTipo = (tipo == TipoT5.REAL ? "float" : "int");
-                        saida.append("   ").append(cTipo).append(" ");
-                        if (ehPonteiro)
-                            saida.append("*");
-                        saida.append(nome).append(";\n");
+                        saida.append("    ").append(cTipo)
+                                .append(ehPonteiro ? "*" : "")
+                                .append(" ").append(nome)
+                                .append(";\n");
                     }
                 }
             }
         }
-        // comandos
+
+        // comandos do corpo
         for (CmdContext cmd : ctx.cmd()) {
             visitCmd(cmd);
         }
@@ -135,6 +216,51 @@ public class T5GeradorC extends T5BaseVisitor<Void> {
                 }
             }
             // tipos e registros podem ser gerados aqui, se desejado...
+            else if (d.var3 != null) {
+                String nomeTipo = d.var3.getText();
+                // 1) monta a tabela interna dos campos
+                TabelaDeSimbolos registroTable = new TabelaDeSimbolos();
+                saida.append("typedef struct {\n");
+                for (VariavelContext campo : d.tipo().registro().variavel()) {
+                    // pega o tipo básico de cada campo
+                    Tipo_estendidoContext te = campo.tipo().tipo_estendido();
+                    String base = te.tipo_basico_ident().getText().toLowerCase();
+                    String cTipo = base.equals("real") ? "float"
+                            : base.equals("literal") ? "char"
+                                    : "int";
+                    boolean ptr = te.PONTEIRO() != null;
+                    for (IdentificadorContext id : campo.identificador()) {
+                        // cadastra o campo na tabela interna
+                        registroTable.adicionar(
+                                id.getText(),
+                                TipoEntrada.VARIAVEL,
+                                base.equals("literal") ? TipoT5.LITERAL
+                                        : base.equals("real") ? TipoT5.REAL
+                                                : TipoT5.INTEIRO,
+                                ptr,
+                                null, // sem sub-registro aninhado
+                                false,
+                                false);
+                        // escreve a linha dentro do struct
+                        saida.append("    ")
+                                .append(cTipo).append(ptr ? "*" : "")
+                                .append(" ").append(id.getText())
+                                .append(base.equals("literal") ? "[80]" : "")
+                                .append(";\n");
+                    }
+                }
+                saida.append("} ").append(nomeTipo).append(";\n\n");
+
+                // 2) registra esse novo tipo na tabela global
+                pilhaDeTabelas.obterEscopoAtual().adicionar(
+                        nomeTipo,
+                        TipoEntrada.TIPO,
+                        TipoT5.REGISTRO,
+                        false,
+                        registroTable,
+                        false,
+                        false);
+            }
         } else if (ctx.declaracao_global() != null) {
             // você pode gerar protótipos de função/procedimento aqui, se precisar
             visitDeclaracao_global(ctx.declaracao_global());
@@ -198,10 +324,9 @@ public class T5GeradorC extends T5BaseVisitor<Void> {
         for (CmdContext cmd : ctx.cmd()) {
             visitCmd(cmd);
         }
-        // 3.c) se for função, garantimos que o `visitCmdRetorne` gerou um `return …;`
+        // 3.c) se for função, garantimos que o visitCmdRetorne gerou um return …;
         if (isFuncao) {
-            // opcional: se nenhum retorno for gerado, insere default
-            // saida.append(" return 0;\n");
+            saida.append(" return 0;\n");
         }
         pilhaDeTabelas.abandonarEscopo();
 
@@ -228,8 +353,10 @@ public class T5GeradorC extends T5BaseVisitor<Void> {
             return visitCmdPara(ctx.cmdPara());
         } else if (ctx.cmdChamada() != null) {
             return visitCmdChamada(ctx.cmdChamada());
-        }else if (ctx.cmdRetorne() != null) {
+        } else if (ctx.cmdRetorne() != null) {
             return visitCmdRetorne(ctx.cmdRetorne());
+        } else if (ctx.cmdFaca() != null) {
+            return visitCmdFaca(ctx.cmdFaca());
         }
         return null;
     }
@@ -254,33 +381,65 @@ public class T5GeradorC extends T5BaseVisitor<Void> {
     @Override
     public Void visitCmdEscreva(CmdEscrevaContext ctx) {
         for (ExpressaoContext eCtx : ctx.expressao()) {
-            // cada expressao pode gerar texto ou número
             TipoT5 tipo = T5SemanticoUtils.verificarTipo(pilhaDeTabelas, eCtx);
             String txt = eCtx.getText();
-            if (tipo == TipoT5.LITERAL) {
-                saida.append("printf(\"%s\",").append(txt).append(");");
+            if (tipo == TipoT5.LITERAL && txt.startsWith("\"") && txt.endsWith("\"")) {
+                // literal puro: imprime o texto diretamente
+                saida.append("    printf(").append(txt).append(");\n");
+            } else if (tipo == TipoT5.LITERAL) {
+                // fallback para variáveis string
+                saida.append("    printf(\"%s\", ").append(txt).append(");\n");
             } else {
                 String fmt = (tipo == TipoT5.REAL ? "%f" : "%d");
-                saida.append("printf(\"").append(fmt)
-                        .append("\",").append(txt).append(");\n");
+                saida.append("    printf(\"").append(fmt).append("\", ").append(txt).append(");\n");
             }
-            saida.append("fflush(stdout);\n");
         }
         return null;
     }
 
     @Override
     public Void visitCmdAtribuicao(CmdAtribuicaoContext ctx) {
-        boolean lhsDeref = ctx.PONTEIRO() != null;
-        String nome = ctx.identificador().getText();
-        if (lhsDeref) {
-            saida.append("*").append(nome).append(" = ");
+        // pega o texto "reg.nome" ou "x" etc.
+        String alvo = ctx.identificador().getText();
+        // recupera as infos de tipo da LHS
+        InfoIdentificador info = T5SemanticoUtils.verificarIdentificador(pilhaDeTabelas, ctx.identificador());
+
+        if (info.tipo == TipoT5.LITERAL) {
+            // para arrays de char: strcpy(reg.nome, <expressao>);
+            saida.append("    strcpy(")
+                    .append(alvo)
+                    .append(", ");
+            visitExpressao(ctx.expressao());
+            saida.append(");\n");
         } else {
-            saida.append(nome).append(" = ");
+            // caso genérico (int, float, registro, ponteiro, etc.)
+            saida.append("    ").append(alvo).append(" = ");
+            visitExpressao(ctx.expressao());
+            saida.append(";\n");
         }
-        // reutiliza o visitor para imprimir a expressão
-        visitExpressao(ctx.expressao());
-        saida.append(";\n");
+        return null;
+    }
+
+    @Override
+    public Void visitCmdFaca(T5Parser.CmdFacaContext ctx) {
+        // abre o do {
+        saida.append("    do {\n");
+        for (T5Parser.CmdContext c : ctx.cmd())
+            visitCmd(c);
+        // decide a forma de while
+        boolean primeiroNeg = ctx.expressao()
+                .termo_logico(0)
+                .fator_logico(0)
+                .NAO() != null;
+        if (primeiroNeg) {
+            saida.append("    } while (");
+            visitExpressao(ctx.expressao());
+            saida.append(");\n");
+        } else {
+            saida.append("    } while (!(");
+            visitExpressao(ctx.expressao());
+            saida.append("));\n");
+        }
         return null;
     }
 
@@ -292,31 +451,45 @@ public class T5GeradorC extends T5BaseVisitor<Void> {
         saida.append(";\n");
         return null;
     }
+@Override
+public Void visitCmdSe(CmdSeContext ctx) {
+    // abre o if
+    saida.append("if(");
+    visitExpressao(ctx.expressao());
+    saida.append(") {\n");
 
-    @Override
-    public Void visitCmdSe(CmdSeContext ctx) {
-        saida.append("if(");
-        visitExpressao(ctx.expressao());
-        saida.append(") {\n"); // Adicionado chave de abertura
-        for (CmdContext c : ctx.cmd()) { // Iterar sobre os comandos
+    // separa os comandos em then e else
+    List<CmdContext> thenCmds = new ArrayList<>();
+    List<CmdContext> elseCmds = new ArrayList<>();
+    boolean inElse = false;
+    for (ParseTree child : ctx.children) {
+        if (child instanceof TerminalNode && 
+            ((TerminalNode) child).getSymbol().getType() == T5Parser.SENAO) {
+            inElse = true;
+        } else if (child instanceof T5Parser.CmdContext) {
+            if (!inElse) thenCmds.add((CmdContext) child);
+            else           elseCmds.add((CmdContext) child);
+        }
+    }
+
+    // gera o bloco then
+    for (CmdContext c : thenCmds) {
+        visitCmd(c);
+    }
+    saida.append("}\n");
+
+    // gera o bloco else se houver
+    if (!elseCmds.isEmpty()) {
+        saida.append("else {\n");
+        for (CmdContext c : elseCmds) {
             visitCmd(c);
         }
-        saida.append("}\n"); // Adicionado chave de fechamento
-        if (ctx.SENAO() != null && !ctx.cmd().isEmpty()) { // Verificar se existe SENAO e se há comandos
-            saida.append("else {\n"); // Adicionado chave de abertura
-            // O cmd(1) só existe se houver SENAO
-            // A gramática indica que cmdSe pode ter um ou dois blocos cmd
-            // ctx.cmd() retorna uma lista, então precisamos pegar os comandos após o ENTAO
-            // e SENAO
-            if (ctx.cmd().size() > 1) { // Se houver um segundo bloco de comandos (para o SENAO)
-                for (int i = 1; i < ctx.cmd().size(); i++) {
-                    visitCmd(ctx.cmd(i));
-                }
-            }
-            saida.append("}\n"); // Adicionado chave de fechamento
-        }
-        return null;
+        saida.append("}\n");
     }
+
+    return null;
+}
+
 
     @Override
     public Void visitCmdEnquanto(CmdEnquantoContext ctx) {

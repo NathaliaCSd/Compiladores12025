@@ -1,6 +1,10 @@
 algoritmo
-  se 4 = 3 
-    entao escreva("4 eh igual a 3")
-    senao escreva("4 eh diferente de 3")
-  fim_se
+  tipo treg: registro
+            nome: literal
+            idade: inteiro
+          fim_registro
+  declare reg: treg
+  reg.nome <- "Maria"
+  reg.idade <- 30
+  escreva(reg.nome," tem ",reg.idade," anos")
 fim_algoritmo

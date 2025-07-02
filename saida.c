@@ -5,11 +5,17 @@
 
 
 int main() {
-if(4 == 3) {
-    printf("4 eh igual a 3");
-}
-else {
-    printf("4 eh diferente de 3");
-}
+    typedef struct {
+        char nome[80];
+        int idade;
+    } treg;
+
+    treg reg;
+    strcpy(reg.nome, "Maria");
+    reg.idade = 30;
+    printf("%s", reg.nome);
+    printf(" tem ");
+    printf("%d", reg.idade);
+    printf(" anos");
    return 0;
 }
